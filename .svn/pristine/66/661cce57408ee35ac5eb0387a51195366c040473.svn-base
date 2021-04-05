@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="EPOSUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ExceptionDetail">
+    <Key>
+      <PropertyRef Name="RowID" />
+    </Key>
+    <Property Name="RowID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ExceptionDate" Type="DateTime" Nullable="false" Precision="7" />
+    <Property Name="InnerException" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StackTrace" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Area" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="User" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Data" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="fileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="mimeType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserGuid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="QuestionText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="isActive" Type="Boolean" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="EPOSDataConnection" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="EPOSUsers" EntityType="Self.EPOSUser" />
+    <EntitySet Name="ExceptionDetails" EntityType="Self.ExceptionDetail" />
+    <EntitySet Name="Images" EntityType="Self.Image" />
+    <EntitySet Name="Questions" EntityType="Self.Question" />
+    <EntitySet Name="tfs_store_details" EntityType="Model.tfs_store_details" />
+    <EntitySet Name="QuestionAnswers" EntityType="Model.QuestionAnswer" />
+    <EntitySet Name="tbl_gdo_numbers" EntityType="Model.tbl_gdo_numbers" />
+  </EntityContainer>
+  <EntityType Name="tfs_store_details">
+    <Key>
+      <PropertyRef Name="storeId" />
+    </Key>
+    <Property Name="storeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="properties_long" Type="Decimal" Precision="9" Scale="8" />
+    <Property Name="properties_lat" Type="Decimal" Precision="10" Scale="8" />
+    <Property Name="store_name" Type="String" MaxLength="23" FixedLength="false" Unicode="true" />
+    <Property Name="store_address" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+    <Property Name="store_link" Type="String" MaxLength="73" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="QuestionAnswer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoredId" Type="Int32" Nullable="false" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="TransId" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="isGood" Type="Boolean" Nullable="false" />
+    <Property Name="isBad" Type="Boolean" Nullable="false" />
+    <Property Name="Question" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="TillId" Type="Int32" Nullable="false" />
+    <Property Name="AnswerDateTime" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_gdo_numbers">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RandomValue" Type="String" MaxLength="510" FixedLength="false" Unicode="true" />
+    <Property Name="storeddestination" Type="Int32" />
+    <Property Name="storesource" Type="Int32" />
+    <Property Name="datecreated" Type="DateTime" Precision="3" />
+    <Property Name="isUsed" Type="Boolean" />
+    <Property Name="rowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="generatedGDO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

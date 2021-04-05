@@ -1,0 +1,7 @@
+2019-09-12 12:55:05.5365|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/suppliertostorelist/171
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetSupplierDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

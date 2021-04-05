@@ -1,0 +1,107 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using AutoMapper;
+using Mi9DataAccessLayer;
+using Newtonsoft.Json;
+using TFS_API.Models.DTO;
+using TFS_API.Models.ViewModels;
+using TFS_API.Repositorys;
+using TFS_API.Repositorys.Interfaces;
+using TFS_API.Services.Interfaces;
+
+namespace TFS_API.Controllers
+{
+    [RoutePrefix("api/v1/productlookupapi")]
+    public class ProductLookupAPIController : ApiController
+    {
+        private readonly IExceptionService _errorService;
+        private readonly IClickAndCollectService _collectService;
+        private readonly IHandyScannerService _scannerService;
+        private readonly IGoogleAPIService _googleApiService;
+        private readonly IEmailService _emailService;
+        private readonly UnitOfWork _unitOfWork;
+        private readonly IClickAndCollectReserveRepository _reserveRepository;
+        private readonly IClickAndCollectStatusRepository _statusRepository;
+        static readonly UnitOfWork unitOfWork = new UnitOfWork();
+        ClickAndCollectPricingRepository _pricingRepository = new ClickAndCollectPricingRepository(unitOfWork);
+        ProductsRepository _productRepository = new ProductsRepository(unitOfWork);
+        StockRepository _stockRepository = new StockRepository(unitOfWork);
+        StoreDestailsRepository _storeDestailsRepository = new StoreDestailsRepository(unitOfWork);
+
+        public ProductLookupAPIController(IExceptionService errorService,
+            IClickAndCollectService collectService,
+            IHandyScannerService scannerService,
+            IGoogleAPIService googleApiService,
+            IEmailService emailservice,
+            UnitOfWork unitorOfWork,
+            IClickAndCollectStatusRepository statusRepository,
+            IClickAndCollectReserveRepository reserveRepository)
+        {
+            _errorService = errorService;
+            _collectService = collectService;
+            _scannerService = scannerService;
+            _googleApiService = googleApiService;
+            _emailService = emailservice;
+            _unitOfWork = unitorOfWork;
+            _reserveRepository = reserveRepository;
+            _statusRepository = statusRepository;
+        }
+
+        [Route("get-stock-info")]
+        [HttpGet]
+        public HttpResponseMessage GetStockInformation([FromUri] StockLookUpDTO dto)
+        {
+            try
+            {
+                var getStoreDetails = _storeDestailsRepository.GetStoreDetails(dto.storeId);
+                var getgoogleApiDetails = _googleApiService.GetGoogleGeoDetails(getStoreDetails.Postcode, null);
+                var lat = getgoogleApiDetails.Results.Select(x => x.Geometry.Location.Lat).FirstOrDefault();
+                var longi = getgoogleApiDetails.Results.Select(x => x.Geometry.Location.Lng).FirstOrDefault();
+                var getStockatLocalStores = _scannerService.GetStoreStockWebPanelv2(dto.variantcode, longi, lat);
+                return Request.CreateResponse(HttpStatusCode.OK,
+                    getStockatLocalStores);
+                //var getvarint = _productRepository.GetVarint(dto.variantcode);
+                //if (getvarint != null)
+                //{
+                //    var config = new MapperConfiguration(cfg => cfg.CreateMap<brnstock, StockDTO>());
+                //    var mapper = config.CreateMapper();
+                //    return Request.CreateResponse(HttpStatusCode.OK,
+                //        mapper.Map<StockDTO>(
+                //            _stockRepository.GetStockInformtaionAtStore(getvarint.varint, dto.storeId)));
+                //}
+
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, "No Product found");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, e.Message);
+            }
+        }
+
+        [Route("get-product-details")]
+        [HttpGet]
+        public HttpResponseMessage GetProductDepartmentCodes([FromUri] ProductLookUpDTO dto)
+        {
+            try
+            {
+                var getProdcodes = _productRepository.GetProdint(dto.sku);
+                var prodint = getProdcodes.prodint;
+                var config = new MapperConfiguration(cfg => cfg.CreateMap<product, ProductDTOVM>());
+                var mapper = config.CreateMapper();
+                return Request.CreateResponse(HttpStatusCode.OK,
+                    mapper.Map<ProductDTOVM>(_productRepository.GetProductDetailsFromProdint(prodint)));
+            }
+            catch (Exception ex)
+            {
+                _errorService.Capture(ex);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+            }
+        }
+
+    }
+}

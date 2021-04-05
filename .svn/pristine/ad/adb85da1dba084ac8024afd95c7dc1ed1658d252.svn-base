@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tfs_customer_liveModelStoreContainer" CdmEntityContainer="tfs_customer_liveEntities">
+    <EntitySetMapping Name="tbl_tofscarddetails">
+      <EntityTypeMapping TypeName="tfs_customer_liveModel.tbl_tofscarddetails">
+        <MappingFragment StoreEntitySet="tbl_tofscarddetails">
+          <ScalarProperty Name="clubcardnumber" ColumnName="clubcardnumber" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="postcode" ColumnName="postcode" />
+          <ScalarProperty Name="phonenumber" ColumnName="phonenumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

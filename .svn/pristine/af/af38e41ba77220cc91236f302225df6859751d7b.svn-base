@@ -1,0 +1,84 @@
+2019-01-29 15:57:04.2445|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-29 15:57:50.5453|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/DirectDeliveryList/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDirectDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-29 15:58:03.1703|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/DirectDeliveryList/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDirectDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-29 15:58:27.6056|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/DirectDeliveryList/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDirectDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-29 15:58:28.0385|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/DirectDeliveryList/1478
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDirectDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-29 15:58:31.2302|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/DirectDeliveryList/148
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDirectDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-29 15:58:32.6124|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/DirectDeliveryList/148
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDirectDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-29 15:58:33.2958|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/DirectDeliveryList/1489
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDirectDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-29 15:58:38.0611|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/DirectDeliveryList/14
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDirectDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-29 15:58:39.3616|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/DirectDeliveryList/149
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDirectDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-29 15:58:40.7911|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/DirectDeliveryList/149
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDirectDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-29 15:58:45.3791|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/DirectDeliveryList/144
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDirectDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

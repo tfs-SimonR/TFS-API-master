@@ -1,0 +1,42 @@
+2019-08-01 08:39:31.2816|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/getseasoncodefromsku/10382923
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetSeasonCode
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-08-01 08:39:53.2885|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/getseasoncodefromsku/10382923
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetSeasonCode
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-08-01 08:40:09.8782|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/getseasoncodefromsku/10382923
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetSeasonCode
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-08-01 09:45:30.1054|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/getseasoncodefromsku/10381894
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetSeasonCode
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-08-01 09:48:06.8769|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/getseasoncodefromsku/10374986
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetSeasonCode
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-08-01 10:10:52.8484|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/getseasoncodefromsku/10374986
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetSeasonCode
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

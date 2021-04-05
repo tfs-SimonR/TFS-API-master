@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SPARQ_TESTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_Sparq_QueBuster_BasketDetails">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cardnumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sku" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="scandate" Type="datetime" Nullable="false" />
+    <Property Name="isOpen" Type="bit" Nullable="false" />
+    <Property Name="price" Type="int" />
+  </EntityType>
+  <EntityType Name="tbl_Sparq_QueueBuster_CardDetails">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cardnumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="scandate" Type="datetime" Nullable="false" />
+    <Property Name="isOpen" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SPARQ_TESTModelStoreContainer">
+    <EntitySet Name="tbl_Sparq_QueBuster_BasketDetails" EntityType="Self.tbl_Sparq_QueBuster_BasketDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_Sparq_QueueBuster_CardDetails" EntityType="Self.tbl_Sparq_QueueBuster_CardDetails" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

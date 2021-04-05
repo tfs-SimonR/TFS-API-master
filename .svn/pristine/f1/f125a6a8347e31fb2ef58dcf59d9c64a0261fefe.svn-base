@@ -1,0 +1,21 @@
+2019-06-12 09:23:33.9299|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehousetoStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-06-12 09:38:18.4556|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/suppliertostorelist/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetSupplierDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-06-12 09:39:22.7681|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storetostorelist/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoretoStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

@@ -1,0 +1,42 @@
+2020-03-10 15:01:09.0669|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/productlookupapi/get-stock-info?storeId=201&variantcode=600564
+Controller : TFS_API.Controllers.ProductLookupAPIController
+Action : GetStockInformation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-10 15:02:59.4248|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/productlookupapi/get-stock-info?storeId=201&variantcode=600564
+Controller : TFS_API.Controllers.ProductLookupAPIController
+Action : GetStockInformation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-10 15:03:57.5457|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/productlookupapi/get-stock-info?storeId=201&variantcode=10200498
+Controller : TFS_API.Controllers.ProductLookupAPIController
+Action : GetStockInformation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-10 15:15:54.9189|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/productlookupapi/get-stock-info?storeId=201&variantcode=10200498
+Controller : TFS_API.Controllers.ProductLookupAPIController
+Action : GetStockInformation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-10 15:16:39.2532|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/productlookupapi/get-stock-info?storeId=201&variantcode=600564
+Controller : TFS_API.Controllers.ProductLookupAPIController
+Action : GetStockInformation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-10 15:35:41.0809|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/productlookupapi/get-stock-info?storeId=201&variantcode=600564
+Controller : TFS_API.Controllers.ProductLookupAPIController
+Action : GetStockInformation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

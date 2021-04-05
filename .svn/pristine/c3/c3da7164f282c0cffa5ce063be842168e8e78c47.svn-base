@@ -1,0 +1,462 @@
+2019-02-04 09:21:08.3108|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostoreaccept/FS300075327
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreAcceptAsyncTask
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 09:21:20.0436|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostoreaccept/FS300075327
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreAcceptAsyncTask
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 09:23:11.8116|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostoreaccept/FS300075327
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreAcceptAsyncTask
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 09:57:12.7481|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostoreaccept/FS300075327
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreAcceptAsyncTask
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 09:57:33.5938|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostoreaccept/HS300172691
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreAcceptAsyncTask
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 09:59:57.2519|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostoreaccept/HS300172691
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreAcceptAsyncTask
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:19:48.4383|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/suppliertostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDirectDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:20:23.7176|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehousetoStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:21:22.4961|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehousetoStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:22:12.4819|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostoreaccept/HG300035506
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreAcceptAsyncTask
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:30:41.2870|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehousetoStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:31:22.2830|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostoreaccept/HS300175787
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreAcceptAsyncTask
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:31:28.0055|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehousetoStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:35:14.7435|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehousetoStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:35:39.3237|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostoreaccept/HS300175825/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreAcceptAsyncTask
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:36:29.6191|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehousetoStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:36:36.8100|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostoreaccept/HS300175847/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreAcceptAsyncTask
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:36:41.6188|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehousetoStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:36:49.3808|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostoreaccept/HS300175852/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreAcceptAsyncTask
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:39:38.1952|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehousetoStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:40:01.3222|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostoreaccept/HS300175876/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreAcceptAsyncTask
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:40:10.2728|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehousetoStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:47:50.8431|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehousetoStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:47:59.7513|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostoreaccept/UG300051585/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreAcceptAsyncTask
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:49:24.6460|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehousetoStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:49:40.5195|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostoreaccept/UG300051595/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreAcceptAsyncTask
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:50:09.3025|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehousetoStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:50:38.3038|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehousetoStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:51:52.7884|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehousetoStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 11:53:52.6978|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/suppliertostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDirectDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 12:40:52.9914|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoretoStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 12:40:59.8087|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storetostorelist/148
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoretoStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 12:41:03.3395|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storetostorelist/145
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoretoStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 12:41:05.9874|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storetostorelist/001
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoretoStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 12:41:08.0217|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storetostorelist/002
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoretoStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 12:41:11.5434|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storetostorelist/003
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoretoStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 12:41:49.7516|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storetostorelist/003
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoretoStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 12:42:23.7829|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storetostorelist/177
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoretoStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 12:47:59.9266|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storetostorelist/177
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoretoStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 14:30:36.7499|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreAcceptAsyncTask
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 14:31:18.3729|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/suppliertostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutSupplierDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 14:35:25.3432|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/suppliertostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutSupplierDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 14:35:55.4360|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/suppliertostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutSupplierDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 14:36:38.1388|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/suppliertostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutSupplierDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 14:39:22.8649|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/suppliertostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutSupplierDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 14:40:24.9538|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/suppliertostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutSupplierDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 14:42:40.3204|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/suppliertostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetSupplierDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 14:56:57.0701|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/suppliertostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutSupplierDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 14:59:37.3995|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/suppliertostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutSupplierDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 15:10:46.5279|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/storetostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutStoreDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 15:12:12.4615|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/storetostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutStoreDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 15:23:47.7500|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/storetostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutStoreDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 15:26:05.5078|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/storetostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutStoreDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 15:28:42.6546|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/storetostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutStoreDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 15:33:36.4393|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/storetostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutStoreDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 15:52:03.0989|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/storetostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutStoreDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 15:56:39.9049|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/storetostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutStoreDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 15:57:17.4902|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/storetostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutStoreDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 15:58:51.7714|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/storetostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutStoreDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 16:06:18.6903|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/storetostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutStoreDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 16:21:50.4777|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/storetostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutStoreDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 16:24:12.2954|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/storetostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutStoreDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 16:25:50.1155|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/storetostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutStoreDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 16:50:16.9359|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/warehousetostorelist/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehousetoStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 16:53:41.6432|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/storetostoreaccept/260539/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutStoreDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-04 17:00:19.2465|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/suppliertostoreaccept
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutSupplierDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

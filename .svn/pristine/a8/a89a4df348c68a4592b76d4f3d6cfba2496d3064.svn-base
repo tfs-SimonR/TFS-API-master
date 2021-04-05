@@ -1,0 +1,11 @@
+﻿<div class="container">
+	<div class="row text-center">
+        <div class="col-sm-6 col-sm-offset-3">
+            <br><br> <h2 style="color:#FF0000">Failure</h2>
+            <img src="~/Content/Images/c1bb09589c.png" width="200px" height="200px"/>
+            <p style="font-size:20px;color:#5C5C5C;">This verifies that the entered AD credentials are incorrect.</p>
+            <br><br>
+        </div>
+        
+	</div>
+</div>

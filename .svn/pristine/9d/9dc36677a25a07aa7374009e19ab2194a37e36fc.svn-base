@@ -1,0 +1,112 @@
+2020-07-01 09:46:25.4266|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/cash_management/PostEndOfDay
+Controller : TFS_API.Controllers.CashAPIController
+Action : PostEndOfDay
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-07-01 09:46:58.8623|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/cash_management/PostEndOfDay
+Controller : TFS_API.Controllers.CashAPIController
+Action : PostEndOfDay
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-07-01 09:48:49.5072|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/cash_management/PostEndOfDay
+Controller : TFS_API.Controllers.CashAPIController
+Action : PostEndOfDay
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-07-01 09:52:08.5310|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/cash_management/PostEndOfDay
+Controller : TFS_API.Controllers.CashAPIController
+Action : PostEndOfDay
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-07-01 09:52:57.2232|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/cash_management/PostEndOfDay
+Controller : TFS_API.Controllers.CashAPIController
+Action : PostEndOfDay
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-07-01 09:54:32.8389|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/cash_management/PostEndOfDay
+Controller : TFS_API.Controllers.CashAPIController
+Action : PostEndOfDay
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-07-01 09:58:35.6754|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/cash_management/PostEndOfDay
+Controller : TFS_API.Controllers.CashAPIController
+Action : PostEndOfDay
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-07-01 10:02:10.7405|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/cash_management/PostEndOfDay
+Controller : TFS_API.Controllers.CashAPIController
+Action : PostEndOfDay
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-07-01 10:21:33.0280|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/cash_management/PostEndOfDay
+Controller : TFS_API.Controllers.CashAPIController
+Action : PostEndOfDay
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-07-01 10:27:44.9833|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/cash_management/PostEndOfDay
+Controller : TFS_API.Controllers.CashAPIController
+Action : PostEndOfDay
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-07-01 10:30:37.5152|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/cash_management/PostEndOfDay
+Controller : TFS_API.Controllers.CashAPIController
+Action : PostEndOfDay
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-07-01 10:38:33.6324|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/cash_management/PostEndOfDay
+Controller : TFS_API.Controllers.CashAPIController
+Action : PostEndOfDay
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-07-01 10:50:02.6863|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/cash_management/PostEndOfDay
+Controller : TFS_API.Controllers.CashAPIController
+Action : PostEndOfDay
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-07-01 10:51:09.8517|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/cash_management/PostEndOfDay
+Controller : TFS_API.Controllers.CashAPIController
+Action : PostEndOfDay
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-07-01 11:22:25.2684|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/cash_management/PostEndOfDay
+Controller : TFS_API.Controllers.CashAPIController
+Action : PostEndOfDay
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-07-01 11:23:55.6652|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/cash_management/PostEndOfDay
+Controller : TFS_API.Controllers.CashAPIController
+Action : PostEndOfDay
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

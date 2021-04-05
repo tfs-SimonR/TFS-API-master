@@ -1,0 +1,21 @@
+2019-07-25 08:57:44.1136|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscannergoodsout/goodsout
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : PostGoodsOut
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-07-25 09:34:28.8137|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscannergoodsout/goodsout
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : PostGoodsOut
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-07-25 09:37:37.5431|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscannergoodsout/goodsout
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : PostGoodsOut
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

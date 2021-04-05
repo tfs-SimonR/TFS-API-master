@@ -1,0 +1,2080 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TFS-API</name>
+    </assembly>
+    <members>
+        <member name="T:TFS_API.ActionFilters.LoggingFilterAttribute">
+            <inheritdoc />
+        </member>
+        <member name="M:TFS_API.ActionFilters.LoggingFilterAttribute.OnActionExecuting(System.Web.Http.Controllers.HttpActionContext)">
+            <inheritdoc />
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.ApiDescriptionExtensions.GetFriendlyId(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Generates an URI-friendly ID for the <see cref="T:System.Web.Http.Description.ApiDescription"/>. E.g. "Get-Values-id_name" instead of "GetValues/{id}?name={name}"
+            </summary>
+            <param name="description">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The ID as a string.</returns>
+        </member>
+        <member name="T:TFS_API.Areas.HelpPage.HelpPageConfig">
+            <summary>
+            Use this class to customize the Help Page.
+            For example you can set a custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> to supply the documentation
+            or you can provide the samples for the requests/responses.
+            </summary>
+        </member>
+        <member name="T:TFS_API.Areas.HelpPage.Controllers.HelpController">
+            <summary>
+            The controller that will handle requests for the help page.
+            </summary>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageConfigurationExtensions.SetDocumentationProvider(System.Web.Http.HttpConfiguration,System.Web.Http.Description.IDocumentationProvider)">
+            <summary>
+            Sets the documentation provider for help page.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="documentationProvider">The documentation provider.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleObjects(System.Web.Http.HttpConfiguration,System.Collections.Generic.IDictionary{System.Type,System.Object})">
+            <summary>
+            Sets the objects that will be used by the formatters to produce sample requests/responses.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleObjects">The sample objects.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type and action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleRequest(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample request directly for the specified media type and action with parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample request.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String)">
+            <summary>
+            Sets the sample request directly for the specified media type of the action.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleResponse(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.String,System.String,System.String[])">
+            <summary>
+            Sets the sample response directly for the specified media type of the action with specific parameters.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample response.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForMediaType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Sets the sample directly for all actions with the specified media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageConfigurationExtensions.SetSampleForType(System.Web.Http.HttpConfiguration,System.Object,System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Sets the sample directly for all actions with the specified type and media type.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sample">The sample.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The parameter type or return type of an action.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualRequestType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate request samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String)">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageConfigurationExtensions.SetActualResponseType(System.Web.Http.HttpConfiguration,System.Type,System.String,System.String,System.String[])">
+            <summary>
+            Specifies the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> returned as part of the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            The help page will use this information to produce more accurate response samples.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="type">The type.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <returns>The help page sample generator.</returns>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageConfigurationExtensions.SetHelpPageSampleGenerator(System.Web.Http.HttpConfiguration,TFS_API.Areas.HelpPage.HelpPageSampleGenerator)">
+            <summary>
+            Sets the help page sample generator.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="sampleGenerator">The help page sample generator.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageConfigurationExtensions.GetModelDescriptionGenerator(System.Web.Http.HttpConfiguration)">
+            <summary>
+            Gets the model description generator.
+            </summary>
+            <param name="config">The configuration.</param>
+            <returns>The <see cref="T:TFS_API.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator"/></returns>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageConfigurationExtensions.GetHelpPageApiModel(System.Web.Http.HttpConfiguration,System.String)">
+            <summary>
+            Gets the model that represents an API displayed on the help page. The model is initialized on the first call and cached for subsequent calls.
+            </summary>
+            <param name="config">The <see cref="T:System.Web.Http.HttpConfiguration"/>.</param>
+            <param name="apiDescriptionId">The <see cref="T:System.Web.Http.Description.ApiDescription"/> ID.</param>
+            <returns>
+            An <see cref="T:TFS_API.Areas.HelpPage.Models.HelpPageApiModel"/>
+            </returns>
+        </member>
+        <member name="T:TFS_API.Areas.HelpPage.ModelDescriptions.ModelDescription">
+            <summary>
+            Describes a type model.
+            </summary>
+        </member>
+        <member name="T:TFS_API.Areas.HelpPage.ModelDescriptions.ModelDescriptionGenerator">
+            <summary>
+            Generates model descriptions for given types.
+            </summary>
+        </member>
+        <member name="T:TFS_API.Areas.HelpPage.ModelDescriptions.ModelNameAttribute">
+            <summary>
+            Use this attribute to change the name of the <see cref="T:TFS_API.Areas.HelpPage.ModelDescriptions.ModelDescription"/> generated for a type.
+            </summary>
+        </member>
+        <member name="T:TFS_API.Areas.HelpPage.Models.HelpPageApiModel">
+            <summary>
+            The model that represents an API displayed on the help page.
+            </summary>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.Models.HelpPageApiModel.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TFS_API.Areas.HelpPage.Models.HelpPageApiModel"/> class.
+            </summary>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription">
+            <summary>
+            Gets or sets the <see cref="P:TFS_API.Areas.HelpPage.Models.HelpPageApiModel.ApiDescription"/> that describes the API.
+            </summary>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.Models.HelpPageApiModel.UriParameters">
+            <summary>
+            Gets or sets the <see cref="T:TFS_API.Areas.HelpPage.ModelDescriptions.ParameterDescription"/> collection that describes the URI parameters for the API.
+            </summary>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.Models.HelpPageApiModel.RequestDocumentation">
+            <summary>
+            Gets or sets the documentation for the request.
+            </summary>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.Models.HelpPageApiModel.RequestModelDescription">
+            <summary>
+            Gets or sets the <see cref="T:TFS_API.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the request body.
+            </summary>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.Models.HelpPageApiModel.RequestBodyParameters">
+            <summary>
+            Gets the request body parameter descriptions.
+            </summary>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.Models.HelpPageApiModel.ResourceDescription">
+            <summary>
+            Gets or sets the <see cref="T:TFS_API.Areas.HelpPage.ModelDescriptions.ModelDescription"/> that describes the resource.
+            </summary>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.Models.HelpPageApiModel.ResourceProperties">
+            <summary>
+            Gets the resource property descriptions.
+            </summary>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.Models.HelpPageApiModel.SampleRequests">
+            <summary>
+            Gets the sample requests associated with the API.
+            </summary>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.Models.HelpPageApiModel.SampleResponses">
+            <summary>
+            Gets the sample responses associated with the API.
+            </summary>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.Models.HelpPageApiModel.ErrorMessages">
+            <summary>
+            Gets the error messages associated with this model.
+            </summary>
+        </member>
+        <member name="T:TFS_API.Areas.HelpPage.HelpPageSampleGenerator">
+            <summary>
+            This class will generate the samples for the help page.
+            </summary>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:TFS_API.Areas.HelpPage.HelpPageSampleGenerator"/> class.
+            </summary>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.ActualHttpMessageTypes">
+            <summary>
+            Gets CLR types that are used as the content of <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/>.
+            </summary>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples">
+            <summary>
+            Gets the objects that are used directly as samples for certain actions.
+            </summary>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects">
+            <summary>
+            Gets the objects that are serialized as samples by the supported formatters.
+            </summary>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories">
+            <summary>
+            Gets factories for the objects that the supported formatters will serialize as samples. Processed in order,
+            stopping when the factory successfully returns a non-<see langref="null"/> object.
+            </summary>
+            <remarks>
+            Collection includes just <see cref="M:TFS_API.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)"/> initially. Use
+            <code>SampleObjectFactories.Insert(0, func)</code> to provide an override and
+            <code>SampleObjectFactories.Add(func)</code> to provide a fallback.</remarks>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.GetSampleRequests(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the request body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.GetSampleResponses(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Gets the response body samples for a given <see cref="T:System.Web.Http.Description.ApiDescription"/>.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.GetSample(System.Web.Http.Description.ApiDescription,TFS_API.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Gets the request or response body samples.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The samples keyed by media type.</returns>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.GetActionSample(System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Type,System.Net.Http.Formatting.MediaTypeFormatter,System.Net.Http.Headers.MediaTypeHeaderValue,TFS_API.Areas.HelpPage.SampleDirection)">
+            <summary>
+            Search for samples that are provided directly through <see cref="P:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.ActionSamples"/>.
+            </summary>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="type">The CLR type.</param>
+            <param name="formatter">The formatter.</param>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or for a response.</param>
+            <returns>The sample that matches the parameters.</returns>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.GetSampleObject(System.Type)">
+            <summary>
+            Gets the sample object that will be serialized by the formatters. 
+            First, it will look at the <see cref="P:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.SampleObjects"/>. If no sample object is found, it will try to create
+            one using <see cref="M:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.DefaultSampleObjectFactory(TFS_API.Areas.HelpPage.HelpPageSampleGenerator,System.Type)"/> (which wraps an <see cref="T:TFS_API.Areas.HelpPage.ObjectGenerator"/>) and other
+            factories in <see cref="P:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.SampleObjectFactories"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>The sample object.</returns>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.ResolveHttpRequestMessageType(System.Web.Http.Description.ApiDescription)">
+            <summary>
+            Resolves the actual type of <see cref="T:System.Net.Http.ObjectContent`1"/> passed to the <see cref="T:System.Net.Http.HttpRequestMessage"/> in an action.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <returns>The type.</returns>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.ResolveType(System.Web.Http.Description.ApiDescription,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},TFS_API.Areas.HelpPage.SampleDirection,System.Collections.ObjectModel.Collection{System.Net.Http.Formatting.MediaTypeFormatter}@)">
+            <summary>
+            Resolves the type of the action parameter or return value when <see cref="T:System.Net.Http.HttpRequestMessage"/> or <see cref="T:System.Net.Http.HttpResponseMessage"/> is used.
+            </summary>
+            <param name="api">The <see cref="T:System.Web.Http.Description.ApiDescription"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+            <param name="sampleDirection">The value indicating whether the sample is for a request or a response.</param>
+            <param name="formatters">The formatters.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageSampleGenerator.WriteSampleObjectUsingFormatter(System.Net.Http.Formatting.MediaTypeFormatter,System.Object,System.Type,System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Writes the sample object using formatter.
+            </summary>
+            <param name="formatter">The formatter.</param>
+            <param name="value">The value.</param>
+            <param name="type">The type.</param>
+            <param name="mediaType">Type of the media.</param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Areas.HelpPage.HelpPageSampleKey">
+            <summary>
+            This is used to identify the place where the sample should be applied.
+            </summary>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue)">
+            <summary>
+            Creates a new <see cref="T:TFS_API.Areas.HelpPage.HelpPageSampleKey"/> based on media type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,System.Type)">
+            <summary>
+            Creates a new <see cref="T:TFS_API.Areas.HelpPage.HelpPageSampleKey"/> based on media type and CLR type.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="type">The CLR type.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageSampleKey.#ctor(TFS_API.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:TFS_API.Areas.HelpPage.HelpPageSampleKey"/> based on <see cref="P:TFS_API.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="sampleDirection">The <see cref="P:TFS_API.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.HelpPageSampleKey.#ctor(System.Net.Http.Headers.MediaTypeHeaderValue,TFS_API.Areas.HelpPage.SampleDirection,System.String,System.String,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Creates a new <see cref="T:TFS_API.Areas.HelpPage.HelpPageSampleKey"/> based on media type, <see cref="P:TFS_API.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>, controller name, action name and parameter names.
+            </summary>
+            <param name="mediaType">The media type.</param>
+            <param name="sampleDirection">The <see cref="P:TFS_API.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.</param>
+            <param name="controllerName">Name of the controller.</param>
+            <param name="actionName">Name of the action.</param>
+            <param name="parameterNames">The parameter names.</param>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.HelpPageSampleKey.ControllerName">
+            <summary>
+            Gets the name of the controller.
+            </summary>
+            <value>
+            The name of the controller.
+            </value>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.HelpPageSampleKey.ActionName">
+            <summary>
+            Gets the name of the action.
+            </summary>
+            <value>
+            The name of the action.
+            </value>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.HelpPageSampleKey.MediaType">
+            <summary>
+            Gets the media type.
+            </summary>
+            <value>
+            The media type.
+            </value>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.HelpPageSampleKey.ParameterNames">
+            <summary>
+            Gets the parameter names.
+            </summary>
+        </member>
+        <member name="P:TFS_API.Areas.HelpPage.HelpPageSampleKey.SampleDirection">
+            <summary>
+            Gets the <see cref="P:TFS_API.Areas.HelpPage.HelpPageSampleKey.SampleDirection"/>.
+            </summary>
+        </member>
+        <member name="T:TFS_API.Areas.HelpPage.ImageSample">
+            <summary>
+            This represents an image sample on the help page. There's a display template named ImageSample associated with this class.
+            </summary>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.ImageSample.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TFS_API.Areas.HelpPage.ImageSample"/> class.
+            </summary>
+            <param name="src">The URL of an image.</param>
+        </member>
+        <member name="T:TFS_API.Areas.HelpPage.InvalidSample">
+            <summary>
+            This represents an invalid sample on the help page. There's a display template named InvalidSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:TFS_API.Areas.HelpPage.ObjectGenerator">
+            <summary>
+            This class will create an object of a given type and populate it with sample data.
+            </summary>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.ObjectGenerator.GenerateObject(System.Type)">
+            <summary>
+            Generates an object for a given type. The type needs to be public, have a public default constructor and settable public properties/fields. Currently it supports the following types:
+            Simple types: <see cref="T:System.Int32"/>, <see cref="T:System.String"/>, <see cref="T:System.Enum"/>, <see cref="T:System.DateTime"/>, <see cref="T:System.Uri"/>, etc.
+            Complex types: POCO types.
+            Nullables: <see cref="T:System.Nullable`1"/>.
+            Arrays: arrays of simple types or complex types.
+            Key value pairs: <see cref="T:System.Collections.Generic.KeyValuePair`2"/>
+            Tuples: <see cref="T:System.Tuple`1"/>, <see cref="T:System.Tuple`2"/>, etc
+            Dictionaries: <see cref="T:System.Collections.Generic.IDictionary`2"/> or anything deriving from <see cref="T:System.Collections.Generic.IDictionary`2"/>.
+            Collections: <see cref="T:System.Collections.Generic.IList`1"/>, <see cref="T:System.Collections.Generic.IEnumerable`1"/>, <see cref="T:System.Collections.Generic.ICollection`1"/>, <see cref="T:System.Collections.IList"/>, <see cref="T:System.Collections.IEnumerable"/>, <see cref="T:System.Collections.ICollection"/> or anything deriving from <see cref="T:System.Collections.Generic.ICollection`1"/> or <see cref="T:System.Collections.IList"/>.
+            Queryables: <see cref="T:System.Linq.IQueryable"/>, <see cref="T:System.Linq.IQueryable`1"/>.
+            </summary>
+            <param name="type">The type.</param>
+            <returns>An object of the given type.</returns>
+        </member>
+        <member name="T:TFS_API.Areas.HelpPage.SampleDirection">
+            <summary>
+            Indicates whether the sample is used for request or response
+            </summary>
+        </member>
+        <member name="T:TFS_API.Areas.HelpPage.TextSample">
+            <summary>
+            This represents a preformatted text sample on the help page. There's a display template named TextSample associated with this class.
+            </summary>
+        </member>
+        <member name="T:TFS_API.Areas.HelpPage.XmlDocumentationProvider">
+            <summary>
+            A custom <see cref="T:System.Web.Http.Description.IDocumentationProvider"/> that reads the API documentation from an XML documentation file.
+            </summary>
+        </member>
+        <member name="M:TFS_API.Areas.HelpPage.XmlDocumentationProvider.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:TFS_API.Areas.HelpPage.XmlDocumentationProvider"/> class.
+            </summary>
+            <param name="documentPath">The physical path to XML document.</param>
+        </member>
+        <member name="T:TFS_API.BusinessObjects.ScannerBo">
+            <summary>
+            Handy Scanner Business Objects
+            </summary>
+        </member>
+        <member name="M:TFS_API.BusinessObjects.ScannerBo.InsertGoodsOut(tfs_api.query.data.Models.WarehouseDto)">
+            <summary>
+            
+            </summary>
+            <param name="gdoDetail"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.BusinessObjects.WarehouseBo">
+            <summary>
+            Warehouse to Store Business Objects
+            </summary>
+        </member>
+        <member name="M:TFS_API.BusinessObjects.WarehouseBo.InsertGoodsOutPallet(tfs_api.query.data.Models.WarehouseDto)">
+            <summary>
+            
+            </summary>
+            <param name="gdoDetail"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.ApplicationServiceAuthenticationController.CreateUser(TFS_API.Models.DTO.AuthDTO)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Controllers.CashAPIController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TFS_API.Controllers.CashAPIController.#ctor(TFS_API.Services.Interfaces.IExceptionService,TFS_API.Repositorys.UnitOfWork)">
+            <summary>
+            
+            </summary>
+            <param name="errorService"></param>
+            <param name="unitOfWork"></param>
+        </member>
+        <member name="M:TFS_API.Controllers.CashAPIController.PostEndOfDay(TFS_API.Models.DTO.TillDataTransferDTO)">
+            <summary>
+            
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.CashAPIController.CreateCashingUpIfNotExist(System.DateTime,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="createdate"></param>
+            <param name="store"></param>
+        </member>
+        <member name="T:TFS_API.Controllers.ClickAndCollectWebController">
+            <summary>
+            Click and collect web panel endpoints for Pricing People Iframe for tofs website
+            </summary>
+        </member>
+        <member name="M:TFS_API.Controllers.ClickAndCollectWebController.#ctor(TFS_API.Services.Interfaces.IExceptionService,TFS_API.Services.Interfaces.IClickAndCollectService,TFS_API.Services.Interfaces.IHandyScannerService,TFS_API.Services.Interfaces.IGoogleAPIService,TFS_API.Services.Interfaces.IEmailService,TFS_API.Repositorys.UnitOfWork,TFS_API.Repositorys.Interfaces.IClickAndCollectStatusRepository,TFS_API.Repositorys.Interfaces.IClickAndCollectReserveRepository)">
+            <summary>
+            
+            </summary>
+            <param name="errorService"></param>
+            <param name="collectService"></param>
+            <param name="scannerService"></param>
+            <param name="googleApiService"></param>
+            <param name="emailservice"></param>
+            <param name="unitorOfWork"></param>
+            <param name="statusRepository"></param>
+            <param name="reserveRepository"></param>
+        </member>
+        <member name="M:TFS_API.Controllers.ClickAndCollectWebController.RCGetProductOptions(TFS_API.Models.DTO.SKUBranchDTO)">
+            <summary>
+            Returns product options at a store
+             </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.ClickAndCollectWebController.RCGetSKUPanelData(TFS_API.Models.DTO.SKUBranchDTO)">
+            <summary>
+            Returns data for the click and collect panels for the website
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.ClickAndCollectWebController.RCGetSKUPanelDatav2(TFS_API.Models.DTO.SKUBranchDTOv2)">
+            <summary>
+            Returns product info by variant
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.ClickAndCollectWebController.RCGetStoresWithStock(TFS_API.Models.DTO.SKUBranchDTO)">
+            <summary>
+            Returns stores with stock in a 10 mile radius
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.ClickAndCollectWebController.RCGetStoresWithStockv2(TFS_API.Models.DTO.SKUBranchDTOv3)">
+            <summary>
+            Returns stores with stock using the Google API
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.ClickAndCollectWebController.MeasureDistance(TFS_API.Models.DTO.HomeDeliveryDTO)">
+            <summary>
+            Distance from a postcode to a store using Google API
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.ClickAndCollectWebController.RcRequestReservation(TFS_API.Models.DTO.ClickAndCollectReserveDTO)">
+            <summary>
+            Request reservation of items
+            </summary>
+            <returns></returns>
+            [HttpGet]
+        </member>
+        <member name="M:TFS_API.Controllers.ClickAndCollectWebController.RCGetAllReservations">
+            <summary>
+            Returns all reservations in a list
+            </summary>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:TFS_API.Controllers.ClickAndCollectWebController.RCGetStockLevelByStore(TFS_API.Models.DTO.StockByStoreDTO)" -->
+        <member name="M:TFS_API.Controllers.CustomerAPIController.PostBustAQueue(TFS_API.Models.DTO.BustAQueueDTO)">
+            <summary>
+            
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Controllers.CustomerController">
+            <summary>
+            API for all TOFS Customer Related endpoints.
+            </summary>
+        </member>
+        <member name="M:TFS_API.Controllers.CustomerController.Get(System.String)">
+            <summary>
+            Gets customer details via search by phone number
+            </summary>
+            <param name="phoneNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.CustomerController.GetByRandom(System.String)">
+            <summary>
+            Enables search for customer by any details available
+            </summary>
+            <param name="searchstring"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.CustomerController.Post(TFS_API.Models.BindingModels.CustomerBM)">
+            <summary>
+            Endpoint to capture new TOFS Card Details 
+            </summary>
+            <param name="details"></param>
+            <returns>201 or 400</returns>
+        </member>
+        <member name="T:TFS_API.Controllers.EPOSController">
+            <summary>
+            Endpoints for the EPOS Customer facing touchscreen
+            </summary>
+        </member>
+        <member name="M:TFS_API.Controllers.EPOSController.PushStreamContent">
+            <summary>
+            Streams a large Json object for all product descriptions with SKU's
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.EPOSController.Post(TFS_API.Models.BindingModels.AnswersBM)">
+            <summary>
+            
+            </summary>
+            <param name="answer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.EXAVaultController.GetListOfFiles(System.String)">
+            <summary>
+            Lists all files on SFTP if you pass in the location
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.EXAVaultController.DownloadFile">
+            <summary>
+            Downloads specific hardcoded file from Exa SFTP 
+            </summary>
+            <returns>C:\SFTPDownloads", "RC_Products.csv</returns>
+        </member>
+        <member name="M:TFS_API.Controllers.EXAVaultController.DeleteLocalFiles">
+            <summary>
+            Deletes files in the directory C:\SFTPDownloads
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.EXAVaultController.DownloadFile(System.String)">
+            <summary>
+            Dynamic download of file from EXA SFTP
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Controllers.HandyScannerController">
+            <summary>
+                Android HHT Scanner End Points
+            </summary>
+        </member>
+        <member name="M:TFS_API.Controllers.HandyScannerController.#ctor(TFS_API.Services.Interfaces.IHandyScannerService,TFS_API.Services.Interfaces.IExceptionService,TFS_API.Services.Interfaces.IAuditService,TFS_API.Services.ICreateFileService,TFS_API.Service.Interface.IScannerService,TFS_API.Service.Interface.IARTSService)">
+            <summary>
+                Android HHT Scanner End Points
+            </summary>
+        </member>
+        <member name="M:TFS_API.Controllers.HandyScannerController.GetWarehousetoStoreDelivery(System.String)">
+            <summary>
+                TOFS Warehouse Delivery, list for store from storeId
+            </summary>
+            <param name="storeId"></param>
+            <returns>HttpStatusCode with 200 for OK and 404 for not found</returns>
+        </member>
+        <member name="M:TFS_API.Controllers.HandyScannerController.PutWarehouseToStoreAcceptAsyncTask(TFS_API.Models.PostViewModels.WarehouseAcceptPM)">
+            <summary>
+                Endpoint to accept a Warehouse To Store Delivery, Must send palletbarcode AND StoreId in body, palletbarcode gives
+                a param to use to search in the DB,
+                var getRecord = mi9TestEntities.consighdrs.FirstOrDefault(x => x.consignment == pm.palletbarcode);
+            </summary>
+            <param name="pm">
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.HandyScannerController.GetSupplierDeliveryToStore(System.String)">
+            <summary>
+                Supplier Direct List of outstanding deliveries.
+            </summary>
+            <param name="storeId"></param>
+            <returns>HttpStatusCode with 200 for OK and 404 for not found</returns>
+        </member>
+        <member name="M:TFS_API.Controllers.HandyScannerController.PutSuppliertoStoreMassAccept(TFS_API.Models.DTO.SupplierAcceptDTO)">
+            <summary>
+                Mass Accept SUPPLIER DIRECT FROM TFS-BACKOFFICE
+            </summary>
+            <param name="ponumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.HandyScannerController.PutSupplierDeliveryToStore(System.Collections.Generic.List{TFS_API.Models.PostViewModels.SupplierToStoreDTO})">
+            <summary>
+                This is the accept for supplier to store, send back object as per the spec and i can loop the json array
+            </summary>
+            ///
+            <param name="vm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.HandyScannerController.GetStoretoStore(System.String)">
+            <summary>
+                Gets list of Store to Store transfers
+            </summary>
+            <param name="storeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.HandyScannerController.PutStoreDeliveryToStore(System.Collections.Generic.List{TFS_API.Models.PostViewModels.StoreToStoreDTO})">
+            <summary>
+                This is the accept for supplier to store, send back object as per the spec and i can loop the json array
+            </summary>
+            <param name="vm"></param>
+            <returns>200 OK</returns>
+        </member>
+        <member name="M:TFS_API.Controllers.HandyScannerController.GetStockTest(System.String,System.String)">
+            <summary>
+                Returns stock at current store and within a 15Km radius of the current store
+            </summary>
+            <param name="storeId"></param>
+            <param name="productCode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Controllers.HandyScannerGoodsOutController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TFS_API.Controllers.HandyScannerGoodsOutController.#ctor(TFS_API.Services.Interfaces.IHandyScannerService,TFS_API.Services.Interfaces.IExceptionService,TFS_API.Services.Interfaces.IAuditService,TFS_API.Services.Interfaces.IStoredProcedureService,TFS_API.Services.Interfaces.ICountingService,TFS_API.Services.ICreateFileService,TFS_API.Service.Interface.IScannerService)">
+            <inheritdoc />
+        </member>
+        <member name="M:TFS_API.Controllers.HandyScannerGoodsOutController.GetStoresList">
+            <summary>
+            Endpoint for returning list of stores and store Id's
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.HandyScannerGoodsOutController.GetResponseCodes">
+            <summary>
+            Reason Code List
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.HandyScannerGoodsOutController.GetSuppliers">
+            <summary>
+            List of supplier names, shortnames and supplier codes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.HandyScannerGoodsOutController.PostGoodsOut(System.Collections.Generic.List{TFS_API.Models.ViewModels.CreateISTDTO})">
+            <summary>
+            Creates Goods out from a Store, this will create IST only (Back to warehouse is IST also,
+            We dont create return to suppliers as this goes back to the Warehouse)
+            </summary>
+            <param name="vm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.HandyScannerGoodsOutController.GetConsignhistory(System.String)">
+            <summary>
+            Returns a list of Goodsout Created in last 28 days from store.
+            </summary>
+            <param name="storeId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Controllers.PICountController">
+            <summary>
+            Counting Stuff
+            </summary>
+        </member>
+        <member name="M:TFS_API.Controllers.PICountController.#ctor(TFS_API.Services.Interfaces.IHandyScannerService,TFS_API.Services.Interfaces.IExceptionService,TFS_API.Services.Interfaces.IAuditService,TFS_API.Services.Interfaces.ICountingService,TFS_API.Services.ICreateFileService,mi9TESTDAL.mi9_mms_fs_trainEntities)">
+            <inheritdoc />
+        </member>
+        <member name="M:TFS_API.Controllers.PICountController.GetPPReasonCodes">
+            <summary>
+            Returns list of profit protection write off / on reason codes.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.PICountController.PutWriteOff(TFS_API.Models.DTO.WriteOffDTO)">
+            <summary>
+            Write off endpoint for profit protection
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.PICountController.GetPIList(System.String)">
+            <summary>
+            Gets the list of PI counts awaiting the store
+            </summary>
+            <param name="storeid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.PICountController.PutAdHoc(System.Collections.Generic.List{TFS_API.Models.Tables.AdHocDTO})">
+            <summary>
+            ADHOC Counting Submit Method
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.PICountController.PutPiCount(System.Collections.Generic.List{TFS_API.Models.DTO.PICountVMDTO})">
+            <summary>
+            PI Counting Submit Method
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.ProductLookupAPIController.GetStockInformation(TFS_API.Models.DTO.StockLookUpDTO)">
+            <summary>
+            Pass storeId and variantcode (SKU) and returns stock information for that sku at that store.
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.ProductLookupAPIController.GetProductDepartmentCodes(TFS_API.Models.DTO.ProductLookUpDTO)">
+            <summary>
+            Pass variantcode (SKU) and returns product information (department etc).
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.ProductLookupAPIController.GetProductVatCode(TFS_API.Models.DTO.ProductLookUpDTO)">
+            <summary>
+            Pass variantcode (SKU) and returns product vatcode.
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.ProductLookupAPIController.GetStockAtStore(TFS_API.Models.DTO.StoreSkuDTO)">
+            <summary>
+            
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.ProductLookupAPIController.GetAllStockForSku(TFS_API.Models.DTO.ProductLookUpDTO)">
+            <summary>
+            Returns stock amounts at all stores for a given variantcode
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.ProductLookupAPIController.GetProductRetailPrice(TFS_API.Models.DTO.ProductLookUpDTO)">
+            <summary>
+            pass in variantcode (SKU) returns latest retail price in use.
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.ProductLookupAPIController.GetCostPrice(TFS_API.Models.DTO.ProductLookUpDTO)">
+            <summary>
+            Pass in variantcode (SKU) returns current product cost.
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Controllers.TFSAuthenticationController.AuthenticateAd(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="username"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Controllers.UserAccountController">
+            <summary>
+            We use these methods for AD user searches
+            </summary>
+        </member>
+        <member name="M:TFS_API.Controllers.UserAccountController.CreateUser(TFS_API.Models.UserAccountViewModels.RegisterViewModel)">
+            <summary>
+            This is for the creation of users via AD
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Helpers.AreaEnum">
+            <inheritdoc />
+        </member>
+        <member name="M:TFS_API.Helpers.SFTPHelpers.downloadFile(System.String)">
+            <summary>
+            Downloads a file in the desktop synchronously
+            </summary>
+        </member>
+        <member name="M:TFS_API.Helpers.SFTPHelpers.uploadFile(System.String)">
+            <summary>
+            Downloads a file in the desktop synchronously
+            </summary>
+        </member>
+        <member name="M:TFS_API.Helpers.SFTPHelpers.listFiles(System.String)">
+            <summary>
+            List a remote directory in the console.
+            </summary>
+        </member>
+        <member name="M:TFS_API.Helpers.SFTPHelpers.deleteFile(System.String)">
+            <summary>
+            Delete a remote file
+            </summary>
+        </member>
+        <member name="T:TFS_API.Helpers.VerbEnum">
+            <inheritdoc />
+        </member>
+        <member name="P:TFS_API.Helpers.NLogger.Logger">
+            <summary>
+            Get property for Logger
+            </summary>
+        </member>
+        <member name="M:TFS_API.Helpers.NLogger.Trace(System.Net.Http.HttpRequestMessage,System.String,System.Web.Http.Tracing.TraceLevel,System.Action{System.Web.Http.Tracing.TraceRecord})">
+            <summary>
+            Implementation of TraceWriter to trace the logs.
+            </summary>
+            <param name="request"></param>
+            <param name="category"></param>
+            <param name="level"></param>
+            <param name="traceAction"></param>
+        </member>
+        <member name="M:TFS_API.Helpers.NLogger.Log(System.Web.Http.Tracing.TraceRecord)">
+            <summary>
+            Logs info/Error to Log file
+            </summary>
+            <param name="record"></param>
+        </member>
+        <member name="T:TFS_API.Mappers.EmailMappers">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TFS_API.Mappers.EmailMappers.EmailMap(Mi9DataAccessLayer.tfs_stockhome_feedback,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="vm"></param>
+            <param name="storename"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Models.AuditTransactionVM">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.AuditTransactionVM.Id">
+            <summary>
+            This is for recording transactions for PI
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.BindingModels.GoodInWarehouseBM.pallet_identifier">
+            <summary>
+            Pallet Number
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.BindingModels.GoodInWarehouseBM.ShipmentItems.sku">
+            <summary>
+            SKU Code
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.BindingModels.GoodInWarehouseBM.ShipmentItems.stock_qty">
+            <summary>
+            Products on Pallet
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.BindingModels.GoodInWarehouseBM.ShipmentItems.description">
+            <summary>
+            Description of Item
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.BindingModels.GoodInWarehouseBM.ShipmentItems.varint">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.BindingModels.HandyScannerBM.description">
+            <summary>
+            Stock Item Description
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.BindingModels.HandyScannerBM.sku">
+            <summary>
+            Product SKU Code
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.BindingModels.HandyScannerBM.barcode">
+            <summary>
+            Product Bar Code
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.BindingModels.HandyScannerBM.sellingprice">
+            <summary>
+            RRP For product
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.BindingModels.HandyScannerBM.stock_qty">
+            <summary>
+            Stock Quantity at Store
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.BindingModels.HandyScannerBM.stk_enroute">
+            <summary>
+            Stock enroute to store
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.BindingModels.ProductsBM.SKU">
+            <summary>
+            SKU Code
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.BindingModels.ProductsBM.Description">
+            <summary>
+            Description of SKU
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.BindingModels.StockStoreBM.stock_qty">
+            <summary>
+            Stock Quantity at Store
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.BindingModels.StockStoreBM.branch_id">
+            <summary>
+            TOFS Branch ID
+            </summary>
+        </member>
+        <member name="T:TFS_API.Models.DTO.AllStockEnRouteDTO">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TFS_API.Models.DTO.AllStockEnRouteDTO.PalletItems">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.AllStockEnRouteDTO.PalletItems.description">
+            <summary>
+            Stock Item Description
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.AllStockEnRouteDTO.PalletItems.sku">
+            <summary>
+            Product SKU Code
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.AllStockEnRouteDTO.PalletItems.barcode">
+            <summary>
+            Product Bar Code
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.AllStockEnRouteDTO.PalletItems.sellingprice">
+            <summary>
+            RRP For product
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.AllStockEnRouteDTO.PalletItems.qty_onway">
+            <summary>
+            Stock Quantity at Store
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.CreateSupReturnDTO.gdo_number">
+            <summary>
+            GDO Number
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.CreateSupReturnDTO.user_name">
+            <summary>
+            User Id
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.CreateSupReturnDTO.store_id">
+            <summary>
+            Store Id
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.CreateSupReturnDTO.supplier_id">
+            <summary>
+            Destination store Id for the shipment
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.CreateSupReturnDTO.ponumber">
+            <summary>
+            PONumber of return item
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.CreateSupReturnDTO.SupplierShipmentItems.sku_counted_qty">
+            <summary>
+            sku counted qty
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.CreateSupReturnDTO.SupplierShipmentItems.sku">
+            <summary>
+            sku
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PICountVMDTO.list_id">
+            <summary>
+            ID of the List
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PICountVMDTO.list_name">
+            <summary>
+            Count List name
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PICountVMDTO.expected_date">
+            <summary>
+            Date of performed Scan
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PICountVMDTO.user_name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PICountVMDTO.store_id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PICountVMDTO.reason_code">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PICountVMDTO.counted_items">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PICountVMDTO.PICountItems.sku">
+            <summary>
+            SKU
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PICountVMDTO.PICountItems.sku_expected_qty">
+            <summary>
+            SKU Expected Count
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PreviousGoodsOutDTO.pallet_identifier">
+            <summary>
+            Pallet Number
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PreviousGoodsOutDTO.destination">
+            <summary>
+            destination
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PreviousGoodsOutDTO.GoodsOutPreviousItems.sku">
+            <summary>
+            SKU Code
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PreviousGoodsOutDTO.GoodsOutPreviousItems.stock_qty">
+            <summary>
+            Products on Pallet
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PreviousGoodsOutDTO.GoodsOutPreviousItems.description">
+            <summary>
+            Description of Item
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PreviousWarhouseDeliveriesDTO.pallet_identifier">
+            <summary>
+            Pallet Number
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PreviousWarhouseDeliveriesDTO.destination">
+            <summary>
+            destination
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PreviousWarhouseDeliveriesDTO.WarehouseItems.sku">
+            <summary>
+            SKU Code
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PreviousWarhouseDeliveriesDTO.WarehouseItems.stock_qty">
+            <summary>
+            Products on Pallet
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.PreviousWarhouseDeliveriesDTO.WarehouseItems.description">
+            <summary>
+            Description of Item
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.StockEnRouteDTO.description">
+            <summary>
+            Stock Item Description
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.StockEnRouteDTO.sku">
+            <summary>
+            Product SKU Code
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.StockEnRouteDTO.barcode">
+            <summary>
+            Product Bar Code
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.StockEnRouteDTO.sellingprice">
+            <summary>
+            RRP For product
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.StockEnRouteDTO.qty_onway">
+            <summary>
+            Stock Quantity at Store
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.StoreDistanceDTO.description">
+            <summary>
+            Stock Item Description
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.StoreDistanceDTO.sku">
+            <summary>
+            Product SKU Code
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.StoreDistanceDTO.barcode">
+            <summary>
+            Product Bar Code
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.StoreDistanceDTO.sellingprice">
+            <summary>
+            RRP For product
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.StoreDistanceDTO.stock_qty">
+            <summary>
+            Stock Quantity at Store
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.DTO.StoreDistanceDTO.stk_enroute">
+            <summary>
+            Stock enroute to store
+            </summary>
+        </member>
+        <member name="T:TFS_API.Models.LogRequestAndResponseHandler">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.PostViewModels.StoreToStoreDTO.gdo_number">
+            <summary>
+            GDO Number (IST Number)
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.PostViewModels.StoreToStoreDTO.store_id">
+            <summary>
+            Stored ID as a string
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.PostViewModels.StoreToStoreDTO.user_name">
+            <summary>
+            username of the user logged into the scanner
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.PostViewModels.StoreToStoreDTO.shipment_items">
+            <summary>
+            Collection of the ShipmentItems Data Transfer Object
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.PostViewModels.StoreToStoreDTO.ShipmentItemsDTO.sku">
+            <summary>
+            Item SKU
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.PostViewModels.StoreToStoreDTO.ShipmentItemsDTO.sku_counted_qty">
+            <summary>
+            SKU Counted QTY by scanner
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.PostViewModels.StoreToStoreDTO.ShipmentItemsDTO.sku_expected_qty">
+            <summary>
+            The SKU QTY that was expected on the delivery
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.Tables.AdHocDTO.user_id">
+            <summary>
+            User ID
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.Tables.AdHocDTO.store_id">
+            <summary>
+            Stored Id
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.Tables.AdHocDTO.reason_code">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.Tables.AdHocDTO.AdHocList.sku">
+            <summary>
+            SKU
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.Tables.AdHocDTO.AdHocList.sku_counted_qty">
+            <summary>
+             Sku counted quantiuty
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.Tables.AdHocDTO.AdHocList.scan_date">
+            <summary>
+            Date of performed Scan
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.ViewModels.CreateISTDTO.gdo_number">
+            <summary>
+            GDO Number
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.ViewModels.CreateISTDTO.user_name">
+            <summary>
+            User Id
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.ViewModels.CreateISTDTO.store_id">
+            <summary>
+            Store Id
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.ViewModels.CreateISTDTO.destination_store_id">
+            <summary>
+            Destination store Id for the shipment
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.ViewModels.CreateISTDTO.ISTShipmentItems.sku_counted_qty">
+            <summary>
+            sku counted qty
+            </summary>
+        </member>
+        <member name="P:TFS_API.Models.ViewModels.CreateISTDTO.ISTShipmentItems.sku">
+            <summary>
+            sku
+            </summary>
+        </member>
+        <member name="T:TFS_API.Providers.ApplicationOAuthProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TFS_API.Providers.ApplicationOAuthProvider.GrantResourceOwnerCredentials(Microsoft.Owin.Security.OAuth.OAuthGrantResourceOwnerCredentialsContext)">
+            <summary>
+            This is where the Authentication Token is set if credentials are same as AD
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Providers.ApplicationOAuthProvider.TokenEndpoint(Microsoft.Owin.Security.OAuth.OAuthTokenEndpointContext)">
+            <summary>
+            Updated to chnage datetime format to UTC and also remove . from issued and expires.
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Repositorys.AuthenticationRepository.CreateAspUser(TFS_API.Models.DTO.AuthDTO)">
+            <summary>
+            
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="F:TFS_API.Repositorys.CashRepository._unitOfWork">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TFS_API.Repositorys.CashRepository.#ctor(TFS_API.Repositorys.UnitOfWork)">
+            <summary>
+            
+            </summary>
+            <param name="unitOfWork"></param>
+        </member>
+        <member name="M:TFS_API.Repositorys.CashRepository.Update(CashingUpDAL.tbl_CashManagement)">
+            <summary>
+            Update
+            </summary>
+            <param name="cashManagement"></param>
+        </member>
+        <member name="M:TFS_API.Repositorys.CashRepository.Add(CashingUpDAL.tbl_CashManagement)">
+            <summary>
+            Add
+            </summary>
+            <param name="cashManagement"></param>
+        </member>
+        <member name="T:TFS_API.Repositorys.ClickAndCollectReserveRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TFS_API.Repositorys.ClickAndCollectReserveRepository.#ctor(TFS_API.Repositorys.UnitOfWork)">
+            <summary>
+            
+            </summary>
+            <param name="unitOfWork"></param>
+        </member>
+        <member name="M:TFS_API.Repositorys.ClickAndCollectReserveRepository.Add(ClickAndCollectDAL.ClickAndCollectReservation)">
+            <summary>
+            
+            </summary>
+            <param name="reservation"></param>
+        </member>
+        <member name="M:TFS_API.Repositorys.ClickAndCollectReserveRepository.Update(ClickAndCollectDAL.ClickAndCollectReservation)">
+            <summary>
+            
+            </summary>
+            <param name="update"></param>
+        </member>
+        <member name="M:TFS_API.Repositorys.ClickAndCollectReserveRepository.GetAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:TFS_API.Repositorys.ClickAndCollectReserveRepository.disposed">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TFS_API.Repositorys.ClickAndCollectReserveRepository.Dispose(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:TFS_API.Repositorys.ClickAndCollectStatusRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TFS_API.Repositorys.ClickAndCollectStatusRepository.#ctor(TFS_API.Repositorys.UnitOfWork)">
+            <summary>
+            
+            </summary>
+            <param name="dbFactory"></param>
+        </member>
+        <member name="M:TFS_API.Repositorys.ClickAndCollectStatusRepository.UpdateReservationStatus(ClickAndCollectDAL.ClickAndCollectReservationStatu)">
+            <summary>
+            
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:TFS_API.Repositorys.ClickAndCollectStatusRepository.GetReservationStatus(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="reservationId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Repositorys.ClickAndCollectStatusRepository.Add(ClickAndCollectDAL.ClickAndCollectReservationStatu)">
+            <summary>
+            
+            </summary>
+            <param name="reservation"></param>
+        </member>
+        <member name="T:TFS_API.Repositorys.Interfaces.ICashRepository">
+            <summary>
+            Interface for Cash Repo
+            </summary>
+        </member>
+        <member name="M:TFS_API.Repositorys.Interfaces.ICashRepository.Update(CashingUpDAL.tbl_CashManagement)">
+            <summary>
+            Update Entity
+            </summary>
+            <param name="cashManagement"></param>
+        </member>
+        <member name="M:TFS_API.Repositorys.Interfaces.ICashRepository.Add(CashingUpDAL.tbl_CashManagement)">
+            <summary>
+            Add Entity
+            </summary>
+            <param name="cashManagement"></param>
+        </member>
+        <member name="M:TFS_API.Repositorys.Interfaces.ICashRepository.GetSPQTills(System.String)">
+            <summary>
+            Get SPQ Tills
+            </summary>
+            <param name="store"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Repositorys.Interfaces.ICashRepository.GetRJTills(System.String)">
+            <summary>
+            Get RJ Tills
+            </summary>
+            <param name="store"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Repositorys.Interfaces.ICashRepository.isExistingSPQ(System.DateTime,System.String,System.Int32)">
+            <summary>
+            Checks if cash record Exists
+            </summary>
+            <param name="createdate"></param>
+            <param name="storeid"></param>
+            <param name="tillId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Repositorys.Interfaces.ICashRepository.isExistingRJ(System.DateTime,System.String,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="createdate"></param>
+            <param name="storeid"></param>
+            <param name="tillId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Repositorys.Interfaces.ICashRepository.GetRecordsToList(System.DateTime,System.DateTime,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="thisWeek"></param>
+            <param name="endofdayToday"></param>
+            <param name="store"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Repositorys.Interfaces.IClickAndCollectReserveRepository">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:TFS_API.Repositorys.Interfaces.IClickAndCollectStatusRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TFS_API.Repositorys.PIRepository._unitOfWork">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TFS_API.Repositorys.PIRepository.#ctor(TFS_API.Repositorys.UnitOfWork)">
+            <summary>
+            
+            </summary>
+            <param name="unitOfWork"></param>
+        </member>
+        <member name="M:TFS_API.Repositorys.PIRepository.GetAllCounts">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Repositorys.PIRepository.GetSkusByCountId(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Repositorys.PIRepository.GetStoresByListId(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Repositorys.PIRepository.GetOpenCountsByStore(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="store"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Repositorys.PIRepository.GetByID(System.Int32)">
+            <summary>
+            Gets Count By ID
+            </summary>
+            <param name="RowID"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Repositorys.ProductsRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TFS_API.Repositorys.ProductsRepository._unitOfWork">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TFS_API.Repositorys.ProductsRepository.#ctor(TFS_API.Repositorys.UnitOfWork)">
+            <summary>
+            
+            </summary>
+            <param name="unitOfWork"></param>
+        </member>
+        <member name="T:TFS_API.Repositorys.RepositoryBase`2">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TContext"></typeparam>
+        </member>
+        <member name="P:TFS_API.Repositorys.RepositoryBase`2.DbFactory">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TFS_API.Repositorys.RepositoryBase`2.DbContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TFS_API.Repositorys.RepositoryBase`2.#ctor(TFS_API.Factories.IFactories.IDbFactory{`1})">
+            <summary>
+            
+            </summary>
+            <param name="dbFactory"></param>
+        </member>
+        <member name="M:TFS_API.Repositorys.RepositoryBase`2.Add(`0)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:TFS_API.Repositorys.RepositoryBase`2.Update(`0)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:TFS_API.Repositorys.RepositoryBase`2.Delete(`0)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+        </member>
+        <member name="M:TFS_API.Repositorys.RepositoryBase`2.Delete(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            
+            </summary>
+            <param name="where"></param>
+        </member>
+        <member name="M:TFS_API.Repositorys.RepositoryBase`2.GetById(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Repositorys.RepositoryBase`2.GetAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Repositorys.RepositoryBase`2.GetMany(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            
+            </summary>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Repositorys.RepositoryBase`2.Get(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            
+            </summary>
+            <param name="where"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Repositorys.StockRepository.GetStockInformtaionAtStore(System.Int32,System.String)">
+            <summary>
+            Returns stock information at a store location 
+            </summary>
+            <param name="varint"></param>
+            <param name="store"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Repositorys.StockRepository.GetVarint(System.String)">
+            <summary>
+            Returns Varint for a given variantcode
+            </summary>
+            <param name="variantcode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Repositorys.StoreDestailsRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:TFS_API.Repositorys.StoreDestailsRepository._unitOfWork">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TFS_API.Repositorys.StoreDestailsRepository.#ctor(TFS_API.Repositorys.UnitOfWork)">
+            <summary>
+            
+            </summary>
+            <param name="unitOfWork"></param>
+        </member>
+        <member name="M:TFS_API.Repositorys.StoreDestailsRepository.GetStoreDetails(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="storeId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Repositorys.UnitOfWork">
+            <summary>
+            
+            </summary>
+            <typeparam name="TContext"></typeparam>
+        </member>
+        <member name="M:TFS_API.Repositorys.UnitOfWork.SaveChanges">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TFS_API.Repositorys.UnitOfWork.Context">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TFS_API.Repositorys.UnitOfWork.CCDBContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TFS_API.Repositorys.UnitOfWork.MI9DBContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TFS_API.Repositorys.UnitOfWork.PIDbContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TFS_API.Repositorys.UnitOfWork.CashDbContext">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TFS_API.Services.AuditService">
+            <inheritdoc />
+        </member>
+        <member name="M:TFS_API.Services.AuditService.#ctor(TFS_API.Services.Interfaces.IExceptionService)">
+            <inheritdoc />
+        </member>
+        <member name="M:TFS_API.Services.AuditService.HandyScannerWarehouseToStoreAudit(Mi9DataAccessLayer.consighdr,TFS_API.Models.PostViewModels.WarehouseAcceptPM)">
+            <summary>
+            Warehouse to Store Audit
+            </summary>
+            <param name="consighdr"></param>
+            <param name="pm"></param>
+            <param name="area"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.AuditService.HandyScannerSupplierToStoreAudit(Mi9DataAccessLayer.purchorder,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            STOCK QTY AUDIT 
+            </summary>
+            <param name="consighdr"></param>
+            <param name="pm"></param>
+            <param name="area"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.AuditService.HandyScannerISTStockPutAudit(Mi9DataAccessLayer.consighdr,System.String,System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            IST Audit
+            </summary>
+            <param name="consighdr"></param>
+            <param name="sku"></param>
+            <param name="sku_qty"></param>
+            <param name="sku_exp_qty"></param>
+            <param name="userId"></param>
+            <param name="storeId"></param>
+            <param name="area"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.AuditService.AuditADHOCCount(Mi9DataAccessLayer.brnstock,System.String,System.Int32,System.String,System.String,System.DateTime,System.Int32,System.Decimal)">
+            <summary>
+            ADHOC Counting Audit
+            </summary>
+            <param name="model"></param>
+            <param name="sku"></param>
+            <param name="sku_counted"></param>
+            <param name="userId"></param>
+            <param name="storeId"></param>
+            <param name="dateTime"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.AuditService.PiCountAudit(Mi9DataAccessLayer.brnstock,System.String,System.Int32,System.Int32,System.String,System.String,System.Int32,System.DateTime)">
+            <summary>
+            PI Count Audit
+            </summary>
+            <param name="model"></param>
+            <param name="sku"></param>
+            <param name="sku_counted_qty"></param>
+            <param name="sku_expected_qty"></param>
+            <param name="userid"></param>
+            <param name="storeid"></param>
+            <param name="listid"></param>
+            <param name="datescanned"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.AuditService.GoodsOutAudit(System.String,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Goods Out Audit
+            </summary>
+            <param name="line"></param>
+            <param name="userId"></param>
+            <param name="storeId"></param>
+            <param name="sku"></param>
+            <param name="gdostring"></param>
+            <param name="sku_counted"></param>
+            <param name="destination"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Services.ClickAndCollectService">
+            <summary>
+            Click and Collect Service
+            </summary>
+        </member>
+        <member name="M:TFS_API.Services.ClickAndCollectService.#ctor(TFS_API.Services.Interfaces.IExceptionService,TFS_API.Repositorys.Interfaces.IClickAndCollectReserveRepository)">
+            <inheritdoc />
+        </member>
+        <member name="M:TFS_API.Services.ClickAndCollectService.AddReservation(ClickAndCollectDAL.ClickAndCollectReservation)">
+            <summary>
+            
+            </summary>
+            <param name="reservation"></param>
+        </member>
+        <member name="M:TFS_API.Services.ClickAndCollectService.GetProductsForPanel(System.String,System.String)">
+            <summary>
+            Adds a new reservation status
+            </summary>
+            <param name="addrecord"></param>
+        </member>
+        <member name="M:TFS_API.Services.CountingService.#ctor(TFS_API.Services.Interfaces.IExceptionService,Mi9DataAccessLayer.Mi9DBEntities)">
+            <summary>
+                Counitng Service
+            </summary>
+            <param name="errorService"></param>
+        </member>
+        <member name="M:TFS_API.Services.CountingService.GetBrnstock(System.Int32,System.String)">
+            <summary>
+            </summary>
+            <param name="sku"></param>
+            <param name="store_id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.CountingService.GetVarInt(System.String)">
+            <summary>
+            </summary>
+            <param name="sku"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Services.CreateFlatFileService">
+            <inheritdoc />
+        </member>
+        <member name="M:TFS_API.Services.CreateFlatFileService.#ctor(TFS_API.Services.Interfaces.IExceptionService)">
+            <inheritdoc />
+        </member>
+        <member name="M:TFS_API.Services.CreateFlatFileService.CreateFile(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            
+            </summary>
+            <param name="store"></param>
+            <param name="flatfile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.EmailService.FeedbackEmail(TFS_API.Models.ViewModels.EmailViewModels.QuickApproveEmailResponseViewModel)">
+            <summary>
+            
+            </summary>
+            <param name="vm"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.ExceptionService.Capture(System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.GoogleAPIService.#ctor(TFS_API.Services.Interfaces.IExceptionService)">
+            <summary>
+            
+            </summary>
+            <param name="errorService"></param>
+        </member>
+        <member name="M:TFS_API.Services.GoogleAPIService.GetGoogleGeoDetails(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="postCode"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Services.HandyScannerService">
+            <inheritdoc />
+        </member>
+        <member name="M:TFS_API.Services.HandyScannerService.#ctor(TFS_API.Services.Interfaces.IExceptionService,TFS_API.Services.Interfaces.ICountingService,TFS_API.Services.Interfaces.IStockService)">
+            <inheritdoc />
+        </member>
+        <member name="M:TFS_API.Services.HandyScannerService.GetPreviousGoodsOut(System.String)">
+            <summary>
+            Gets GoodsOut created in past 28 days.
+            </summary>
+            <param name="storeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.HandyScannerService.GetWarehouseToStoreList(System.String)">
+            <summary>
+            /Warehouse to Store List
+            </summary>
+            <param name="storeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.HandyScannerService.GetSupplierToStoresList(System.String)">
+            <summary>
+            Supplier to Store List
+            </summary>
+            <param name="storeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.HandyScannerService.GetStoreToStoreList(System.String)">
+            <summary>
+            Store to Store List 
+            </summary>
+            <param name="storeId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.HandyScannerService.GetStoresList">
+            <summary>
+            Gets list of all stores in the estate
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.HandyScannerService.GetStockAtBranch(System.String,System.String)">
+            <summary>
+            Gets stock level of SKU and a Branch
+            </summary>
+            <param name="productCode"></param>
+            <param name="branchId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.HandyScannerService.GetStockatLocal(System.String,System.String)">
+            <summary>
+            Not used at the moment
+            </summary>
+            <param name="productCode"></param>
+            <param name="branchId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.HandyScannerService.GetStockAtBranchBarcode(System.String,System.String)">
+            <summary>
+            Not used any more.
+            </summary>
+            <param name="barcode"></param>
+            <param name="branchId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.HandyScannerService.GetAllStockEnRoute(System.String)">
+            <summary>
+            Gets All Stock on way to a store.
+            </summary>
+            <param name="storeid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.HandyScannerService.GetNearestStoresTest(System.String,System.String)">
+            <summary>
+            This is the test method for the new Stock at 5 nearest stores and the weekly sales per sku
+            </summary>
+            <param name="productCode"></param>
+            <param name="storeid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.HandyScannerService.GetStoreStockWebPanel(System.String,System.Double,System.Double)">
+            <summary>
+            New endpoint to support click and collect
+            </summary>
+            <param name="productCode"></param>
+            <param name="storeid"></param>
+            <param name="longitude"></param>
+            <param name="latitude"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.HandyScannerService.GetStoreStockWebPanelv2(System.String,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="productCode"></param>
+            <param name="longitude"></param>
+            <param name="latitude"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.HandyScannerService.GetNearestStoresProdcode(System.String,System.String)">
+            <summary>
+            Returns all data needed for store stock and stores within a radius of 15KM, expands to 130KM for Scotland and remote places.
+            </summary>
+            <param name="productCode"></param>
+            <param name="storeid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TFS_API.Services.HandyScannerService.GetTaskLists(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="storeid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TFS_API.Services.Interfaces.IAuditService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TFS_API.Services.Interfaces.ICountingService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TFS_API.Services.Interfaces.IEmailService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:TFS_API.Services.Interfaces.IStockService">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TFS_API.Service.ArtsService.WarehouseReceipt(System.Collections.Generic.List{tfs_api.query.data.Models.WarehouseDto})">
+            <summary>
+            
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

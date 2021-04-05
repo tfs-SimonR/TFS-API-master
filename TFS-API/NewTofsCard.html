@@ -1,0 +1,114 @@
+﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="Scripts/jquery.validate.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <style>
+        .tier_price_break {
+            border-radius: 8px;
+            border: 1px solid #cde2f5;
+            background: #fff;
+        }
+        .tier_price_break thead th {
+            border: none;
+            border-bottom: 1px solid #cde2f5;
+
+        }
+            .tier_price_break thead th:nth-child(2) {
+                border-left: 1px solid #cde2f5;
+                background-image: url('Content/Images/banner3.svg');
+            }.tier_price_break tbody td {
+             border: 1px solid transparent;
+
+         }
+    </style>
+</head>
+<body>
+<br /><br /><br /><br /><br />
+<div class="container">
+    <section>
+        <table class="table table-striped tier_price_break">
+            <tbody>
+            <tr>
+                <td class="tier_price_break tbody td">
+                    <form id="customerDetails" class="well form-horizontal" method="post">
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">First Name</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="glyphicon glyphicon-user"></i>
+                                        </span>
+                                        <input id="firstName" name="firstName" placeholder="First Name" class="form-control" required="true" value="" type="text" autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Last Name</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="glyphicon glyphicon-user"></i>
+                                        </span>
+                                        <input id="lastName" name="lastName" placeholder="Last Name" class="form-control" required="true" value="" type="text" autocomplete="off">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Postal Code/ZIP</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="postCode" name="postCode" placeholder="Postal Code/ZIP" class="form-control" required="true" value="" type="text" autocomplete="off"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Email</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span><input id="customerEmail" name="customerEmail" placeholder="Email" class="form-control" required="true" value="" type="text" autocomplete="off"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Phone Number</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber" name="phoneNumber" placeholder="Phone Number" class="form-control" required="true" value="" type="text" autocomplete="off"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">New TOFS Card Number</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span><input id="cardNumber" name="cardNumber" placeholder="New Card Number" class="form-control" required="true" value="" type="text" autocomplete="off"></div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="form-group">
+                                <button name="submit" id="submit" value="" type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
+                            </div>
+                            <div class="form-group">
+                                <input id="btnCancel" class="btn btn-danger btn-lg btn-block" onclick="self.close()" type="button" value="Cancel"/>
+                            </div>
+                            <!--Bootstrap alert to display error message if the login fails-->
+                            <div id="alerts-container"></div>
+                        </fieldset>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
+</body>
+</html>
+
+<script src="Scripts/tfs_tofscards_new.js"></script>
+<!--BACKSTRETCH-->
+<!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+<script src="Scripts/jquery.backstretch.min.js"></script>
+<script>
+    $.backstretch("/Content/Images/wallpaper.bmp", { speed: 500 });
+</script>

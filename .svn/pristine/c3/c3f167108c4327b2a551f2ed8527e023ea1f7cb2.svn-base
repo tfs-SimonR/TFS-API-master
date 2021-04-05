@@ -1,0 +1,7 @@
+2019-10-25 15:06:59.4617|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/PutSuppliertoStoreMassAccept
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutSuppliertoStoreMassAccept
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

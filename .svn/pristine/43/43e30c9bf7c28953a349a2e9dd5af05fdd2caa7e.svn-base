@@ -1,0 +1,140 @@
+2019-02-13 08:32:51.8907|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousereset
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreTEstReset
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 08:40:29.0678|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousereset
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreTEstReset
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 08:48:41.9281|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousereset
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreTEstReset
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 08:49:46.8390|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousereset
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreTEstReset
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 08:51:15.4595|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousereset
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreTEstReset
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 08:53:38.9452|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousereset
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreTEstReset
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 09:01:28.1294|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousereset
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreTEstReset
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 09:03:34.6691|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousereset
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreTEstReset
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 09:09:14.5742|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousereset
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreTEstReset
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 09:09:25.6392|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousereset
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreTEstReset
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 09:10:48.2653|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousereset
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreTEstReset
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 09:12:02.3441|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousereset
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreTEstReset
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 09:13:40.5577|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/warehousereset
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutWarehouseToStoreTEstReset
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 15:02:34.3772|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscannergoodsout/goodsout
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : PostGoodsOut
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 15:08:05.1103|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscannergoodsout/goodsout
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : PostGoodsOut
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 15:33:46.8668|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscannergoodsout/goodsout
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : PostGoodsOut
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 15:35:36.2393|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscannergoodsout/goodsout
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : PostGoodsOut
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 15:48:38.1374|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscannergoodsout/goodsout
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : PostGoodsOut
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 16:00:03.2731|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscannergoodsout/goodsout
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : PostGoodsOut
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-13 16:05:13.9864|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscannergoodsout/goodsout
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : PostGoodsOut
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

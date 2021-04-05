@@ -1,0 +1,86 @@
+﻿
+
+<link type="text/css" href="~/Areas/HelpPage/HelpPage.css" rel="stylesheet" />
+<header class="help-page">
+    <div class="content-wrapper">
+        <div class="float-left">
+            <h1>@ViewBag.Title</h1>
+        </div>
+    </div>
+</header>
+<div id="body">
+
+    <div>
+        <!--Table to capture username and password-->
+        <table class="table table-bordered">
+            <thead>
+                <tr class="table-info">
+                    <th colspan="2">
+                        API Authentication Test, Use AD login details.
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Username</td>
+                    <td>
+                        <input type="text" id="txtUsername" placeholder="Username" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="password" id="txtPassword" placeholder="Password" />
+                    </td>
+                </tr>
+                <tr class="table-info">
+                    <td colspan="2">
+                        <input id="btnLogin" class="btn btn-primary" type="button" value="Login" />
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!--Bootstrap alert to display error message if the login fails-->
+        <div id="divError" class="alert alert-danger collapse">
+            <a id="linkClose" href="#" class="close">&times;</a>
+            <div id="divErrorText"></div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/bootstrap.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#linkClose').click(function () {
+            $('#divError').hide('fade');
+        });
+
+        $('#btnLogin').click(function () {
+            $.ajax({
+                // Post username, password & the grant type to /token
+                url: '/api/v1/authentication',
+                method: 'POST',
+                contentType: 'application/json',
+                data: {
+                    username: $('#txtUsername').val(),
+                    password: $('#txtPassword').val(),
+                    grant_type: 'password'
+                },
+                // When the request completes successfully, save the
+                // access token in the browser session storage and
+                // redirect the user to Data.html page. We do not have
+                // this page yet. So please add it to the
+                // EmployeeService project before running it
+                success: function (response) {
+                    sessionStorage.setItem("accessToken", response.access_token);
+                    window.location.href = "/Home/AuthenticationSuccess";
+                },
+                // Display errors if any in the Bootstrap alert <div>
+                error: function (jqXHR) {
+                    window.location.href = "/UserAccount/AuthenticationFailure";
+                }
+            });
+        });
+    });
+</script>

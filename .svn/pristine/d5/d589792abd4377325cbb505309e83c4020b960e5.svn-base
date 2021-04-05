@@ -1,0 +1,133 @@
+2020-03-13 10:00:21.5526|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 10:00:59.6521|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 10:07:49.5914|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 10:11:25.7435|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/210
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 10:14:22.0891|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/210
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 10:17:57.7426|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 10:22:59.5783|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 10:23:14.5008|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 10:23:24.1645|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 10:27:40.8922|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 10:35:10.3474|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 10:42:10.9592|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 10:43:45.7234|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 10:56:39.9418|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 11:00:33.2472|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 11:03:37.3973|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 11:03:54.6792|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 11:04:06.5846|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-13 11:06:32.9405|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/GetHistoricWarehouse/201
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetHistoricWarehouse
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

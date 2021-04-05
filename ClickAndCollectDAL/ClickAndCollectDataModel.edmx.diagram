@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b79113a9212848d6a05729ef02c925aa" Name="Diagram1">
+        <EntityTypeShape EntityType="ClickAndCollectModel.ClickAndCollectProduct" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClickAndCollectModel.ClickAndCollectReservation" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClickAndCollectModel.ClickAndCollectReservationStatu" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClickAndCollectModel.ClickAndCollectMessage" Width="1.5" PointX="6.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ClickAndCollectModel.ClickAndCollectProductTranslation" Width="1.5" PointX="8.125" PointY="0.875" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

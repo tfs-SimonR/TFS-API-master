@@ -1,0 +1,119 @@
+2019-05-13 09:59:44.1027|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/210
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-13 09:59:53.1359|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/210
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-13 09:59:59.7506|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/210
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-13 10:00:39.6721|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/210
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-13 10:02:21.4945|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/210
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-13 10:57:37.2548|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/241
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-13 10:58:26.8481|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/241
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-13 10:58:31.7802|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/241
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-13 10:58:33.1046|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/241
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-13 10:58:34.0671|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/241
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-13 10:58:35.0021|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/241
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-13 11:00:04.9827|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/241
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-13 11:00:08.9761|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/001
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-13 11:00:47.1678|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/001
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-13 11:00:54.2317|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/241
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-13 11:00:57.5763|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/001
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-13 11:01:21.4780|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScannerGoodsOut/goodsouthistory/001
+Controller : TFS_API.Controllers.HandyScannerGoodsOutController
+Action : GetConsignhistory
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

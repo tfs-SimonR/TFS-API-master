@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tfs_pi_count_testModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_pi_count">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="list_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="date_create" Type="datetime" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="created_by" Type="nvarchar" MaxLength="50" />
+    <Property Name="expexted_count_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="tbl_pi_count_stores">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="list_id" Type="int" />
+    <Property Name="storeid" Type="nvarchar" MaxLength="50" />
+    <Property Name="sku_list_id" Type="int" />
+    <Property Name="isCompleted" Type="bit" />
+  </EntityType>
+  <EntityType Name="tbl_sku_count">
+    <Key>
+      <PropertyRef Name="rowId" />
+    </Key>
+    <Property Name="rowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="storeId" Type="nvarchar" MaxLength="50" />
+    <Property Name="list_id" Type="int" />
+    <Property Name="variantcode" Type="nvarchar" MaxLength="50" />
+    <Property Name="expected_qty" Type="int" />
+  </EntityType>
+  <EntityContainer Name="tfs_pi_count_testModelStoreContainer">
+    <EntitySet Name="tbl_pi_count" EntityType="Self.tbl_pi_count" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_pi_count_stores" EntityType="Self.tbl_pi_count_stores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_sku_count" EntityType="Self.tbl_sku_count" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tfs_pi_count_testModelStoreContainer" CdmEntityContainer="piDBContext">
+    <EntitySetMapping Name="tbl_pi_count">
+      <EntityTypeMapping TypeName="tfs_pi_count_testModel.tbl_pi_count">
+        <MappingFragment StoreEntitySet="tbl_pi_count">
+          <ScalarProperty Name="expexted_count_date" ColumnName="expexted_count_date" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+          <ScalarProperty Name="list_name" ColumnName="list_name" />
+          <ScalarProperty Name="date_create" ColumnName="date_create" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="created_by" ColumnName="created_by" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_sku_count">
+      <EntityTypeMapping TypeName="tfs_pi_count_testModel.tbl_sku_count">
+        <MappingFragment StoreEntitySet="tbl_sku_count">
+          <ScalarProperty Name="storeId" ColumnName="storeId" />
+          <ScalarProperty Name="expected_qty" ColumnName="expected_qty" />
+          <ScalarProperty Name="rowId" ColumnName="rowId" />
+          <ScalarProperty Name="list_id" ColumnName="list_id" />
+          <ScalarProperty Name="variantcode" ColumnName="variantcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_pi_count_stores">
+      <EntityTypeMapping TypeName="tfs_pi_count_testModel.tbl_pi_count_stores">
+        <MappingFragment StoreEntitySet="tbl_pi_count_stores">
+          <ScalarProperty Name="isCompleted" ColumnName="isCompleted" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="list_id" ColumnName="list_id" />
+          <ScalarProperty Name="storeid" ColumnName="storeid" />
+          <ScalarProperty Name="sku_list_id" ColumnName="sku_list_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

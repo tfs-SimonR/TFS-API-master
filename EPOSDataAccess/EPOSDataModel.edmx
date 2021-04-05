@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EPOSUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="100" />
+          <Property Name="Password" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ExceptionDetails">
+          <Key>
+            <PropertyRef Name="RowID" />
+          </Key>
+          <Property Name="RowID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ExceptionDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="InnerException" Type="nvarchar(max)" />
+          <Property Name="StackTrace" Type="nvarchar(max)" />
+          <Property Name="Area" Type="nvarchar(max)" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="User" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Data" Type="varbinary(max)" />
+          <Property Name="fileName" Type="nvarchar(max)" />
+          <Property Name="mimeType" Type="nvarchar(max)" />
+          <Property Name="UserGuid" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="QuestionAnswers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoredId" Type="int" Nullable="false" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="TransId" Type="varchar(max)" Nullable="false" />
+          <Property Name="isGood" Type="bit" Nullable="false" />
+          <Property Name="isBad" Type="bit" Nullable="false" />
+          <Property Name="Question" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="TillId" Type="int" Nullable="false" />
+          <Property Name="AnswerDateTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Questions">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QuestionText" Type="nvarchar(max)" />
+          <Property Name="isActive" Type="bit" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_gdo_numbers">
+          <Key>
+            <PropertyRef Name="RowId" />
+          </Key>
+          <Property Name="RowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RandomValue" Type="nvarchar" MaxLength="510" />
+          <Property Name="storeddestination" Type="int" />
+          <Property Name="storesource" Type="int" />
+          <Property Name="datecreated" Type="datetime" />
+          <Property Name="generatedGDO" Type="nvarchar" MaxLength="50" />
+          <Property Name="isUsed" Type="bit" />
+          <Property Name="rowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'TFS-CS-DEV.dbo.tfs_store_details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="tfs_store_details">
+          <Key>
+            <PropertyRef Name="storeId" />
+          </Key>
+          <Property Name="storeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="properties_long" Type="numeric" Precision="9" Scale="8" />
+          <Property Name="properties_lat" Type="numeric" Precision="10" Scale="8" />
+          <Property Name="store_name" Type="nvarchar" MaxLength="23" />
+          <Property Name="store_address" Type="nvarchar" MaxLength="35" />
+          <Property Name="store_link" Type="nvarchar" MaxLength="73" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="EPOSUsers" EntityType="Self.EPOSUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExceptionDetails" EntityType="Self.ExceptionDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QuestionAnswers" EntityType="Self.QuestionAnswers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_gdo_numbers" EntityType="Self.tbl_gdo_numbers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tfs_store_details" EntityType="Self.tfs_store_details" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [tfs_store_details].[storeId] AS [storeId], 
+    [tfs_store_details].[properties_long] AS [properties_long], 
+    [tfs_store_details].[properties_lat] AS [properties_lat], 
+    [tfs_store_details].[store_name] AS [store_name], 
+    [tfs_store_details].[store_address] AS [store_address], 
+    [tfs_store_details].[store_link] AS [store_link]
+    FROM [dbo].[tfs_store_details] AS [tfs_store_details]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EPOSUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ExceptionDetail">
+          <Key>
+            <PropertyRef Name="RowID" />
+          </Key>
+          <Property Name="RowID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ExceptionDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="InnerException" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StackTrace" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Area" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="User" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Image">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Data" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="fileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="mimeType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserGuid" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QuestionText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="isActive" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="EPOSDataConnection" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EPOSUsers" EntityType="Self.EPOSUser" />
+          <EntitySet Name="ExceptionDetails" EntityType="Self.ExceptionDetail" />
+          <EntitySet Name="Images" EntityType="Self.Image" />
+          <EntitySet Name="Questions" EntityType="Self.Question" />
+          <EntitySet Name="tfs_store_details" EntityType="Model.tfs_store_details" />
+          <EntitySet Name="QuestionAnswers" EntityType="Model.QuestionAnswer" />
+          <EntitySet Name="tbl_gdo_numbers" EntityType="Model.tbl_gdo_numbers" />
+        </EntityContainer>
+        <EntityType Name="tfs_store_details">
+          <Key>
+            <PropertyRef Name="storeId" />
+          </Key>
+          <Property Name="storeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="properties_long" Type="Decimal" Precision="9" Scale="8" />
+          <Property Name="properties_lat" Type="Decimal" Precision="10" Scale="8" />
+          <Property Name="store_name" Type="String" MaxLength="23" FixedLength="false" Unicode="true" />
+          <Property Name="store_address" Type="String" MaxLength="35" FixedLength="false" Unicode="true" />
+          <Property Name="store_link" Type="String" MaxLength="73" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="QuestionAnswer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoredId" Type="Int32" Nullable="false" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="TransId" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="isGood" Type="Boolean" Nullable="false" />
+          <Property Name="isBad" Type="Boolean" Nullable="false" />
+          <Property Name="Question" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TillId" Type="Int32" Nullable="false" />
+          <Property Name="AnswerDateTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_gdo_numbers">
+          <Key>
+            <PropertyRef Name="RowId" />
+          </Key>
+          <Property Name="RowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RandomValue" Type="String" MaxLength="510" FixedLength="false" Unicode="true" />
+          <Property Name="storeddestination" Type="Int32" />
+          <Property Name="storesource" Type="Int32" />
+          <Property Name="datecreated" Type="DateTime" Precision="3" />
+          <Property Name="isUsed" Type="Boolean" />
+          <Property Name="rowVersion" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="generatedGDO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="EPOSDataConnection">
+          <EntitySetMapping Name="EPOSUsers">
+            <EntityTypeMapping TypeName="Model.EPOSUser">
+              <MappingFragment StoreEntitySet="EPOSUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExceptionDetails">
+            <EntityTypeMapping TypeName="Model.ExceptionDetail">
+              <MappingFragment StoreEntitySet="ExceptionDetails">
+                <ScalarProperty Name="RowID" ColumnName="RowID" />
+                <ScalarProperty Name="ExceptionDate" ColumnName="ExceptionDate" />
+                <ScalarProperty Name="InnerException" ColumnName="InnerException" />
+                <ScalarProperty Name="StackTrace" ColumnName="StackTrace" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="User" ColumnName="User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Images">
+            <EntityTypeMapping TypeName="Model.Image">
+              <MappingFragment StoreEntitySet="Image">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="fileName" ColumnName="fileName" />
+                <ScalarProperty Name="mimeType" ColumnName="mimeType" />
+                <ScalarProperty Name="UserGuid" ColumnName="UserGuid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="Model.Question">
+              <MappingFragment StoreEntitySet="Questions">
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="isActive" ColumnName="isActive" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="QuestionText" ColumnName="QuestionText" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tfs_store_details">
+            <EntityTypeMapping TypeName="Model.tfs_store_details">
+              <MappingFragment StoreEntitySet="tfs_store_details">
+                <ScalarProperty Name="store_link" ColumnName="store_link" />
+                <ScalarProperty Name="store_address" ColumnName="store_address" />
+                <ScalarProperty Name="store_name" ColumnName="store_name" />
+                <ScalarProperty Name="properties_lat" ColumnName="properties_lat" />
+                <ScalarProperty Name="properties_long" ColumnName="properties_long" />
+                <ScalarProperty Name="storeId" ColumnName="storeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QuestionAnswers">
+            <EntityTypeMapping TypeName="Model.QuestionAnswer">
+              <MappingFragment StoreEntitySet="QuestionAnswers">
+                <ScalarProperty Name="AnswerDateTime" ColumnName="AnswerDateTime" />
+                <ScalarProperty Name="TillId" ColumnName="TillId" />
+                <ScalarProperty Name="Question" ColumnName="Question" />
+                <ScalarProperty Name="isBad" ColumnName="isBad" />
+                <ScalarProperty Name="isGood" ColumnName="isGood" />
+                <ScalarProperty Name="TransId" ColumnName="TransId" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="StoredId" ColumnName="StoredId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_gdo_numbers">
+            <EntityTypeMapping TypeName="Model.tbl_gdo_numbers">
+              <MappingFragment StoreEntitySet="tbl_gdo_numbers">
+                <ScalarProperty Name="generatedGDO" ColumnName="generatedGDO" />
+                <ScalarProperty Name="rowVersion" ColumnName="rowVersion" />
+                <ScalarProperty Name="isUsed" ColumnName="isUsed" />
+                <ScalarProperty Name="datecreated" ColumnName="datecreated" />
+                <ScalarProperty Name="storesource" ColumnName="storesource" />
+                <ScalarProperty Name="storeddestination" ColumnName="storeddestination" />
+                <ScalarProperty Name="RandomValue" ColumnName="RandomValue" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

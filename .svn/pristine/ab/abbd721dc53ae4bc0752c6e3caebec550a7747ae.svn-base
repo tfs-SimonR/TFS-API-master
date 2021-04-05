@@ -1,0 +1,14 @@
+2019-04-04 14:57:45.7839|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/Counting/getpicountlist/141
+Controller : TFS_API.Controllers.PICountController
+Action : GetPIList
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-04-04 14:59:28.0804|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/Counting/getpicountlist/241
+Controller : TFS_API.Controllers.PICountController
+Action : GetPIList
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

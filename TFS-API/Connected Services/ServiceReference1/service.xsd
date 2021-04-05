@@ -1,0 +1,2030 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://www.mi9retail.com/WCFServices/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/StdBusinessRules.Common" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/RemoteFacadeWCF.RetailHub" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Avalara.AvaTax.Adapter.TaxService" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:element name="Authenticate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q1:Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Request">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ClientType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PasswordEncrypted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="RequestID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Terminal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Timestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Trancode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q2="http://www.mi9retail.com/WCFServices/" name="Request" nillable="true" type="q2:Request" />
+  <xs:element name="AuthenticateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="AuthenticateResult" nillable="true" type="q3:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="Response">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ErrorMessages" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="InfoMessages" nillable="true" type="q5:ArrayOfstring" />
+      <xs:element minOccurs="0" name="InstallationInstanceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RequestID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SessionID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Timestamp" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Version" type="xs:decimal" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="WarningMessages" nillable="true" type="q6:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q7="http://www.mi9retail.com/WCFServices/" name="Response" nillable="true" type="q7:Response" />
+  <xs:complexType name="clsAuthenticationFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q8="http://www.mi9retail.com/WCFServices/" base="q8:clsBaseFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q9="http://www.mi9retail.com/WCFServices/" name="clsAuthenticationFault" nillable="true" type="q9:clsAuthenticationFault" />
+  <xs:complexType name="clsBaseFault">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element xmlns:q10="http://www.mi9retail.com/WCFServices/" name="clsBaseFault" nillable="true" type="q10:clsBaseFault" />
+  <xs:element name="GetUserInfo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q11:Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetUserInfoResult" nillable="true" type="q12:ResponseWithPayloadOfUserInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfUserInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q13="http://www.mi9retail.com/WCFServices/" base="q13:clsResponseWithPayloadOfUserInfoMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q14="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfUserInfo" nillable="true" type="q14:ResponseWithPayloadOfUserInfo" />
+  <xs:complexType name="clsResponseWithPayloadOfUserInfoMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="UserInfo" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q15="http://www.mi9retail.com/WCFServices/" base="q15:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q15:UserInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q16="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfUserInfoMoVubBOZ" nillable="true" type="q16:clsResponseWithPayloadOfUserInfoMoVubBOZ" />
+  <xs:complexType name="UserInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AllowAllStores" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AllowAllWarehouses" type="xs:boolean" />
+      <xs:element xmlns:q17="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="AllowedStores" nillable="true" type="q17:ArrayOfLocationInfo" />
+      <xs:element xmlns:q18="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="AllowedWarehouses" nillable="true" type="q18:ArrayOfLocationInfo" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CountryCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LanguageCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShowMyListsOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StoreCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StoreDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WarehouseCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WarehouseDescription" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q19="http://www.mi9retail.com/WCFServices/" name="UserInfo" nillable="true" type="q19:UserInfo" />
+  <xs:complexType name="ArrayOfLocationInfo">
+    <xs:sequence>
+      <xs:element xmlns:q20="http://www.mi9retail.com/WCFServices/" minOccurs="0" maxOccurs="unbounded" name="LocationInfo" nillable="true" type="q20:LocationInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q21="http://www.mi9retail.com/WCFServices/" name="ArrayOfLocationInfo" nillable="true" type="q21:ArrayOfLocationInfo" />
+  <xs:complexType name="LocationInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element xmlns:q22="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="Type" type="q22:LocationTypes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q23="http://www.mi9retail.com/WCFServices/" name="LocationInfo" nillable="true" type="q23:LocationInfo" />
+  <xs:simpleType name="LocationTypes">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Store" />
+      <xs:enumeration value="Warehouse" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element xmlns:q24="http://www.mi9retail.com/WCFServices/" name="LocationTypes" nillable="true" type="q24:LocationTypes" />
+  <xs:complexType name="clsUserDoesNotHavePermissionFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q25="http://www.mi9retail.com/WCFServices/" base="q25:clsBaseFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q26="http://www.mi9retail.com/WCFServices/" name="clsUserDoesNotHavePermissionFault" nillable="true" type="q26:clsUserDoesNotHavePermissionFault" />
+  <xs:complexType name="clsParameterNotProvidedFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q27="http://www.mi9retail.com/WCFServices/" base="q27:clsBaseFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q28="http://www.mi9retail.com/WCFServices/" name="clsParameterNotProvidedFault" nillable="true" type="q28:clsParameterNotProvidedFault" />
+  <xs:element name="GetAllPermissionsForUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q29:Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllPermissionsForUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetAllPermissionsForUserResult" nillable="true" type="q30:ResponseWithPayloadOfListOfTranInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfListOfTranInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q31="http://www.mi9retail.com/WCFServices/" base="q31:clsResponseWithPayloadOfArrayOfTranInfoMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q32="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfListOfTranInfo" nillable="true" type="q32:ResponseWithPayloadOfListOfTranInfo" />
+  <xs:complexType name="clsResponseWithPayloadOfArrayOfTranInfoMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfTranInfo" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q33="http://www.mi9retail.com/WCFServices/" base="q33:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q33:ArrayOfTranInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q34="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfArrayOfTranInfoMoVubBOZ" nillable="true" type="q34:clsResponseWithPayloadOfArrayOfTranInfoMoVubBOZ" />
+  <xs:complexType name="ArrayOfTranInfo">
+    <xs:sequence>
+      <xs:element xmlns:q35="http://www.mi9retail.com/WCFServices/" minOccurs="0" maxOccurs="unbounded" name="TranInfo" nillable="true" type="q35:TranInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q36="http://www.mi9retail.com/WCFServices/" name="ArrayOfTranInfo" nillable="true" type="q36:ArrayOfTranInfo" />
+  <xs:complexType name="TranInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AndroidProgram" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AppleProgram" nillable="true" type="xs:string" />
+      <xs:element xmlns:q37="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="Applicability" type="q37:TranApplicability" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HHTProgram" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Params" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SecLevel" type="xs:unsignedByte" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q38="http://www.mi9retail.com/WCFServices/" name="TranInfo" nillable="true" type="q38:TranInfo" />
+  <xs:simpleType name="TranApplicability">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Store" />
+      <xs:enumeration value="Warehouse" />
+      <xs:enumeration value="All" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element xmlns:q39="http://www.mi9retail.com/WCFServices/" name="TranApplicability" nillable="true" type="q39:TranApplicability" />
+  <xs:element name="GetUserInfoAndPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q40:Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoAndPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetUserInfoAndPermissionsResult" nillable="true" type="q41:ResponseWithPayloadOfUserInfoAndPermissions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfUserInfoAndPermissions">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q42="http://www.mi9retail.com/WCFServices/" base="q42:clsResponseWithPayloadOfUserInfoAndPermissionsMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q43="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfUserInfoAndPermissions" nillable="true" type="q43:ResponseWithPayloadOfUserInfoAndPermissions" />
+  <xs:complexType name="clsResponseWithPayloadOfUserInfoAndPermissionsMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="UserInfoAndPermissions" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q44="http://www.mi9retail.com/WCFServices/" base="q44:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q44:UserInfoAndPermissions" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q45="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfUserInfoAndPermissionsMoVubBOZ" nillable="true" type="q45:clsResponseWithPayloadOfUserInfoAndPermissionsMoVubBOZ" />
+  <xs:complexType name="UserInfoAndPermissions">
+    <xs:sequence>
+      <xs:element xmlns:q46="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="Permissions" nillable="true" type="q46:ArrayOfTranInfo" />
+      <xs:element xmlns:q47="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="UserInfo" nillable="true" type="q47:UserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q48="http://www.mi9retail.com/WCFServices/" name="UserInfoAndPermissions" nillable="true" type="q48:UserInfoAndPermissions" />
+  <xs:element name="GetGLUCodesBasedOnCriteria">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q49:RequestWithPayloadOfGLUCodeCriteriaWCF" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RequestWithPayloadOfGLUCodeCriteriaWCF">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q50="http://www.mi9retail.com/WCFServices/" base="q50:clsRequestWithPayloadOfGLUCodeCriteriaWCFMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q51="http://www.mi9retail.com/WCFServices/" name="RequestWithPayloadOfGLUCodeCriteriaWCF" nillable="true" type="q51:RequestWithPayloadOfGLUCodeCriteriaWCF" />
+  <xs:complexType name="clsRequestWithPayloadOfGLUCodeCriteriaWCFMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsRequestWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="GLUCodeCriteriaWCF" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q52="http://www.mi9retail.com/WCFServices/" base="q52:Request">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q52:GLUCodeCriteriaWCF" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q53="http://www.mi9retail.com/WCFServices/" name="clsRequestWithPayloadOfGLUCodeCriteriaWCFMoVubBOZ" nillable="true" type="q53:clsRequestWithPayloadOfGLUCodeCriteriaWCFMoVubBOZ" />
+  <xs:complexType name="GLUCodeCriteriaWCF">
+    <xs:sequence>
+      <xs:element xmlns:q54="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="AuxValue10s" nillable="true" type="q54:ArrayOfstring" />
+      <xs:element xmlns:q55="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="AuxValue1s" nillable="true" type="q55:ArrayOfstring" />
+      <xs:element xmlns:q56="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="AuxValue2s" nillable="true" type="q56:ArrayOfstring" />
+      <xs:element xmlns:q57="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="AuxValue3s" nillable="true" type="q57:ArrayOfstring" />
+      <xs:element xmlns:q58="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="AuxValue4s" nillable="true" type="q58:ArrayOfstring" />
+      <xs:element xmlns:q59="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="AuxValue5s" nillable="true" type="q59:ArrayOfstring" />
+      <xs:element xmlns:q60="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="AuxValue6s" nillable="true" type="q60:ArrayOfstring" />
+      <xs:element xmlns:q61="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="AuxValue7s" nillable="true" type="q61:ArrayOfstring" />
+      <xs:element xmlns:q62="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="AuxValue8s" nillable="true" type="q62:ArrayOfstring" />
+      <xs:element xmlns:q63="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="AuxValue9s" nillable="true" type="q63:ArrayOfstring" />
+      <xs:element xmlns:q64="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="Codes" nillable="true" type="q64:ArrayOfstring" />
+      <xs:element xmlns:q65="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="FloatValue1s" nillable="true" type="q65:ArrayOfdouble" />
+      <xs:element xmlns:q66="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="FloatValue2s" nillable="true" type="q66:ArrayOfdouble" />
+      <xs:element xmlns:q67="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="FloatValue3s" nillable="true" type="q67:ArrayOfdouble" />
+      <xs:element xmlns:q68="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="FloatValue4s" nillable="true" type="q68:ArrayOfdouble" />
+      <xs:element xmlns:q69="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="FloatValue5s" nillable="true" type="q69:ArrayOfdouble" />
+      <xs:element xmlns:q70="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="IntValue1s" nillable="true" type="q70:ArrayOfint" />
+      <xs:element xmlns:q71="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="IntValue2s" nillable="true" type="q71:ArrayOfint" />
+      <xs:element xmlns:q72="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="IntValue3s" nillable="true" type="q72:ArrayOfint" />
+      <xs:element xmlns:q73="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="IntValue4s" nillable="true" type="q73:ArrayOfint" />
+      <xs:element xmlns:q74="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="IntValue5s" nillable="true" type="q74:ArrayOfint" />
+      <xs:element name="OrderByCode" type="xs:unsignedByte" />
+      <xs:element name="OrderByDescription" type="xs:unsignedByte" />
+      <xs:element xmlns:q75="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="Types" nillable="true" type="q75:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q76="http://www.mi9retail.com/WCFServices/" name="GLUCodeCriteriaWCF" nillable="true" type="q76:GLUCodeCriteriaWCF" />
+  <xs:element name="GetGLUCodesBasedOnCriteriaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q77="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetGLUCodesBasedOnCriteriaResult" nillable="true" type="q77:ResponseWithPayloadOfListOfGLUCodeInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfListOfGLUCodeInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q78="http://www.mi9retail.com/WCFServices/" base="q78:clsResponseWithPayloadOfArrayOfGLUCodeInfoMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q79="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfListOfGLUCodeInfo" nillable="true" type="q79:ResponseWithPayloadOfListOfGLUCodeInfo" />
+  <xs:complexType name="clsResponseWithPayloadOfArrayOfGLUCodeInfoMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfGLUCodeInfo" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q80="http://www.mi9retail.com/WCFServices/" base="q80:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q80:ArrayOfGLUCodeInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q81="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfArrayOfGLUCodeInfoMoVubBOZ" nillable="true" type="q81:clsResponseWithPayloadOfArrayOfGLUCodeInfoMoVubBOZ" />
+  <xs:complexType name="ArrayOfGLUCodeInfo">
+    <xs:sequence>
+      <xs:element xmlns:q82="http://www.mi9retail.com/WCFServices/" minOccurs="0" maxOccurs="unbounded" name="GLUCodeInfo" nillable="true" type="q82:GLUCodeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q83="http://www.mi9retail.com/WCFServices/" name="ArrayOfGLUCodeInfo" nillable="true" type="q83:ArrayOfGLUCodeInfo" />
+  <xs:complexType name="GLUCodeInfo">
+    <xs:sequence>
+      <xs:element name="AuxValue1" nillable="true" type="xs:string" />
+      <xs:element name="AuxValue10" nillable="true" type="xs:string" />
+      <xs:element name="AuxValue2" nillable="true" type="xs:string" />
+      <xs:element name="AuxValue3" nillable="true" type="xs:string" />
+      <xs:element name="AuxValue4" nillable="true" type="xs:string" />
+      <xs:element name="AuxValue5" nillable="true" type="xs:string" />
+      <xs:element name="AuxValue6" nillable="true" type="xs:string" />
+      <xs:element name="AuxValue7" nillable="true" type="xs:string" />
+      <xs:element name="AuxValue8" nillable="true" type="xs:string" />
+      <xs:element name="AuxValue9" nillable="true" type="xs:string" />
+      <xs:element name="Code" nillable="true" type="xs:string" />
+      <xs:element name="CodeType" nillable="true" type="xs:string" />
+      <xs:element name="Description" nillable="true" type="xs:string" />
+      <xs:element name="FloatValue1" type="xs:double" />
+      <xs:element name="FloatValue2" type="xs:double" />
+      <xs:element name="FloatValue3" type="xs:double" />
+      <xs:element name="FloatValue4" type="xs:double" />
+      <xs:element name="FloatValue5" type="xs:double" />
+      <xs:element name="ID" type="xs:int" />
+      <xs:element name="IntValue1" type="xs:int" />
+      <xs:element name="IntValue2" type="xs:int" />
+      <xs:element name="IntValue3" type="xs:int" />
+      <xs:element name="IntValue4" type="xs:int" />
+      <xs:element name="IntValue5" type="xs:int" />
+      <xs:element name="ShortDesc" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q84="http://www.mi9retail.com/WCFServices/" name="GLUCodeInfo" nillable="true" type="q84:GLUCodeInfo" />
+  <xs:complexType name="clsRequestPayloadNotProvidedFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q85="http://www.mi9retail.com/WCFServices/" base="q85:clsBaseFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q86="http://www.mi9retail.com/WCFServices/" name="clsRequestPayloadNotProvidedFault" nillable="true" type="q86:clsRequestPayloadNotProvidedFault" />
+  <xs:element name="GetUsersWithListsOrListFolders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q87="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q87:Request" />
+        <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/StdBusinessRules.Common" minOccurs="0" name="InListType" type="q88:clsListType.Values" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersWithListsOrListFoldersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q89="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetUsersWithListsOrListFoldersResult" nillable="true" type="q89:ResponseWithPayloadOfListOfUserInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfListOfUserInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q90="http://www.mi9retail.com/WCFServices/" base="q90:clsResponseWithPayloadOfArrayOfUserInfoMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q91="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfListOfUserInfo" nillable="true" type="q91:ResponseWithPayloadOfListOfUserInfo" />
+  <xs:complexType name="clsResponseWithPayloadOfArrayOfUserInfoMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfUserInfo" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q92="http://www.mi9retail.com/WCFServices/" base="q92:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q92:ArrayOfUserInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q93="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfArrayOfUserInfoMoVubBOZ" nillable="true" type="q93:clsResponseWithPayloadOfArrayOfUserInfoMoVubBOZ" />
+  <xs:complexType name="ArrayOfUserInfo">
+    <xs:sequence>
+      <xs:element xmlns:q94="http://www.mi9retail.com/WCFServices/" minOccurs="0" maxOccurs="unbounded" name="UserInfo" nillable="true" type="q94:UserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q95="http://www.mi9retail.com/WCFServices/" name="ArrayOfUserInfo" nillable="true" type="q95:ArrayOfUserInfo" />
+  <xs:element name="RequestEmails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q96="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q96:RequestWithPayloadOfListOfEmailInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RequestWithPayloadOfListOfEmailInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q97="http://www.mi9retail.com/WCFServices/" base="q97:clsRequestWithPayloadOfArrayOfEmailInfoMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q98="http://www.mi9retail.com/WCFServices/" name="RequestWithPayloadOfListOfEmailInfo" nillable="true" type="q98:RequestWithPayloadOfListOfEmailInfo" />
+  <xs:complexType name="clsRequestWithPayloadOfArrayOfEmailInfoMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsRequestWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfEmailInfo" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q99="http://www.mi9retail.com/WCFServices/" base="q99:Request">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q99:ArrayOfEmailInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q100="http://www.mi9retail.com/WCFServices/" name="clsRequestWithPayloadOfArrayOfEmailInfoMoVubBOZ" nillable="true" type="q100:clsRequestWithPayloadOfArrayOfEmailInfoMoVubBOZ" />
+  <xs:complexType name="ArrayOfEmailInfo">
+    <xs:sequence>
+      <xs:element xmlns:q101="http://www.mi9retail.com/WCFServices/" minOccurs="0" maxOccurs="unbounded" name="EmailInfo" nillable="true" type="q101:EmailInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q102="http://www.mi9retail.com/WCFServices/" name="ArrayOfEmailInfo" nillable="true" type="q102:ArrayOfEmailInfo" />
+  <xs:complexType name="EmailInfo">
+    <xs:sequence>
+      <xs:element xmlns:q103="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="BCCAddresses" nillable="true" type="q103:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+      <xs:element xmlns:q104="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="CCAddresses" nillable="true" type="q104:ArrayOfstring" />
+      <xs:element minOccurs="0" name="EmailContentsXML" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EntityID" type="xs:int" />
+      <xs:element minOccurs="0" name="FromAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q105="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ToAddresses" nillable="true" type="q105:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q106="http://www.mi9retail.com/WCFServices/" name="EmailInfo" nillable="true" type="q106:EmailInfo" />
+  <xs:element name="RequestEmailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q107="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="RequestEmailsResult" nillable="true" type="q107:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="clsParameterInvalidFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q108="http://www.mi9retail.com/WCFServices/" base="q108:clsBaseFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q109="http://www.mi9retail.com/WCFServices/" name="clsParameterInvalidFault" nillable="true" type="q109:clsParameterInvalidFault" />
+  <xs:element name="Ping">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q110="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="PingResult" nillable="true" type="q110:PingResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="PingResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EnvironmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q111="http://www.mi9retail.com/WCFServices/" name="PingResult" nillable="true" type="q111:PingResult" />
+  <xs:element name="GetAlertsForCurrentUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q112="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q112:Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlertsForCurrentUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q113="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetAlertsForCurrentUserResult" nillable="true" type="q113:ResponseWithPayloadOfListOfAlertInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfListOfAlertInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q114="http://www.mi9retail.com/WCFServices/" base="q114:clsResponseWithPayloadOfArrayOfAlertInfoMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q115="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfListOfAlertInfo" nillable="true" type="q115:ResponseWithPayloadOfListOfAlertInfo" />
+  <xs:complexType name="clsResponseWithPayloadOfArrayOfAlertInfoMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfAlertInfo" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q116="http://www.mi9retail.com/WCFServices/" base="q116:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q116:ArrayOfAlertInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q117="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfArrayOfAlertInfoMoVubBOZ" nillable="true" type="q117:clsResponseWithPayloadOfArrayOfAlertInfoMoVubBOZ" />
+  <xs:complexType name="ArrayOfAlertInfo">
+    <xs:sequence>
+      <xs:element xmlns:q118="http://www.mi9retail.com/WCFServices/" minOccurs="0" maxOccurs="unbounded" name="AlertInfo" nillable="true" type="q118:AlertInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q119="http://www.mi9retail.com/WCFServices/" name="ArrayOfAlertInfo" nillable="true" type="q119:ArrayOfAlertInfo" />
+  <xs:complexType name="AlertInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Body" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DateCreated" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HasNotes" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="StoreCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StoreCodeAndDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ToUserCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TransactionID" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="UserCreated" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q120="http://www.mi9retail.com/WCFServices/" name="AlertInfo" nillable="true" type="q120:AlertInfo" />
+  <xs:element name="GetAlertsForAllUsersAtSameLocation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q121="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q121:Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlertsForAllUsersAtSameLocationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q122="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetAlertsForAllUsersAtSameLocationResult" nillable="true" type="q122:ResponseWithPayloadOfListOfAlertInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlertsCountForCurrentUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q123:Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlertsCountForCurrentUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q124="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetAlertsCountForCurrentUserResult" nillable="true" type="q124:ResponseWithPayloadOfInteger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfInteger">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q125="http://www.mi9retail.com/WCFServices/" base="q125:clsResponseWithPayloadOfint">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q126="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfInteger" nillable="true" type="q126:ResponseWithPayloadOfInteger" />
+  <xs:complexType name="clsResponseWithPayloadOfint">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q127="http://www.mi9retail.com/WCFServices/" base="q127:Response">
+        <xs:sequence>
+          <xs:element name="Payload" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q128="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfint" nillable="true" type="q128:clsResponseWithPayloadOfint" />
+  <xs:element name="GetCrystalReportFilenamesByType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q129="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q129:Request" />
+        <xs:element xmlns:q130="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InReportType" type="q130:ReportTypes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="ReportTypes">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="VMI" />
+      <xs:enumeration value="StoreShipment" />
+      <xs:enumeration value="StorePOReceipt" />
+      <xs:enumeration value="StoreStockMove" />
+      <xs:enumeration value="StoreStockAdj" />
+      <xs:enumeration value="StoreTransferReceipt" />
+      <xs:enumeration value="RTV" />
+      <xs:enumeration value="VMIRegister" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element xmlns:q131="http://www.mi9retail.com/WCFServices/" name="ReportTypes" nillable="true" type="q131:ReportTypes" />
+  <xs:element name="GetCrystalReportFilenamesByTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetCrystalReportFilenamesByTypeResult" nillable="true" type="q132:ResponseWithPayloadOfListOfStrings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfListOfStrings">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q133="http://www.mi9retail.com/WCFServices/" base="q133:clsResponseWithPayloadOfArrayOfstringuHEDJ7Dj">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q134="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfListOfStrings" nillable="true" type="q134:ResponseWithPayloadOfListOfStrings" />
+  <xs:complexType name="clsResponseWithPayloadOfArrayOfstringuHEDJ7Dj">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfstring" Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q135="http://www.mi9retail.com/WCFServices/" base="q135:Response">
+        <xs:sequence>
+          <xs:element xmlns:q136="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="Payload" nillable="true" type="q136:ArrayOfstring" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q137="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfArrayOfstringuHEDJ7Dj" nillable="true" type="q137:clsResponseWithPayloadOfArrayOfstringuHEDJ7Dj" />
+  <xs:element name="CreateReportCriteria">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q138="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q138:RequestWithPayloadOfXMLKeys" />
+        <xs:element xmlns:q139="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InReportType" type="q139:ReportTypes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RequestWithPayloadOfXMLKeys">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q140="http://www.mi9retail.com/WCFServices/" base="q140:clsRequestWithPayloadOfclsXMLKeysMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q141="http://www.mi9retail.com/WCFServices/" name="RequestWithPayloadOfXMLKeys" nillable="true" type="q141:RequestWithPayloadOfXMLKeys" />
+  <xs:complexType name="clsRequestWithPayloadOfclsXMLKeysMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsRequestWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="clsXMLKeys" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q142="http://www.mi9retail.com/WCFServices/" base="q142:Request">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q142:clsXMLKeys" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q143="http://www.mi9retail.com/WCFServices/" name="clsRequestWithPayloadOfclsXMLKeysMoVubBOZ" nillable="true" type="q143:clsRequestWithPayloadOfclsXMLKeysMoVubBOZ" />
+  <xs:complexType name="clsXMLKeys">
+    <xs:sequence>
+      <xs:element xmlns:q144="http://www.mi9retail.com/WCFServices/" minOccurs="0" maxOccurs="unbounded" name="clsXMLKey" nillable="true" type="q144:clsXMLKey" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q145="http://www.mi9retail.com/WCFServices/" name="clsXMLKeys" nillable="true" type="q145:clsXMLKeys" />
+  <xs:complexType name="clsXMLKey">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Boolean1" type="xs:boolean" />
+      <xs:element xmlns:q146="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="ChildKeys" nillable="true" type="q146:clsXMLKeys" />
+      <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Data1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Data2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Data3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Date" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DecimalQty" type="xs:decimal" />
+      <xs:element minOccurs="0" name="FromDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:long" />
+      <xs:element minOccurs="0" name="ID2" type="xs:long" />
+      <xs:element minOccurs="0" name="IDSpecified" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Qty" type="xs:int" />
+      <xs:element minOccurs="0" name="RowVer" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="RowVerInt" type="xs:long" />
+      <xs:element minOccurs="0" name="ToDate" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q147="http://www.mi9retail.com/WCFServices/" name="clsXMLKey" nillable="true" type="q147:clsXMLKey" />
+  <xs:element name="CreateReportCriteriaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q148="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="CreateReportCriteriaResult" nillable="true" type="q148:ResponseWithPayloadOfReportCriteriaInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfReportCriteriaInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q149="http://www.mi9retail.com/WCFServices/" base="q149:clsResponseWithPayloadOfReportCriteriaInfoMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q150="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfReportCriteriaInfo" nillable="true" type="q150:ResponseWithPayloadOfReportCriteriaInfo" />
+  <xs:complexType name="clsResponseWithPayloadOfReportCriteriaInfoMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ReportCriteriaInfo" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q151="http://www.mi9retail.com/WCFServices/" base="q151:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q151:ReportCriteriaInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q152="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfReportCriteriaInfoMoVubBOZ" nillable="true" type="q152:clsResponseWithPayloadOfReportCriteriaInfoMoVubBOZ" />
+  <xs:complexType name="ReportCriteriaInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CreateDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReportName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q153="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="Type" type="q153:ReportTypes" />
+      <xs:element minOccurs="0" name="UserCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q154="http://www.mi9retail.com/WCFServices/" name="ReportCriteriaInfo" nillable="true" type="q154:ReportCriteriaInfo" />
+  <xs:element name="GetCrystalReports">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q155="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q155:RequestWithPayloadOfXMLKeys" />
+        <xs:element xmlns:q156="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InReportType" type="q156:ReportTypes" />
+        <xs:element minOccurs="0" name="InReportFilename" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCrystalReportsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q157="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetCrystalReportsResult" nillable="true" type="q157:ResponseWithPayloadOfListOfByteArrays" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfListOfByteArrays">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q158="http://www.mi9retail.com/WCFServices/" base="q158:clsResponseWithPayloadOfArrayOfbase64BinaryuHEDJ7Dj">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q159="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfListOfByteArrays" nillable="true" type="q159:ResponseWithPayloadOfListOfByteArrays" />
+  <xs:complexType name="clsResponseWithPayloadOfArrayOfbase64BinaryuHEDJ7Dj">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfbase64Binary" Namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q160="http://www.mi9retail.com/WCFServices/" base="q160:Response">
+        <xs:sequence>
+          <xs:element xmlns:q161="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="Payload" nillable="true" type="q161:ArrayOfbase64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q162="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfArrayOfbase64BinaryuHEDJ7Dj" nillable="true" type="q162:clsResponseWithPayloadOfArrayOfbase64BinaryuHEDJ7Dj" />
+  <xs:element name="PrintReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q163="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q163:RequestWithPayloadOfReportPrintInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RequestWithPayloadOfReportPrintInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q164="http://www.mi9retail.com/WCFServices/" base="q164:clsRequestWithPayloadOfReportPrintInfoMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q165="http://www.mi9retail.com/WCFServices/" name="RequestWithPayloadOfReportPrintInfo" nillable="true" type="q165:RequestWithPayloadOfReportPrintInfo" />
+  <xs:complexType name="clsRequestWithPayloadOfReportPrintInfoMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsRequestWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ReportPrintInfo" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q166="http://www.mi9retail.com/WCFServices/" base="q166:Request">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q166:ReportPrintInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q167="http://www.mi9retail.com/WCFServices/" name="clsRequestWithPayloadOfReportPrintInfoMoVubBOZ" nillable="true" type="q167:clsRequestWithPayloadOfReportPrintInfoMoVubBOZ" />
+  <xs:complexType name="ReportPrintInfo">
+    <xs:sequence>
+      <xs:element xmlns:q168="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="FormulaFields" nillable="true" type="q168:ArrayOfReportPrintInputInfo" />
+      <xs:element xmlns:q169="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="Parameters" nillable="true" type="q169:ArrayOfReportPrintInputInfo" />
+      <xs:element minOccurs="0" name="PrinterCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportCriteria" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q170="http://www.mi9retail.com/WCFServices/" name="ReportPrintInfo" nillable="true" type="q170:ReportPrintInfo" />
+  <xs:complexType name="ArrayOfReportPrintInputInfo">
+    <xs:sequence>
+      <xs:element xmlns:q171="http://www.mi9retail.com/WCFServices/" minOccurs="0" maxOccurs="unbounded" name="ReportPrintInputInfo" nillable="true" type="q171:ReportPrintInputInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q172="http://www.mi9retail.com/WCFServices/" name="ArrayOfReportPrintInputInfo" nillable="true" type="q172:ArrayOfReportPrintInputInfo" />
+  <xs:complexType name="ReportPrintInputInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q173="http://www.mi9retail.com/WCFServices/" name="ReportPrintInputInfo" nillable="true" type="q173:ReportPrintInputInfo" />
+  <xs:element name="PrintReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q174="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="PrintReportResult" nillable="true" type="q174:Response" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOfAvailableStoreReportsForUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q175="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q175:Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOfAvailableStoreReportsForUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q176="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetListOfAvailableStoreReportsForUserResult" nillable="true" type="q176:ResponseWithPayloadOfListOfStoreReportInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfListOfStoreReportInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q177="http://www.mi9retail.com/WCFServices/" base="q177:clsResponseWithPayloadOfArrayOfStoreReportInfoMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q178="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfListOfStoreReportInfo" nillable="true" type="q178:ResponseWithPayloadOfListOfStoreReportInfo" />
+  <xs:complexType name="clsResponseWithPayloadOfArrayOfStoreReportInfoMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfStoreReportInfo" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q179="http://www.mi9retail.com/WCFServices/" base="q179:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q179:ArrayOfStoreReportInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q180="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfArrayOfStoreReportInfoMoVubBOZ" nillable="true" type="q180:clsResponseWithPayloadOfArrayOfStoreReportInfoMoVubBOZ" />
+  <xs:complexType name="ArrayOfStoreReportInfo">
+    <xs:sequence>
+      <xs:element xmlns:q181="http://www.mi9retail.com/WCFServices/" minOccurs="0" maxOccurs="unbounded" name="StoreReportInfo" nillable="true" type="q181:StoreReportInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q182="http://www.mi9retail.com/WCFServices/" name="ArrayOfStoreReportInfo" nillable="true" type="q182:ArrayOfStoreReportInfo" />
+  <xs:complexType name="StoreReportInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q183="http://www.mi9retail.com/WCFServices/" base="q183:ReportInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address4" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address5" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+          <xs:element name="IsForAllStores" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Latitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="LeagueCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LeagueDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level1Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level1Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level2Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level2Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level3Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level3Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level4Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level4Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level5Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level5Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Longitude" type="xs:decimal" />
+          <xs:element minOccurs="0" name="PostCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StoreCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StoreDescription" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StoreID" type="xs:int" />
+          <xs:element minOccurs="0" name="Telephone1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Telephone2" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q184="http://www.mi9retail.com/WCFServices/" name="StoreReportInfo" nillable="true" type="q184:StoreReportInfo" />
+  <xs:complexType name="ReportInfo">
+    <xs:sequence>
+      <xs:element name="CreateDateTimeUTC" type="xs:dateTime" />
+      <xs:element name="Filename" nillable="true" type="xs:string" />
+      <xs:element name="ReportCode" nillable="true" type="xs:string" />
+      <xs:element name="ReportDescription" nillable="true" type="xs:string" />
+      <xs:element name="SizeInKB" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q185="http://www.mi9retail.com/WCFServices/" name="ReportInfo" nillable="true" type="q185:ReportInfo" />
+  <xs:element name="GetListOfAvailableCoStructureReportsForUser">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q186="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q186:Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListOfAvailableCoStructureReportsForUserResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q187="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetListOfAvailableCoStructureReportsForUserResult" nillable="true" type="q187:ResponseWithPayloadOfListOfCompanyReportInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfListOfCompanyReportInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q188="http://www.mi9retail.com/WCFServices/" base="q188:clsResponseWithPayloadOfArrayOfCompanyReportInfoMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q189="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfListOfCompanyReportInfo" nillable="true" type="q189:ResponseWithPayloadOfListOfCompanyReportInfo" />
+  <xs:complexType name="clsResponseWithPayloadOfArrayOfCompanyReportInfoMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfCompanyReportInfo" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q190="http://www.mi9retail.com/WCFServices/" base="q190:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q190:ArrayOfCompanyReportInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q191="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfArrayOfCompanyReportInfoMoVubBOZ" nillable="true" type="q191:clsResponseWithPayloadOfArrayOfCompanyReportInfoMoVubBOZ" />
+  <xs:complexType name="ArrayOfCompanyReportInfo">
+    <xs:sequence>
+      <xs:element xmlns:q192="http://www.mi9retail.com/WCFServices/" minOccurs="0" maxOccurs="unbounded" name="CompanyReportInfo" nillable="true" type="q192:CompanyReportInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q193="http://www.mi9retail.com/WCFServices/" name="ArrayOfCompanyReportInfo" nillable="true" type="q193:ArrayOfCompanyReportInfo" />
+  <xs:complexType name="CompanyReportInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q194="http://www.mi9retail.com/WCFServices/" base="q194:ReportInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CompanyHierarchyID" type="xs:int" />
+          <xs:element minOccurs="0" name="CompanyHierarchyLevel" type="xs:unsignedByte" />
+          <xs:element name="IsForEntireCompany" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Level1Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level1Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level2Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level2Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level3Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level3Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level4Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level4Description" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level5Code" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Level5Description" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q195="http://www.mi9retail.com/WCFServices/" name="CompanyReportInfo" nillable="true" type="q195:CompanyReportInfo" />
+  <xs:element name="GetReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q196="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q196:Request" />
+        <xs:element minOccurs="0" name="InFilename" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q197="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetReportResult" nillable="true" type="q197:ResponseWithPayloadOfByteArray" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfByteArray">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q198="http://www.mi9retail.com/WCFServices/" base="q198:clsResponseWithPayloadOfbase64Binary">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q199="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfByteArray" nillable="true" type="q199:ResponseWithPayloadOfByteArray" />
+  <xs:complexType name="clsResponseWithPayloadOfbase64Binary">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="base64Binary" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q200="http://www.mi9retail.com/WCFServices/" base="q200:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="xs:base64Binary" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q201="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfbase64Binary" nillable="true" type="q201:clsResponseWithPayloadOfbase64Binary" />
+  <xs:element name="DeleteAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q202="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q202:Request" />
+        <xs:element minOccurs="0" name="InID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAlertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q203="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="DeleteAlertResult" nillable="true" type="q203:ResponseWithPayloadOfResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfResult">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q204="http://www.mi9retail.com/WCFServices/" base="q204:clsResponseWithPayloadOfResultMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q205="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfResult" nillable="true" type="q205:ResponseWithPayloadOfResult" />
+  <xs:complexType name="clsResponseWithPayloadOfResultMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="Result" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q206="http://www.mi9retail.com/WCFServices/" base="q206:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q206:Result" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q207="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfResultMoVubBOZ" nillable="true" type="q207:clsResponseWithPayloadOfResultMoVubBOZ" />
+  <xs:complexType name="Result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Code1" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Code2" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Date1" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ID1" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ID1Int64" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Success" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q208="http://www.mi9retail.com/WCFServices/" name="Result" nillable="true" type="q208:Result" />
+  <xs:element name="DeleteAlerts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q209="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q209:RequestWithPayloadOfXMLKeys" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAlertsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q210="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="DeleteAlertsResult" nillable="true" type="q210:ResponseWithPayloadOfResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostInventoryChanges">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q211="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q211:RequestWithPayloadOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RequestWithPayloadOfString">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q212="http://www.mi9retail.com/WCFServices/" base="q212:clsRequestWithPayloadOfstring">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q213="http://www.mi9retail.com/WCFServices/" name="RequestWithPayloadOfString" nillable="true" type="q213:RequestWithPayloadOfString" />
+  <xs:complexType name="clsRequestWithPayloadOfstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsRequestWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q214="http://www.mi9retail.com/WCFServices/" base="q214:Request">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q215="http://www.mi9retail.com/WCFServices/" name="clsRequestWithPayloadOfstring" nillable="true" type="q215:clsRequestWithPayloadOfstring" />
+  <xs:element name="PostInventoryChangesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q216="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="PostInventoryChangesResult" nillable="true" type="q216:ResponseWithPayloadOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfString">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q217="http://www.mi9retail.com/WCFServices/" base="q217:clsResponseWithPayloadOfstring">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q218="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfString" nillable="true" type="q218:ResponseWithPayloadOfString" />
+  <xs:complexType name="clsResponseWithPayloadOfstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q219="http://www.mi9retail.com/WCFServices/" base="q219:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q220="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfstring" nillable="true" type="q220:clsResponseWithPayloadOfstring" />
+  <xs:element name="PostStoreTransactions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q221="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q221:RequestWithPayloadOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PostStoreTransactionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q222="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="PostStoreTransactionsResult" nillable="true" type="q222:ResponseWithPayloadOfString" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntityNotesConfiguration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q223="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q223:Request" />
+        <xs:element xmlns:q224="http://schemas.datacontract.org/2004/07/StdBusinessRules.Common" minOccurs="0" name="InEntityType" type="q224:EntityTypes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntityNotesConfigurationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q225="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetEntityNotesConfigurationResult" nillable="true" type="q225:ResponseWithPayloadOfListOfEntityNoteConfigurationInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfListOfEntityNoteConfigurationInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q226="http://www.mi9retail.com/WCFServices/" base="q226:clsResponseWithPayloadOfArrayOfEntityNoteConfigurationInfoMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q227="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfListOfEntityNoteConfigurationInfo" nillable="true" type="q227:ResponseWithPayloadOfListOfEntityNoteConfigurationInfo" />
+  <xs:complexType name="clsResponseWithPayloadOfArrayOfEntityNoteConfigurationInfoMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfEntityNoteConfigurationInfo" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q228="http://www.mi9retail.com/WCFServices/" base="q228:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q228:ArrayOfEntityNoteConfigurationInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q229="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfArrayOfEntityNoteConfigurationInfoMoVubBOZ" nillable="true" type="q229:clsResponseWithPayloadOfArrayOfEntityNoteConfigurationInfoMoVubBOZ" />
+  <xs:complexType name="ArrayOfEntityNoteConfigurationInfo">
+    <xs:sequence>
+      <xs:element xmlns:q230="http://www.mi9retail.com/WCFServices/" minOccurs="0" maxOccurs="unbounded" name="EntityNoteConfigurationInfo" nillable="true" type="q230:EntityNoteConfigurationInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q231="http://www.mi9retail.com/WCFServices/" name="ArrayOfEntityNoteConfigurationInfo" nillable="true" type="q231:ArrayOfEntityNoteConfigurationInfo" />
+  <xs:complexType name="EntityNoteConfigurationInfo">
+    <xs:sequence>
+      <xs:element xmlns:q232="http://schemas.datacontract.org/2004/07/StdBusinessRules.Common" minOccurs="0" name="EntityType" type="q232:EntityTypes" />
+      <xs:element minOccurs="0" name="Sequence" type="xs:short" />
+      <xs:element minOccurs="0" name="TableName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q233="http://www.mi9retail.com/WCFServices/" name="EntityNoteConfigurationInfo" nillable="true" type="q233:EntityNoteConfigurationInfo" />
+  <xs:element name="GetEntityNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q234="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q234:Request" />
+        <xs:element minOccurs="0" name="InEntityID" type="xs:long" />
+        <xs:element xmlns:q235="http://schemas.datacontract.org/2004/07/StdBusinessRules.Common" minOccurs="0" name="InEntityType" type="q235:EntityTypes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEntityNotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q236="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetEntityNotesResult" nillable="true" type="q236:ResponseWithPayloadEntityNotes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadEntityNotes">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q237="http://www.mi9retail.com/WCFServices/" base="q237:clsResponseWithPayloadOfEntityNotesMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q238="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadEntityNotes" nillable="true" type="q238:ResponseWithPayloadEntityNotes" />
+  <xs:complexType name="clsResponseWithPayloadOfEntityNotesMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="EntityNotes" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q239="http://www.mi9retail.com/WCFServices/" base="q239:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q239:EntityNotes" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q240="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfEntityNotesMoVubBOZ" nillable="true" type="q240:clsResponseWithPayloadOfEntityNotesMoVubBOZ" />
+  <xs:complexType name="EntityNotes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EntityID" type="xs:long" />
+      <xs:element xmlns:q241="http://schemas.datacontract.org/2004/07/StdBusinessRules.Common" minOccurs="0" name="EntityType" type="q241:EntityTypes" />
+      <xs:element xmlns:q242="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="Notes" nillable="true" type="q242:ArrayOfNoteInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q243="http://www.mi9retail.com/WCFServices/" name="EntityNotes" nillable="true" type="q243:EntityNotes" />
+  <xs:complexType name="ArrayOfNoteInfo">
+    <xs:sequence>
+      <xs:element xmlns:q244="http://www.mi9retail.com/WCFServices/" minOccurs="0" maxOccurs="unbounded" name="NoteInfo" nillable="true" type="q244:NoteInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q245="http://www.mi9retail.com/WCFServices/" name="ArrayOfNoteInfo" nillable="true" type="q245:ArrayOfNoteInfo" />
+  <xs:complexType name="NoteInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DateCreated" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IsUpdateRequired" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Sequence" type="xs:short" />
+      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserCreated" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q246="http://www.mi9retail.com/WCFServices/" name="NoteInfo" nillable="true" type="q246:NoteInfo" />
+  <xs:element name="UpdateEntityNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q247="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q247:RequestWithPayloadOfEntityNotes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RequestWithPayloadOfEntityNotes">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q248="http://www.mi9retail.com/WCFServices/" base="q248:clsRequestWithPayloadOfEntityNotesMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q249="http://www.mi9retail.com/WCFServices/" name="RequestWithPayloadOfEntityNotes" nillable="true" type="q249:RequestWithPayloadOfEntityNotes" />
+  <xs:complexType name="clsRequestWithPayloadOfEntityNotesMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsRequestWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="EntityNotes" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q250="http://www.mi9retail.com/WCFServices/" base="q250:Request">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q250:EntityNotes" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q251="http://www.mi9retail.com/WCFServices/" name="clsRequestWithPayloadOfEntityNotesMoVubBOZ" nillable="true" type="q251:clsRequestWithPayloadOfEntityNotesMoVubBOZ" />
+  <xs:element name="UpdateEntityNotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q252="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="UpdateEntityNotesResult" nillable="true" type="q252:ResponseWithPayloadOfResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoAndHHTPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q253="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q253:Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoAndHHTPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q254="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetUserInfoAndHHTPermissionsResult" nillable="true" type="q254:ResponseWithPayloadOfUserInfoAndMobileMenuAndPermissions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfUserInfoAndMobileMenuAndPermissions">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q255="http://www.mi9retail.com/WCFServices/" base="q255:clsResponseWithPayloadOfUserInfoAndMobileMenuAndPermissionsMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q256="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfUserInfoAndMobileMenuAndPermissions" nillable="true" type="q256:ResponseWithPayloadOfUserInfoAndMobileMenuAndPermissions" />
+  <xs:complexType name="clsResponseWithPayloadOfUserInfoAndMobileMenuAndPermissionsMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="UserInfoAndMobileMenuAndPermissions" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q257="http://www.mi9retail.com/WCFServices/" base="q257:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q257:UserInfoAndMobileMenuAndPermissions" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q258="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfUserInfoAndMobileMenuAndPermissionsMoVubBOZ" nillable="true" type="q258:clsResponseWithPayloadOfUserInfoAndMobileMenuAndPermissionsMoVubBOZ" />
+  <xs:complexType name="UserInfoAndMobileMenuAndPermissions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DBConnectionString" nillable="true" type="xs:string" />
+      <xs:element xmlns:q259="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="MobileMenu" nillable="true" type="q259:MobileMenu" />
+      <xs:element xmlns:q260="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="Permissions" nillable="true" type="q260:ArrayOfTranInfo" />
+      <xs:element xmlns:q261="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="UserInfo" nillable="true" type="q261:UserInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q262="http://www.mi9retail.com/WCFServices/" name="UserInfoAndMobileMenuAndPermissions" nillable="true" type="q262:UserInfoAndMobileMenuAndPermissions" />
+  <xs:complexType name="MobileMenu">
+    <xs:sequence>
+      <xs:element xmlns:q263="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="MobileMenuItems" nillable="true" type="q263:ArrayOfMobileMenuItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q264="http://www.mi9retail.com/WCFServices/" name="MobileMenu" nillable="true" type="q264:MobileMenu" />
+  <xs:complexType name="ArrayOfMobileMenuItem">
+    <xs:sequence>
+      <xs:element xmlns:q265="http://www.mi9retail.com/WCFServices/" minOccurs="0" maxOccurs="unbounded" name="MobileMenuItem" nillable="true" type="q265:MobileMenuItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q266="http://www.mi9retail.com/WCFServices/" name="ArrayOfMobileMenuItem" nillable="true" type="q266:ArrayOfMobileMenuItem" />
+  <xs:complexType name="MobileMenuItem">
+    <xs:sequence>
+      <xs:element xmlns:q267="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="Applicability" type="q267:TranApplicability" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsForm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsMenu" type="xs:boolean" />
+      <xs:element xmlns:q268="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="MobileMenuItems" nillable="true" type="q268:ArrayOfMobileMenuItem" />
+      <xs:element minOccurs="0" name="MobileProgram" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Parameters" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TranCode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q269="http://www.mi9retail.com/WCFServices/" name="MobileMenuItem" nillable="true" type="q269:MobileMenuItem" />
+  <xs:element name="GetUserInfoAndApplePermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q270="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q270:Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoAndApplePermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q271="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetUserInfoAndApplePermissionsResult" nillable="true" type="q271:ResponseWithPayloadOfUserInfoAndMobileMenuAndPermissions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoAndAndroidPermissions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q272="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q272:Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserInfoAndAndroidPermissionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q273="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetUserInfoAndAndroidPermissionsResult" nillable="true" type="q273:ResponseWithPayloadOfUserInfoAndMobileMenuAndPermissions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTax">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q274="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q274:RequestWithPayloadOfTaxableDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RequestWithPayloadOfTaxableDocument">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q275="http://www.mi9retail.com/WCFServices/" base="q275:clsRequestWithPayloadOfTaxableDocumentMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q276="http://www.mi9retail.com/WCFServices/" name="RequestWithPayloadOfTaxableDocument" nillable="true" type="q276:RequestWithPayloadOfTaxableDocument" />
+  <xs:complexType name="clsRequestWithPayloadOfTaxableDocumentMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsRequestWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="TaxableDocument" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q277="http://www.mi9retail.com/WCFServices/" base="q277:Request">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q277:TaxableDocument" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q278="http://www.mi9retail.com/WCFServices/" name="clsRequestWithPayloadOfTaxableDocumentMoVubBOZ" nillable="true" type="q278:clsRequestWithPayloadOfTaxableDocumentMoVubBOZ" />
+  <xs:complexType name="TaxableDocument">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommitDocument" type="xs:boolean" />
+      <xs:element name="CustomerCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q279="http://schemas.datacontract.org/2004/07/RemoteFacadeWCF.RetailHub" minOccurs="0" name="CustomerExemptionType" type="q279:clsTaxableDocument.CustomerExemptionTypes" />
+      <xs:element xmlns:q280="http://www.mi9retail.com/WCFServices/" name="DestinationAddress" nillable="true" type="q280:AddressInfo">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="DocumentCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="DocumentDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q281="http://schemas.datacontract.org/2004/07/Avalara.AvaTax.Adapter.TaxService" minOccurs="0" name="DocumentType" type="q281:DocumentType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q282="http://www.mi9retail.com/WCFServices/" name="Lines" nillable="true" type="q282:ArrayOfTaxableDocumentLine">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="LocationCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q283="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="SourceAddress" nillable="true" type="q283:AddressInfo">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q284="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="TaxOverride" nillable="true" type="q284:TaxOverride" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q285="http://www.mi9retail.com/WCFServices/" name="TaxableDocument" nillable="true" type="q285:TaxableDocument" />
+  <xs:complexType name="AddressInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Address1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Address2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="County" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Phone2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q286="http://www.mi9retail.com/WCFServices/" name="AddressInfo" nillable="true" type="q286:AddressInfo" />
+  <xs:complexType name="ArrayOfTaxableDocumentLine">
+    <xs:sequence>
+      <xs:element xmlns:q287="http://www.mi9retail.com/WCFServices/" minOccurs="0" maxOccurs="unbounded" name="TaxableDocumentLine" nillable="true" type="q287:TaxableDocumentLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q288="http://www.mi9retail.com/WCFServices/" name="ArrayOfTaxableDocumentLine" nillable="true" type="q288:ArrayOfTaxableDocumentLine" />
+  <xs:complexType name="TaxableDocumentLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsForShipCharge" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LineNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ProductCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="ProductDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Qty" type="xs:int" />
+      <xs:element minOccurs="0" name="TaxCode" nillable="true" type="xs:string" />
+      <xs:element xmlns:q289="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="TaxOverride" nillable="true" type="q289:TaxOverride" />
+      <xs:element name="TotalAmount" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q290="http://www.mi9retail.com/WCFServices/" name="TaxableDocumentLine" nillable="true" type="q290:TaxableDocumentLine" />
+  <xs:complexType name="TaxOverride">
+    <xs:sequence>
+      <xs:element xmlns:q291="http://schemas.datacontract.org/2004/07/Avalara.AvaTax.Adapter.TaxService" name="OverrideType" type="q291:TaxOverrideType" />
+      <xs:element name="Reason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TaxAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TaxDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q292="http://www.mi9retail.com/WCFServices/" name="TaxOverride" nillable="true" type="q292:TaxOverride" />
+  <xs:element name="GetTaxResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q293="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetTaxResult" nillable="true" type="q293:ResponseWithPayloadOfTaxInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfTaxInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q294="http://www.mi9retail.com/WCFServices/" base="q294:clsResponseWithPayloadOfTaxInfoMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q295="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfTaxInfo" nillable="true" type="q295:ResponseWithPayloadOfTaxInfo" />
+  <xs:complexType name="clsResponseWithPayloadOfTaxInfoMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="TaxInfo" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q296="http://www.mi9retail.com/WCFServices/" base="q296:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q296:TaxInfo" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q297="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfTaxInfoMoVubBOZ" nillable="true" type="q297:clsResponseWithPayloadOfTaxInfoMoVubBOZ" />
+  <xs:complexType name="TaxInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q298="http://www.mi9retail.com/WCFServices/" name="Lines" nillable="true" type="q298:ArrayOfTaxInfoLine">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="TaxableDocumentCode" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q299="http://www.mi9retail.com/WCFServices/" name="TaxInfo" nillable="true" type="q299:TaxInfo" />
+  <xs:complexType name="ArrayOfTaxInfoLine">
+    <xs:sequence>
+      <xs:element xmlns:q300="http://www.mi9retail.com/WCFServices/" minOccurs="0" maxOccurs="unbounded" name="TaxInfoLine" nillable="true" type="q300:TaxInfoLine" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q301="http://www.mi9retail.com/WCFServices/" name="ArrayOfTaxInfoLine" nillable="true" type="q301:ArrayOfTaxInfoLine" />
+  <xs:complexType name="TaxInfoLine">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Error" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LineNumber" nillable="true" type="xs:string">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="TaxAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TaxCode" nillable="true" type="xs:string" />
+      <xs:element name="TaxRate" type="xs:double" />
+      <xs:element name="TaxableAmount" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q302="http://www.mi9retail.com/WCFServices/" name="TaxInfoLine" nillable="true" type="q302:TaxInfoLine" />
+  <xs:complexType name="clsInvalidConfigurationFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q303="http://www.mi9retail.com/WCFServices/" base="q303:clsBaseFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q304="http://www.mi9retail.com/WCFServices/" name="clsInvalidConfigurationFault" nillable="true" type="q304:clsInvalidConfigurationFault" />
+  <xs:complexType name="clsAvalaraFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q305="http://www.mi9retail.com/WCFServices/" base="q305:clsBaseFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q306="http://www.mi9retail.com/WCFServices/" name="clsAvalaraFault" nillable="true" type="q306:clsAvalaraFault" />
+  <xs:complexType name="clsTaxServiceNotInUseFault">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q307="http://www.mi9retail.com/WCFServices/" base="q307:clsBaseFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q308="http://www.mi9retail.com/WCFServices/" name="clsTaxServiceNotInUseFault" nillable="true" type="q308:clsTaxServiceNotInUseFault" />
+  <xs:complexType name="clsTaxServiceTaxableDocumentLinesNotSet">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q309="http://www.mi9retail.com/WCFServices/" base="q309:clsBaseFault">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q310="http://www.mi9retail.com/WCFServices/" name="clsTaxServiceTaxableDocumentLinesNotSet" nillable="true" type="q310:clsTaxServiceTaxableDocumentLinesNotSet" />
+  <xs:element name="ExtractToTaxSystem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q311="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q311:RequestWithPayloadOfTaxableDocument" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExtractToTaxSystemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q312="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="ExtractToTaxSystemResult" nillable="true" type="q312:ResponseWithPayloadOfTaxInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsTaxServiceInUse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q313="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q313:Request" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsTaxServiceInUseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q314="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="IsTaxServiceInUseResult" nillable="true" type="q314:ResponseWithPayloadOfBoolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfBoolean">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q315="http://www.mi9retail.com/WCFServices/" base="q315:clsResponseWithPayloadOfboolean">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q316="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfBoolean" nillable="true" type="q316:ResponseWithPayloadOfBoolean" />
+  <xs:complexType name="clsResponseWithPayloadOfboolean">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="boolean" Namespace="http://www.w3.org/2001/XMLSchema" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q317="http://www.mi9retail.com/WCFServices/" base="q317:Response">
+        <xs:sequence>
+          <xs:element name="Payload" type="xs:boolean" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q318="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfboolean" nillable="true" type="q318:clsResponseWithPayloadOfboolean" />
+  <xs:element name="PostIntegration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q319="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q319:RequestWithPayloadOfIntegrationTypeAndData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="RequestWithPayloadOfIntegrationTypeAndData">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q320="http://www.mi9retail.com/WCFServices/" base="q320:clsRequestWithPayloadOfIntegrationTypeAndDataMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q321="http://www.mi9retail.com/WCFServices/" name="RequestWithPayloadOfIntegrationTypeAndData" nillable="true" type="q321:RequestWithPayloadOfIntegrationTypeAndData" />
+  <xs:complexType name="clsRequestWithPayloadOfIntegrationTypeAndDataMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsRequestWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="IntegrationTypeAndData" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q322="http://www.mi9retail.com/WCFServices/" base="q322:Request">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q322:IntegrationTypeAndData" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q323="http://www.mi9retail.com/WCFServices/" name="clsRequestWithPayloadOfIntegrationTypeAndDataMoVubBOZ" nillable="true" type="q323:clsRequestWithPayloadOfIntegrationTypeAndDataMoVubBOZ" />
+  <xs:complexType name="IntegrationTypeAndData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Data" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="JustCount" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Top" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q324="http://www.mi9retail.com/WCFServices/" name="IntegrationTypeAndData" nillable="true" type="q324:IntegrationTypeAndData" />
+  <xs:element name="PostIntegrationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q325="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="PostIntegrationResult" nillable="true" type="q325:ResponseWithPayloadOfListOfResults" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfListOfResults">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q326="http://www.mi9retail.com/WCFServices/" base="q326:clsResponseWithPayloadOfArrayOfResultMoVubBOZ">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q327="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfListOfResults" nillable="true" type="q327:ResponseWithPayloadOfListOfResults" />
+  <xs:complexType name="clsResponseWithPayloadOfArrayOfResultMoVubBOZ">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="ArrayOfResult" Namespace="http://www.mi9retail.com/WCFServices/" />
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q328="http://www.mi9retail.com/WCFServices/" base="q328:Response">
+        <xs:sequence>
+          <xs:element name="Payload" nillable="true" type="q328:ArrayOfResult" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q329="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfArrayOfResultMoVubBOZ" nillable="true" type="q329:clsResponseWithPayloadOfArrayOfResultMoVubBOZ" />
+  <xs:complexType name="ArrayOfResult">
+    <xs:sequence>
+      <xs:element xmlns:q330="http://www.mi9retail.com/WCFServices/" minOccurs="0" maxOccurs="unbounded" name="Result" nillable="true" type="q330:Result" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element xmlns:q331="http://www.mi9retail.com/WCFServices/" name="ArrayOfResult" nillable="true" type="q331:ArrayOfResult" />
+  <xs:element name="GetIntegration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q332="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="InRequest" nillable="true" type="q332:RequestWithPayloadOfIntegrationTypeAndData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetIntegrationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q333="http://www.mi9retail.com/WCFServices/" minOccurs="0" name="GetIntegrationResult" nillable="true" type="q333:ResponseWithPayloadOfDataAndCount" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="ResponseWithPayloadOfDataAndCount">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q334="http://www.mi9retail.com/WCFServices/" base="q334:clsResponseWithPayloadOfTupleOfstringint5F2dSckg">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q335="http://www.mi9retail.com/WCFServices/" name="ResponseWithPayloadOfDataAndCount" nillable="true" type="q335:ResponseWithPayloadOfDataAndCount" />
+  <xs:complexType name="clsResponseWithPayloadOfTupleOfstringint5F2dSckg">
+    <xs:annotation>
+      <xs:appinfo>
+        <GenericType Name="clsResponseWithPayloadOf{0}{#}" Namespace="http://www.mi9retail.com/WCFServices/" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+          <GenericParameter Name="TupleOf{0}{1}{#}" Namespace="http://schemas.datacontract.org/2004/07/System">
+            <GenericParameter Name="string" Namespace="http://www.w3.org/2001/XMLSchema" />
+            <GenericParameter Name="int" Namespace="http://www.w3.org/2001/XMLSchema" />
+          </GenericParameter>
+        </GenericType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q336="http://www.mi9retail.com/WCFServices/" base="q336:Response">
+        <xs:sequence>
+          <xs:element xmlns:q337="http://schemas.datacontract.org/2004/07/System" name="Payload" nillable="true" type="q337:TupleOfstringint" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element xmlns:q338="http://www.mi9retail.com/WCFServices/" name="clsResponseWithPayloadOfTupleOfstringint5F2dSckg" nillable="true" type="q338:clsResponseWithPayloadOfTupleOfstringint5F2dSckg" />
+</xs:schema>

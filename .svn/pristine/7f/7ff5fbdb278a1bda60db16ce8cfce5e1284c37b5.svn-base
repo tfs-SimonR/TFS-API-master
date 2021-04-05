@@ -1,0 +1,182 @@
+2019-02-14 09:28:41.1719|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/counting/getpicountlist/147
+Controller : TFS_API.Controllers.PICountController
+Action : GetPIList
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 10:11:55.2712|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 10:15:35.6656|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 10:16:50.4040|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 10:18:37.5650|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 10:26:43.4951|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 10:33:28.6135|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 10:37:06.3376|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 10:44:16.4853|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 10:46:14.4740|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 10:52:20.4156|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 10:55:05.5533|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 11:00:59.4199|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 11:08:06.3974|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 11:11:53.8619|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 11:27:24.7388|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 11:35:03.0939|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 11:42:46.4311|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 11:51:02.6495|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 11:54:37.1413|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 11:56:39.2156|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 12:03:34.9533|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 13:57:22.3674|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 14:00:01.0613|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 14:01:40.1101|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-02-14 15:24:32.6706|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/adhoccountsubmit
+Controller : TFS_API.Controllers.PICountController
+Action : PutAdHoc
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

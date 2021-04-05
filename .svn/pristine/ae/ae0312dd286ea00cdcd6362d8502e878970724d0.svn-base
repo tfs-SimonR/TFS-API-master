@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TasksModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_action_types">
+    <Key>
+      <PropertyRef Name="action_id" />
+    </Key>
+    <Property Name="action_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="action_type_description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_store_responses">
+    <Key>
+      <PropertyRef Name="TA_id" />
+    </Key>
+    <Property Name="TA_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="response" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_task_actions">
+    <Key>
+      <PropertyRef Name="TA_id" />
+    </Key>
+    <Property Name="taskid" Type="int" />
+    <Property Name="TA_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="actiontypeid" Type="int" />
+    <Property Name="isMandatory" Type="bit" />
+    <Property Name="questions" Type="nvarchar(max)" />
+    <Property Name="param1" Type="nvarchar" MaxLength="50" />
+    <Property Name="param2" Type="nvarchar" MaxLength="50" />
+    <Property Name="param3" Type="nvarchar" MaxLength="50" />
+    <Property Name="param4" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tbl_tasks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="storeid" Type="nvarchar" MaxLength="50" />
+    <Property Name="decrption" Type="nvarchar" MaxLength="50" />
+    <Property Name="instructions" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="TasksModelStoreContainer">
+    <EntitySet Name="tbl_action_types" EntityType="Self.tbl_action_types" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_store_responses" EntityType="Self.tbl_store_responses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_task_actions" EntityType="Self.tbl_task_actions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_tasks" EntityType="Self.tbl_tasks" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

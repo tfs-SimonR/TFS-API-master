@@ -1,0 +1,50 @@
+﻿@model Mi9DataAccessLayer.tfs_store_details
+<div class="container">
+    <div class="row text-center">
+        <div class="col-sm-6 col-sm-offset-3">
+            <br /><br /> <h2 style="color:#0fad00">Success</h2>
+            <img src="~/Content/Images/4c9816379c.png" width="200px" height="200px" />
+            <br /><br />
+            <p style="font-size:20px;color:#5C5C5C;">This verifies that your link to Head Office is working.</p>
+
+            <br /><br />
+        </div>
+
+    </div>
+</div>
+@*<div class="box box-primary">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group has-feedback">
+                @Html.DropDownListFor(x => x.storeId, new SelectList(string.Empty, "Value", "Text"), "Select Store")
+            </div>
+            <div>
+                <button id="btnSubmit">Machine Name</button>
+            </div>
+        </div>
+    </div>
+</div>*@
+<script src="~/Scripts/jquery-1.12.4.js"></script>
+<Script>
+    $(function () {
+        $.ajax({
+            type: "GET",
+            url: "/TestAPI/GetStoresList",
+            datatype: "json",
+            success: function (data) {
+                $.each(data, function (index, value) {
+                    $('#storeId').append('<option value="' + value.Value + '">' + value.Text + '</option>');
+                });
+            }
+        });
+    });
+    $(document).ready(function () {
+        $("#btnSubmit").click(function () {
+            var objShell = new ActiveXObject("Shell.Application");
+            objShell.ShellExecute("notepad.exe", "C:\\WINDOWS\\system32", "open", "1"); 
+        });
+    });
+
+   
+   
+</Script>

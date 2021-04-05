@@ -1,0 +1,123 @@
+﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="container">
+    <section>
+        <table class="table table-striped">
+            <tbody>
+            <tr>
+                <td colspan="1">
+                    <form class="well form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Full Name</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="fullName" name="fullName" placeholder="Full Name" class="form-control" required="true" value="" type="text"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Address Line 1</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine1" name="addressLine1" placeholder="Address Line 1" class="form-control" required="true" value="" type="text"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Address Line 2</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine2" name="addressLine2" placeholder="Address Line 2" class="form-control" required="true" value="" type="text"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">City</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="city" name="city" placeholder="City" class="form-control" required="true" value="" type="text"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">State/Province/Region</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="state" name="state" placeholder="State/Province/Region" class="form-control" required="true" value="" type="text"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Postal Code/ZIP</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="postCode" name="postCode" placeholder="Postal Code/ZIP" class="form-control" required="true" value="" type="text"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Email</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span><input id="customerEmail" name="customerEmail" placeholder="Email" class="form-control" required="true" value="" type="text"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label">Phone Number</label>
+                                <div class="col-md-8 inputGroupContainer">
+                                    <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber" name="phoneNumber" placeholder="Phone Number" class="form-control" required="true" value="" type="text"></div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="form-group">
+                                <input id="btnLogin" class="btn btn-primary btn-lg btn-block" type="button" value="Submit"/>
+                            </div>
+                        </fieldset>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+         <!--Bootstrap alert to display error message if the login fails-->
+         <div id="successPopup" class="alert alert-success collapse">
+             <a id="linkClose" href="#" class="close">&times;</a>
+             <div id="divSuccessText"></div>
+         </div>
+           <div id="errorPopup" class="alert alert-success collapse">
+                <a id="linkClose" href="#" class="close">&times;</a>
+                <div id="divErrorText"></div>
+            </div>
+    </section>
+</div>
+<script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#linkClose').click(function () {
+                $('#divErrorText').hide('fade');
+            });
+
+            $('#btnLogin').click(function () {
+                $.ajax({
+                    // Post username, password & the grant type to /token
+                    url: '/Customer/NewCustomer',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: {
+                        fullName: $('#fullName').val(),
+                        addressLine1: $('#addressLine1').val(),
+                        addressLine2: $('#addressLine2').val(),
+                        city: $('#city').val(),
+                        state: $('#state').val(),
+                        postCode: $('#postCode').val(),
+                        customerEmail: $('#customerEmail').val(),
+                        phoneNumber: $('#phoneNumber').val()
+                    },
+                    // When successful show and then close after 1.5 seconds
+                    success: function (data) {
+                        if (data.success === true)
+                        {
+                            $('#divSuccessText').text(response.responseText);
+                            $('#successPopup').show('fade');
+                            setTimeout(function ()
+                            {
+                                location.close();
+                            }, 1500);
+                        }
+                    },
+                    // Display errors if any in the Bootstrap alert <div>
+                    error: function (jqXHR) {
+                        $('#divErrorText').text(jqXHR.responseText);
+                        $('#errorPopup').show('fade');
+                    }
+                });
+            });
+        });
+    </script>

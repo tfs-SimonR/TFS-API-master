@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <WebPublishMethod>MSDeploy</WebPublishMethod>
+    <LastUsedBuildConfiguration>Debug</LastUsedBuildConfiguration>
+    <LastUsedPlatform>Any CPU</LastUsedPlatform>
+    <SiteUrlToLaunchAfterPublish>http://TFS-API</SiteUrlToLaunchAfterPublish>
+    <LaunchSiteAfterPublish>True</LaunchSiteAfterPublish>
+    <ExcludeApp_Data>False</ExcludeApp_Data>
+    <MSDeployServiceURL>http://TFS-API</MSDeployServiceURL>
+    <DeployIisAppPath>TFS-API</DeployIisAppPath>
+    <RemoteSitePhysicalPath />
+    <SkipExtraFilesOnServer>True</SkipExtraFilesOnServer>
+    <MSDeployPublishMethod>RemoteAgent</MSDeployPublishMethod>
+    <EnableMSDeployBackup>True</EnableMSDeployBackup>
+    <UserName>fsdomain\sroberts</UserName>
+    <_SavePWD>True</_SavePWD>
+    <PublishDatabaseSettings>
+      <Objects xmlns="">
+        <ObjectGroup Name="EPOSDataConnection" Order="2" Enabled="False">
+          <Destination Path="" />
+          <Object Type="DbCodeFirst">
+            <Source Path="DBContext" DbContext="EPOSDataAccess.EPOSDataConnection, EPOSDataAccess" Origin="Configuration" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="Mi9DBEntities" Order="3" Enabled="False">
+          <Destination Path="" />
+          <Object Type="DbCodeFirst">
+            <Source Path="DBContext" DbContext="Mi9DataAccessLayer.Mi9DBEntities, Mi9DataAccessLayer" Origin="Configuration" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="tfs_customer_liveEntities" Order="4" Enabled="False">
+          <Destination Path="" />
+          <Object Type="DbCodeFirst">
+            <Source Path="DBContext" DbContext="CustomerDAL.tfs_customer_liveEntities, CustomerDAL" Origin="Configuration" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="auditEntities" Order="5" Enabled="False">
+          <Destination Path="" />
+          <Object Type="DbCodeFirst">
+            <Source Path="DBContext" DbContext="AuditDataAccessLayer.auditEntities, AuditDataAccessLayer" Origin="Configuration" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="mi9_mms_fs_trainEntities" Order="6" Enabled="False">
+          <Destination Path="" />
+          <Object Type="DbCodeFirst">
+            <Source Path="DBContext" DbContext="mi9TESTDAL.mi9_mms_fs_trainEntities, mi9TESTDAL" Origin="Configuration" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="piDBContext" Order="7" Enabled="False">
+          <Destination Path="" />
+          <Object Type="DbCodeFirst">
+            <Source Path="DBContext" DbContext="PICountDataAccessLayer.piDBContext, PICountDataAccessLayer" Origin="Configuration" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="propDBContext" Order="8" Enabled="False">
+          <Destination Path="" />
+          <Object Type="DbCodeFirst">
+            <Source Path="DBContext" DbContext="PropertiesDAL.propDBContext, PropertiesDAL" Origin="Configuration" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="DefaultConnection" Order="13" Enabled="False">
+          <Destination Path="" />
+          <Object Type="DbCodeFirst">
+            <Source Path="DBContext" DbContext="TFS_API.Models.ApplicationDbContext, TFS-API" Origin="Configuration" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="ErrorDBContext" Order="14" Enabled="False">
+          <Destination Path="" />
+          <Object Type="DbCodeFirst">
+            <Source Path="DBContext" DbContext="ErrorViewDAL.ErrorDBContext, ErrorViewDAL" Origin="Configuration" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="TaskDBContext" Order="15" Enabled="False">
+          <Destination Path="" />
+          <Object Type="DbCodeFirst">
+            <Source Path="DBContext" DbContext="HHTTaskDAL.TaskDBContext, HHTTaskDAL" Origin="Configuration" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="ProDbContext" Order="17" Enabled="False">
+          <Destination Path="" />
+          <Object Type="DbCodeFirst">
+            <Source Path="DBContext" DbContext="ProcessedDAL.ProDbContext, ProcessedDAL" Origin="Configuration" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <MSDeployParameterValue Include="$(DeployParameterPrefix)auditEntities-Web.config Connection String" />
+    <MSDeployParameterValue Include="$(DeployParameterPrefix)DefaultConnection-Web.config Connection String" />
+    <MSDeployParameterValue Include="$(DeployParameterPrefix)EPOSDataConnection-Web.config Connection String" />
+    <MSDeployParameterValue Include="$(DeployParameterPrefix)ErrorDBContext-Web.config Connection String" />
+    <MSDeployParameterValue Include="$(DeployParameterPrefix)Mi9DBEntities-Web.config Connection String" />
+    <MSDeployParameterValue Include="$(DeployParameterPrefix)mi9_mms_fs_trainEntities-Web.config Connection String" />
+    <MSDeployParameterValue Include="$(DeployParameterPrefix)piDBContext-Web.config Connection String" />
+    <!--<MSDeployParameterValue Include="$(DeployParameterPrefix)ProcessedDBContext-Web.config Connection String" />-->
+    <MSDeployParameterValue Include="$(DeployParameterPrefix)ProDbContext-Web.config Connection String" />
+    <MSDeployParameterValue Include="$(DeployParameterPrefix)propDBContext-Web.config Connection String" />
+    <MSDeployParameterValue Include="$(DeployParameterPrefix)TaskDBContext-Web.config Connection String" />
+    <MSDeployParameterValue Include="$(DeployParameterPrefix)tfs_customer_liveEntities-Web.config Connection String" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4f28c7d236484f018baafea6f68668b0" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="tfs_hs_holdingModel.consigdest" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tfs_hs_holdingModel.consighdr" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tfs_hs_holdingModel.consigline" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tfs_hs_holdingModel.hs_processed_consighdrs" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tfs_hs_holdingModel.hs_processed_interstore" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tfs_hs_holdingModel.hs_processed_purchorders" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tfs_hs_holdingModel.purchordline" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tfs_hs_holdingModel.statuscode" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tfs_hs_holdingModel.supplier" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tfs_hs_holdingModel.purchorder" Width="1.5" PointX="7.375" PointY="9.75" />
+        <EntityTypeShape EntityType="tfs_hs_holdingModel.TOFS_12WeeksSales" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="tfs_hs_holdingModel.tbl_PP_ThresholdValues" Width="1.5" PointX="13.375" PointY="3.75" />
+        <EntityTypeShape EntityType="tfs_hs_holdingModel.tbl_ProfitProtectionHeldItems" Width="1.5" PointX="13.375" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,42 @@
+2019-04-16 14:44:50.4373|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/suppliertostorelist/222
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetSupplierDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-04-16 16:15:46.8925|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/PutSuppliertoStoreMassAccept
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutSuppliertoStoreMassAccept
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-04-16 16:22:16.7044|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/PutSuppliertoStoreMassAccept
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutSuppliertoStoreMassAccept
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-04-16 16:23:29.8655|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/PutSuppliertoStoreMassAccept
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutSuppliertoStoreMassAccept
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-04-16 16:28:34.9515|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/PutSuppliertoStoreMassAccept
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutSuppliertoStoreMassAccept
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-04-16 16:30:13.3464|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/handyscanner/PutSuppliertoStoreMassAccept
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PutSuppliertoStoreMassAccept
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

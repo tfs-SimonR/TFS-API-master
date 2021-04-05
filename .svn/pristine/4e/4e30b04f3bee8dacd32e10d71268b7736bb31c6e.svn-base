@@ -1,0 +1,28 @@
+2019-07-04 08:43:30.3865|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/productwriteoff
+Controller : TFS_API.Controllers.PICountController
+Action : PutWriteOff
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-07-04 08:46:27.8037|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/productwriteoff
+Controller : TFS_API.Controllers.PICountController
+Action : PutWriteOff
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-07-04 08:56:56.0898|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/productwriteoff
+Controller : TFS_API.Controllers.PICountController
+Action : PutWriteOff
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-07-04 10:00:26.1879|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/productwriteoff
+Controller : TFS_API.Controllers.PICountController
+Action : PutWriteOff
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

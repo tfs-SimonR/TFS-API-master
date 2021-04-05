@@ -1,0 +1,63 @@
+2019-05-09 08:13:50.1636|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/productwriteoff
+Controller : TFS_API.Controllers.PICountController
+Action : PutWriteOff
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-09 08:15:59.4143|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/productwriteoff
+Controller : TFS_API.Controllers.PICountController
+Action : PutWriteOff
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-09 08:18:13.7327|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/productwriteoff
+Controller : TFS_API.Controllers.PICountController
+Action : PutWriteOff
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-09 08:21:19.4069|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/productwriteoff
+Controller : TFS_API.Controllers.PICountController
+Action : PutWriteOff
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-09 08:25:43.9538|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/productwriteoff
+Controller : TFS_API.Controllers.PICountController
+Action : PutWriteOff
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-09 08:30:28.1499|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/productwriteoff
+Controller : TFS_API.Controllers.PICountController
+Action : PutWriteOff
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-09 08:34:36.0083|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/productwriteoff
+Controller : TFS_API.Controllers.PICountController
+Action : PutWriteOff
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-09 08:37:47.0910|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/counting/productwriteoff
+Controller : TFS_API.Controllers.PICountController
+Action : PutWriteOff
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-05-09 10:33:18.1663|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/suppliertostorelist/013
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetSupplierDeliveryToStore
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

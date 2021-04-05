@@ -1,0 +1,142 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFS-API", "TFS-API\TFS-API.csproj", "{978E885B-7182-4775-ADA3-67997D4D6E0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPOSDataAccess", "EPOSDataAccess\EPOSDataAccess.csproj", "{7F3BBB92-4B44-4502-A0CA-3A27A2231123}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mi9DataAccessLayer", "Mi9DataAccessLayer\Mi9DataAccessLayer.csproj", "{A26F6942-6FDD-47F6-9D33-54194D59F95D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerDAL", "CustomerDAL\CustomerDAL.csproj", "{3DE6BFE6-70FB-4601-993C-F70EB5C7A2EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mi9TESTDAL", "mi9TESTDAL\mi9TESTDAL.csproj", "{163C2184-5335-4906-B2EF-1D3CBC10AFDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditDataAccessLayer", "AuditDataAccessLayer\AuditDataAccessLayer.csproj", "{7EA794C5-D580-41CE-84E2-6A32B8CBBBEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PICountDataAccessLayer", "PICountDataAccessLayer\PICountDataAccessLayer.csproj", "{C858EFCB-8928-4972-BC91-E3A4AA272A44}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PropertiesDAL", "PropertiesDAL\PropertiesDAL.csproj", "{CAE80C1D-5603-4A5D-AC54-9B0F85DBD8C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorViewDAL", "ErrorViewDAL\ErrorViewDAL.csproj", "{76777DEB-0193-40C2-BAF8-232220674989}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HHTTaskDAL", "HHTTaskDAL\HHTTaskDAL.csproj", "{384BF8E2-6F61-4160-865A-FB9F5E6163B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessedDAL", "ProcessedDAL\ProcessedDAL.csproj", "{C351E660-C180-445F-8A2B-F9A860B7817B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClickAndCollectDAL", "ClickAndCollectDAL\ClickAndCollectDAL.csproj", "{061544DD-D076-4647-B049-47F7DC9BF26A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPARQTestDAL", "SPARQTestDAL\SPARQTestDAL.csproj", "{D89281BF-140F-4841-A701-8B5E538638FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{978E885B-7182-4775-ADA3-67997D4D6E0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{978E885B-7182-4775-ADA3-67997D4D6E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{978E885B-7182-4775-ADA3-67997D4D6E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{978E885B-7182-4775-ADA3-67997D4D6E0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F3BBB92-4B44-4502-A0CA-3A27A2231123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F3BBB92-4B44-4502-A0CA-3A27A2231123}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F3BBB92-4B44-4502-A0CA-3A27A2231123}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F3BBB92-4B44-4502-A0CA-3A27A2231123}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A26F6942-6FDD-47F6-9D33-54194D59F95D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A26F6942-6FDD-47F6-9D33-54194D59F95D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A26F6942-6FDD-47F6-9D33-54194D59F95D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A26F6942-6FDD-47F6-9D33-54194D59F95D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DE6BFE6-70FB-4601-993C-F70EB5C7A2EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DE6BFE6-70FB-4601-993C-F70EB5C7A2EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DE6BFE6-70FB-4601-993C-F70EB5C7A2EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DE6BFE6-70FB-4601-993C-F70EB5C7A2EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{163C2184-5335-4906-B2EF-1D3CBC10AFDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{163C2184-5335-4906-B2EF-1D3CBC10AFDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{163C2184-5335-4906-B2EF-1D3CBC10AFDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{163C2184-5335-4906-B2EF-1D3CBC10AFDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EA794C5-D580-41CE-84E2-6A32B8CBBBEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EA794C5-D580-41CE-84E2-6A32B8CBBBEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EA794C5-D580-41CE-84E2-6A32B8CBBBEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EA794C5-D580-41CE-84E2-6A32B8CBBBEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C858EFCB-8928-4972-BC91-E3A4AA272A44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C858EFCB-8928-4972-BC91-E3A4AA272A44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C858EFCB-8928-4972-BC91-E3A4AA272A44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C858EFCB-8928-4972-BC91-E3A4AA272A44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAE80C1D-5603-4A5D-AC54-9B0F85DBD8C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAE80C1D-5603-4A5D-AC54-9B0F85DBD8C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAE80C1D-5603-4A5D-AC54-9B0F85DBD8C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAE80C1D-5603-4A5D-AC54-9B0F85DBD8C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76777DEB-0193-40C2-BAF8-232220674989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76777DEB-0193-40C2-BAF8-232220674989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76777DEB-0193-40C2-BAF8-232220674989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76777DEB-0193-40C2-BAF8-232220674989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{384BF8E2-6F61-4160-865A-FB9F5E6163B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{384BF8E2-6F61-4160-865A-FB9F5E6163B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{384BF8E2-6F61-4160-865A-FB9F5E6163B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{384BF8E2-6F61-4160-865A-FB9F5E6163B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C351E660-C180-445F-8A2B-F9A860B7817B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C351E660-C180-445F-8A2B-F9A860B7817B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C351E660-C180-445F-8A2B-F9A860B7817B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C351E660-C180-445F-8A2B-F9A860B7817B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{061544DD-D076-4647-B049-47F7DC9BF26A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{061544DD-D076-4647-B049-47F7DC9BF26A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{061544DD-D076-4647-B049-47F7DC9BF26A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{061544DD-D076-4647-B049-47F7DC9BF26A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D89281BF-140F-4841-A701-8B5E538638FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D89281BF-140F-4841-A701-8B5E538638FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D89281BF-140F-4841-A701-8B5E538638FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D89281BF-140F-4841-A701-8B5E538638FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C572898-37DB-4C8A-9EC4-1E3607BBB066}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 14
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/tofsdev01
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CustomerDAL\\CustomerDAL.csproj
+		SccProjectName1 = CustomerDAL
+		SccLocalPath1 = CustomerDAL
+		SccProjectUniqueName2 = EPOSDataAccess\\EPOSDataAccess.csproj
+		SccProjectName2 = EPOSDataAccess
+		SccLocalPath2 = EPOSDataAccess
+		SccProjectUniqueName3 = Mi9DataAccessLayer\\Mi9DataAccessLayer.csproj
+		SccProjectName3 = Mi9DataAccessLayer
+		SccLocalPath3 = Mi9DataAccessLayer
+		SccProjectUniqueName4 = TFS-API\\TFS-API.csproj
+		SccProjectName4 = TFS-API
+		SccLocalPath4 = TFS-API
+		SccProjectUniqueName5 = mi9TESTDAL\\mi9TESTDAL.csproj
+		SccProjectName5 = mi9TESTDAL
+		SccLocalPath5 = mi9TESTDAL
+		SccProjectUniqueName6 = AuditDataAccessLayer\\AuditDataAccessLayer.csproj
+		SccProjectName6 = AuditDataAccessLayer
+		SccLocalPath6 = AuditDataAccessLayer
+		SccProjectUniqueName7 = PICountDataAccessLayer\\PICountDataAccessLayer.csproj
+		SccProjectName7 = PICountDataAccessLayer
+		SccLocalPath7 = PICountDataAccessLayer
+		SccProjectUniqueName8 = PropertiesDAL\\PropertiesDAL.csproj
+		SccProjectName8 = PropertiesDAL
+		SccLocalPath8 = PropertiesDAL
+		SccProjectUniqueName9 = ErrorViewDAL\\ErrorViewDAL.csproj
+		SccProjectName9 = ErrorViewDAL
+		SccLocalPath9 = ErrorViewDAL
+		SccProjectUniqueName10 = HHTTaskDAL\\HHTTaskDAL.csproj
+		SccProjectName10 = HHTTaskDAL
+		SccLocalPath10 = HHTTaskDAL
+		SccProjectUniqueName11 = ProcessedDAL\\ProcessedDAL.csproj
+		SccProjectName11 = ProcessedDAL
+		SccLocalPath11 = ProcessedDAL
+		SccProjectUniqueName12 = ClickAndCollectDAL\\ClickAndCollectDAL.csproj
+		SccProjectName12 = ClickAndCollectDAL
+		SccLocalPath12 = ClickAndCollectDAL
+		SccProjectUniqueName13 = SPARQTestDAL\\SPARQTestDAL.csproj
+		SccProjectName13 = SPARQTestDAL
+		SccLocalPath13 = SPARQTestDAL
+	EndGlobalSection
+EndGlobal

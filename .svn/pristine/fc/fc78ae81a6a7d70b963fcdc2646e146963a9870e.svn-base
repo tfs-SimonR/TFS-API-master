@@ -1,0 +1,35 @@
+2020-01-06 09:18:35.9210|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetSKUPanelData?guid=c98e152337c84df2845e00f19d32e782&storeId=201
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetSKUPanelData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-06 09:26:27.3980|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetSKUPanelData?guid=c98e152337c84df2845e00f19d32e782&storeId=201
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetSKUPanelData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-06 09:26:37.6153|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetSKUPanelData?guid=c98e152337c84df2845e00f19d32e782&storeId=201
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetSKUPanelData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-06 09:27:52.9006|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetSKUPanelData?guid=c98e152337c84df2845e00f19d32e782&storeId=201
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetSKUPanelData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-06 09:29:49.4746|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetSKUPanelData?guid=c98e152337c84df2845e00f19d32e782&storeId=201
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetSKUPanelData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

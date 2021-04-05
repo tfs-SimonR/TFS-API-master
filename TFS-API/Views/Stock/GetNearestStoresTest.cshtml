@@ -1,0 +1,45 @@
+﻿@model TFS_API.Models.ViewModels.StockLocationVM
+@{
+    ViewBag.Title = "GetNearestStoresTest";
+}
+
+
+<section class="content-header">
+    <h1>Locate Stock</h1>
+</section>
+<section class="content">
+    <div class="box box-primary">
+        <div class="box-header">
+            <h4>Search</h4>
+        </div>
+        <div class="box-body">
+
+            <p>
+                @Html.TextBoxFor(x => x.productId)
+                <button id="search">Search</button>
+            </p>
+
+
+        </div>
+    </div>
+
+    <div class="box box-primary">
+        <div class="box-header">
+            <h4>Stock at Stores Below</h4>
+        </div>
+        <div class="box-body">
+            <div id="searchResults"></div>
+        </div>
+        <div class="box-footer">
+
+        </div>
+    </div>
+</section>
+<script>
+    var url = '@Url.Action("GetStockData", "Stock")';
+$('#search').click(function() {
+  var productCode = $('#productId').val();
+  $('#searchResults').load(url, { productCode: productCode });
+})
+</script>
+

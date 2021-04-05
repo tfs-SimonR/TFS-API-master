@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f2bfe2fa4fb042e69f41bb0c42ad1b79" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.branch" Width="1.5" PointX="6" PointY="55.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.brnstkchk" Width="1.5" PointX="2.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.brnstock" Width="1.5" PointX="8.25" PointY="37.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.btranscount" Width="1.5" PointX="4.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.btransdisc" Width="1.5" PointX="2.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.btranshdr" Width="1.5" PointX="8.25" PointY="67.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.btransifdata" Width="1.5" PointX="4.75" PointY="18.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.btransline" Width="1.5" PointX="5.25" PointY="40" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.consigdest" Width="1.5" PointX="12" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.consighdr" Width="1.5" PointX="9.75" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.consigline" Width="1.5" PointX="5.25" PointY="48.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.pricechghdr" Width="1.5" PointX="6.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.proddesc" Width="1.5" PointX="4.75" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.productcode" Width="1.5" PointX="3" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.product" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.purchcost" Width="1.5" PointX="8.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.purchorder" Width="1.5" PointX="14.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.purchordline" Width="1.5" PointX="11.25" PointY="35.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.reasoncode" Width="1.5" PointX="6.75" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.supplier" Width="1.5" PointX="1.5" PointY="56.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.supproduct" Width="1.5" PointX="5.25" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.supprodunit" Width="1.5" PointX="7.5" PointY="29.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.varcode" Width="1.5" PointX="0.75" PointY="38.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.consigdoc" Width="1.5" PointX="12" PointY="30.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.purchordhist" Width="1.5" PointX="16.75" PointY="14.5" IsExpanded="true" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_branches_2" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_brnstocks_1" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_btranshdrs_2" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_btranshdrs_4" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_brnstkchks_2" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_brnstocks_2" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_btranslines_2" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_consigdests_1" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_consigdocs_2" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_consiglines_2" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_productcodes_1" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_purchordline_2" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_supproducts_3" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.productcodes_FK2" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.productcodes_FK3" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.productcodes_FK8" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.productcodes_FK9" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_products_19" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_products_26" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_products_3" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_purchordline_3" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_supproducts_2" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_purchordline_7" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_suppliers_1" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_suppliers_2" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_supproducts_10" ManuallyRouted="false" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_supprodunits_1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.prodkey" Width="1.5" PointX="5.25" PointY="10.25" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.structlevel" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="mi9_mms_fs_trainModel.TOFS_RetailPrice" Width="1.5" PointX="3.375" PointY="0.75" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_prodkeys_1" />
+        <AssociationConnector Association="mi9_mms_fs_trainModel.fk_structlevels_4" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

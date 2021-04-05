@@ -1,0 +1,42 @@
+2020-03-21 13:39:58.8384|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/get-distance?postcode=BB2 5GW
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : MeasureDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-21 13:40:18.7093|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/get-distance?postcode=BB2 5GW
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : MeasureDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-21 13:41:26.5177|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/get-distance?postcode=BB2 5GW&storeId=201
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : MeasureDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-21 13:42:42.7511|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/get-distance?postcode=BB2 5GW&storeId=201
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : MeasureDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-21 13:45:14.2496|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/get-distance?postcode=BB2 5GW&storeId=201
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : MeasureDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-21 13:47:09.4246|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/get-distance?postcode=BB2 5GW&storeId=201
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : MeasureDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

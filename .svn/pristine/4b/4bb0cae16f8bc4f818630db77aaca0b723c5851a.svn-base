@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CashManagmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_CashManagement">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RJTillId" Type="Int32" Nullable="false" />
+    <Property Name="SPQTillId" Type="Int32" Nullable="false" />
+    <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+    <Property Name="ClosingFloat" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CashAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Love2Shop" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="GiftVoucherTotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CreditCardTotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Income" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Expense" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="isLocked" Type="Boolean" Nullable="false" />
+    <Property Name="SubmittedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LockedDateTime" Type="DateTime" Precision="3" />
+    <Property Name="LockedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TradingDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="tillisLive" Type="Boolean" />
+    <Property Name="isClosed" Type="Boolean" />
+    <Property Name="ClosingDateTime" Type="DateTime" Precision="3" />
+    <Property Name="isSparq" Type="Boolean" />
+    <Property Name="expectedAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LSVexpectedAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LSVdiscrepancyAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="discrepencyAmount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="isLSVdiscrepancy" Type="Boolean" />
+    <Property Name="isDescrepency" Type="Boolean" />
+    <Property Name="netSales" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="marketing1100" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="lottery1101" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="parking1102" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="postage1103" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="windows1104" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="personalvehicle1105" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="carhire1106" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="publictransport1107" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="bankcharge1108" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="milk1109" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="customerservice1126" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="tofsclubcard1198" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="wages1116" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="CashDbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_CashManagement" EntityType="Self.tbl_CashManagement" />
+    <EntitySet Name="tbl_store_till_availabilty" EntityType="CashManagmentModel.tbl_store_till_availabilty" />
+  </EntityContainer>
+  <EntityType Name="tbl_store_till_availabilty">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="storeNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TillId" Type="Int32" />
+    <Property Name="isAlive" Type="Boolean" />
+    <Property Name="DateTakenOffline" Type="DateTime" Precision="3" />
+    <Property Name="isSparq" Type="Boolean" />
+    <Property Name="TillFloat" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CashManagmentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_CashManagement">
+          <Key>
+            <PropertyRef Name="RowId" />
+          </Key>
+          <Property Name="RowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreId" Type="nvarchar(max)" />
+          <Property Name="UserId" Type="nvarchar(max)" />
+          <Property Name="RJTillId" Type="int" Nullable="false" />
+          <Property Name="SPQTillId" Type="int" Nullable="false" />
+          <Property Name="TransactionDate" Type="datetime" />
+          <Property Name="ClosingFloat" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CashAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Love2Shop" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="GiftVoucherTotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CreditCardTotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Income" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DeliverySales" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Expense" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="isLocked" Type="bit" Nullable="false" />
+          <Property Name="SubmittedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="LockedDateTime" Type="datetime" />
+          <Property Name="LockedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="isDeleted" Type="bit" Nullable="false" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="TradingDate" Type="datetime" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="tillisLive" Type="bit" />
+          <Property Name="isClosed" Type="bit" />
+          <Property Name="isEndOfDay" Type="bit" />
+          <Property Name="ClosingDateTime" Type="datetime" />
+          <Property Name="isSparq" Type="bit" />
+          <Property Name="expectedAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LSVexpectedAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="LSVdiscrepancyAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="discrepencyAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="isLSVdiscrepancy" Type="bit" />
+          <Property Name="isDescrepency" Type="bit" />
+          <Property Name="netSales" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="marketing1100" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="lottery1101" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="parking1102" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="postage1103" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="windows1104" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="personalvehicle1105" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="carhire1106" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="publictransport1107" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="bankcharge1108" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="milk1109" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="customerservice1126" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="tofsclubcard1198" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="wages1116" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="tbl_store_till_availabilty">
+          <Key>
+            <PropertyRef Name="RowId" />
+          </Key>
+          <Property Name="RowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="storeNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="TillId" Type="int" />
+          <Property Name="isAlive" Type="bit" />
+          <Property Name="DateTakenOffline" Type="datetime" />
+          <Property Name="isSparq" Type="bit" />
+          <Property Name="TillFloat" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityContainer Name="CashManagmentModelStoreContainer">
+          <EntitySet Name="tbl_CashManagement" EntityType="Self.tbl_CashManagement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_store_till_availabilty" EntityType="Self.tbl_store_till_availabilty" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CashManagmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_CashManagement">
+          <Key>
+            <PropertyRef Name="RowId" />
+          </Key>
+          <Property Name="RowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RJTillId" Type="Int32" Nullable="false" />
+          <Property Name="SPQTillId" Type="Int32" Nullable="false" />
+          <Property Name="TransactionDate" Type="DateTime" Precision="3" />
+          <Property Name="ClosingFloat" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CashAmount" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Love2Shop" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="GiftVoucherTotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CreditCardTotal" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Income" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Expense" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="isLocked" Type="Boolean" Nullable="false" />
+          <Property Name="SubmittedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LockedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="LockedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TradingDate" Type="DateTime" Precision="3" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="tillisLive" Type="Boolean" />
+          <Property Name="isClosed" Type="Boolean" />
+          <Property Name="ClosingDateTime" Type="DateTime" Precision="3" />
+          <Property Name="isSparq" Type="Boolean" />
+          <Property Name="expectedAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LSVexpectedAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="LSVdiscrepancyAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="discrepencyAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="isLSVdiscrepancy" Type="Boolean" />
+          <Property Name="isDescrepency" Type="Boolean" />
+          <Property Name="netSales" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="marketing1100" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="lottery1101" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="parking1102" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="postage1103" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="windows1104" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="personalvehicle1105" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="carhire1106" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="publictransport1107" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="bankcharge1108" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="milk1109" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="customerservice1126" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="tofsclubcard1198" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="wages1116" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DeliverySales" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="isEndOfDay" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="CashDbContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_CashManagement" EntityType="Self.tbl_CashManagement" />
+          <EntitySet Name="tbl_store_till_availabilty" EntityType="CashManagmentModel.tbl_store_till_availabilty" />
+        </EntityContainer>
+        <EntityType Name="tbl_store_till_availabilty">
+          <Key>
+            <PropertyRef Name="RowId" />
+          </Key>
+          <Property Name="RowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="storeNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TillId" Type="Int32" />
+          <Property Name="isAlive" Type="Boolean" />
+          <Property Name="DateTakenOffline" Type="DateTime" Precision="3" />
+          <Property Name="isSparq" Type="Boolean" />
+          <Property Name="TillFloat" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CashManagmentModelStoreContainer" CdmEntityContainer="CashDbContext">
+          <EntitySetMapping Name="tbl_CashManagement">
+            <EntityTypeMapping TypeName="CashManagmentModel.tbl_CashManagement">
+              <MappingFragment StoreEntitySet="tbl_CashManagement">
+                <ScalarProperty Name="isEndOfDay" ColumnName="isEndOfDay" />
+                <ScalarProperty Name="DeliverySales" ColumnName="DeliverySales" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="RJTillId" ColumnName="RJTillId" />
+                <ScalarProperty Name="SPQTillId" ColumnName="SPQTillId" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="ClosingFloat" ColumnName="ClosingFloat" />
+                <ScalarProperty Name="CashAmount" ColumnName="CashAmount" />
+                <ScalarProperty Name="Love2Shop" ColumnName="Love2Shop" />
+                <ScalarProperty Name="GiftVoucherTotal" ColumnName="GiftVoucherTotal" />
+                <ScalarProperty Name="CreditCardTotal" ColumnName="CreditCardTotal" />
+                <ScalarProperty Name="Income" ColumnName="Income" />
+                <ScalarProperty Name="Expense" ColumnName="Expense" />
+                <ScalarProperty Name="isLocked" ColumnName="isLocked" />
+                <ScalarProperty Name="SubmittedBy" ColumnName="SubmittedBy" />
+                <ScalarProperty Name="LockedDateTime" ColumnName="LockedDateTime" />
+                <ScalarProperty Name="LockedBy" ColumnName="LockedBy" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="TradingDate" ColumnName="TradingDate" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="tillisLive" ColumnName="tillisLive" />
+                <ScalarProperty Name="isClosed" ColumnName="isClosed" />
+                <ScalarProperty Name="ClosingDateTime" ColumnName="ClosingDateTime" />
+                <ScalarProperty Name="isSparq" ColumnName="isSparq" />
+                <ScalarProperty Name="expectedAmount" ColumnName="expectedAmount" />
+                <ScalarProperty Name="LSVexpectedAmount" ColumnName="LSVexpectedAmount" />
+                <ScalarProperty Name="LSVdiscrepancyAmount" ColumnName="LSVdiscrepancyAmount" />
+                <ScalarProperty Name="discrepencyAmount" ColumnName="discrepencyAmount" />
+                <ScalarProperty Name="isLSVdiscrepancy" ColumnName="isLSVdiscrepancy" />
+                <ScalarProperty Name="isDescrepency" ColumnName="isDescrepency" />
+                <ScalarProperty Name="netSales" ColumnName="netSales" />
+                <ScalarProperty Name="marketing1100" ColumnName="marketing1100" />
+                <ScalarProperty Name="lottery1101" ColumnName="lottery1101" />
+                <ScalarProperty Name="parking1102" ColumnName="parking1102" />
+                <ScalarProperty Name="postage1103" ColumnName="postage1103" />
+                <ScalarProperty Name="windows1104" ColumnName="windows1104" />
+                <ScalarProperty Name="personalvehicle1105" ColumnName="personalvehicle1105" />
+                <ScalarProperty Name="carhire1106" ColumnName="carhire1106" />
+                <ScalarProperty Name="publictransport1107" ColumnName="publictransport1107" />
+                <ScalarProperty Name="bankcharge1108" ColumnName="bankcharge1108" />
+                <ScalarProperty Name="milk1109" ColumnName="milk1109" />
+                <ScalarProperty Name="customerservice1126" ColumnName="customerservice1126" />
+                <ScalarProperty Name="tofsclubcard1198" ColumnName="tofsclubcard1198" />
+                <ScalarProperty Name="wages1116" ColumnName="wages1116" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_store_till_availabilty">
+            <EntityTypeMapping TypeName="CashManagmentModel.tbl_store_till_availabilty">
+              <MappingFragment StoreEntitySet="tbl_store_till_availabilty">
+                <ScalarProperty Name="TillFloat" ColumnName="TillFloat" />
+                <ScalarProperty Name="isSparq" ColumnName="isSparq" />
+                <ScalarProperty Name="DateTakenOffline" ColumnName="DateTakenOffline" />
+                <ScalarProperty Name="isAlive" ColumnName="isAlive" />
+                <ScalarProperty Name="TillId" ColumnName="TillId" />
+                <ScalarProperty Name="storeNumber" ColumnName="storeNumber" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,70 @@
+2020-01-22 08:34:18.7854|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RcRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-22 08:42:06.0855|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation?storeid=201&guid=07fda175104f429d9bd700617e7f7f30&forename=Andrew&surname=Banks&postcode=BB25GW&quantity=1&email=ajbanks@tofs.com&tofscardnumber=1001883566&mobilenumber=07837827349
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RcRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-22 08:43:37.2286|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation?storeid=201&guid=07fda175104f429d9bd700617e7f7f30&forename=Andrew&surname=Banks&postcode=BB25GW&quantity=1&email=ajbanks@tofs.com&tofscardnumber=1001883566&mobilenumber=07837827349
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RcRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-22 08:49:32.8872|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation?storeid=201&guid=07fda175104f429d9bd700617e7f7f30&forename=Simon&surname=Lyons&postcode=BB54DG&quantity=10&email=slyons@tofs.com&tofscardnumber=1001883567&mobilenumber=07837827349&marketing_consent=true
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RcRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-22 10:50:33.6162|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation?storeid=201&guid=07fda175104f429d9bd700617e7f7f30&forename=Simon&surname=Roberts&postcode=BB54DG&quantity=1&email=sroberts@tofs.com&tofscardnumber=1001883566&mobilenumber=07837827349&marketing_consent=true
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RcRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-22 10:51:48.3335|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation?storeid=201&guid=07fda175104f429d9bd700617e7f7f30&forename=Andrew&surname=Banks&postcode=BB54DG&quantity=1&email=ajbanks@tofs.com&tofscardnumber=1001883566&mobilenumber=07837827349&marketing_consent=true
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RcRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-22 10:52:02.2157|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation?storeid=201&guid=07fda175104f429d9bd700617e7f7f30&forename=Andrew&surname=Banks&postcode=BB54DG&quantity=1&email=ajbanks@tofs.com&tofscardnumber=1001883566&mobilenumber=07837827349&marketing_consent=true
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RcRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-22 10:57:31.4458|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation?storeid=201&guid=07fda175104f429d9bd700617e7f7f30&forename=Andrew&surname=Banks&postcode=BB54DG&quantity=1&email=ajbanks@tofs.com&tofscardnumber=1001883566&mobilenumber=07837827349&marketing_consent=true
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RcRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-22 10:58:05.9285|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation?storeid=201&guid=07fda175104f429d9bd700617e7f7f30&forename=Simon&surname=Lyons&postcode=BB54DG&quantity=1&email=slyons@tofs.com&tofscardnumber=1001883566&mobilenumber=07837827349&marketing_consent=true
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RcRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-22 11:08:28.4962|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation?storeid=201&guid=07fda175104f429d9bd700617e7f7f30&forename=Simon&surname=Lyons&postcode=BB54DG&quantity=1&email=slyons@tofs.com&tofscardnumber=1001883566&mobilenumber=07837827349&marketing_consent=true
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RcRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

@@ -1,0 +1,676 @@
+﻿using AuditDataAccessLayer;
+using Mi9DataAccessLayer;
+
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Security.Cryptography.X509Certificates;
+using System.Security.Permissions;
+using System.Threading.Tasks;
+using System.Web.Http;
+using mi9TESTDAL;
+using PICountDataAccessLayer;
+using ProcessedDAL;
+using TFS_API.Helpers;
+using TFS_API.Models;
+using TFS_API.Models.DTO;
+using TFS_API.Models.Tables;
+using TFS_API.Services;
+using TFS_API.Services.Interfaces;
+
+namespace TFS_API.Controllers
+{
+
+    /// <summary>
+    /// Counting Stuff
+    /// </summary>
+    [RoutePrefix("api/v1/Counting")]
+    public class PICountController : ApiController
+    {
+        #region Setup
+        /*Setup DB context*/
+        public readonly ApplicationDbContext _db = new ApplicationDbContext();
+        public readonly Mi9DBEntities mi9db = new Mi9DBEntities();
+        private readonly mi9_mms_fs_trainEntities _mi9TestEntities;
+        private readonly auditEntities _auditdb = new auditEntities();
+        private readonly piDBContext _piDbContext = new piDBContext();
+        private readonly ProDbContext _holdDB = new ProDbContext();
+        private readonly IHandyScannerService _handyScannerService;
+        private readonly IExceptionService _errorService;
+        private readonly IAuditService _auditService;
+        private readonly ICountingService _countingService;
+        private readonly ICreateFileService _createFileService;
+        private decimal _total_weighted_average;
+        private decimal _unit_cost_average;
+        #endregion
+
+        /// <inheritdoc />
+        public PICountController(
+            IHandyScannerService handyScannerService,
+            IExceptionService errorService,
+            IAuditService auditService,
+            ICountingService countingService,
+            ICreateFileService createFileService,
+            mi9_mms_fs_trainEntities mi9TestEntities)
+        {
+            _handyScannerService = handyScannerService;
+            _errorService = errorService;
+            _auditService = auditService;
+            _countingService = countingService;
+            _mi9TestEntities = mi9TestEntities;
+            _createFileService = createFileService;
+        }
+
+        /// <summary>
+        /// Returns list of profit protection write off / on reason codes.
+        /// </summary>
+        /// <returns></returns>
+        #if DEBUG
+#else
+        [System.Web.Http.Authorize]
+#endif
+        [Route("reasoncodelist")]
+        public HttpResponseMessage GetPPReasonCodes()
+        {
+            try
+            {
+                var resonList = new List<PPReasonCodes>
+                {
+                    new PPReasonCodes {id = 1, reason_code = "SA" ,description = "Write Off - Damaged"},
+                    new PPReasonCodes {id = 2, reason_code = "SB" ,description = "Write Off - Theft"},
+                    new PPReasonCodes {id = 3, reason_code = "SC" ,description = "Write Off - Damaged on Delivery"},
+                    new PPReasonCodes {id = 4, reason_code = "SD" ,description = "Write Off - Out Of Date"},
+                    new PPReasonCodes {id = 5, reason_code = "SF" ,description = "Write Off - Head Office"},
+                    new PPReasonCodes {id = 6, reason_code = "SI" ,description = "Write Off - Own Store Use"},
+                    new PPReasonCodes {id = 7, reason_code = "SJ" ,description = "Write Off - Odd Shoes"},
+                    new PPReasonCodes {id = 8, reason_code = "SL" ,description = "Write Off - Stock Correction"},
+                    new PPReasonCodes {id = 9, reason_code = "SM" ,description = "Write Off - Colleague Uniform"},
+                    new PPReasonCodes {id = 10, reason_code = "SN" ,description = "Write Off - Delivery Discrepancy"},
+                    new PPReasonCodes {id = 11, reason_code = "SY" ,description = "Write On - Delivery Discrepancy"},
+                    new PPReasonCodes {id = 12, reason_code = "SZ" ,description = "Write On - Stock Correction"},
+                };
+
+                return Request.CreateResponse(HttpStatusCode.Accepted, resonList);
+
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.InnerException);
+
+            }
+        }
+
+
+        /// <summary>
+        /// Write off endpoint for profit protection
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
+        #if DEBUG
+#else
+        [System.Web.Http.Authorize]
+#endif
+        [Route("productwriteoff")]
+        public async Task<HttpResponseMessage> PutWriteOff([FromBody] WriteOffDTO viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Model state not valid.");
+            }
+
+            try
+            {
+                #region Variables
+                string _store = null;
+                string _storename = null;
+                string _userid = null;
+                string _sku = null;
+                string _reasoncodestring = null;
+                string _reasoncodeDescription = null;
+                string _description = null;
+                decimal? _retailPrice = null;
+                decimal _costPrice;
+                int varint = 0;
+                int qty = 0;
+                #endregion
+
+                var flatfile = new List<string>();
+                var holdFlatFile = new List<string>();
+
+                _store = viewModel.store_id;
+                _userid = viewModel.user_id;
+                _reasoncodestring = viewModel.reason_code;
+                _reasoncodeDescription = DataHelpers.GetReasonCodeDescription(viewModel.reason_code);
+
+                var date = DateTime.Now.Date.ToString("ddMMyy");
+                var time = DateTime.Now.ToString("hhmm");
+
+                //Lets get some totals for amounts written off or adjusted in tha past 7 days
+                var pastweek = DateTime.Now.AddDays(-7);
+                var get7DaysCosttotal = _auditdb.tbl_writeoff_audit
+                    .Where(x => x.DateofWriteOff >= pastweek && x.storeid == _store).Distinct().Sum(x => x.writeofftotalcost);
+
+                //Threshold amount set by PP here from Stores Central Front End
+                var getThreshold = _holdDB.tbl_PP_ThresholdValues.Where(x => x.isInUse)
+                    .Select(x => x.thresholdvalue).FirstOrDefault();
+
+                /*MA <Storeid> +010000 <StaffId> <date> <time> <reasonCode> */
+                var line1 = "MA" + viewModel.store_id + "010000" + "0002" + date + time + _reasoncodestring;
+
+                flatfile.Add(line1);
+                holdFlatFile.Add(line1);
+                decimal total = 0;
+                foreach (var listitem in viewModel.write_off_items)
+                {
+                    decimal costPrice;
+                    _sku = listitem.sku;
+                    qty = listitem.sku_counted_qty;
+                    var _deltaValue = listitem.sku_counted_qty;
+
+                    var getProdint = DataHelpers.GetProdInt(listitem.sku);
+                    var getcostPrice = DataHelpers.GetCostPrice(listitem.sku);
+                    if (getcostPrice != null)
+                        _costPrice = (decimal) getcostPrice;
+                    var getstoreName = DataHelpers.GetStoreName(_store);
+                    if (getstoreName != null)
+                        _storename = getstoreName;
+
+                    //Lets start getting together a total price to see if it hits the thresholds.
+                    if (getcostPrice != null)
+                    {
+                        costPrice = (decimal) getcostPrice * _deltaValue;
+                        _total_weighted_average = costPrice;
+                        _unit_cost_average = (decimal) getcostPrice;
+                    }
+
+                    var getVarInt = _countingService.GetVarInt(listitem.sku);
+                    if (getVarInt != 0)
+                        varint = getVarInt;
+                    else
+                        getVarInt = 0;
+
+                    var getbrnStock = mi9db.brnstocks.FirstOrDefault(x => x.branchcode == _store && x.varint == varint);
+
+                    //if (getbrnStock != null)
+                    //    _deltaValue = (int) DataHelpers.FindDifference(_deltaValue, getbrnStock.retail);
+                    _deltaValue = listitem.sku_counted_qty;
+
+                    var getDescription = DataHelpers.GetProductDescription(getProdint);
+                    if (getDescription != null)
+                        _description = getDescription;
+                    var getRetailPrice = DataHelpers.GetRetailPrice(getProdint);
+                    if (getRetailPrice != null)
+                        _retailPrice = getRetailPrice;
+
+                    if (viewModel.user_id != "pricing")
+                    {
+                        var audit = _auditService.WriteoffAudit(_userid, _store, _sku, varint,
+                            _deltaValue, _unit_cost_average, viewModel.reason_code, 
+                            getDescription, _retailPrice, _reasoncodeDescription);
+                        _auditdb.tbl_writeoff_audit.Add(audit);
+                        await _auditdb.SaveChangesAsync();
+                    }
+
+                    var totalValue = Math.Round((decimal) (_deltaValue * getRetailPrice), 2);
+
+                    var totalvaluetoInt = (int)totalValue;
+                    var intToString = DataHelpers.setQuantity(totalvaluetoInt.ToString());
+                    var qtytoEight = DataHelpers.setQuantity(_deltaValue.ToString());
+
+                    string lines;
+                    if (viewModel.reason_code == "SY" || viewModel.reason_code == "SZ")
+                    {
+                        if (listitem.sku.Length <= 6)
+                            lines = string.Format("MV" + listitem.sku + "  " + intToString + " " + qtytoEight);
+                        else
+                            lines = string.Format("MV" + listitem.sku + intToString + " " + qtytoEight);
+                        if (_total_weighted_average < getThreshold /*&& _total_weighted_average != 0*/)
+                        {
+                            flatfile.Add(lines);
+                            if (viewModel.user_id != "pricing")
+                            {
+                                _createFileService.CreateFile(_store, flatfile);
+                            }
+                            var itemtoremove = flatfile.SingleOrDefault(item => item.Contains(_sku));
+                            flatfile.Remove(itemtoremove);
+                        }
+                        else
+                        {
+                            holdFlatFile.Add(lines);
+                            var uniqueFileName = Guid.NewGuid().ToString();
+                            //We take a snapshot here of the actual held items and qauntities etc.
+                            var dataModel = new tbl_ProfitProtectionHeldItems
+                            {
+                                DateWrittenOff = DateTime.Now,
+                                userid = _userid,
+                                storename = _storename,
+                                storeid = _store,
+                                sku = _sku,
+                                description = _description,
+                                varint = varint,
+                                quantity = qty,
+                                reasoncode = _reasoncodestring,
+                                costtotal = _total_weighted_average,
+                                retailpriceperitem = _retailPrice * qty,
+                                costvalueperitem = _unit_cost_average,
+                                eventdate = DateTime.Now,
+                                isHeld = true,
+                                uniquefilename = uniqueFileName,
+                                triggeramount = getThreshold,
+                            };
+                            _holdDB.tbl_ProfitProtectionHeldItems.Add(dataModel);
+                            await _holdDB.SaveChangesAsync();
+                            if (viewModel.user_id != "pricing")
+                            {
+                                _createFileService.HoldFlatFile(uniqueFileName, _store, holdFlatFile);
+                            }
+                            
+                            var itemtoremove = holdFlatFile.SingleOrDefault(item => item.Contains(_sku));
+                            holdFlatFile.Remove(itemtoremove);
+                        }
+                        
+                    }
+                    else
+                    {
+                        if (listitem.sku.Length <= 6)
+                            lines = string.Format("MV" + listitem.sku + "  " + intToString + "-" + qtytoEight + "-");
+                        else
+                            lines = string.Format("MV" + listitem.sku + intToString + "-" + qtytoEight + "-");
+                        if (_total_weighted_average < getThreshold /*&& _total_weighted_average != 0*/)
+                        {
+                            flatfile.Add(lines);
+                            if (viewModel.user_id != "pricing")
+                            {
+                                _createFileService.CreateFile(_store, flatfile);
+                            }
+                            var itemtoremove = flatfile.SingleOrDefault(item => item.Contains(_sku));
+                            flatfile.Remove(itemtoremove);
+                        }
+                        if (_total_weighted_average == 0 || _total_weighted_average > getThreshold)
+                        {
+                            holdFlatFile.Add(lines);
+                            var uniqueFileName = Guid.NewGuid().ToString();
+                            //We take a snapshot here of the actual held items and qauntities etc.
+                            var dataModel = new tbl_ProfitProtectionHeldItems
+                            {
+                                DateWrittenOff = DateTime.Now,
+                                userid = _userid,
+                                storename = _storename,
+                                storeid = _store,
+                                sku = _sku,
+                                description = _description,
+                                varint = varint,
+                                quantity = qty,
+                                reasoncode = _reasoncodestring,
+                                costtotal = _total_weighted_average,
+                                retailpriceperitem = _retailPrice * qty,
+                                costvalueperitem = _unit_cost_average,
+                                eventdate = DateTime.Now,
+                                isHeld = true,
+                                uniquefilename = uniqueFileName,
+                                triggeramount = getThreshold,
+                            };
+                            _holdDB.tbl_ProfitProtectionHeldItems.Add(dataModel);
+                            await _holdDB.SaveChangesAsync();
+                            if(viewModel.user_id != "pricing")
+                                _createFileService.HoldFlatFile(uniqueFileName, _store, holdFlatFile);
+                            var itemtoremove = holdFlatFile.SingleOrDefault(item => item.Contains(_sku));
+                            holdFlatFile.Remove(itemtoremove);
+                        }
+
+                    }
+
+                }
+                return Request.CreateResponse(HttpStatusCode.OK, _store);
+            }
+            catch (Exception ex)
+            {
+                _errorService.Capture(ex);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "API Error Logged", ex.InnerException);
+            }
+        }
+
+        /// <summary>
+        /// Gets the list of PI counts awaiting the store
+        /// </summary>
+        /// <param name="storeid"></param>
+        /// <returns></returns>
+#if DEBUG
+#else
+        [Authorize]
+#endif
+        [Route("getpicountlist/{storeId}")]
+        public HttpResponseMessage GetPIList(string storeid)
+        {
+            try
+            {
+                var getCountList = (from list in _piDbContext.tbl_pi_count
+                    join stores in _piDbContext.tbl_pi_count_stores on list.rowid equals stores.list_id
+                    join skulist in _piDbContext.tbl_sku_count on stores.sku_list_id equals skulist.rowId
+                    where stores.storeid == storeid && list.isDeleted == false
+                    group new {list, stores, skulist} by list.list_name
+                    into grp
+                    select new PICountVMDTO
+                    {
+                        list_id = grp.Select(x => x.list.rowid).FirstOrDefault(),
+                        expected_date = (DateTime) grp.Select(x => x.list.expexted_count_date).FirstOrDefault(),
+                        list_name = grp.Key,
+                        counted_items = grp.Select(x => new PICountVMDTO.PICountItems
+                        {
+                            sku = x.skulist.variantcode, 
+                            sku_expected_qty = (int) x.skulist.expected_qty
+
+                        }).ToList()
+                    }).ToList();
+
+                return Request.CreateResponse(HttpStatusCode.Accepted, getCountList);
+            }
+            catch (Exception ex)
+            {
+                _errorService.Capture(ex);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "API Error Logged", ex.InnerException);
+            }
+        }
+
+        /// <summary>
+        /// ADHOC Counting Submit Method
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
+        #if DEBUG
+        #else
+        [Authorize]
+        #endif
+        [Route("adhoccountsubmit")]
+        public async Task<HttpResponseMessage> PutAdHoc([FromBody] List<AdHocDTO> viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Model state not valid.");
+
+            }
+
+            try
+            {
+
+                string _storename = null;
+                string userid = null;
+                string sku = null;
+                string reasoncodestring = null;
+                string _description = null;
+                double? _costPrice = 0;
+                int varint = 0;
+                int qty = 0;
+                string store = null;
+                var branchList = new List<string>();
+                var flatfile = new List<string>();
+
+                var pastweek = DateTime.Now.AddDays(-7);
+                //var get7DaysCosttotal = _auditdb.tbl_writeoff_audit
+                //    .Where(x => x.DateofWriteOff >= pastweek && x.storeid == store).Select(x => x.costvalue).Sum();
+
+                decimal tenThousand = 10000;
+
+                var getThreshold = _holdDB.tbl_PP_ThresholdValues.Where(x => x.isInUse)
+                  .Select(x => x.thresholdvalue).FirstOrDefault();
+
+
+                foreach (var item in viewModel)
+                {
+                    var date = DateTime.Now.Date.ToString("ddMMyy");
+                    var time = DateTime.Now.ToString("hhmm");
+
+                    /*MA <Storeid> +010000 <StaffId> <date> <time> */
+                    var line1 = "MA" + item.store_id + "010000" + "0002" + date + time;
+
+                    store = item.store_id;
+                    flatfile.Add(line1);
+
+                    foreach (var listitem in item.counted_items)
+                    {
+                        decimal costPrice;
+                        sku = listitem.sku;
+                        qty = listitem.sku_counted_qty;
+
+
+                        var getcostPrice = mi9db.TOFS_CostPrice.FirstOrDefault(x => x.prodcode == sku);
+                        if (getcostPrice != null)
+                        {
+                            _costPrice = getcostPrice.Cost;
+
+                        }
+                        else
+                        {
+                            _costPrice = 0;
+                        }
+                        //Lets start getting together a total price to see if it hits the thresholds.
+                        costPrice = (decimal)_costPrice * listitem.sku_counted_qty;
+
+                        _total_weighted_average = costPrice;
+                        _unit_cost_average = (decimal)_costPrice;
+
+                        var getVarInt = _countingService.GetVarInt(listitem.sku);
+                        var getbrnStock = mi9db.brnstocks
+                            .Where(x => x.varint == getVarInt).FirstOrDefault(x => x.branchcode == item.store_id);
+
+                        //var audit = _auditService.AuditADHOCCount(getbrnStock, listitem.sku, listitem.sku_counted_qty,
+                        //        item.user_id, item.store_id, listitem.scan_date, getVarInt, (decimal)_costPrice);
+
+                        //_auditdb.tbl_ADHOCCount_Audit.Add(audit);
+                        //await _auditdb.SaveChangesAsync();
+
+                        var getProdint = (from prodcodes in mi9db.productcodes
+                                          where prodcodes.variantcode == listitem.sku
+                                          select prodcodes.prodint).FirstOrDefault();
+
+                        var getRetailPrice = (from products in mi9db.products
+                                              join productcodes in mi9db.productcodes on products.prodint equals productcodes
+                                                  .prodint
+                                              join retailprice in mi9db.TOFS_RetailPrice on productcodes.varint equals
+                                                  retailprice.Varint
+                                              where products.prodint == getProdint
+                                              select retailprice.Retail_Price).FirstOrDefault();
+
+                        var stringtoInt = int.Parse(listitem.sku_counted_qty.ToString());
+
+                        var totalValue = Math.Round((decimal) (stringtoInt * getRetailPrice), 2);
+
+                        var totalInt = (int)totalValue;
+                        var intToString = DataHelpers.replaceLastFour(totalInt.ToString());
+                        var qtytoEight = DataHelpers.setQuantity(listitem.sku_counted_qty.ToString());
+
+                        string lines;
+                        if (listitem.sku.Length <= 6)
+                        {
+                            /*MV <ProductId> TotalValue (<Quantity> * <RetailPrice>) <Quantity>*/
+                            lines = string.Format("MV" + listitem.sku + "  " + intToString + " " + qtytoEight);
+
+                        }
+                        else
+                        {
+                            /*MV <ProductId> TotalValue (<Quantity> * <RetailPrice>) <Quantity>*/
+                            lines = string.Format("MV" + listitem.sku + intToString + " " + qtytoEight);
+
+                        }
+                        flatfile.Add(lines);
+
+                        //if (_total_weighted_average < getThreshold && _total_weighted_average != 0)
+                        //{
+                        //    //_createFileService.CreateFile(store, flatfile);
+
+                        //}
+                        //else if (_total_weighted_average == 0 || _total_weighted_average > tenThousand)
+                        //{
+                        //    var UniqueFileName = Guid.NewGuid().ToString();
+                        //    //We take a snapshot here of the actual held items and qauntities etc.
+                        //    var dataModel = new tbl_ProfitProtectionHeldItems
+                        //    {
+                        //        DateWrittenOff = DateTime.Now,
+                        //        userid = userid,
+                        //        storename = _storename,
+                        //        storeid = store,
+                        //        sku = sku,
+                        //        description = _description,
+                        //        varint = varint,
+                        //        quantity = qty,
+                        //        reasoncode = reasoncodestring,
+                        //        costtotal = _total_weighted_average,
+                        //        costvalueperitem = _unit_cost_average,
+                        //        eventdate = DateTime.Now,
+                        //        isHeld = true,
+                        //        uniquefilename = UniqueFileName,
+                        //        triggeramount = getThreshold,
+                        //    };
+
+                        //    _holdDB.tbl_ProfitProtectionHeldItems.Add(dataModel);
+                        //    await _holdDB.SaveChangesAsync();
+                        //    _createFileService.HoldFlatFile(UniqueFileName, store, flatfile);
+
+                        //}
+                        //else
+                        //{
+                        //    var UniqueFileName = Guid.NewGuid().ToString();
+                        //    //We take a snapshot here of the actual held items and qauntities etc.
+                        //    var dataModel = new tbl_ProfitProtectionHeldItems
+                        //    {
+                        //        DateWrittenOff = DateTime.Now,
+                        //        userid = userid,
+                        //        storename = _storename,
+                        //        storeid = store,
+                        //        sku = sku,
+                        //        description = _description,
+                        //        varint = varint,
+                        //        quantity = qty,
+                        //        reasoncode = reasoncodestring,
+                        //        costtotal = _total_weighted_average,
+                        //        costvalueperitem = _unit_cost_average,
+                        //        eventdate = DateTime.Now,
+                        //        isHeld = true,
+                        //        uniquefilename = UniqueFileName,
+                        //        triggeramount = getThreshold,
+                        //    };
+
+                        //    _holdDB.tbl_ProfitProtectionHeldItems.Add(dataModel);
+                        //    await _holdDB.SaveChangesAsync();
+                        //    _createFileService.HoldFlatFile(UniqueFileName, store, flatfile);
+                        //}
+
+                    }
+                }
+
+                return Request.CreateResponse(HttpStatusCode.OK, branchList);
+            }
+            catch (Exception ex)
+            {
+                _errorService.Capture(ex);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "API Error Logged", ex.InnerException);
+            }
+        }
+
+        /// <summary>
+        /// PI Counting Submit Method
+        /// </summary>
+        /// <param name="viewModel"></param>
+        /// <returns></returns>
+
+        #if DEBUG
+        #else
+        [Authorize]
+        #endif
+        [Route("picountsubmit")]
+        public async Task<HttpResponseMessage> PutPiCount([FromBody] List<PICountVMDTO> viewModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Model state not valid.");
+
+            }
+
+            try
+            {
+                string store = null;
+                var branchList = new List<string>();
+                var flatfile = new List<string>();
+                foreach (var item in viewModel)
+                {
+                    var date = DateTime.Now.Date.ToString("ddMMyy");
+                    var time = DateTime.Now.ToString("hhmm");
+
+                    /*MA <Storeid> +010000 <StaffId> <date> <time> */
+                    var line1 = "MA" + item.store_id + "010000" + "0002" + date + time;
+
+                    store = item.store_id;
+                    flatfile.Add(line1);
+
+                    foreach (var listitem in item.counted_items)
+                    {
+
+                        var getVarInt = _countingService.GetVarInt(listitem.sku);
+                        
+
+                        var getbrnStock = mi9db.brnstocks
+                            .Where(x => x.varint == getVarInt).FirstOrDefault(x => x.branchcode == item.store_id);
+
+                        var audit = _auditService.PiCountAudit(getbrnStock, listitem.sku, listitem.sku_counted_qty, listitem.sku_expected_qty, item.user_name, 
+                            item.store_id, item.list_id, listitem.scan_date);
+
+                        _auditdb.tbl_PICount_Audit.Add(audit);
+                        //await _auditdb.SaveChangesAsync();
+
+                        var getProdint = (from prodcodes in mi9db.productcodes
+                                          where prodcodes.variantcode == listitem.sku
+                                          select prodcodes.prodint).FirstOrDefault();
+
+                        var getRetailPrice = (from products in mi9db.products
+                                              join productcodes in mi9db.productcodes on products.prodint equals productcodes
+                                                  .prodint
+                                              join retailprice in mi9db.TOFS_RetailPrice on productcodes.varint equals
+                                                  retailprice.Varint
+                                              where products.prodint == getProdint
+                                              select retailprice.Retail_Price).FirstOrDefault();
+
+                        var stringtoInt = int.Parse(listitem.ToString());
+
+                        var totalValue = Math.Round((decimal) (stringtoInt * getRetailPrice), 2);
+
+                        var totalInt = (int)totalValue;
+                        var intToString = DataHelpers.replaceLastFour(totalInt.ToString());
+                        var qtytoEight = DataHelpers.setQuantity(listitem.sku_counted_qty.ToString());
+
+                        string lines;
+                        if (listitem.sku.Length <= 6)
+                        {
+                            /*MV <ProductId> TotalValue (<Quantity> * <RetailPrice>) <Quantity>*/
+                            lines = string.Format("MV" + listitem.sku + "  " + intToString + " " + qtytoEight);
+
+                        }
+                        else
+                        {
+                            /*MV <ProductId> TotalValue (<Quantity> * <RetailPrice>) <Quantity>*/
+                            lines = string.Format("MV" + listitem.sku + intToString + " " + qtytoEight);
+
+                        }
+                        flatfile.Add(lines);
+
+                    }
+                }
+
+                //_createFileService.CreateFile(store, flatfile);
+
+                return Request.CreateResponse(HttpStatusCode.OK, branchList);
+            }
+            catch (Exception ex)
+            {
+                _errorService.Capture(ex);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "API Error Logged", ex.InnerException);
+            }
+
+        }
+
+    }
+}

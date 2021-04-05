@@ -1,0 +1,238 @@
+2019-01-14 10:57:55.3230|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://tfs-api/api/v1/Customer/PostCustomer
+Controller : TFS_API.Controllers.CustomerController
+Action : Post
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 10:58:32.3837|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://tfs-api/api/v1/Customer/GetCustomerSearch/0
+Controller : TFS_API.Controllers.CustomerController
+Action : GetByRandom
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 11:38:45.8995|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://tfs-api/api/v1/Customer/GetCustomerSearch/s
+Controller : TFS_API.Controllers.CustomerController
+Action : GetByRandom
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 11:38:47.7433|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://tfs-api/api/v1/Customer/GetCustomerSearch/s
+Controller : TFS_API.Controllers.CustomerController
+Action : GetByRandom
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 11:38:59.6088|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://tfs-api/api/v1/Customer/GetCustomerSearch/077077
+Controller : TFS_API.Controllers.CustomerController
+Action : GetByRandom
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 11:49:54.2549|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://tfs-api/api/v1/handyscanner/stockatstore/611734
+Controller : TFS_API.Controllers.HandyScannerController
+Action : Get
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 11:50:10.7549|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://tfs-api/api/v1/handyscanner/stockbranch/10334550/240
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 11:50:24.0827|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://tfs-api/api/v1/handyscanner/stockatstore/611734
+Controller : TFS_API.Controllers.HandyScannerController
+Action : Get
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 11:50:44.6226|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://tfs-api/api/v1/handyscanner/stockatstore/539098
+Controller : TFS_API.Controllers.HandyScannerController
+Action : Get
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 11:51:23.6746|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://tfs-api/api/v1/handyscanner/stockbranch/539098/240
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 11:52:26.6095|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://tfs-api/api/v1/handyscanner/WarehouseDelivery/fs300074004
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehouseDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 11:54:34.2284|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://tfs-api/api/v1/handyscanner/WarehouseDelivery/fs300074602
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetWarehouseDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 12:00:59.0799|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://tfs-api/api/v1/Customer/GetCustomerSearch/mag
+Controller : TFS_API.Controllers.CustomerController
+Action : GetByRandom
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 12:01:08.4387|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://tfs-api/api/v1/Customer/GetCustomerSearch/mag
+Controller : TFS_API.Controllers.CustomerController
+Action : GetByRandom
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 12:08:51.0499|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://10.0.1.39/api/v1/handyscanner/stockbranch/10334550/240
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 12:15:42.5013|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://10.0.1.39/api/v1/handyscanner/stockbranch/10334550/240
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 12:34:59.3398|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://10.0.1.39/api/v1/handyscanner/stockbranch/10334550/240
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 15:16:55.5391|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/Stockbranch/551017/068
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 15:20:13.8071|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/StockatStore/551017
+Controller : TFS_API.Controllers.HandyScannerController
+Action : Get
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 15:37:10.4960|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/Stockbranch/551017/undefined
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 15:38:23.5685|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/Stockbranch/551017/063
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 15:38:47.5941|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/Stockbranch/551017/063
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 15:41:06.6849|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/Stockbranch/551017/063
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 15:41:29.3040|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/Stockbranch/551017/063
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 15:44:01.4322|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/Stockbranch/551017/063
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 15:44:33.9231|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/Stockbranch/551017/063
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 15:46:10.2158|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/Stockbranch/551017/063
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 15:51:11.5864|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/Stockbranch/551017/063
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 16:10:00.1855|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/StockatStore/551017
+Controller : TFS_API.Controllers.HandyScannerController
+Action : Get
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 16:12:20.4617|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/StockatStore/551017
+Controller : TFS_API.Controllers.HandyScannerController
+Action : Get
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 16:15:04.3764|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/StockatStore/551017
+Controller : TFS_API.Controllers.HandyScannerController
+Action : Get
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 16:16:44.0851|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/StockatStore/551017
+Controller : TFS_API.Controllers.HandyScannerController
+Action : Get
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 16:18:29.8807|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/StockatStore/551017
+Controller : TFS_API.Controllers.HandyScannerController
+Action : Get
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-14 16:22:58.5713|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/StockatStore/551017
+Controller : TFS_API.Controllers.HandyScannerController
+Action : Get
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

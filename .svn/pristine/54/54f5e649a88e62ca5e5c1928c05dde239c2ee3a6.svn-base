@@ -1,0 +1,808 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tfs_hs_holdingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="consigdests">
+    <Key>
+      <PropertyRef Name="consignment" />
+    </Key>
+    <Property Name="warehouse" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="consignment" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="desttype" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="destination" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="condestint" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="delroute" Type="varchar" MaxLength="3" />
+    <Property Name="droppoint" Type="int" StoreGeneratedPattern="Identity" />
+    <Property Name="destdoc" Type="varchar" MaxLength="50" />
+    <Property Name="delroutedoc" Type="varchar" MaxLength="12" />
+    <Property Name="payterms" Type="varchar" MaxLength="4" />
+    <Property Name="freightchg" Type="float" />
+    <Property Name="freighttax" Type="money" />
+    <Property Name="address1" Type="varchar" MaxLength="32" />
+    <Property Name="address2" Type="varchar" MaxLength="32" />
+    <Property Name="address3" Type="varchar" MaxLength="32" />
+    <Property Name="address4" Type="varchar" MaxLength="32" />
+    <Property Name="postcode" Type="varchar" MaxLength="12" />
+    <Property Name="country" Type="varchar" MaxLength="3" />
+    <Property Name="notepad" Type="int" />
+    <Property Name="status" Type="varchar(max)" />
+    <Property Name="reference" Type="varchar" MaxLength="20" />
+    <Property Name="category" Type="varchar" MaxLength="1" />
+    <Property Name="reasoncode" Type="varchar" MaxLength="12" />
+    <Property Name="reference2" Type="varchar" MaxLength="12" />
+    <Property Name="KitAssemblyOrderDestinationID" Type="int" />
+    <Property Name="ShipDate" Type="datetime" />
+    <Property Name="ShipUser" Type="varchar" MaxLength="4" />
+    <Property Name="ReceiveDate" Type="datetime" />
+    <Property Name="ReceiveUser" Type="varchar" MaxLength="4" />
+    <Property Name="AllocStatus" Type="tinyint" />
+    <Property Name="PickStatus" Type="tinyint" />
+    <Property Name="ParcelCnt" Type="int" />
+    <Property Name="ParcelType" Type="varchar" MaxLength="3" />
+    <Property Name="DateInterfaced" Type="datetime" />
+    <Property Name="ShippingCost" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="RTVDisposalMethod" Type="tinyint" />
+    <Property Name="SourceSubLocationID" Type="int" />
+    <Property Name="UserCancelled" Type="varchar" MaxLength="4" />
+    <Property Name="DateCancelled" Type="datetime" />
+    <Property Name="UserReopened" Type="varchar" MaxLength="4" />
+    <Property Name="DateReopened" Type="datetime" />
+    <Property Name="RowVer" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="VendorLocationID" Type="int" />
+    <Property Name="ShipMethodCode" Type="varchar" MaxLength="20" />
+    <Property Name="ShipMethodCodeGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="ShipReference" Type="nvarchar" MaxLength="50" />
+    <Property Name="DriverReference" Type="nvarchar" MaxLength="50" />
+    <Property Name="TruckNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserRejected" Type="varchar" MaxLength="4" />
+    <Property Name="DateRejected" Type="datetime" />
+    <Property Name="UserApproved" Type="varchar" MaxLength="4" />
+    <Property Name="DateApproved" Type="datetime" />
+    <Property Name="DateLastModified" Type="datetime" />
+    <Property Name="DateCreatedInStore" Type="datetime" />
+    <Property Name="UserCreatedInStore" Type="nvarchar(max)" />
+    <Property Name="DateCancelledInStore" Type="datetime" />
+    <Property Name="UserCancelledInStore" Type="nvarchar(max)" />
+    <Property Name="StoreSuggestionCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateAmendedInStore" Type="datetime" />
+    <Property Name="UserAmendedInStore" Type="nvarchar(max)" />
+    <Property Name="DateApprovedInStore" Type="datetime" />
+    <Property Name="UserApprovedInStore" Type="nvarchar(max)" />
+    <Property Name="DateShippedInStore" Type="datetime" />
+    <Property Name="UserShippedInStore" Type="nvarchar(max)" />
+    <Property Name="ParentShipDestID" Type="int" />
+    <Property Name="LastChildShipCodeSuffix" Type="int" />
+    <Property Name="DateReceivedInStore" Type="datetime" />
+    <Property Name="UserReceivedInStore" Type="nvarchar(max)" />
+    <Property Name="sourceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="destName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="consighdrs">
+    <Key>
+      <PropertyRef Name="consignment" />
+    </Key>
+    <Property Name="warehouse" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="consignment" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="collect" Type="varchar" MaxLength="1" />
+    <Property Name="carrier" Type="varchar" MaxLength="4" />
+    <Property Name="notepad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="createdate" Type="datetime" Nullable="false" />
+    <Property Name="amenddate" Type="datetime" />
+    <Property Name="despatchdate" Type="datetime" />
+    <Property Name="issuedate" Type="datetime" />
+    <Property Name="confirmdate" Type="datetime" />
+    <Property Name="consigdoc" Type="varchar" MaxLength="50" />
+    <Property Name="exceptions" Type="smallint" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="authorityno" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="4" />
+    <Property Name="AmendUser" Type="varchar" MaxLength="4" />
+    <Property Name="AuthorizeUser" Type="varchar" MaxLength="4" />
+    <Property Name="AuthorizeDate" Type="datetime" />
+    <Property Name="ManyToOne" Type="bit" Nullable="false" />
+    <Property Name="ChannelType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TransferRequest" Type="bit" Nullable="false" />
+    <Property Name="TransferAll" Type="bit" Nullable="false" />
+    <Property Name="BuyerCode" Type="varchar" MaxLength="8" />
+    <Property Name="ReasonCode" Type="varchar" MaxLength="2" />
+    <Property Name="RTV" Type="bit" Nullable="false" />
+    <Property Name="TransferRequestID" Type="int" />
+    <Property Name="StoreInitiated" Type="bit" Nullable="false" />
+    <Property Name="RTVAuthRequestedUser" Type="varchar" MaxLength="4" />
+    <Property Name="RTVAuthRequestedDate" Type="datetime" />
+    <Property Name="RTVRejectNotes" Type="nvarchar" MaxLength="300" />
+    <Property Name="RTVRejectedUser" Type="varchar" MaxLength="4" />
+    <Property Name="RTVRejectedDate" Type="datetime" />
+    <Property Name="RTVCancelReasonCode" Type="varchar" MaxLength="20" />
+    <Property Name="RTVCancelReasonGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="DateExtractedToAP" Type="datetime" />
+    <Property Name="AllowAddProductsDuringPack" Type="bit" Nullable="false" />
+    <Property Name="DateCreatedInStore" Type="datetime" />
+    <Property Name="UserCreatedInStore" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="consiglines">
+    <Key>
+      <PropertyRef Name="transline" />
+    </Key>
+    <Property Name="condestint" Type="int" Nullable="false" />
+    <Property Name="transline" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="conlineint" Type="int" Nullable="false" />
+    <Property Name="destordref" Type="varchar" MaxLength="12" />
+    <Property Name="destordline" Type="int" />
+    <Property Name="destordint" Type="int" />
+    <Property Name="varint" Type="int" Nullable="false" />
+    <Property Name="batchint" Type="int" />
+    <Property Name="issueqty" Type="int" Nullable="false" />
+    <Property Name="receiveqty" Type="int" />
+    <Property Name="avcost" Type="float" Nullable="false" />
+    <Property Name="unitretail" Type="money" />
+    <Property Name="othervalue" Type="money" />
+    <Property Name="discrepqty" Type="int" />
+    <Property Name="download" Type="smallint" Nullable="false" />
+    <Property Name="RequestQty" Type="int" Nullable="false" />
+    <Property Name="ReasonCode" Type="varchar" MaxLength="12" />
+    <Property Name="WIPQty" Type="int" />
+    <Property Name="InTransitQuantity" Type="int" StoreGeneratedPattern="Computed" />
+    <Property Name="PackedQty" Type="int" Nullable="false" />
+    <Property Name="DestLocAverageCost" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="DestLocUnitPrice" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="hs_processed_consighdrs">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="consignment" Type="nvarchar" MaxLength="50" />
+    <Property Name="date_bookedin" Type="datetime" />
+    <Property Name="isBookedin" Type="bit" Nullable="false" />
+    <Property Name="storeid" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="hs_processed_interstore">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gdonumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="date_booked_in" Type="datetime" />
+    <Property Name="isBookedin" Type="bit" />
+    <Property Name="storeid" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="hs_processed_purchorders">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ponumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="date_booked_in" Type="datetime" />
+    <Property Name="isBookedin" Type="bit" />
+    <Property Name="storeid" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="purchorders">
+    <Key>
+      <PropertyRef Name="ordernumber" />
+    </Key>
+    <Property Name="suppint" Type="int" />
+    <Property Name="ordernumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="orderdate" Type="datetime" />
+    <Property Name="status" Type="smallint" />
+    <Property Name="transint" Type="int" />
+    <Property Name="shipdate" Type="datetime" />
+    <Property Name="location" Type="varchar" MaxLength="4" />
+    <Property Name="lastdeldate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tfs_hs_holding.dbo.purchordline' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="purchordline">
+    <Key>
+      <PropertyRef Name="transint" />
+      <PropertyRef Name="transline" />
+      <PropertyRef Name="varint" />
+      <PropertyRef Name="prodint" />
+      <PropertyRef Name="baseproduct" />
+      <PropertyRef Name="quantity" />
+      <PropertyRef Name="makeupqty" />
+      <PropertyRef Name="unitcost" />
+      <PropertyRef Name="netcost" />
+      <PropertyRef Name="unitretail" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="purchlineint" />
+      <PropertyRef Name="CreatedOffline" />
+      <PropertyRef Name="LandedCost" />
+      <PropertyRef Name="DutiableCost" />
+      <PropertyRef Name="MultiBrand" />
+      <PropertyRef Name="BoxCount" />
+      <PropertyRef Name="PreTicket" />
+      <PropertyRef Name="SampleQty" />
+      <PropertyRef Name="QtyPerPurchUnit" />
+      <PropertyRef Name="QtyInPurchUnits" />
+      <PropertyRef Name="FirstCostPerPurchUnit" />
+      <PropertyRef Name="TaxRate" />
+      <PropertyRef Name="DateCreated" />
+      <PropertyRef Name="DateAmendedForEDI" />
+    </Key>
+    <Property Name="transint" Type="int" Nullable="false" />
+    <Property Name="transline" Type="smallint" Nullable="false" />
+    <Property Name="location" Type="varchar" MaxLength="4" />
+    <Property Name="deliverydate" Type="datetime" />
+    <Property Name="canceldate" Type="datetime" />
+    <Property Name="varint" Type="int" Nullable="false" />
+    <Property Name="prodint" Type="int" Nullable="false" />
+    <Property Name="baseproduct" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="quantity" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="makeupqty" Type="int" Nullable="false" />
+    <Property Name="purchunits" Type="varchar" MaxLength="4" />
+    <Property Name="unitcost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="netcost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="unitretail" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="bandingunits" Type="varchar" MaxLength="4" />
+    <Property Name="packagetype" Type="varchar" MaxLength="3" />
+    <Property Name="origin" Type="varchar" MaxLength="3" />
+    <Property Name="suppprodref" Type="varchar" MaxLength="20" />
+    <Property Name="quoteref" Type="varchar" MaxLength="20" />
+    <Property Name="quotedate" Type="datetime" />
+    <Property Name="status" Type="smallint" Nullable="false" />
+    <Property Name="amendstatus" Type="smallint" />
+    <Property Name="makeupstatus" Type="smallint" />
+    <Property Name="purchlineint" Type="int" Nullable="false" />
+    <Property Name="supprodint" Type="int" />
+    <Property Name="delschstatus" Type="smallint" />
+    <Property Name="CreatedOffline" Type="bit" Nullable="false" />
+    <Property Name="LandedCost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DutiableCost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="MultiBrand" Type="bit" Nullable="false" />
+    <Property Name="BoxCount" Type="int" Nullable="false" />
+    <Property Name="PreTicket" Type="bit" Nullable="false" />
+    <Property Name="SampleQty" Type="int" Nullable="false" />
+    <Property Name="YrWeek" Type="int" />
+    <Property Name="QtyPerPurchUnit" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="QtyInPurchUnits" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="FirstCostPerPurchUnit" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="PurchUnitsID" Type="int" />
+    <Property Name="TaxRate" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="MergedIntoPOLineID" Type="int" />
+    <Property Name="CustomerOrderLineID" Type="int" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="DateAmendedForEDI" Type="datetime" Nullable="false" />
+    <Property Name="DateReopened" Type="datetime" />
+    <Property Name="QtyFromEDILastSent" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="SpecialOrderDescription" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tfs_hs_holding.dbo.statuscodes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="statuscodes">
+    <Key>
+      <PropertyRef Name="statcode" />
+      <PropertyRef Name="status" />
+      <PropertyRef Name="description" />
+      <PropertyRef Name="intvalue" />
+      <PropertyRef Name="included" />
+    </Key>
+    <Property Name="statcode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="shortdesc" Type="varchar" MaxLength="12" />
+    <Property Name="intvalue" Type="smallint" Nullable="false" />
+    <Property Name="included" Type="varchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tfs_hs_holding.dbo.suppliers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="suppliers">
+    <Key>
+      <PropertyRef Name="supplier" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="shortname" />
+      <PropertyRef Name="accounttype" />
+      <PropertyRef Name="leadtimetype" />
+      <PropertyRef Name="createdate" />
+      <PropertyRef Name="suppint" />
+      <PropertyRef Name="EdiStatus" />
+      <PropertyRef Name="EdiFormat" />
+      <PropertyRef Name="EdiPo" />
+      <PropertyRef Name="EdiPoAck" />
+      <PropertyRef Name="EdiPoAmend" />
+      <PropertyRef Name="EdiInvoice" />
+      <PropertyRef Name="EdiAsn" />
+      <PropertyRef Name="EdiPayment" />
+      <PropertyRef Name="EdiCatalog" />
+      <PropertyRef Name="EdiFuncAck" />
+      <PropertyRef Name="AutoAuthorizeOrders" />
+      <PropertyRef Name="Import" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="Fulfillment" />
+      <PropertyRef Name="FFShipChargeType" />
+      <PropertyRef Name="FFShipChargeCountType" />
+      <PropertyRef Name="FFUsePackaging" />
+      <PropertyRef Name="FFPackagingOptimizationType" />
+      <PropertyRef Name="CreatedOffline" />
+      <PropertyRef Name="Interfaced" />
+      <PropertyRef Name="PreTicket" />
+      <PropertyRef Name="DUNS" />
+      <PropertyRef Name="RequireVendorProduct" />
+      <PropertyRef Name="RequireVendorUPC" />
+      <PropertyRef Name="Edi850ControlNumber" />
+      <PropertyRef Name="VMI" />
+      <PropertyRef Name="AutoReceiveASN" />
+      <PropertyRef Name="CancelAfterDays" />
+      <PropertyRef Name="Edi850DTM001InUse" />
+      <PropertyRef Name="Edi850DTM010InUse" />
+      <PropertyRef Name="Edi850DTM037InUse" />
+      <PropertyRef Name="Edi850DTM038InUse" />
+      <PropertyRef Name="Edi850DTM074InUse" />
+      <PropertyRef Name="VendorLocationsInUse" />
+      <PropertyRef Name="EdiUseTildeAsSegmentTerminator" />
+      <PropertyRef Name="EnforceVendorCompanyLocationRules" />
+      <PropertyRef Name="UseSystemTolerance" />
+      <PropertyRef Name="ImportingCompanyGLU" />
+      <PropertyRef Name="SbaContractInUse" />
+      <PropertyRef Name="CommercialDiscountPercent" />
+      <PropertyRef Name="DefectiveMerchandiseDiscountPercent" />
+      <PropertyRef Name="EdiProviderGLU" />
+      <PropertyRef Name="EdiMessagingProtocolGLU" />
+      <PropertyRef Name="OrderPlanRequired" />
+      <PropertyRef Name="AllowBrokenPacks" />
+      <PropertyRef Name="NewStoreDiscountDays" />
+      <PropertyRef Name="EdiProductActivity" />
+      <PropertyRef Name="UpdateCostOnASN" />
+      <PropertyRef Name="RebateVendorGLU" />
+      <PropertyRef Name="VerticallyIntegratedRetailer" />
+      <PropertyRef Name="SpecialOrders" />
+      <PropertyRef Name="SpecialOrdersSpecRequired" />
+      <PropertyRef Name="Edi850DTM001DeliveryDateInUse" />
+      <PropertyRef Name="Edi850SDQInUse" />
+      <PropertyRef Name="Edi850TD5InUse" />
+      <PropertyRef Name="Edi850ITDInUse" />
+      <PropertyRef Name="EdiFuncAckForInvoice" />
+    </Key>
+    <Property Name="supplier" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="shortname" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="commsline" Type="varchar" MaxLength="15" />
+    <Property Name="hoaccountno" Type="varchar" MaxLength="12" />
+    <Property Name="grpaccountno" Type="varchar" MaxLength="12" />
+    <Property Name="category" Type="varchar" MaxLength="3" />
+    <Property Name="typecode" Type="varchar" MaxLength="3" />
+    <Property Name="class" Type="varchar" MaxLength="3" />
+    <Property Name="accounttype" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="buyer" Type="varchar" MaxLength="8" />
+    <Property Name="ordermethod" Type="varchar" MaxLength="1" />
+    <Property Name="merchplan" Type="varchar" MaxLength="3" />
+    <Property Name="invmethod" Type="varchar" MaxLength="1" />
+    <Property Name="paymethod" Type="varchar" MaxLength="20" />
+    <Property Name="currency" Type="varchar" MaxLength="3" />
+    <Property Name="retmethod" Type="varchar" MaxLength="1" />
+    <Property Name="creditproc" Type="varchar" MaxLength="1" />
+    <Property Name="minlead" Type="int" />
+    <Property Name="maxlead" Type="int" />
+    <Property Name="leadtimetype" Type="smallint" Nullable="false" />
+    <Property Name="orderbranch" Type="int" />
+    <Property Name="historylevel" Type="varchar" MaxLength="1" />
+    <Property Name="suppprod" Type="varchar" MaxLength="1" />
+    <Property Name="lastmovedate" Type="datetime" />
+    <Property Name="createdate" Type="datetime" Nullable="false" />
+    <Property Name="amenddate" Type="datetime" />
+    <Property Name="deletedate" Type="datetime" />
+    <Property Name="suppint" Type="int" Nullable="false" />
+    <Property Name="suspreason" Type="varchar" MaxLength="2" />
+    <Property Name="suspreasonra" Type="varchar" MaxLength="2" />
+    <Property Name="suspreasonap" Type="varchar" MaxLength="2" />
+    <Property Name="suspdate" Type="datetime" />
+    <Property Name="suspuser" Type="varchar" MaxLength="4" />
+    <Property Name="reinstdate" Type="datetime" />
+    <Property Name="reinstuser" Type="varchar" MaxLength="4" />
+    <Property Name="status" Type="varchar" MaxLength="1" />
+    <Property Name="minorder" Type="int" />
+    <Property Name="maxorder" Type="int" />
+    <Property Name="anacode" Type="varchar" MaxLength="13" />
+    <Property Name="discount" Type="float" />
+    <Property Name="languageid" Type="varchar" MaxLength="2" />
+    <Property Name="settletype" Type="varchar" MaxLength="3" />
+    <Property Name="taxregno" Type="varchar" MaxLength="32" />
+    <Property Name="printprice" Type="varchar" MaxLength="1" />
+    <Property Name="supptype" Type="smallint" />
+    <Property Name="buymethod" Type="varchar" MaxLength="4" />
+    <Property Name="stdindclass" Type="varchar" MaxLength="4" />
+    <Property Name="dbrating" Type="varchar" MaxLength="4" />
+    <Property Name="reportcat" Type="varchar" MaxLength="1" />
+    <Property Name="carrier" Type="varchar" MaxLength="4" />
+    <Property Name="multilocords" Type="varchar" MaxLength="1" />
+    <Property Name="maxdelval" Type="int" />
+    <Property Name="mindelval" Type="int" />
+    <Property Name="allowbo" Type="varchar" MaxLength="1" />
+    <Property Name="compafter" Type="int" />
+    <Property Name="sa01" Type="varchar" MaxLength="20" />
+    <Property Name="sa02" Type="varchar" MaxLength="20" />
+    <Property Name="sa03" Type="varchar" MaxLength="20" />
+    <Property Name="sa04" Type="varchar" MaxLength="20" />
+    <Property Name="sa05" Type="varchar" MaxLength="20" />
+    <Property Name="sa06" Type="varchar" MaxLength="20" />
+    <Property Name="sa07" Type="varchar" MaxLength="20" />
+    <Property Name="sa08" Type="varchar" MaxLength="20" />
+    <Property Name="sa09" Type="varchar" MaxLength="20" />
+    <Property Name="sa10" Type="varchar" MaxLength="20" />
+    <Property Name="sa11" Type="varchar" MaxLength="20" />
+    <Property Name="sa12" Type="varchar" MaxLength="20" />
+    <Property Name="sa13" Type="varchar" MaxLength="20" />
+    <Property Name="sa14" Type="varchar" MaxLength="20" />
+    <Property Name="sa15" Type="varchar" MaxLength="20" />
+    <Property Name="sa16" Type="varchar" MaxLength="20" />
+    <Property Name="sa17" Type="varchar" MaxLength="20" />
+    <Property Name="sa18" Type="varchar" MaxLength="20" />
+    <Property Name="sa19" Type="varchar" MaxLength="20" />
+    <Property Name="sa20" Type="varchar" MaxLength="20" />
+    <Property Name="sa21" Type="varchar" MaxLength="20" />
+    <Property Name="sa22" Type="varchar" MaxLength="20" />
+    <Property Name="sa23" Type="varchar" MaxLength="20" />
+    <Property Name="sa24" Type="varchar" MaxLength="20" />
+    <Property Name="sa25" Type="varchar" MaxLength="20" />
+    <Property Name="EdiTestCodeQualifier" Type="varchar" MaxLength="2" />
+    <Property Name="EdiTestCode" Type="varchar" MaxLength="15" />
+    <Property Name="EdiLiveCodeQualifier" Type="varchar" MaxLength="2" />
+    <Property Name="EdiLiveCode" Type="varchar" MaxLength="15" />
+    <Property Name="EdiStatus" Type="tinyint" Nullable="false" />
+    <Property Name="EdiFormat" Type="tinyint" Nullable="false" />
+    <Property Name="EdiVersion" Type="varchar" MaxLength="12" />
+    <Property Name="EdiTestStartDate" Type="datetime" />
+    <Property Name="EdiLiveStartDate" Type="datetime" />
+    <Property Name="EdiSuspendDate" Type="datetime" />
+    <Property Name="EdiPo" Type="tinyint" Nullable="false" />
+    <Property Name="EdiPoAck" Type="bit" Nullable="false" />
+    <Property Name="EdiPoAmend" Type="bit" Nullable="false" />
+    <Property Name="EdiInvoice" Type="bit" Nullable="false" />
+    <Property Name="EdiAsn" Type="bit" Nullable="false" />
+    <Property Name="EdiPayment" Type="bit" Nullable="false" />
+    <Property Name="EdiCatalog" Type="bit" Nullable="false" />
+    <Property Name="EdiFuncAck" Type="bit" Nullable="false" />
+    <Property Name="AutoAuthorizeOrders" Type="tinyint" Nullable="false" />
+    <Property Name="TransportMethod" Type="varchar" MaxLength="2" />
+    <Property Name="Import" Type="bit" Nullable="false" />
+    <Property Name="Brand" Type="varchar" MaxLength="12" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Fulfillment" Type="bit" Nullable="false" />
+    <Property Name="FFShipMode" Type="varchar" MaxLength="2" />
+    <Property Name="FFShipModeInt" Type="varchar" MaxLength="2" />
+    <Property Name="FFHandlingCharge" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="FFHandlingChargeInt" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="FFItemHandlingCharge" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="FFItemHandlingChargeInt" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="FFShipChargeType" Type="tinyint" Nullable="false" />
+    <Property Name="FFShipChargeCountType" Type="tinyint" Nullable="false" />
+    <Property Name="FFUsePackaging" Type="bit" Nullable="false" />
+    <Property Name="FFPackagingOptimizationType" Type="tinyint" Nullable="false" />
+    <Property Name="CreatedOffline" Type="bit" Nullable="false" />
+    <Property Name="Interfaced" Type="bit" Nullable="false" />
+    <Property Name="DateInterfaced" Type="datetime" />
+    <Property Name="PreTicket" Type="bit" Nullable="false" />
+    <Property Name="DUNS" Type="int" Nullable="false" />
+    <Property Name="RequireVendorProduct" Type="tinyint" Nullable="false" />
+    <Property Name="RequireVendorUPC" Type="tinyint" Nullable="false" />
+    <Property Name="Edi850ControlNumber" Type="int" Nullable="false" />
+    <Property Name="VMI" Type="bit" Nullable="false" />
+    <Property Name="AutoReceiveASN" Type="tinyint" Nullable="false" />
+    <Property Name="CancelAfterDays" Type="tinyint" Nullable="false" />
+    <Property Name="Edi850DTM001InUse" Type="bit" Nullable="false" />
+    <Property Name="Edi850DTM010InUse" Type="bit" Nullable="false" />
+    <Property Name="Edi850DTM037InUse" Type="bit" Nullable="false" />
+    <Property Name="Edi850DTM038InUse" Type="bit" Nullable="false" />
+    <Property Name="Edi850DTM074InUse" Type="bit" Nullable="false" />
+    <Property Name="EdiLastInvoiceCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="EdiLastASNCode" Type="varchar" MaxLength="20" />
+    <Property Name="VendorLocationsInUse" Type="bit" Nullable="false" />
+    <Property Name="EdiUseTildeAsSegmentTerminator" Type="tinyint" Nullable="false" />
+    <Property Name="EnforceVendorCompanyLocationRules" Type="tinyint" Nullable="false" />
+    <Property Name="UseSystemTolerance" Type="bit" Nullable="false" />
+    <Property Name="ImportingCompany" Type="varchar" MaxLength="20" />
+    <Property Name="ImportingCompanyGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="SbaContractInUse" Type="bit" Nullable="false" />
+    <Property Name="SbaContractStartDate" Type="date" />
+    <Property Name="CommercialDiscountPercent" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="CommercialDiscountPercentStartDate" Type="date" />
+    <Property Name="DefectiveMerchandiseDiscountPercent" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="DefectiveMerchandiseDiscountPercentStartDate" Type="date" />
+    <Property Name="EdiProvider" Type="varchar" MaxLength="20" />
+    <Property Name="EdiProviderGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="EdiMessagingProtocol" Type="varchar" MaxLength="20" />
+    <Property Name="EdiMessagingProtocolGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="OrderPlanRequired" Type="bit" Nullable="false" />
+    <Property Name="AllowBrokenPacks" Type="bit" Nullable="false" />
+    <Property Name="NewStoreDiscountDays" Type="tinyint" Nullable="false" />
+    <Property Name="EdiProductActivity" Type="bit" Nullable="false" />
+    <Property Name="UpdateCostOnASN" Type="bit" Nullable="false" />
+    <Property Name="RebateVendor" Type="varchar" MaxLength="20" />
+    <Property Name="RebateVendorGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="VerticallyIntegratedRetailer" Type="bit" Nullable="false" />
+    <Property Name="SpecialOrders" Type="bit" Nullable="false" />
+    <Property Name="SpecialOrdersSpecRequired" Type="bit" Nullable="false" />
+    <Property Name="Edi850DTM001DeliveryDateInUse" Type="bit" Nullable="false" />
+    <Property Name="Edi850SDQInUse" Type="bit" Nullable="false" />
+    <Property Name="Edi850TD5InUse" Type="bit" Nullable="false" />
+    <Property Name="Edi850ITDInUse" Type="bit" Nullable="false" />
+    <Property Name="EdiFuncAckForInvoice" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_PP_ThresholdValues">
+    <Key>
+      <PropertyRef Name="rowId" />
+    </Key>
+    <Property Name="rowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="thresholdvalue" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="createdby" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="datecreated" Type="datetime" Nullable="false" />
+    <Property Name="dateupdated" Type="datetime" />
+    <Property Name="updatedby" Type="nvarchar" MaxLength="50" />
+    <Property Name="isInUse" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tbl_ProfitProtectionHeldItems">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateWrittenOff" Type="datetime" Nullable="false" />
+    <Property Name="userid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="storename" Type="nvarchar" MaxLength="50" />
+    <Property Name="storeid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sku" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="varint" Type="int" Nullable="false" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+    <Property Name="reasoncode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="retailpriceperitem" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="costvalueperitem" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="costtotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="triggeramount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="eventdate" Type="datetime" Nullable="false" />
+    <Property Name="isHeld" Type="bit" />
+    <Property Name="uniquefilename" Type="nvarchar" MaxLength="128" />
+    <Property Name="isDeleted" Type="bit" />
+    <Property Name="DateDeleted" Type="datetime" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TOFS_12WeeksSales">
+    <Key>
+      <PropertyRef Name="rowId" />
+    </Key>
+    <Property Name="rowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="branchcode" Type="varchar" MaxLength="4" />
+    <Property Name="varint" Type="int" />
+    <Property Name="salesweek" Type="varchar" MaxLength="6" />
+    <Property Name="Sales" Type="int" />
+  </EntityType>
+  <EntityContainer Name="tfs_hs_holdingModelStoreContainer">
+    <EntitySet Name="consigdests" EntityType="Self.consigdests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="consighdrs" EntityType="Self.consighdrs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="consiglines" EntityType="Self.consiglines" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hs_processed_consighdrs" EntityType="Self.hs_processed_consighdrs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hs_processed_interstore" EntityType="Self.hs_processed_interstore" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hs_processed_purchorders" EntityType="Self.hs_processed_purchorders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="purchorders" EntityType="Self.purchorders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_PP_ThresholdValues" EntityType="Self.tbl_PP_ThresholdValues" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_ProfitProtectionHeldItems" EntityType="Self.tbl_ProfitProtectionHeldItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TOFS_12WeeksSales" EntityType="Self.TOFS_12WeeksSales" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="purchordline" EntityType="Self.purchordline" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [purchordline].[transint] AS [transint], 
+    [purchordline].[transline] AS [transline], 
+    [purchordline].[location] AS [location], 
+    [purchordline].[deliverydate] AS [deliverydate], 
+    [purchordline].[canceldate] AS [canceldate], 
+    [purchordline].[varint] AS [varint], 
+    [purchordline].[prodint] AS [prodint], 
+    [purchordline].[baseproduct] AS [baseproduct], 
+    [purchordline].[quantity] AS [quantity], 
+    [purchordline].[makeupqty] AS [makeupqty], 
+    [purchordline].[purchunits] AS [purchunits], 
+    [purchordline].[unitcost] AS [unitcost], 
+    [purchordline].[netcost] AS [netcost], 
+    [purchordline].[unitretail] AS [unitretail], 
+    [purchordline].[bandingunits] AS [bandingunits], 
+    [purchordline].[packagetype] AS [packagetype], 
+    [purchordline].[origin] AS [origin], 
+    [purchordline].[suppprodref] AS [suppprodref], 
+    [purchordline].[quoteref] AS [quoteref], 
+    [purchordline].[quotedate] AS [quotedate], 
+    [purchordline].[status] AS [status], 
+    [purchordline].[amendstatus] AS [amendstatus], 
+    [purchordline].[makeupstatus] AS [makeupstatus], 
+    [purchordline].[purchlineint] AS [purchlineint], 
+    [purchordline].[supprodint] AS [supprodint], 
+    [purchordline].[delschstatus] AS [delschstatus], 
+    [purchordline].[CreatedOffline] AS [CreatedOffline], 
+    [purchordline].[LandedCost] AS [LandedCost], 
+    [purchordline].[DutiableCost] AS [DutiableCost], 
+    [purchordline].[MultiBrand] AS [MultiBrand], 
+    [purchordline].[BoxCount] AS [BoxCount], 
+    [purchordline].[PreTicket] AS [PreTicket], 
+    [purchordline].[SampleQty] AS [SampleQty], 
+    [purchordline].[YrWeek] AS [YrWeek], 
+    [purchordline].[QtyPerPurchUnit] AS [QtyPerPurchUnit], 
+    [purchordline].[QtyInPurchUnits] AS [QtyInPurchUnits], 
+    [purchordline].[FirstCostPerPurchUnit] AS [FirstCostPerPurchUnit], 
+    [purchordline].[PurchUnitsID] AS [PurchUnitsID], 
+    [purchordline].[TaxRate] AS [TaxRate], 
+    [purchordline].[MergedIntoPOLineID] AS [MergedIntoPOLineID], 
+    [purchordline].[CustomerOrderLineID] AS [CustomerOrderLineID], 
+    [purchordline].[DateCreated] AS [DateCreated], 
+    [purchordline].[DateAmendedForEDI] AS [DateAmendedForEDI], 
+    [purchordline].[DateReopened] AS [DateReopened], 
+    [purchordline].[QtyFromEDILastSent] AS [QtyFromEDILastSent], 
+    [purchordline].[SpecialOrderDescription] AS [SpecialOrderDescription]
+    FROM [dbo].[purchordline] AS [purchordline]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="statuscodes" EntityType="Self.statuscodes" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [statuscodes].[statcode] AS [statcode], 
+    [statuscodes].[status] AS [status], 
+    [statuscodes].[description] AS [description], 
+    [statuscodes].[shortdesc] AS [shortdesc], 
+    [statuscodes].[intvalue] AS [intvalue], 
+    [statuscodes].[included] AS [included]
+    FROM [dbo].[statuscodes] AS [statuscodes]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="suppliers" EntityType="Self.suppliers" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [suppliers].[supplier] AS [supplier], 
+    [suppliers].[name] AS [name], 
+    [suppliers].[shortname] AS [shortname], 
+    [suppliers].[commsline] AS [commsline], 
+    [suppliers].[hoaccountno] AS [hoaccountno], 
+    [suppliers].[grpaccountno] AS [grpaccountno], 
+    [suppliers].[category] AS [category], 
+    [suppliers].[typecode] AS [typecode], 
+    [suppliers].[class] AS [class], 
+    [suppliers].[accounttype] AS [accounttype], 
+    [suppliers].[buyer] AS [buyer], 
+    [suppliers].[ordermethod] AS [ordermethod], 
+    [suppliers].[merchplan] AS [merchplan], 
+    [suppliers].[invmethod] AS [invmethod], 
+    [suppliers].[paymethod] AS [paymethod], 
+    [suppliers].[currency] AS [currency], 
+    [suppliers].[retmethod] AS [retmethod], 
+    [suppliers].[creditproc] AS [creditproc], 
+    [suppliers].[minlead] AS [minlead], 
+    [suppliers].[maxlead] AS [maxlead], 
+    [suppliers].[leadtimetype] AS [leadtimetype], 
+    [suppliers].[orderbranch] AS [orderbranch], 
+    [suppliers].[historylevel] AS [historylevel], 
+    [suppliers].[suppprod] AS [suppprod], 
+    [suppliers].[lastmovedate] AS [lastmovedate], 
+    [suppliers].[createdate] AS [createdate], 
+    [suppliers].[amenddate] AS [amenddate], 
+    [suppliers].[deletedate] AS [deletedate], 
+    [suppliers].[suppint] AS [suppint], 
+    [suppliers].[suspreason] AS [suspreason], 
+    [suppliers].[suspreasonra] AS [suspreasonra], 
+    [suppliers].[suspreasonap] AS [suspreasonap], 
+    [suppliers].[suspdate] AS [suspdate], 
+    [suppliers].[suspuser] AS [suspuser], 
+    [suppliers].[reinstdate] AS [reinstdate], 
+    [suppliers].[reinstuser] AS [reinstuser], 
+    [suppliers].[status] AS [status], 
+    [suppliers].[minorder] AS [minorder], 
+    [suppliers].[maxorder] AS [maxorder], 
+    [suppliers].[anacode] AS [anacode], 
+    [suppliers].[discount] AS [discount], 
+    [suppliers].[languageid] AS [languageid], 
+    [suppliers].[settletype] AS [settletype], 
+    [suppliers].[taxregno] AS [taxregno], 
+    [suppliers].[printprice] AS [printprice], 
+    [suppliers].[supptype] AS [supptype], 
+    [suppliers].[buymethod] AS [buymethod], 
+    [suppliers].[stdindclass] AS [stdindclass], 
+    [suppliers].[dbrating] AS [dbrating], 
+    [suppliers].[reportcat] AS [reportcat], 
+    [suppliers].[carrier] AS [carrier], 
+    [suppliers].[multilocords] AS [multilocords], 
+    [suppliers].[maxdelval] AS [maxdelval], 
+    [suppliers].[mindelval] AS [mindelval], 
+    [suppliers].[allowbo] AS [allowbo], 
+    [suppliers].[compafter] AS [compafter], 
+    [suppliers].[sa01] AS [sa01], 
+    [suppliers].[sa02] AS [sa02], 
+    [suppliers].[sa03] AS [sa03], 
+    [suppliers].[sa04] AS [sa04], 
+    [suppliers].[sa05] AS [sa05], 
+    [suppliers].[sa06] AS [sa06], 
+    [suppliers].[sa07] AS [sa07], 
+    [suppliers].[sa08] AS [sa08], 
+    [suppliers].[sa09] AS [sa09], 
+    [suppliers].[sa10] AS [sa10], 
+    [suppliers].[sa11] AS [sa11], 
+    [suppliers].[sa12] AS [sa12], 
+    [suppliers].[sa13] AS [sa13], 
+    [suppliers].[sa14] AS [sa14], 
+    [suppliers].[sa15] AS [sa15], 
+    [suppliers].[sa16] AS [sa16], 
+    [suppliers].[sa17] AS [sa17], 
+    [suppliers].[sa18] AS [sa18], 
+    [suppliers].[sa19] AS [sa19], 
+    [suppliers].[sa20] AS [sa20], 
+    [suppliers].[sa21] AS [sa21], 
+    [suppliers].[sa22] AS [sa22], 
+    [suppliers].[sa23] AS [sa23], 
+    [suppliers].[sa24] AS [sa24], 
+    [suppliers].[sa25] AS [sa25], 
+    [suppliers].[EdiTestCodeQualifier] AS [EdiTestCodeQualifier], 
+    [suppliers].[EdiTestCode] AS [EdiTestCode], 
+    [suppliers].[EdiLiveCodeQualifier] AS [EdiLiveCodeQualifier], 
+    [suppliers].[EdiLiveCode] AS [EdiLiveCode], 
+    [suppliers].[EdiStatus] AS [EdiStatus], 
+    [suppliers].[EdiFormat] AS [EdiFormat], 
+    [suppliers].[EdiVersion] AS [EdiVersion], 
+    [suppliers].[EdiTestStartDate] AS [EdiTestStartDate], 
+    [suppliers].[EdiLiveStartDate] AS [EdiLiveStartDate], 
+    [suppliers].[EdiSuspendDate] AS [EdiSuspendDate], 
+    [suppliers].[EdiPo] AS [EdiPo], 
+    [suppliers].[EdiPoAck] AS [EdiPoAck], 
+    [suppliers].[EdiPoAmend] AS [EdiPoAmend], 
+    [suppliers].[EdiInvoice] AS [EdiInvoice], 
+    [suppliers].[EdiAsn] AS [EdiAsn], 
+    [suppliers].[EdiPayment] AS [EdiPayment], 
+    [suppliers].[EdiCatalog] AS [EdiCatalog], 
+    [suppliers].[EdiFuncAck] AS [EdiFuncAck], 
+    [suppliers].[AutoAuthorizeOrders] AS [AutoAuthorizeOrders], 
+    [suppliers].[TransportMethod] AS [TransportMethod], 
+    [suppliers].[Import] AS [Import], 
+    [suppliers].[Brand] AS [Brand], 
+    [suppliers].[Active] AS [Active], 
+    [suppliers].[Fulfillment] AS [Fulfillment], 
+    [suppliers].[FFShipMode] AS [FFShipMode], 
+    [suppliers].[FFShipModeInt] AS [FFShipModeInt], 
+    [suppliers].[FFHandlingCharge] AS [FFHandlingCharge], 
+    [suppliers].[FFHandlingChargeInt] AS [FFHandlingChargeInt], 
+    [suppliers].[FFItemHandlingCharge] AS [FFItemHandlingCharge], 
+    [suppliers].[FFItemHandlingChargeInt] AS [FFItemHandlingChargeInt], 
+    [suppliers].[FFShipChargeType] AS [FFShipChargeType], 
+    [suppliers].[FFShipChargeCountType] AS [FFShipChargeCountType], 
+    [suppliers].[FFUsePackaging] AS [FFUsePackaging], 
+    [suppliers].[FFPackagingOptimizationType] AS [FFPackagingOptimizationType], 
+    [suppliers].[CreatedOffline] AS [CreatedOffline], 
+    [suppliers].[Interfaced] AS [Interfaced], 
+    [suppliers].[DateInterfaced] AS [DateInterfaced], 
+    [suppliers].[PreTicket] AS [PreTicket], 
+    [suppliers].[DUNS] AS [DUNS], 
+    [suppliers].[RequireVendorProduct] AS [RequireVendorProduct], 
+    [suppliers].[RequireVendorUPC] AS [RequireVendorUPC], 
+    [suppliers].[Edi850ControlNumber] AS [Edi850ControlNumber], 
+    [suppliers].[VMI] AS [VMI], 
+    [suppliers].[AutoReceiveASN] AS [AutoReceiveASN], 
+    [suppliers].[CancelAfterDays] AS [CancelAfterDays], 
+    [suppliers].[Edi850DTM001InUse] AS [Edi850DTM001InUse], 
+    [suppliers].[Edi850DTM010InUse] AS [Edi850DTM010InUse], 
+    [suppliers].[Edi850DTM037InUse] AS [Edi850DTM037InUse], 
+    [suppliers].[Edi850DTM038InUse] AS [Edi850DTM038InUse], 
+    [suppliers].[Edi850DTM074InUse] AS [Edi850DTM074InUse], 
+    [suppliers].[EdiLastInvoiceCode] AS [EdiLastInvoiceCode], 
+    [suppliers].[EdiLastASNCode] AS [EdiLastASNCode], 
+    [suppliers].[VendorLocationsInUse] AS [VendorLocationsInUse], 
+    [suppliers].[EdiUseTildeAsSegmentTerminator] AS [EdiUseTildeAsSegmentTerminator], 
+    [suppliers].[EnforceVendorCompanyLocationRules] AS [EnforceVendorCompanyLocationRules], 
+    [suppliers].[UseSystemTolerance] AS [UseSystemTolerance], 
+    [suppliers].[ImportingCompany] AS [ImportingCompany], 
+    [suppliers].[ImportingCompanyGLU] AS [ImportingCompanyGLU], 
+    [suppliers].[SbaContractInUse] AS [SbaContractInUse], 
+    [suppliers].[SbaContractStartDate] AS [SbaContractStartDate], 
+    [suppliers].[CommercialDiscountPercent] AS [CommercialDiscountPercent], 
+    [suppliers].[CommercialDiscountPercentStartDate] AS [CommercialDiscountPercentStartDate], 
+    [suppliers].[DefectiveMerchandiseDiscountPercent] AS [DefectiveMerchandiseDiscountPercent], 
+    [suppliers].[DefectiveMerchandiseDiscountPercentStartDate] AS [DefectiveMerchandiseDiscountPercentStartDate], 
+    [suppliers].[EdiProvider] AS [EdiProvider], 
+    [suppliers].[EdiProviderGLU] AS [EdiProviderGLU], 
+    [suppliers].[EdiMessagingProtocol] AS [EdiMessagingProtocol], 
+    [suppliers].[EdiMessagingProtocolGLU] AS [EdiMessagingProtocolGLU], 
+    [suppliers].[OrderPlanRequired] AS [OrderPlanRequired], 
+    [suppliers].[AllowBrokenPacks] AS [AllowBrokenPacks], 
+    [suppliers].[NewStoreDiscountDays] AS [NewStoreDiscountDays], 
+    [suppliers].[EdiProductActivity] AS [EdiProductActivity], 
+    [suppliers].[UpdateCostOnASN] AS [UpdateCostOnASN], 
+    [suppliers].[RebateVendor] AS [RebateVendor], 
+    [suppliers].[RebateVendorGLU] AS [RebateVendorGLU], 
+    [suppliers].[VerticallyIntegratedRetailer] AS [VerticallyIntegratedRetailer], 
+    [suppliers].[SpecialOrders] AS [SpecialOrders], 
+    [suppliers].[SpecialOrdersSpecRequired] AS [SpecialOrdersSpecRequired], 
+    [suppliers].[Edi850DTM001DeliveryDateInUse] AS [Edi850DTM001DeliveryDateInUse], 
+    [suppliers].[Edi850SDQInUse] AS [Edi850SDQInUse], 
+    [suppliers].[Edi850TD5InUse] AS [Edi850TD5InUse], 
+    [suppliers].[Edi850ITDInUse] AS [Edi850ITDInUse], 
+    [suppliers].[EdiFuncAckForInvoice] AS [EdiFuncAckForInvoice]
+    FROM [dbo].[suppliers] AS [suppliers]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HoldingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="hs_processed_consighdrs">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="consignment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="date_bookedin" Type="DateTime" Precision="3" />
+    <Property Name="isBookedin" Type="Boolean" Nullable="false" />
+    <Property Name="storeid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="ProcessedDBContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="hs_processed_consighdrs" EntityType="Self.hs_processed_consighdrs" />
+    <EntitySet Name="hs_processed_interstore" EntityType="HoldingModel.hs_processed_interstore" />
+    <EntitySet Name="hs_processed_purchorders" EntityType="HoldingModel.hs_processed_purchorders" />
+    <EntitySet Name="consighdrs" EntityType="HoldingModel.consighdr" />
+    <EntitySet Name="consigdests" EntityType="HoldingModel.consigdest" />
+    <EntitySet Name="consiglines" EntityType="HoldingModel.consigline" />
+  </EntityContainer>
+  <EntityType Name="hs_processed_interstore">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="gdonumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="date_booked_in" Type="DateTime" Precision="3" />
+    <Property Name="isBookedin" Type="Boolean" />
+    <Property Name="storeid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="hs_processed_purchorders">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ponumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="date_booked_in" Type="DateTime" Precision="3" />
+    <Property Name="isBookedin" Type="Boolean" />
+    <Property Name="storeid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="consighdr">
+    <Key>
+      <PropertyRef Name="consignment" />
+    </Key>
+    <Property Name="warehouse" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="consignment" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="collect" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="carrier" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="notepad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="createdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="amenddate" Type="DateTime" Precision="3" />
+    <Property Name="despatchdate" Type="DateTime" Precision="3" />
+    <Property Name="issuedate" Type="DateTime" Precision="3" />
+    <Property Name="confirmdate" Type="DateTime" Precision="3" />
+    <Property Name="consigdoc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="exceptions" Type="Int16" Nullable="false" />
+    <Property Name="status" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="authorityno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AmendUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AuthorizeUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AuthorizeDate" Type="DateTime" Precision="3" />
+    <Property Name="ManyToOne" Type="Boolean" Nullable="false" />
+    <Property Name="ChannelType" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="TransferRequest" Type="Boolean" Nullable="false" />
+    <Property Name="TransferAll" Type="Boolean" Nullable="false" />
+    <Property Name="BuyerCode" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="ReasonCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="RTV" Type="Boolean" Nullable="false" />
+    <Property Name="TransferRequestID" Type="Int32" />
+    <Property Name="StoreInitiated" Type="Boolean" Nullable="false" />
+    <Property Name="RTVAuthRequestedUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="RTVAuthRequestedDate" Type="DateTime" Precision="3" />
+    <Property Name="RTVRejectNotes" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="RTVRejectedUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="RTVRejectedDate" Type="DateTime" Precision="3" />
+    <Property Name="RTVCancelReasonCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RTVCancelReasonGLU" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="DateExtractedToAP" Type="DateTime" Precision="3" />
+    <Property Name="AllowAddProductsDuringPack" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreatedInStore" Type="DateTime" Precision="3" />
+    <Property Name="UserCreatedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="consigdest">
+    <Key>
+      <PropertyRef Name="consignment" />
+    </Key>
+    <Property Name="warehouse" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="consignment" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="desttype" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="destination" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="condestint" Type="Int32" Nullable="false" />
+    <Property Name="delroute" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="droppoint" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="destdoc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="delroutedoc" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="payterms" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="freightchg" Type="Double" />
+    <Property Name="freighttax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="address1" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="address2" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="address3" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="address4" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="postcode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="notepad" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="reference" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="reasoncode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="reference2" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="KitAssemblyOrderDestinationID" Type="Int32" />
+    <Property Name="ShipDate" Type="DateTime" Precision="3" />
+    <Property Name="ShipUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="ReceiveDate" Type="DateTime" Precision="3" />
+    <Property Name="ReceiveUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AllocStatus" Type="Byte" Nullable="false" />
+    <Property Name="PickStatus" Type="Byte" Nullable="false" />
+    <Property Name="ParcelCnt" Type="Int32" />
+    <Property Name="ParcelType" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DateInterfaced" Type="DateTime" Precision="3" />
+    <Property Name="ShippingCost" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="RTVDisposalMethod" Type="Byte" Nullable="false" />
+    <Property Name="SourceSubLocationID" Type="Int32" Nullable="false" />
+    <Property Name="UserCancelled" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DateCancelled" Type="DateTime" Precision="3" />
+    <Property Name="UserReopened" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DateReopened" Type="DateTime" Precision="3" />
+    <Property Name="RowVer" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="VendorLocationID" Type="Int32" />
+    <Property Name="ShipMethodCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ShipMethodCodeGLU" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ShipReference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DriverReference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TruckNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserRejected" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DateRejected" Type="DateTime" Precision="3" />
+    <Property Name="UserApproved" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DateApproved" Type="DateTime" Precision="3" />
+    <Property Name="DateLastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateCreatedInStore" Type="DateTime" Precision="3" />
+    <Property Name="UserCreatedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateCancelledInStore" Type="DateTime" Precision="3" />
+    <Property Name="UserCancelledInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StoreSuggestionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateAmendedInStore" Type="DateTime" Precision="3" />
+    <Property Name="UserAmendedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateApprovedInStore" Type="DateTime" Precision="3" />
+    <Property Name="UserApprovedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateShippedInStore" Type="DateTime" Precision="3" />
+    <Property Name="UserShippedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ParentShipDestID" Type="Int32" />
+    <Property Name="LastChildShipCodeSuffix" Type="Int32" />
+    <Property Name="DateReceivedInStore" Type="DateTime" Precision="3" />
+    <Property Name="UserReceivedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="sourceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="destName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="consigline">
+    <Key>
+      <PropertyRef Name="transline" />
+    </Key>
+    <Property Name="condestint" Type="Int32" Nullable="false" />
+    <Property Name="transline" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="conlineint" Type="Int32" Nullable="false" />
+    <Property Name="destordref" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="destordline" Type="Int32" />
+    <Property Name="destordint" Type="Int32" />
+    <Property Name="varint" Type="Int32" Nullable="false" />
+    <Property Name="batchint" Type="Int32" />
+    <Property Name="issueqty" Type="Int32" Nullable="false" />
+    <Property Name="receiveqty" Type="Int32" />
+    <Property Name="avcost" Type="Double" Nullable="false" />
+    <Property Name="unitretail" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="othervalue" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="discrepqty" Type="Int32" />
+    <Property Name="download" Type="Int16" Nullable="false" />
+    <Property Name="RequestQty" Type="Int32" Nullable="false" />
+    <Property Name="ReasonCode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="WIPQty" Type="Int32" />
+    <Property Name="InTransitQuantity" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="PackedQty" Type="Int32" Nullable="false" />
+    <Property Name="DestLocAverageCost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DestLocUnitPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

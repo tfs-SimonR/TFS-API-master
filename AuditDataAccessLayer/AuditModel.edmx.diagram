@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ddc14c88e976435ab434e376ecd0032a" Name="Diagram1">
+        <EntityTypeShape EntityType="tfs_api_audit_liveModel.tbl_audit_api" Width="1.5" PointX="2.125" PointY="0.75" />
+        <EntityTypeShape EntityType="tfs_api_audit_liveModel.tbl_PICount_Audit" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="tfs_api_audit_liveModel.tbl_ADHOCCount_Audit" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="tfs_api_audit_liveModel.tbl_SupplierToStore_Audit" Width="1.5" PointX="9" PointY="0.75" />
+        <EntityTypeShape EntityType="tfs_api_audit_liveModel.tbl_WarehouseToStore_Audit" Width="1.5" PointX="5.375" PointY="3.75" />
+        <EntityTypeShape EntityType="tfs_api_audit_liveModel.tbl_goodsout_audit" Width="1.5" PointX="3.75" PointY="4" />
+        <EntityTypeShape EntityType="tfs_api_audit_liveModel.tbl_InterStore_Audit" Width="1.5" PointX="7.125" PointY="0.75" />
+        <EntityTypeShape EntityType="tfs_api_audit_liveModel.tbl_authentication_audit" Width="1.5" PointX="0.5" PointY="0.75" />
+        <EntityTypeShape EntityType="tfs_api_audit_liveModel.tbl_SupplierMassAccept_Audit" Width="1.5" PointX="0.5" PointY="2.625" />
+        <EntityTypeShape EntityType="tfs_api_audit_liveModel.tbl_cancel_allocations_audit" Width="1.5" PointX="7.125" PointY="4.625" />
+        <EntityTypeShape EntityType="tfs_api_audit_liveModel.tbl_PP_frontend_audit" Width="1.5" PointX="8.75" PointY="4.125" />
+        <EntityTypeShape EntityType="tfs_api_audit_liveModel.tbl_writeoff_audit" Width="1.5" PointX="2.125" PointY="5.375" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="69ad758ffd694e58aedb0090a9bd28dd" Name="Diagram1" ZoomLevel="13">
+        <EntityTypeShape EntityType="Mi9Model.altdesc" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mi9Model.lookupcode" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mi9Model.prodkey" Width="1.5" PointX="5.25" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mi9Model.productcode" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mi9Model.product" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mi9Model.feature" Width="1.5" PointX="8" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Mi9Model.TOFS_RetailPrice" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <AssociationConnector Association="Mi9Model.features_FK1" ManuallyRouted="false" />
+        <AssociationConnector Association="Mi9Model.fk_prodkeys_1" ManuallyRouted="false" />
+        <AssociationConnector Association="Mi9Model.fk_productcodes_1" ManuallyRouted="false" />
+        <AssociationConnector Association="Mi9Model.productcodes_FK3" ManuallyRouted="false" />
+        <AssociationConnector Association="Mi9Model.productcodes_FK8" ManuallyRouted="false" />
+        <AssociationConnector Association="Mi9Model.fk_products_26" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Mi9Model.supplier" Width="1.5" PointX="8.875" PointY="5.875" />
+        <AssociationConnector Association="Mi9Model.suppliers_FK10" />
+        <AssociationConnector Association="Mi9Model.suppliers_FK11" />
+        <AssociationConnector Association="Mi9Model.suppliers_FK12" />
+        <AssociationConnector Association="Mi9Model.suppliers_FK13" />
+        <AssociationConnector Association="Mi9Model.fk_products_19" />
+        <AssociationConnector Association="Mi9Model.fk_products_3" />
+        <AssociationConnector Association="Mi9Model.fk_suppliers_1" />
+        <AssociationConnector Association="Mi9Model.fk_suppliers_2" />
+        <EntityTypeShape EntityType="Mi9Model.supproduct" Width="1.5" PointX="11.25" PointY="14.125" />
+        <AssociationConnector Association="Mi9Model.fk_supproducts_3" />
+        <AssociationConnector Association="Mi9Model.productcodes_FK2" />
+        <AssociationConnector Association="Mi9Model.fk_supproducts_2" />
+        <AssociationConnector Association="Mi9Model.fk_supproducts_10" />
+        <EntityTypeShape EntityType="Mi9Model.brnstock" Width="1.5" PointX="5.25" PointY="23.25" />
+        <EntityTypeShape EntityType="Mi9Model.structlevel" Width="1.5" PointX="14.125" PointY="9.375" />
+        <AssociationConnector Association="Mi9Model.fk_brnstocks_2" />
+        <AssociationConnector Association="Mi9Model.structlevels_FK22" />
+        <AssociationConnector Association="Mi9Model.structlevels_FK23" />
+        <AssociationConnector Association="Mi9Model.structlevels_FK24" />
+        <AssociationConnector Association="Mi9Model.fk_structlevels_4" />
+        <EntityTypeShape EntityType="Mi9Model.btranshdr" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Mi9Model.btransline" Width="1.5" PointX="5.25" PointY="10.25" />
+        <EntityTypeShape EntityType="Mi9Model.fiscperiod" Width="1.5" PointX="13.375" PointY="0.75" />
+        <AssociationConnector Association="Mi9Model.fk_btranslines_2" />
+        <EntityTypeShape EntityType="Mi9Model.branch" Width="1.5" PointX="8" PointY="41.375" />
+        <AssociationConnector Association="Mi9Model.branches_FK16" />
+        <AssociationConnector Association="Mi9Model.branches_FK17" />
+        <AssociationConnector Association="Mi9Model.branches_FK18" />
+        <AssociationConnector Association="Mi9Model.fk_branches_2" />
+        <AssociationConnector Association="Mi9Model.fk_brnstocks_1" />
+        <AssociationConnector Association="Mi9Model.fk_btranshdrs_2" />
+        <AssociationConnector Association="Mi9Model.fk_btranshdrs_4" />
+        <EntityTypeShape EntityType="Mi9Model.brnstat" Width="1.5" PointX="11.25" PointY="38.875" />
+        <AssociationConnector Association="Mi9Model.fk_brnstats_3" />
+        <AssociationConnector Association="Mi9Model.fk_brnstats_4" />
+        <EntityTypeShape EntityType="Mi9Model.consigdest" Width="1.5" PointX="14.25" PointY="36.875" />
+        <EntityTypeShape EntityType="Mi9Model.consighdr" Width="1.5" PointX="8" PointY="78.25" />
+        <EntityTypeShape EntityType="Mi9Model.consigline" Width="1.5" PointX="5.25" PointY="30.625" />
+        <AssociationConnector Association="Mi9Model.consigdests_FK7" />
+        <AssociationConnector Association="Mi9Model.fk_consigdests_1" />
+        <AssociationConnector Association="Mi9Model.consighdrs_FK5" />
+        <AssociationConnector Association="Mi9Model.fk_consiglines_2" />
+        <EntityTypeShape EntityType="Mi9Model.purchorder" Width="1.5" PointX="8" PointY="88.25" />
+        <AssociationConnector Association="Mi9Model.purchorders_FK16" />
+        <AssociationConnector Association="Mi9Model.purchorders_FK17" />
+        <AssociationConnector Association="Mi9Model.purchorders_FK18" />
+        <AssociationConnector Association="Mi9Model.purchorders_FK19" />
+        <AssociationConnector Association="Mi9Model.purchorders_FK20" />
+        <AssociationConnector Association="Mi9Model.purchorders_FK22" />
+        <AssociationConnector Association="Mi9Model.purchorders_FK23" />
+        <EntityTypeShape EntityType="Mi9Model.purchordline" Width="1.5" PointX="16.5" PointY="16" />
+        <EntityTypeShape EntityType="Mi9Model.statuscode" Width="1.5" PointX="13.375" PointY="5.75" />
+        <AssociationConnector Association="Mi9Model.fk_purchordline_2" />
+        <AssociationConnector Association="Mi9Model.fk_purchordline_3" />
+        <AssociationConnector Association="Mi9Model.fk_purchordline_7" />
+        <EntityTypeShape EntityType="Mi9Model.tfs_store_details" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Mi9Model.tfs_stockhome_feedback" Width="1.5" PointX="15.375" PointY="4.75" />
+        <EntityTypeShape EntityType="Mi9Model.whstock" Width="1.5" PointX="16.375" PointY="7.75" />
+        <EntityTypeShape EntityType="Mi9Model.whloc" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Mi9Model.TOFS_CostPrice" Width="1.5" PointX="16.375" PointY="11.75" />
+        <EntityTypeShape EntityType="Mi9Model.TFS_Store_Updated" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Mi9Model.rpricehdr" Width="1.5" PointX="5.25" PointY="42.875" />
+        <EntityTypeShape EntityType="Mi9Model.rpricehist" Width="1.5" PointX="5.25" PointY="37.25" />
+        <AssociationConnector Association="Mi9Model.fk_rpricehdrs_2" />
+        <AssociationConnector Association="Mi9Model.fk_rpricehist_2" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

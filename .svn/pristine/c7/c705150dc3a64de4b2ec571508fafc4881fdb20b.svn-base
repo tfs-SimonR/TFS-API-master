@@ -1,0 +1,96 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Globalization;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Web.Http;
+using AuditDataAccessLayer;
+using HHTTaskDAL;
+using mi9TESTDAL;
+using Mi9DataAccessLayer;
+using ProcessedDAL;
+using PropertiesDAL;
+using TFS_API.Helpers;
+using TFS_API.Models;
+using TFS_API.Models.DTO;
+using TFS_API.Services;
+using TFS_API.Services.Interfaces;
+
+namespace TFS_API.Controllers
+{
+    [RoutePrefix("api/v1/Change")]
+    public class ChangeController : ApiController
+    {
+        #region Setup
+        /*Setup DB context*/
+        private readonly ProDbContext processedDb = new ProDbContext();
+       
+        private readonly IHandyScannerService _handyScannerService;
+        private readonly IExceptionService _errorService;
+        private readonly IAuditService _auditService;
+        private readonly ICountingService _countingService;
+        private readonly ICreateFileService _createFileService;
+        private readonly IEmailService _emailService;
+        #endregion
+
+        #region Constructors
+        /// <summary>
+        /// Android HHT Scanner End Points
+        /// </summary>
+        public ChangeController(
+            IHandyScannerService handyScannerService,
+            IExceptionService errorService,
+            IAuditService auditService,
+            ICountingService countingService,
+            ICreateFileService createFileService,
+            IEmailService emailService)
+        {
+            _handyScannerService = handyScannerService;
+            _errorService = errorService;
+            _auditService = auditService;
+            _countingService = countingService;
+            _createFileService = createFileService;
+            _emailService = emailService;
+
+        }
+
+        #endregion
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ponumber"></param>
+        /// <returns></returns>
+        public async Task<HttpResponseMessage> PutSuppliertoStoreMassAccept([FromBody] SupplierAcceptDTO ponumber)
+        {
+            var ponumberList = new List<string>();
+            var linint = 0;
+
+            try
+            {
+                var getRecord = processedDb.purchorders.FirstOrDefault(x => x.ordernumber == ponumber.po_number);
+                getRecord.status = 7;
+                processedDb.Entry(getRecord).State = EntityState.Modified;
+                await processedDb.SaveChangesAsync();
+
+               
+
+                /*Send the OK status and a list of the GDO back to the device.*/
+                return Request.CreateResponse(HttpStatusCode.OK, ponumberList);
+
+
+            }
+            catch (Exception ex)
+            {
+                _errorService.Capture(ex);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "API Error Logged " + ex.InnerException);
+
+            }
+
+        }
+    }
+}

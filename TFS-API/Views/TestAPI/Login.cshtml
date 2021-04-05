@@ -1,0 +1,103 @@
+﻿@{
+    Layout = null;
+}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>SKU SPU | Log in</title>
+<!-- Tell the browser to be responsive to screen width -->
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+<!-- Bootstrap 3.3.6 -->
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<!-- Theme style -->
+<link href="~/Content/css/AdminLTE.css" rel="stylesheet" />
+<!-- iCheck -->
+<link href="~/Content/iCheck/square/blue.css" rel="stylesheet" />
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+<style>
+    span, input[type="button"] {
+        height: 25px;
+    }
+</style>
+
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="#"><b>TOFS</b> SKU SPY</a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="login-box-body">
+            <img src="~/Content/Images/logo.svg" alt="" />
+            <form method="post">
+                <div class="input-group has-feedback">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input class="form-control" id="txtUsername" name="txtUsername" placeholder="Username" type="text" value="" height="150px">
+
+                </div>
+                <br />
+                <div class="input-group has-feedback">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input class="form-control" id="txtPassword" name="txtPassword" placeholder="Password" type="password" height="150px">
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-xs-4">
+                        <input id="btnLogin" type="submit" value="Log in" class="btn btn-primary btn-block btn-flat" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script src="~/Scripts/bootstrap.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#linkClose').click(function () {
+            $('#divError').hide('fade');
+        });
+
+        $('#btnLogin').click(function () {
+            $.ajax({
+                // Post username, password & the grant type
+                url: 'https://api.tofs.com/api/v1/authentication',
+                method: 'POST',
+                dataType: 'json',
+                data: {
+                    username: $('#txtUsername').val(),
+                    password: $('#txtPassword').val(),
+                    grant_type: 'password'
+                },
+                // When the request completes successfully, save the
+                // access token in the browser session storage and
+                // redirect the user to SKUSPY
+                success: function (response) {
+                    //sessionStorage.setItem("accessToken", response.access_token);
+                    localStorage.setItem("accessToken", response.access_token);
+                    console.log(response.access_token);
+                    window.location.href = "/STOCK/SKUSPY";
+                },
+                // Redirect to error login
+                error: function (jqXHR) {
+                    window.location.href = "/Testapi/AuthenticationFailure";
+                }
+            });
+        });
+    });
+</script>

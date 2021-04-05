@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tfs_properties_testModelStoreContainer" CdmEntityContainer="propDBContext">
+    <EntitySetMapping Name="tbl_ImageData">
+      <EntityTypeMapping TypeName="tfs_properties_testModel.tbl_ImageData">
+        <MappingFragment StoreEntitySet="tbl_ImageData">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="fileName" ColumnName="fileName" />
+          <ScalarProperty Name="mimeType" ColumnName="mimeType" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

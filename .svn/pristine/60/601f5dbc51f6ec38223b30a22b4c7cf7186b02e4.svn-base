@@ -1,0 +1,56 @@
+2020-01-24 13:00:18.5056|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetSKUPanelData?guid=efe7e5fb8d1c413389311f880085580f
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetSKUPanelData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-24 14:02:17.1348|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/customerAPI/bustaque
+Controller : TFS_API.Controllers.CustomerAPIController
+Action : PostBustAQueue
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-24 14:02:34.5582|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/customerAPI/bustaque
+Controller : TFS_API.Controllers.CustomerAPIController
+Action : PostBustAQueue
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-24 14:04:03.9143|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/customerAPI/bustaque
+Controller : TFS_API.Controllers.CustomerAPIController
+Action : PostBustAQueue
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-24 14:44:07.6750|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/customerAPI/bustaque
+Controller : TFS_API.Controllers.CustomerAPIController
+Action : PostBustAQueue
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-24 14:44:25.9790|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/customerAPI/bustaque
+Controller : TFS_API.Controllers.CustomerAPIController
+Action : PostBustAQueue
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-24 14:47:46.0257|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/customerAPI/bustaque
+Controller : TFS_API.Controllers.CustomerAPIController
+Action : PostBustAQueue
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-24 14:56:24.3446|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/customerAPI/bustaque
+Controller : TFS_API.Controllers.CustomerAPIController
+Action : PostBustAQueue
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

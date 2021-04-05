@@ -1,0 +1,56 @@
+2018-12-20 17:13:40.8907|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/handyscanner/10254607/124
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2018-12-20 17:16:19.3910|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/handyscanner/10334550/240
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2018-12-20 17:16:51.1019|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/handyscanner/10334550/240
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2018-12-20 17:16:54.3588|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/handyscanner/10334550/240
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2018-12-20 17:22:31.0295|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/handyscanner/10334550/240
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStockData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2018-12-20 17:24:52.1387|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/account/register
+Controller : TFS_API.Controllers.AccountController
+Action : Register
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2018-12-20 17:25:42.2253|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/account/register
+Controller : TFS_API.Controllers.AccountController
+Action : Register
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2018-12-20 17:26:37.2279|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/account/register
+Controller : TFS_API.Controllers.AccountController
+Action : Register
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

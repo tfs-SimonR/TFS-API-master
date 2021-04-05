@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SPARQ_TESTModelStoreContainer" CdmEntityContainer="SparqTestDbContext">
+    <EntitySetMapping Name="tbl_Sparq_QueBuster_BasketDetails">
+      <EntityTypeMapping TypeName="SPARQ_TESTModel.tbl_Sparq_QueBuster_BasketDetails">
+        <MappingFragment StoreEntitySet="tbl_Sparq_QueBuster_BasketDetails">
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="isOpen" ColumnName="isOpen" />
+          <ScalarProperty Name="scandate" ColumnName="scandate" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="cardnumber" ColumnName="cardnumber" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_Sparq_QueueBuster_CardDetails">
+      <EntityTypeMapping TypeName="SPARQ_TESTModel.tbl_Sparq_QueueBuster_CardDetails">
+        <MappingFragment StoreEntitySet="tbl_Sparq_QueueBuster_CardDetails">
+          <ScalarProperty Name="isOpen" ColumnName="isOpen" />
+          <ScalarProperty Name="scandate" ColumnName="scandate" />
+          <ScalarProperty Name="cardnumber" ColumnName="cardnumber" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

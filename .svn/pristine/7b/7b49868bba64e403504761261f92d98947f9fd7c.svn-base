@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{163C2184-5335-4906-B2EF-1D3CBC10AFDE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>mi9TESTDAL</RootNamespace>
+    <AssemblyName>mi9TESTDAL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="branch.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="brnstkchk.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="brnstock.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="btranscount.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="btransdisc.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="btranshdr.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="btransifdata.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="btransline.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="consigdest.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="consigdoc.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="consighdr.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="consigline.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mi9_test_entities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mi9_test_entities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mi9_test_entities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mi9_test_entities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>mi9_test_entities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="pricechghdr.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="proddesc.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="prodkey.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="product.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="productcode.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="purchcost.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="purchorder.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="purchordhist.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="purchordline.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="reasoncode.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="structlevel.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="supplier.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="supproduct.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="supprodunit.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TOFS_RetailPrice.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="varcode.cs">
+      <DependentUpon>mi9_test_entities.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="mi9_test_entities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>mi9_test_entities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="mi9_test_entities.edmx.diagram">
+      <DependentUpon>mi9_test_entities.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="mi9_test_entities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>mi9_test_entities.Context.cs</LastGenOutput>
+      <DependentUpon>mi9_test_entities.edmx</DependentUpon>
+    </Content>
+    <Content Include="mi9_test_entities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>mi9_test_entities.edmx</DependentUpon>
+      <LastGenOutput>mi9_test_entities.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>

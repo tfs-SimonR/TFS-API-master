@@ -1,0 +1,49 @@
+2019-03-11 14:06:13.0754|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscanner/stockhomefeedback
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PostFeedback
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-11 14:07:51.5922|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscanner/stockhomefeedback
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PostFeedback
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-11 14:09:49.6478|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscanner/stockhomefeedback
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PostFeedback
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-11 14:14:43.8821|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscanner/stockhomefeedback
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PostFeedback
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-11 14:17:04.9235|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscanner/stockhomefeedback
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PostFeedback
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-11 14:18:08.7330|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscanner/stockhomefeedback
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PostFeedback
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-11 14:27:21.6935|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/handyscanner/stockhomefeedback
+Controller : TFS_API.Controllers.HandyScannerController
+Action : PostFeedback
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

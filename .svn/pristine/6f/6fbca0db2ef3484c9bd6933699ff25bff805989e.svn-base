@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tfs_pi_count_testModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_pi_count">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="list_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="date_create" Type="DateTime" Precision="3" />
+    <Property Name="isDeleted" Type="Boolean" />
+    <Property Name="created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="expexted_count_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_sku_count">
+    <Key>
+      <PropertyRef Name="rowId" />
+    </Key>
+    <Property Name="rowId" Type="Int32" Nullable="false" />
+    <Property Name="list_id" Type="Int32" />
+    <Property Name="variantcode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="expected_qty" Type="Int32" />
+    <Property Name="storeId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_pi_count_stores">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="list_id" Type="Int32" />
+    <Property Name="storeid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sku_list_id" Type="Int32" />
+    <Property Name="isCompleted" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="piDBContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_pi_count" EntityType="Self.tbl_pi_count" />
+    <EntitySet Name="tbl_sku_count" EntityType="Self.tbl_sku_count" />
+    <EntitySet Name="tbl_pi_count_stores" EntityType="Self.tbl_pi_count_stores" />
+  </EntityContainer>
+</Schema>

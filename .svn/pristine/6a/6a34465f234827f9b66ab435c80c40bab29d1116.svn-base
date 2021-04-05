@@ -1,0 +1,154 @@
+2020-01-23 10:45:44.7431|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=&latlng=40.714224,-73.961452
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 10:49:27.9129|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=&latlng=53.786880,-2.245320
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 10:50:01.5583|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=&latlng=53.786880,-2.245320
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 10:52:46.5977|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=&latlng=53.786880,-2.245320
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 11:11:05.6280|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=&latlng=53.786880,-2.245320
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 11:11:29.0494|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=&latlng=53.786880,-2.245320
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 11:13:05.3233|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=&latlng=53.786880,-2.245320
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 11:15:28.7464|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=&latlng=53.786880,-2.245320
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 11:17:38.0961|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=&latlng=53.786880,-2.245320
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 11:18:27.3047|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=london&latlng=
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 11:18:39.8796|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=LONDON&latlng=
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 11:18:47.1238|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=Glasgow&latlng=
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 11:19:10.1181|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=Edinburgh&latlng=
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 11:19:30.5370|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=Stoke-On-Trent&latlng=
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 11:23:53.9744|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=&latlng=40.714224,-73.961452
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 11:24:08.1577|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=&latlng=40.714224,-73.961452
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 11:25:28.2002|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=fc93d617d8ab4f33bc89538b7616d335&postcode=&latlng=53.786880,-2.245320
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 13:50:32.6309|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetSKUPanelData?guid=c98e152337c84df2845e00f19d32e782&storeId=201
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetSKUPanelData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 14:28:18.8279|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetSKUPanelData?storeId=201&guid=efe7e5fb8d1c413389311f880085580f
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetSKUPanelData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 14:38:52.8350|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetSKUPanelData?guid=efe7e5fb8d1c413389311f880085580f&storeId=201
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetSKUPanelData
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 16:07:19.7815|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/Counting/productwriteoff
+Controller : TFS_API.Controllers.PICountController
+Action : PutWriteOff
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-23 16:08:55.0791|INFO|TFS_API.Helpers.NLogger|JSON
+Method: PUT
+URL: http://localhost:63154/api/v1/Counting/productwriteoff
+Controller : TFS_API.Controllers.PICountController
+Action : PutWriteOff
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

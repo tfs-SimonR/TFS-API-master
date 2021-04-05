@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ClickAndCollectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'tfs_ClickAndCollect_Test.dbo.ClickAndCollectMessages' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ClickAndCollectMessages">
+    <Key>
+      <PropertyRef Name="ReservationID" />
+      <PropertyRef Name="MessageId" />
+      <PropertyRef Name="MessageDate" />
+    </Key>
+    <Property Name="ReservationID" Type="bigint" Nullable="false" />
+    <Property Name="MessageId" Type="int" Nullable="false" />
+    <Property Name="MessageType" Type="nvarchar" MaxLength="50" />
+    <Property Name="MessageDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClickAndCollectProducts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="SKU" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClickAndCollectProductTranslation">
+    <Key>
+      <PropertyRef Name="guid" />
+    </Key>
+    <Property Name="guid" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="sku" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClickAndCollectReservation">
+    <Key>
+      <PropertyRef Name="ReservationID" />
+    </Key>
+    <Property Name="ReservationID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoreNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SKU" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="CustFirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustSurName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustPostCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustEmailAddress" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TofsCardNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustMobileNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MarketingConsent" Type="bit" Nullable="false" />
+    <Property Name="MarketingConsentDate" Type="datetime" />
+    <Property Name="TermsAndCondsConsentDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ClickAndCollectReservationStatus">
+    <Key>
+      <PropertyRef Name="ReservationID" />
+    </Key>
+    <Property Name="ReservationID" Type="bigint" Nullable="false" />
+    <Property Name="ReservationStatus" Type="int" Nullable="false" />
+    <Property Name="StoreId" Type="nvarchar" MaxLength="10" />
+    <Property Name="StatusDate" Type="datetime" Nullable="false" />
+    <Property Name="PreviousStatus" Type="int" Nullable="false" />
+    <Property Name="LastAction" Type="nvarchar" MaxLength="50" />
+    <Property Name="BasketTransActionId" Type="nvarchar" MaxLength="50" />
+    <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ClickAndCollectModelStoreContainer">
+    <EntitySet Name="ClickAndCollectProducts" EntityType="Self.ClickAndCollectProducts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClickAndCollectProductTranslation" EntityType="Self.ClickAndCollectProductTranslation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClickAndCollectReservation" EntityType="Self.ClickAndCollectReservation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClickAndCollectReservationStatus" EntityType="Self.ClickAndCollectReservationStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClickAndCollectMessages" EntityType="Self.ClickAndCollectMessages" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ClickAndCollectMessages].[ReservationID] AS [ReservationID], 
+    [ClickAndCollectMessages].[MessageId] AS [MessageId], 
+    [ClickAndCollectMessages].[MessageType] AS [MessageType], 
+    [ClickAndCollectMessages].[MessageDate] AS [MessageDate]
+    FROM [dbo].[ClickAndCollectMessages] AS [ClickAndCollectMessages]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

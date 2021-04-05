@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c1498bf9-b3a0-4c52-b8d4-2a27c71271e9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://a-q-tof.mi9cloud.com/Mi9-WCF-Test/RetailHubService.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="6afb67e0-0675-474f-a67f-32db795f72af" SourceId="1" SourceUrl="http://a-q-tof.mi9cloud.com/Mi9-WCF-Test/RetailHubService.svc/mex" />
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="c1a8eb63-7915-4396-b33a-c10b9fe91a17" SourceId="1" SourceUrl="http://a-q-tof.mi9cloud.com/Mi9-WCF-Test/RetailHubService.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="cec9474c-c7ff-40a9-82b1-45dc15346c07" SourceId="1" SourceUrl="http://a-q-tof.mi9cloud.com/Mi9-WCF-Test/RetailHubService.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="37c7b6dc-b410-4985-9928-5745e64743bd" SourceId="1" SourceUrl="http://a-q-tof.mi9cloud.com/Mi9-WCF-Test/RetailHubService.svc/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="65687fc4-040a-42b7-be9e-b7faa5bcfb49" SourceId="1" SourceUrl="http://a-q-tof.mi9cloud.com/Mi9-WCF-Test/RetailHubService.svc/mex" />
+    <MetadataFile FileName="StdBusinessRules.Common.xsd" MetadataType="Schema" ID="8986746c-83dd-42bc-a752-c83ac8cbf59c" SourceId="1" SourceUrl="http://a-q-tof.mi9cloud.com/Mi9-WCF-Test/RetailHubService.svc/mex" />
+    <MetadataFile FileName="RemoteFacadeWCF.RetailHub.xsd" MetadataType="Schema" ID="7e007db4-ff64-4667-8843-caf825941db0" SourceId="1" SourceUrl="http://a-q-tof.mi9cloud.com/Mi9-WCF-Test/RetailHubService.svc/mex" />
+    <MetadataFile FileName="Avalara.AvaTax.Adapter.TaxService.xsd" MetadataType="Schema" ID="3870fc30-ca35-462f-8f07-92cd6683a171" SourceId="1" SourceUrl="http://a-q-tof.mi9cloud.com/Mi9-WCF-Test/RetailHubService.svc/mex" />
+    <MetadataFile FileName="System.xsd" MetadataType="Schema" ID="6ca0c1b3-3507-4ce6-ab27-c13d2f10e849" SourceId="1" SourceUrl="http://a-q-tof.mi9cloud.com/Mi9-WCF-Test/RetailHubService.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

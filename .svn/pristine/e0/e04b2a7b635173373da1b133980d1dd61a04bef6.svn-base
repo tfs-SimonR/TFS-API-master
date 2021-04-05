@@ -1,0 +1,63 @@
+2020-01-16 08:03:22.4939|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-16 08:25:58.1326|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-16 08:28:51.8149|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-16 18:11:18.1309|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-16 18:29:08.6076|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-16 19:08:01.5625|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-16 19:12:30.9257|INFO|TFS_API.Helpers.NLogger|JSON
+Method: POST
+URL: http://localhost:63154/api/v1/webpaneldata/RCRequestReservation
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-16 19:21:59.2495|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetAllReservations
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetAllReservations
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-01-16 19:25:47.2871|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetAllReservations
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetAllReservations
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

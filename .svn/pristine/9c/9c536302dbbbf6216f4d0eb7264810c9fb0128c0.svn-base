@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HoldingModelStoreContainer" CdmEntityContainer="ProcessedDBContext">
+    <EntitySetMapping Name="hs_processed_consighdrs">
+      <EntityTypeMapping TypeName="HoldingModel.hs_processed_consighdrs">
+        <MappingFragment StoreEntitySet="hs_processed_consighdrs">
+          <ScalarProperty Name="storeid" ColumnName="storeid" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+          <ScalarProperty Name="consignment" ColumnName="consignment" />
+          <ScalarProperty Name="date_bookedin" ColumnName="date_bookedin" />
+          <ScalarProperty Name="isBookedin" ColumnName="isBookedin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hs_processed_interstore">
+      <EntityTypeMapping TypeName="HoldingModel.hs_processed_interstore">
+        <MappingFragment StoreEntitySet="hs_processed_interstore">
+          <ScalarProperty Name="storeid" ColumnName="storeid" />
+          <ScalarProperty Name="isBookedin" ColumnName="isBookedin" />
+          <ScalarProperty Name="date_booked_in" ColumnName="date_booked_in" />
+          <ScalarProperty Name="gdonumber" ColumnName="gdonumber" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hs_processed_purchorders">
+      <EntityTypeMapping TypeName="HoldingModel.hs_processed_purchorders">
+        <MappingFragment StoreEntitySet="hs_processed_purchorders">
+          <ScalarProperty Name="storeid" ColumnName="storeid" />
+          <ScalarProperty Name="isBookedin" ColumnName="isBookedin" />
+          <ScalarProperty Name="date_booked_in" ColumnName="date_booked_in" />
+          <ScalarProperty Name="ponumber" ColumnName="ponumber" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="consighdrs">
+      <EntityTypeMapping TypeName="HoldingModel.consighdr">
+        <MappingFragment StoreEntitySet="consighdrs">
+          <ScalarProperty Name="UserCreatedInStore" ColumnName="UserCreatedInStore" />
+          <ScalarProperty Name="DateCreatedInStore" ColumnName="DateCreatedInStore" />
+          <ScalarProperty Name="AllowAddProductsDuringPack" ColumnName="AllowAddProductsDuringPack" />
+          <ScalarProperty Name="DateExtractedToAP" ColumnName="DateExtractedToAP" />
+          <ScalarProperty Name="RTVCancelReasonGLU" ColumnName="RTVCancelReasonGLU" />
+          <ScalarProperty Name="RTVCancelReasonCode" ColumnName="RTVCancelReasonCode" />
+          <ScalarProperty Name="RTVRejectedDate" ColumnName="RTVRejectedDate" />
+          <ScalarProperty Name="RTVRejectedUser" ColumnName="RTVRejectedUser" />
+          <ScalarProperty Name="RTVRejectNotes" ColumnName="RTVRejectNotes" />
+          <ScalarProperty Name="RTVAuthRequestedDate" ColumnName="RTVAuthRequestedDate" />
+          <ScalarProperty Name="RTVAuthRequestedUser" ColumnName="RTVAuthRequestedUser" />
+          <ScalarProperty Name="StoreInitiated" ColumnName="StoreInitiated" />
+          <ScalarProperty Name="TransferRequestID" ColumnName="TransferRequestID" />
+          <ScalarProperty Name="RTV" ColumnName="RTV" />
+          <ScalarProperty Name="ReasonCode" ColumnName="ReasonCode" />
+          <ScalarProperty Name="BuyerCode" ColumnName="BuyerCode" />
+          <ScalarProperty Name="TransferAll" ColumnName="TransferAll" />
+          <ScalarProperty Name="TransferRequest" ColumnName="TransferRequest" />
+          <ScalarProperty Name="ChannelType" ColumnName="ChannelType" />
+          <ScalarProperty Name="ManyToOne" ColumnName="ManyToOne" />
+          <ScalarProperty Name="AuthorizeDate" ColumnName="AuthorizeDate" />
+          <ScalarProperty Name="AuthorizeUser" ColumnName="AuthorizeUser" />
+          <ScalarProperty Name="AmendUser" ColumnName="AmendUser" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="authorityno" ColumnName="authorityno" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="exceptions" ColumnName="exceptions" />
+          <ScalarProperty Name="consigdoc" ColumnName="consigdoc" />
+          <ScalarProperty Name="confirmdate" ColumnName="confirmdate" />
+          <ScalarProperty Name="issuedate" ColumnName="issuedate" />
+          <ScalarProperty Name="despatchdate" ColumnName="despatchdate" />
+          <ScalarProperty Name="amenddate" ColumnName="amenddate" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="notepad" ColumnName="notepad" />
+          <ScalarProperty Name="carrier" ColumnName="carrier" />
+          <ScalarProperty Name="collect" ColumnName="collect" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="consignment" ColumnName="consignment" />
+          <ScalarProperty Name="warehouse" ColumnName="warehouse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="consigdests">
+      <EntityTypeMapping TypeName="HoldingModel.consigdest">
+        <MappingFragment StoreEntitySet="consigdests">
+          <ScalarProperty Name="destName" ColumnName="destName" />
+          <ScalarProperty Name="sourceName" ColumnName="sourceName" />
+          <ScalarProperty Name="UserReceivedInStore" ColumnName="UserReceivedInStore" />
+          <ScalarProperty Name="DateReceivedInStore" ColumnName="DateReceivedInStore" />
+          <ScalarProperty Name="LastChildShipCodeSuffix" ColumnName="LastChildShipCodeSuffix" />
+          <ScalarProperty Name="ParentShipDestID" ColumnName="ParentShipDestID" />
+          <ScalarProperty Name="UserShippedInStore" ColumnName="UserShippedInStore" />
+          <ScalarProperty Name="DateShippedInStore" ColumnName="DateShippedInStore" />
+          <ScalarProperty Name="UserApprovedInStore" ColumnName="UserApprovedInStore" />
+          <ScalarProperty Name="DateApprovedInStore" ColumnName="DateApprovedInStore" />
+          <ScalarProperty Name="UserAmendedInStore" ColumnName="UserAmendedInStore" />
+          <ScalarProperty Name="DateAmendedInStore" ColumnName="DateAmendedInStore" />
+          <ScalarProperty Name="StoreSuggestionCode" ColumnName="StoreSuggestionCode" />
+          <ScalarProperty Name="UserCancelledInStore" ColumnName="UserCancelledInStore" />
+          <ScalarProperty Name="DateCancelledInStore" ColumnName="DateCancelledInStore" />
+          <ScalarProperty Name="UserCreatedInStore" ColumnName="UserCreatedInStore" />
+          <ScalarProperty Name="DateCreatedInStore" ColumnName="DateCreatedInStore" />
+          <ScalarProperty Name="DateLastModified" ColumnName="DateLastModified" />
+          <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
+          <ScalarProperty Name="UserApproved" ColumnName="UserApproved" />
+          <ScalarProperty Name="DateRejected" ColumnName="DateRejected" />
+          <ScalarProperty Name="UserRejected" ColumnName="UserRejected" />
+          <ScalarProperty Name="TruckNumber" ColumnName="TruckNumber" />
+          <ScalarProperty Name="DriverReference" ColumnName="DriverReference" />
+          <ScalarProperty Name="ShipReference" ColumnName="ShipReference" />
+          <ScalarProperty Name="ShipMethodCodeGLU" ColumnName="ShipMethodCodeGLU" />
+          <ScalarProperty Name="ShipMethodCode" ColumnName="ShipMethodCode" />
+          <ScalarProperty Name="VendorLocationID" ColumnName="VendorLocationID" />
+          <ScalarProperty Name="RowVer" ColumnName="RowVer" />
+          <ScalarProperty Name="DateReopened" ColumnName="DateReopened" />
+          <ScalarProperty Name="UserReopened" ColumnName="UserReopened" />
+          <ScalarProperty Name="DateCancelled" ColumnName="DateCancelled" />
+          <ScalarProperty Name="UserCancelled" ColumnName="UserCancelled" />
+          <ScalarProperty Name="SourceSubLocationID" ColumnName="SourceSubLocationID" />
+          <ScalarProperty Name="RTVDisposalMethod" ColumnName="RTVDisposalMethod" />
+          <ScalarProperty Name="ShippingCost" ColumnName="ShippingCost" />
+          <ScalarProperty Name="DateInterfaced" ColumnName="DateInterfaced" />
+          <ScalarProperty Name="ParcelType" ColumnName="ParcelType" />
+          <ScalarProperty Name="ParcelCnt" ColumnName="ParcelCnt" />
+          <ScalarProperty Name="PickStatus" ColumnName="PickStatus" />
+          <ScalarProperty Name="AllocStatus" ColumnName="AllocStatus" />
+          <ScalarProperty Name="ReceiveUser" ColumnName="ReceiveUser" />
+          <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+          <ScalarProperty Name="ShipUser" ColumnName="ShipUser" />
+          <ScalarProperty Name="ShipDate" ColumnName="ShipDate" />
+          <ScalarProperty Name="KitAssemblyOrderDestinationID" ColumnName="KitAssemblyOrderDestinationID" />
+          <ScalarProperty Name="reference2" ColumnName="reference2" />
+          <ScalarProperty Name="reasoncode" ColumnName="reasoncode" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="reference" ColumnName="reference" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="notepad" ColumnName="notepad" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="postcode" ColumnName="postcode" />
+          <ScalarProperty Name="address4" ColumnName="address4" />
+          <ScalarProperty Name="address3" ColumnName="address3" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="freighttax" ColumnName="freighttax" />
+          <ScalarProperty Name="freightchg" ColumnName="freightchg" />
+          <ScalarProperty Name="payterms" ColumnName="payterms" />
+          <ScalarProperty Name="delroutedoc" ColumnName="delroutedoc" />
+          <ScalarProperty Name="destdoc" ColumnName="destdoc" />
+          <ScalarProperty Name="droppoint" ColumnName="droppoint" />
+          <ScalarProperty Name="delroute" ColumnName="delroute" />
+          <ScalarProperty Name="condestint" ColumnName="condestint" />
+          <ScalarProperty Name="destination" ColumnName="destination" />
+          <ScalarProperty Name="desttype" ColumnName="desttype" />
+          <ScalarProperty Name="consignment" ColumnName="consignment" />
+          <ScalarProperty Name="warehouse" ColumnName="warehouse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="consiglines">
+      <EntityTypeMapping TypeName="HoldingModel.consigline">
+        <MappingFragment StoreEntitySet="consiglines">
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="DestLocUnitPrice" ColumnName="DestLocUnitPrice" />
+          <ScalarProperty Name="DestLocAverageCost" ColumnName="DestLocAverageCost" />
+          <ScalarProperty Name="PackedQty" ColumnName="PackedQty" />
+          <ScalarProperty Name="InTransitQuantity" ColumnName="InTransitQuantity" />
+          <ScalarProperty Name="WIPQty" ColumnName="WIPQty" />
+          <ScalarProperty Name="ReasonCode" ColumnName="ReasonCode" />
+          <ScalarProperty Name="RequestQty" ColumnName="RequestQty" />
+          <ScalarProperty Name="download" ColumnName="download" />
+          <ScalarProperty Name="discrepqty" ColumnName="discrepqty" />
+          <ScalarProperty Name="othervalue" ColumnName="othervalue" />
+          <ScalarProperty Name="unitretail" ColumnName="unitretail" />
+          <ScalarProperty Name="avcost" ColumnName="avcost" />
+          <ScalarProperty Name="receiveqty" ColumnName="receiveqty" />
+          <ScalarProperty Name="issueqty" ColumnName="issueqty" />
+          <ScalarProperty Name="batchint" ColumnName="batchint" />
+          <ScalarProperty Name="varint" ColumnName="varint" />
+          <ScalarProperty Name="destordint" ColumnName="destordint" />
+          <ScalarProperty Name="destordline" ColumnName="destordline" />
+          <ScalarProperty Name="destordref" ColumnName="destordref" />
+          <ScalarProperty Name="conlineint" ColumnName="conlineint" />
+          <ScalarProperty Name="transline" ColumnName="transline" />
+          <ScalarProperty Name="condestint" ColumnName="condestint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

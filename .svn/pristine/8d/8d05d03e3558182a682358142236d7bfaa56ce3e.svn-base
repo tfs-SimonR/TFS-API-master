@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="tfs_api_audit_liveModelStoreContainer" CdmEntityContainer="auditEntities">
+    <EntitySetMapping Name="tbl_audit_api">
+      <EntityTypeMapping TypeName="tfs_api_audit_liveModel.tbl_audit_api">
+        <MappingFragment StoreEntitySet="tbl_audit_api">
+          <ScalarProperty Name="controllerarea" ColumnName="controllerarea" />
+          <ScalarProperty Name="destinationstoreid" ColumnName="destinationstoreid" />
+          <ScalarProperty Name="goodsout_sku_qty" ColumnName="goodsout_sku_qty" />
+          <ScalarProperty Name="condestint" ColumnName="condestint" />
+          <ScalarProperty Name="recordId" ColumnName="recordId" />
+          <ScalarProperty Name="condignment" ColumnName="condignment" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="EventType" ColumnName="EventType" />
+          <ScalarProperty Name="PriorStatusCode" ColumnName="PriorStatusCode" />
+          <ScalarProperty Name="PriorResonCode" ColumnName="PriorResonCode" />
+          <ScalarProperty Name="CostValue" ColumnName="CostValue" />
+          <ScalarProperty Name="RetailValue" ColumnName="RetailValue" />
+          <ScalarProperty Name="StockAdjustLevel" ColumnName="StockAdjustLevel" />
+          <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PICount_Audit">
+      <EntityTypeMapping TypeName="tfs_api_audit_liveModel.tbl_PICount_Audit">
+        <MappingFragment StoreEntitySet="tbl_PICount_Audit">
+          <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+          <ScalarProperty Name="CostValue" ColumnName="CostValue" />
+          <ScalarProperty Name="PriceValue" ColumnName="PriceValue" />
+          <ScalarProperty Name="StockLevelDifference" ColumnName="StockLevelDifference" />
+          <ScalarProperty Name="VarInt" ColumnName="VarInt" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="PICount_ListId" ColumnName="PICount_ListId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DateCounted" ColumnName="DateCounted" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_ADHOCCount_Audit">
+      <EntityTypeMapping TypeName="tfs_api_audit_liveModel.tbl_ADHOCCount_Audit">
+        <MappingFragment StoreEntitySet="tbl_ADHOCCount_Audit">
+          <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+          <ScalarProperty Name="CostValue" ColumnName="CostValue" />
+          <ScalarProperty Name="PriceValue" ColumnName="PriceValue" />
+          <ScalarProperty Name="StockLevelDifference" ColumnName="StockLevelDifference" />
+          <ScalarProperty Name="VarInt" ColumnName="VarInt" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DateCounted" ColumnName="DateCounted" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SupplierToStore_Audit">
+      <EntityTypeMapping TypeName="tfs_api_audit_liveModel.tbl_SupplierToStore_Audit">
+        <MappingFragment StoreEntitySet="tbl_SupplierToStore_Audit">
+          <ScalarProperty Name="ponumber" ColumnName="ponumber" />
+          <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+          <ScalarProperty Name="CostValue" ColumnName="CostValue" />
+          <ScalarProperty Name="PriceValue" ColumnName="PriceValue" />
+          <ScalarProperty Name="StockLevelDifference" ColumnName="StockLevelDifference" />
+          <ScalarProperty Name="VarInt" ColumnName="VarInt" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DateCounted" ColumnName="DateCounted" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_WarehouseToStore_Audit">
+      <EntityTypeMapping TypeName="tfs_api_audit_liveModel.tbl_WarehouseToStore_Audit">
+        <MappingFragment StoreEntitySet="tbl_WarehouseToStore_Audit">
+          <ScalarProperty Name="PriorStatusCode" ColumnName="PriorStatusCode" />
+          <ScalarProperty Name="consignment_number" ColumnName="consignment_number" />
+          <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+          <ScalarProperty Name="CostValue" ColumnName="CostValue" />
+          <ScalarProperty Name="PriceValue" ColumnName="PriceValue" />
+          <ScalarProperty Name="StockLevelDifference" ColumnName="StockLevelDifference" />
+          <ScalarProperty Name="VarInt" ColumnName="VarInt" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DateCounted" ColumnName="DateCounted" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_goodsout_audit">
+      <EntityTypeMapping TypeName="tfs_api_audit_liveModel.tbl_goodsout_audit">
+        <MappingFragment StoreEntitySet="tbl_goodsout_audit">
+          <ScalarProperty Name="consignment" ColumnName="consignment" />
+          <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+          <ScalarProperty Name="sku_qty" ColumnName="sku_qty" />
+          <ScalarProperty Name="Sku" ColumnName="Sku" />
+          <ScalarProperty Name="DestinationStoreId" ColumnName="DestinationStoreId" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_InterStore_Audit">
+      <EntityTypeMapping TypeName="tfs_api_audit_liveModel.tbl_InterStore_Audit">
+        <MappingFragment StoreEntitySet="tbl_InterStore_Audit">
+          <ScalarProperty Name="InsertRecordId" ColumnName="InsertRecordId" />
+          <ScalarProperty Name="PriorStatusCode" ColumnName="PriorStatusCode" />
+          <ScalarProperty Name="consignment_number" ColumnName="consignment_number" />
+          <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+          <ScalarProperty Name="CostValue" ColumnName="CostValue" />
+          <ScalarProperty Name="PriceValue" ColumnName="PriceValue" />
+          <ScalarProperty Name="StockLevelDifference" ColumnName="StockLevelDifference" />
+          <ScalarProperty Name="VarInt" ColumnName="VarInt" />
+          <ScalarProperty Name="destination_StoreId" ColumnName="destination_StoreId" />
+          <ScalarProperty Name="source_storeid" ColumnName="source_storeid" />
+          <ScalarProperty Name="SKU" ColumnName="SKU" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="DateCounted" ColumnName="DateCounted" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_authentication_audit">
+      <EntityTypeMapping TypeName="tfs_api_audit_liveModel.tbl_authentication_audit">
+        <MappingFragment StoreEntitySet="tbl_authentication_audit">
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="timeloggedin" ColumnName="timeloggedin" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_SupplierMassAccept_Audit">
+      <EntityTypeMapping TypeName="tfs_api_audit_liveModel.tbl_SupplierMassAccept_Audit">
+        <MappingFragment StoreEntitySet="tbl_SupplierMassAccept_Audit">
+          <ScalarProperty Name="reason" ColumnName="reason" />
+          <ScalarProperty Name="ponumber" ColumnName="ponumber" />
+          <ScalarProperty Name="EventDate" ColumnName="EventDate" />
+          <ScalarProperty Name="varint" ColumnName="varint" />
+          <ScalarProperty Name="storeid" ColumnName="storeid" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="DateAccepted" ColumnName="DateAccepted" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_cancel_allocations_audit">
+      <EntityTypeMapping TypeName="tfs_api_audit_liveModel.tbl_cancel_allocations_audit">
+        <MappingFragment StoreEntitySet="tbl_cancel_allocations_audit">
+          <ScalarProperty Name="storedprocedurecalled" ColumnName="storedprocedurecalled" />
+          <ScalarProperty Name="dateupdated" ColumnName="dateupdated" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_PP_frontend_audit">
+      <EntityTypeMapping TypeName="tfs_api_audit_liveModel.tbl_PP_frontend_audit">
+        <MappingFragment StoreEntitySet="tbl_PP_frontend_audit">
+          <ScalarProperty Name="previousthreshold" ColumnName="previousthreshold" />
+          <ScalarProperty Name="previousqty" ColumnName="previousqty" />
+          <ScalarProperty Name="previouscost" ColumnName="previouscost" />
+          <ScalarProperty Name="previousstatuscode" ColumnName="previousstatuscode" />
+          <ScalarProperty Name="eventdate" ColumnName="eventdate" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_writeoff_audit">
+      <EntityTypeMapping TypeName="tfs_api_audit_liveModel.tbl_writeoff_audit">
+        <MappingFragment StoreEntitySet="tbl_writeoff_audit">
+          <ScalarProperty Name="reasoncodeDescription" ColumnName="reasoncodeDescription" />
+          <ScalarProperty Name="retailvaluetotal" ColumnName="retailvaluetotal" />
+          <ScalarProperty Name="retailperitem" ColumnName="retailperitem" />
+          <ScalarProperty Name="descriptions" ColumnName="descriptions" />
+          <ScalarProperty Name="reasonCode" ColumnName="reasonCode" />
+          <ScalarProperty Name="eventdate" ColumnName="eventdate" />
+          <ScalarProperty Name="writeofftotalcost" ColumnName="writeofftotalcost" />
+          <ScalarProperty Name="costvalue" ColumnName="costvalue" />
+          <ScalarProperty Name="writeofftotalqty" ColumnName="writeofftotalqty" />
+          <ScalarProperty Name="stockleveldifference" ColumnName="stockleveldifference" />
+          <ScalarProperty Name="varint" ColumnName="varint" />
+          <ScalarProperty Name="storeid" ColumnName="storeid" />
+          <ScalarProperty Name="sku" ColumnName="sku" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="DateofWriteOff" ColumnName="DateofWriteOff" />
+          <ScalarProperty Name="rowid" ColumnName="rowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

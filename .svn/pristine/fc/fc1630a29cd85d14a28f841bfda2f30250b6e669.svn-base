@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Mi9DataAccessLayer;
+
+namespace TFS_API.Repositorys
+{
+    public class StockRepository
+    {
+        private UnitOfWork _unitOfWork;
+
+        public StockRepository(UnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
+
+        public brnstock GetStockInformtaionAtStore(int varint, string store)
+        {
+            return _unitOfWork.MI9DBContext.brnstocks.FirstOrDefault(x => x.varint == varint && x.branchcode == store);
+        }
+    }
+}

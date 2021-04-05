@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CashManagmentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_CashManagement">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoreId" Type="nvarchar(max)" />
+    <Property Name="UserId" Type="nvarchar(max)" />
+    <Property Name="RJTillId" Type="int" Nullable="false" />
+    <Property Name="SPQTillId" Type="int" Nullable="false" />
+    <Property Name="TransactionDate" Type="datetime" />
+    <Property Name="ClosingFloat" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CashAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Love2Shop" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GiftVoucherTotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CreditCardTotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Income" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Expense" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="isLocked" Type="bit" Nullable="false" />
+    <Property Name="SubmittedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="LockedDateTime" Type="datetime" />
+    <Property Name="LockedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="isDeleted" Type="bit" Nullable="false" />
+    <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="TradingDate" Type="datetime" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="tillisLive" Type="bit" />
+    <Property Name="isClosed" Type="bit" />
+    <Property Name="ClosingDateTime" Type="datetime" />
+    <Property Name="isSparq" Type="bit" />
+    <Property Name="expectedAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="LSVexpectedAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="LSVdiscrepancyAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="discrepencyAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="isLSVdiscrepancy" Type="bit" />
+    <Property Name="isDescrepency" Type="bit" />
+    <Property Name="netSales" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="marketing1100" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="lottery1101" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="parking1102" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="postage1103" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="windows1104" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="personalvehicle1105" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="carhire1106" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="publictransport1107" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="bankcharge1108" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="milk1109" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="customerservice1126" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="tofsclubcard1198" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="wages1116" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="tbl_store_till_availabilty">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="storeNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="TillId" Type="int" />
+    <Property Name="isAlive" Type="bit" />
+    <Property Name="DateTakenOffline" Type="datetime" />
+    <Property Name="isSparq" Type="bit" />
+    <Property Name="TillFloat" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityContainer Name="CashManagmentModelStoreContainer">
+    <EntitySet Name="tbl_CashManagement" EntityType="Self.tbl_CashManagement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tbl_store_till_availabilty" EntityType="Self.tbl_store_till_availabilty" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

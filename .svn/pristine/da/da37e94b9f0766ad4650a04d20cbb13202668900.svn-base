@@ -1,0 +1,2042 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mi9_mms_fs_trainModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="branch">
+    <Key>
+      <PropertyRef Name="branchcode" />
+    </Key>
+    <Property Name="branchcode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="colevel1" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="colevel2" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="colevel3" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="shortname" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="commsline" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="mastind" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="mastbranch" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="league" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="positionind" Type="Int32" />
+    <Property Name="branchtype" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="branchsize" Type="Int32" />
+    <Property Name="locntype" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="storegroup" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="staff" Type="Int16" />
+    <Property Name="floors" Type="Int16" />
+    <Property Name="lifts" Type="Int16" />
+    <Property Name="catalogue" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="tradplan" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="holplan" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="merchplan" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="repsource" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="reptype" Type="Int16" />
+    <Property Name="delroute" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="operstatus" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="notepad" Type="Int32" Nullable="false" />
+    <Property Name="auditdate" Type="DateTime" Precision="3" />
+    <Property Name="stkchkdate" Type="DateTime" Precision="3" />
+    <Property Name="opendate" Type="DateTime" Precision="3" />
+    <Property Name="closedate" Type="DateTime" Precision="3" />
+    <Property Name="createdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="amenddate" Type="DateTime" Precision="3" />
+    <Property Name="deletedate" Type="DateTime" Precision="3" />
+    <Property Name="integritylok" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="levint" Type="Int32" Nullable="false" />
+    <Property Name="version" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="commsmethod" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="keydatelist" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="bankcode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="languageid" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="pricegroup" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="franchisee" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="replenmethod" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="sizegrade" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="grandopendte" Type="DateTime" Precision="3" />
+    <Property Name="remodeldate" Type="DateTime" Precision="3" />
+    <Property Name="plandate" Type="DateTime" Precision="3" />
+    <Property Name="printloc" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="costcentre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="autoreplen" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SaleGoalProfileID" Type="Int32" />
+    <Property Name="CommissionPercent" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="ba01" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba02" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba03" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba04" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba05" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba06" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba07" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba08" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba09" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba10" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba11" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba12" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba13" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba14" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba15" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba16" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba17" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba18" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba19" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba20" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba21" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba22" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba23" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba24" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ba25" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GLEntity" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GLCompany" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GLCorpCostCentre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Comparative" Type="Byte" Nullable="false" />
+    <Property Name="ShrinkPercent" Type="Decimal" Precision="9" Scale="7" />
+    <Property Name="CoLevel4" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="CoLevel5" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="AltCoHierarchy1ID" Type="Int32" />
+    <Property Name="Currency" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="BankCode1" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="BankAccount1" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="GLForBankCode1" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="BankCode2" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="BankAccount2" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="GLForBankCode2" Type="String" MaxLength="64" FixedLength="false" Unicode="false" />
+    <Property Name="SellingSize" Type="Int32" />
+    <Property Name="BackRoomSize" Type="Int32" />
+    <Property Name="ShoppingCenter1" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="ShoppingCenter2" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="BuildingType" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CeilingType" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CeilingHeight" Type="Decimal" Precision="9" Scale="4" />
+    <Property Name="HVACUnits" Type="Int32" />
+    <Property Name="LoadingDock" Type="Boolean" Nullable="false" />
+    <Property Name="DelRestrictions" Type="Boolean" Nullable="false" />
+    <Property Name="HoldTruckReceipt" Type="Boolean" Nullable="false" />
+    <Property Name="FireLine1" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="FireLine2" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="LeaseCommenceDate" Type="DateTime" Precision="3" />
+    <Property Name="PossessionPerLeaseDate" Type="DateTime" Precision="3" />
+    <Property Name="LeaseExpirationDate" Type="DateTime" Precision="3" />
+    <Property Name="RelocationDate1" Type="DateTime" Precision="3" />
+    <Property Name="RelocationDate2" Type="DateTime" Precision="3" />
+    <Property Name="RelocationDate3" Type="DateTime" Precision="3" />
+    <Property Name="RelocationDate4" Type="DateTime" Precision="3" />
+    <Property Name="ChangeInSameMall" Type="Boolean" Nullable="false" />
+    <Property Name="OpeningCash" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InventoryManagedAtWarehouseCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="SingleDestinationPO" Type="Boolean" Nullable="false" />
+    <Property Name="ShipInCartons" Type="Boolean" Nullable="false" />
+    <Property Name="DateStartReplen" Type="DateTime" Precision="3" />
+    <Property Name="DateEndReplen" Type="DateTime" Precision="3" />
+    <Property Name="TransInHomeCurrency" Type="Boolean" Nullable="false" />
+    <Property Name="LeadTime" Type="Int16" Nullable="false" />
+    <Property Name="ReplSunday" Type="Boolean" Nullable="false" />
+    <Property Name="ReplMonday" Type="Boolean" Nullable="false" />
+    <Property Name="ReplTuesday" Type="Boolean" Nullable="false" />
+    <Property Name="ReplWednesday" Type="Boolean" Nullable="false" />
+    <Property Name="ReplThursday" Type="Boolean" Nullable="false" />
+    <Property Name="ReplFriday" Type="Boolean" Nullable="false" />
+    <Property Name="ReplSaturday" Type="Boolean" Nullable="false" />
+    <Property Name="TaxIncluded" Type="Boolean" Nullable="false" />
+    <Property Name="Planogram" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PlanogramGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="FAInvoiceAccount" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FACostAccount" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FAWriteOffAccount" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FAInvoiceUseCorp" Type="Boolean" Nullable="false" />
+    <Property Name="FACostUseCorp" Type="Boolean" Nullable="false" />
+    <Property Name="FAWriteOffUseCorp" Type="Boolean" Nullable="false" />
+    <Property Name="ChannelType" Type="Byte" Nullable="false" />
+    <Property Name="UPSAccount" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="EmailHouseCoEntry" Type="Boolean" Nullable="false" />
+    <Property Name="EmailCorpCoEntry" Type="Boolean" Nullable="false" />
+    <Property Name="EmailHouseCoShip" Type="Boolean" Nullable="false" />
+    <Property Name="EmailCorpCoShip" Type="Boolean" Nullable="false" />
+    <Property Name="EmailHouseCoReturn" Type="Boolean" Nullable="false" />
+    <Property Name="EmailCorpCoReturn" Type="Boolean" Nullable="false" />
+    <Property Name="PrimaryForManagedAtWarehouse" Type="Boolean" Nullable="false" />
+    <Property Name="POSTransNumber" Type="Int32" Nullable="false" />
+    <Property Name="MarketCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MarketGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="AltCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EDISenderID" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="EDISenderIDQualifier" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EDISenderIDQualifierGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="PICountDays" Type="Byte" Nullable="false" />
+    <Property Name="SmallFormat" Type="Boolean" Nullable="false" />
+    <Property Name="FulfillsCustomerOrders" Type="Boolean" Nullable="false" />
+    <Property Name="DefaultTaxCode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="ShipSunday" Type="Boolean" Nullable="false" />
+    <Property Name="ShipMonday" Type="Boolean" Nullable="false" />
+    <Property Name="ShipTuesday" Type="Boolean" Nullable="false" />
+    <Property Name="ShipWednesday" Type="Boolean" Nullable="false" />
+    <Property Name="ShipThursday" Type="Boolean" Nullable="false" />
+    <Property Name="ShipFriday" Type="Boolean" Nullable="false" />
+    <Property Name="ShipSaturday" Type="Boolean" Nullable="false" />
+    <Property Name="ShipScheduleSameAsRepl" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="branches1" Relationship="Self.fk_branches_2" FromRole="branches" ToRole="branches1" />
+    <NavigationProperty Name="branch1" Relationship="Self.fk_branches_2" FromRole="branches1" ToRole="branches" />
+    <NavigationProperty Name="brnstocks" Relationship="Self.fk_brnstocks_1" FromRole="branches" ToRole="brnstocks" />
+    <NavigationProperty Name="btranshdrs" Relationship="Self.fk_btranshdrs_2" FromRole="branches" ToRole="btranshdrs" />
+    <NavigationProperty Name="btranshdrs1" Relationship="Self.fk_btranshdrs_4" FromRole="branches" ToRole="btranshdrs" />
+  </EntityType>
+  <EntityType Name="brnstkchk">
+    <Key>
+      <PropertyRef Name="levint" />
+      <PropertyRef Name="prodint" />
+    </Key>
+    <Property Name="levint" Type="Int32" Nullable="false" />
+    <Property Name="prodint" Type="Int32" Nullable="false" />
+    <Property Name="planint" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="requestdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="completedate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="product" Relationship="Self.fk_brnstkchks_2" FromRole="brnstkchks" ToRole="products" />
+  </EntityType>
+  <EntityType Name="brnstock">
+    <Key>
+      <PropertyRef Name="branchcode" />
+      <PropertyRef Name="varint" />
+    </Key>
+    <Property Name="branchcode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="varint" Type="Int32" Nullable="false" />
+    <Property Name="lastmovedate" Type="Int32" />
+    <Property Name="onorder" Type="Int32" Nullable="false" />
+    <Property Name="avcost" Type="Double" Nullable="false" />
+    <Property Name="retail" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="showroom" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="damaged" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="allocated" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="quarantine" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="stockcheck" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="lastcheckdte" Type="Int32" />
+    <Property Name="discrepancy" Type="Int16" Nullable="false" />
+    <Property Name="stdcost" Type="Double" />
+    <Property Name="lastcost" Type="Double" />
+    <Property Name="carryoverqty" Type="Double" />
+    <Property Name="carryovercst" Type="Double" />
+    <Property Name="firstdeldate" Type="DateTime" Precision="3" />
+    <Property Name="lastdeldate" Type="DateTime" Precision="3" />
+    <Property Name="FirstSoldDate" Type="DateTime" Precision="0" />
+    <Property Name="LastSoldDate" Type="DateTime" Precision="0" />
+    <Property Name="CrossDockQty" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="TransferHeldQty" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="branch" Relationship="Self.fk_brnstocks_1" FromRole="brnstocks" ToRole="branches" />
+    <NavigationProperty Name="productcode" Relationship="Self.fk_brnstocks_2" FromRole="brnstocks" ToRole="productcodes" />
+  </EntityType>
+  <EntityType Name="btranscount">
+    <Key>
+      <PropertyRef Name="transint" />
+      <PropertyRef Name="transline" />
+      <PropertyRef Name="sequenceno" />
+    </Key>
+    <Property Name="transint" Type="Int32" Nullable="false" />
+    <Property Name="transline" Type="Int32" Nullable="false" />
+    <Property Name="sequenceno" Type="Int16" Nullable="false" />
+    <Property Name="transcount" Type="Int16" />
+    <Property Name="linecount" Type="Int32" />
+    <Property Name="transunits" Type="Int32" />
+    <Property Name="transvalue" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="transtax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="notepad" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="btransdisc">
+    <Key>
+      <PropertyRef Name="transint" />
+      <PropertyRef Name="transline" />
+      <PropertyRef Name="sequenceno" />
+    </Key>
+    <Property Name="transint" Type="Int32" Nullable="false" />
+    <Property Name="transline" Type="Int32" Nullable="false" />
+    <Property Name="sequenceno" Type="Int16" Nullable="false" />
+    <Property Name="translineint" Type="Int32" />
+    <Property Name="discountvalue" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="discounttax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="reasoncode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="discountcode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="authority" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="notepad" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="btranshdr">
+    <Key>
+      <PropertyRef Name="transnumber" />
+      <PropertyRef Name="typecode" />
+      <PropertyRef Name="branchcode" />
+    </Key>
+    <Property Name="transnumber" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="typecode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="reasoncode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="transdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="branchcode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="branchother" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="nominal" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="download" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="usercode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="processdate" Type="DateTime" Precision="3" />
+    <Property Name="transint" Type="Int32" Nullable="false" />
+    <Property Name="postransint" Type="Int32" />
+    <Property Name="source" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="KitAssemblyOrderID" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="SalesAudit" Type="Boolean" Nullable="false" />
+    <Property Name="Reference" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="WhDeliveryID" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ShipCode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="TargetCode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="AdjOtherTranCode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="AdjOtherLocCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="Reference2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="KitDisassemblyID" Type="Int32" />
+    <Property Name="KitAssemblyID" Type="Int32" />
+    <Property Name="DateExtractedToBI" Type="DateTime" Precision="3" />
+    <Property Name="CustomerOrderID" Type="Int32" />
+    <Property Name="CustomerShipmentID" Type="Int32" />
+    <Property Name="UserAmended" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DateAmended" Type="DateTime" Precision="3" />
+    <Property Name="UserApproved" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DateApproved" Type="DateTime" Precision="3" />
+    <Property Name="UserRejected" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DateRejected" Type="DateTime" Precision="3" />
+    <Property Name="UserConfirmed" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DateConfirmed" Type="DateTime" Precision="3" />
+    <Property Name="TotalAbsoluteCost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TotalAbsoluteRetail" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PIHeaderID" Type="Int32" />
+    <NavigationProperty Name="branch" Relationship="Self.fk_btranshdrs_2" FromRole="btranshdrs" ToRole="branches" />
+    <NavigationProperty Name="branch1" Relationship="Self.fk_btranshdrs_4" FromRole="btranshdrs" ToRole="branches" />
+  </EntityType>
+  <EntityType Name="btransifdata">
+    <Key>
+      <PropertyRef Name="transint" />
+      <PropertyRef Name="transline" />
+    </Key>
+    <Property Name="transint" Type="Int32" Nullable="false" />
+    <Property Name="transline" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="notepad" Type="Int32" Nullable="false" />
+    <Property Name="transdata" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="btransline">
+    <Key>
+      <PropertyRef Name="transint" />
+      <PropertyRef Name="transline" />
+    </Key>
+    <Property Name="transint" Type="Int32" Nullable="false" />
+    <Property Name="transline" Type="Int32" Nullable="false" />
+    <Property Name="prodint" Type="Int32" Nullable="false" />
+    <Property Name="quantity" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="costvalue" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="retailvalue" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="retailtax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="category" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="download" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="costcode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="weeknumber" Type="Int16" />
+    <Property Name="subcategory" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="stklevel" Type="Int32" />
+    <Property Name="transdate" Type="DateTime" Precision="3" />
+    <Property Name="pluvalue" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="plutax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="barcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="reasoncode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="translineint" Type="Int32" Nullable="false" />
+    <Property Name="kitlineint" Type="Int32" />
+    <Property Name="stklretail" Type="Double" />
+    <Property Name="stklcost" Type="Double" />
+    <Property Name="stklcm" Type="Double" />
+    <Property Name="fiscyrpercode" Type="Int32" />
+    <Property Name="kitvarint" Type="Int32" />
+    <Property Name="OldQty" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DbProcessStatus" Type="Boolean" Nullable="false" />
+    <Property Name="DbProcessedCount" Type="Int16" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Replenished" Type="Boolean" />
+    <Property Name="PromoCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerOrderLineID" Type="Int32" />
+    <Property Name="CustomerShipmentLineID" Type="Int32" />
+    <Property Name="StoreSubcategoryID" Type="Int32" />
+    <NavigationProperty Name="productcode" Relationship="Self.fk_btranslines_2" FromRole="btranslines" ToRole="productcodes" />
+  </EntityType>
+  <EntityType Name="consigdest">
+    <Key>
+      <PropertyRef Name="warehouse" />
+      <PropertyRef Name="consignment" />
+      <PropertyRef Name="destination" />
+    </Key>
+    <Property Name="warehouse" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="consignment" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="desttype" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="destination" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="condestint" Type="Int32" Nullable="false" />
+    <Property Name="delroute" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="droppoint" Type="Int32" />
+    <Property Name="destdoc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="delroutedoc" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="payterms" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="freightchg" Type="Double" />
+    <Property Name="freighttax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="address1" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="address2" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="address3" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="address4" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="postcode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="country" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="notepad" Type="Int32" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="reference" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="reasoncode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="reference2" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="KitAssemblyOrderDestinationID" Type="Int32" />
+    <Property Name="ShipDate" Type="DateTime" Precision="3" />
+    <Property Name="ShipUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="ReceiveDate" Type="DateTime" Precision="3" />
+    <Property Name="ReceiveUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AllocStatus" Type="Byte" Nullable="false" />
+    <Property Name="PickStatus" Type="Byte" Nullable="false" />
+    <Property Name="ParcelCnt" Type="Int32" />
+    <Property Name="ParcelType" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="DateInterfaced" Type="DateTime" Precision="3" />
+    <Property Name="ShippingCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="RTVDisposalMethod" Type="Byte" Nullable="false" />
+    <Property Name="SourceSubLocationID" Type="Int32" Nullable="false" />
+    <Property Name="UserCancelled" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DateCancelled" Type="DateTime" Precision="3" />
+    <Property Name="UserReopened" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DateReopened" Type="DateTime" Precision="3" />
+    <Property Name="RowVer" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="VendorLocationID" Type="Int32" />
+    <Property Name="ShipMethodCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ShipMethodCodeGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ShipReference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DriverReference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TruckNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserRejected" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DateRejected" Type="DateTime" Precision="3" />
+    <Property Name="UserApproved" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DateApproved" Type="DateTime" Precision="3" />
+    <Property Name="DateLastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateCreatedInStore" Type="DateTime" Precision="3" />
+    <Property Name="UserCreatedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateCancelledInStore" Type="DateTime" Precision="3" />
+    <Property Name="UserCancelledInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StoreSuggestionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateAmendedInStore" Type="DateTime" Precision="3" />
+    <Property Name="UserAmendedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateApprovedInStore" Type="DateTime" Precision="3" />
+    <Property Name="UserApprovedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateShippedInStore" Type="DateTime" Precision="3" />
+    <Property Name="UserShippedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ParentShipDestID" Type="Int32" />
+    <Property Name="LastChildShipCodeSuffix" Type="Int32" />
+    <Property Name="DateReceivedInStore" Type="DateTime" Precision="3" />
+    <Property Name="UserReceivedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="consighdr" Relationship="Self.fk_consigdests_1" FromRole="consigdests" ToRole="consighdrs" />
+  </EntityType>
+  <EntityType Name="consighdr">
+    <Key>
+      <PropertyRef Name="warehouse" />
+      <PropertyRef Name="consignment" />
+    </Key>
+    <Property Name="warehouse" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="consignment" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="collect" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="carrier" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="notepad" Type="Int32" Nullable="false" />
+    <Property Name="createdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="amenddate" Type="DateTime" Precision="3" />
+    <Property Name="despatchdate" Type="DateTime" Precision="3" />
+    <Property Name="issuedate" Type="DateTime" Precision="3" />
+    <Property Name="confirmdate" Type="DateTime" Precision="3" />
+    <Property Name="consigdoc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="exceptions" Type="Int16" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="authorityno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreateUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AmendUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AuthorizeUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AuthorizeDate" Type="DateTime" Precision="3" />
+    <Property Name="ManyToOne" Type="Boolean" Nullable="false" />
+    <Property Name="ChannelType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="TransferRequest" Type="Boolean" Nullable="false" />
+    <Property Name="TransferAll" Type="Boolean" Nullable="false" />
+    <Property Name="BuyerCode" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="ReasonCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="RTV" Type="Boolean" Nullable="false" />
+    <Property Name="TransferRequestID" Type="Int32" />
+    <Property Name="StoreInitiated" Type="Boolean" Nullable="false" />
+    <Property Name="RTVAuthRequestedUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="RTVAuthRequestedDate" Type="DateTime" Precision="3" />
+    <Property Name="RTVRejectNotes" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="RTVRejectedUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="RTVRejectedDate" Type="DateTime" Precision="3" />
+    <Property Name="RTVCancelReasonCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RTVCancelReasonGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="DateExtractedToAP" Type="DateTime" Precision="3" />
+    <Property Name="AllowAddProductsDuringPack" Type="Boolean" Nullable="false" />
+    <Property Name="DateCreatedInStore" Type="DateTime" Precision="3" />
+    <Property Name="UserCreatedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="consigdests" Relationship="Self.fk_consigdests_1" FromRole="consighdrs" ToRole="consigdests" />
+    <NavigationProperty Name="consigdocs" Relationship="Self.fk_consigdocs_2" FromRole="consighdrs" ToRole="consigdocs" />
+  </EntityType>
+  <EntityType Name="consigline">
+    <Key>
+      <PropertyRef Name="condestint" />
+      <PropertyRef Name="transline" />
+      <PropertyRef Name="varint" />
+    </Key>
+    <Property Name="condestint" Type="Int32" Nullable="false" />
+    <Property Name="transline" Type="Int32" Nullable="false" />
+    <Property Name="conlineint" Type="Int32" Nullable="false" />
+    <Property Name="destordref" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="destordline" Type="Int32" />
+    <Property Name="destordint" Type="Int32" />
+    <Property Name="varint" Type="Int32" Nullable="false" />
+    <Property Name="batchint" Type="Int32" />
+    <Property Name="issueqty" Type="Int32" Nullable="false" />
+    <Property Name="receiveqty" Type="Int32" />
+    <Property Name="avcost" Type="Double" Nullable="false" />
+    <Property Name="unitretail" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="othervalue" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="discrepqty" Type="Int32" />
+    <Property Name="download" Type="Int16" Nullable="false" />
+    <Property Name="RequestQty" Type="Int32" Nullable="false" />
+    <Property Name="ReasonCode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="WIPQty" Type="Int32" />
+    <Property Name="InTransitQuantity" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="PackedQty" Type="Int32" Nullable="false" />
+    <Property Name="DestLocAverageCost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="DestLocUnitPrice" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="productcode" Relationship="Self.fk_consiglines_2" FromRole="consiglines" ToRole="productcodes" />
+  </EntityType>
+  <EntityType Name="pricechghdr">
+    <Key>
+      <PropertyRef Name="pricechgcode" />
+    </Key>
+    <Property Name="pricechgcode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pricechgint" Type="Int32" Nullable="false" />
+    <Property Name="startdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="enddate" Type="DateTime" Precision="3" />
+    <Property Name="createdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="authdate" Type="DateTime" Precision="3" />
+    <Property Name="reasoncode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pricechgtype" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="usercode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="authuser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="buyer" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="totvalue" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="frequency" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="daysofweek" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="starttime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="endtime" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="budgetqty" Type="Int32" />
+    <Property Name="budgetval" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="eventcode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="buycond" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="reccond" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="disctype" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="proddesc">
+    <Key>
+      <PropertyRef Name="prodint" />
+      <PropertyRef Name="sequenceno" />
+    </Key>
+    <Property Name="prodint" Type="Int32" Nullable="false" />
+    <Property Name="sequenceno" Type="Int16" Nullable="false" />
+    <Property Name="descline" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="productcode">
+    <Key>
+      <PropertyRef Name="varint" />
+    </Key>
+    <Property Name="variantcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="prodint" Type="Int32" Nullable="false" />
+    <Property Name="varint" Type="Int32" Nullable="false" />
+    <Property Name="vatcode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="repcost" Type="Double" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="baseproduct" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sequenceno" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="varcode1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="varcode2" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="vardesc1" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="vardesc2" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="SeasonIntroduced" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="CoordinateGroup" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Silhouette" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="InventoryStatus" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="CountryOrigin" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="CountryMfr" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="CountryDispatch" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="pa01" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa02" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa03" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa04" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa05" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa06" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa07" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa08" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa09" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa10" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa11" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa12" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa13" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa14" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa15" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa16" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa17" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa18" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa19" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa20" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa21" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa22" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa23" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa24" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa25" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOffline" Type="Boolean" Nullable="false" />
+    <Property Name="DefaultVendorProductID" Type="Int32" />
+    <Property Name="Web" Type="Boolean" Nullable="false" />
+    <Property Name="prodint2" Type="Int32" />
+    <Property Name="WebRejected" Type="Boolean" Nullable="false" />
+    <Property Name="ClusterID" Type="Int32" />
+    <Property Name="WIPClusterID" Type="Int32" />
+    <Property Name="TargetYrWeek" Type="Int32" />
+    <Property Name="AdCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="POSMarkdown" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="MarkdownDate" Type="DateTime" Precision="3" />
+    <Property Name="MergeID" Type="Int32" />
+    <Property Name="MergeDate" Type="DateTime" Precision="3" />
+    <Property Name="MergeUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="ColourARGB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="SizeType" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="SizeCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="SizeDesc" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ProductOptionID" Type="Int32" />
+    <Property Name="ProductOptionCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CouponFamily1" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="CouponFamily2" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="pa26" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa27" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa28" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa29" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa30" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa31" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa32" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa33" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa34" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa35" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa36" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa37" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa38" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa39" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa40" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa41" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa42" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa43" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa44" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa45" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa46" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa47" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa48" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa49" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa50" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa51" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa52" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa53" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa54" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa55" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa56" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa57" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa58" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa59" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa60" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa61" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa62" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa63" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa64" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa65" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa66" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa67" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa68" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa69" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa70" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa71" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa72" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa73" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa74" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa75" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa76" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa77" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa78" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa79" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa80" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa81" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa82" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa83" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa84" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa85" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa86" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa87" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa88" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa89" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa90" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa91" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa92" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa93" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa94" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa95" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa96" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa97" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa98" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="pa99" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="brnstocks" Relationship="Self.fk_brnstocks_2" FromRole="productcodes" ToRole="brnstocks" />
+    <NavigationProperty Name="btranslines" Relationship="Self.fk_btranslines_2" FromRole="productcodes" ToRole="btranslines" />
+    <NavigationProperty Name="consiglines" Relationship="Self.fk_consiglines_2" FromRole="productcodes" ToRole="consiglines" />
+    <NavigationProperty Name="product" Relationship="Self.fk_productcodes_1" FromRole="productcodes" ToRole="products" />
+    <NavigationProperty Name="purchordlines" Relationship="Self.fk_purchordline_2" FromRole="productcodes" ToRole="purchordline" />
+    <NavigationProperty Name="supproducts" Relationship="Self.fk_supproducts_3" FromRole="productcodes" ToRole="supproducts" />
+    <NavigationProperty Name="supproduct" Relationship="Self.productcodes_FK2" FromRole="productcodes" ToRole="supproducts" />
+    <NavigationProperty Name="product1" Relationship="Self.productcodes_FK3" FromRole="productcodes" ToRole="products" />
+    <NavigationProperty Name="productcodes1" Relationship="Self.productcodes_FK8" FromRole="productcodes" ToRole="productcodes1" />
+    <NavigationProperty Name="productcode1" Relationship="Self.productcodes_FK8" FromRole="productcodes1" ToRole="productcodes" />
+    <NavigationProperty Name="varcode" Relationship="Self.productcodes_FK9" FromRole="productcodes" ToRole="varcodes" />
+    <NavigationProperty Name="prodkeys" Relationship="mi9_mms_fs_trainModel.fk_prodkeys_1" FromRole="productcode" ToRole="prodkey" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="prodint" />
+    </Key>
+    <Property Name="prodcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="velcode" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+    <Property Name="altkey" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="barcode" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="proddesc" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="longdescind" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="level1" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="level2" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="level3" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="prodquality" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="prodstatus" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="prodtype" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="prodhistlev" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="prodorderind" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="prodallocind" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="kitind" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="packcode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="supplier" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="supptable" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="avlead" Type="Int32" />
+    <Property Name="vatcode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="cubefactor" Type="Double" />
+    <Property Name="weight" Type="Double" />
+    <Property Name="facing" Type="Double" />
+    <Property Name="height" Type="Double" />
+    <Property Name="width" Type="Double" />
+    <Property Name="depth" Type="Double" />
+    <Property Name="length" Type="Double" />
+    <Property Name="convcode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="purchunits" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="stockunits" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="salesunits" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="abcclass" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="analcode1" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="analcode2" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="analcode3" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="analcode4" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="analcode5" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="prodclass" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="disccat" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="commcat" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="resprodcode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="seasoncode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="misccharge" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="merchmodel" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="carrmethod" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="carrcharge" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="handcharge" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="surcharge" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="salesnomcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="purchnomcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="stocknomcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="lastmovedate" Type="DateTime" Precision="3" />
+    <Property Name="amenddate" Type="DateTime" Precision="3" />
+    <Property Name="amenduser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="createdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="deletedate" Type="DateTime" Precision="3" />
+    <Property Name="introdate" Type="DateTime" Precision="3" />
+    <Property Name="discondate" Type="DateTime" Precision="3" />
+    <Property Name="suspdate" Type="DateTime" Precision="3" />
+    <Property Name="lastcheckdte" Type="DateTime" Precision="3" />
+    <Property Name="nextcheckdte" Type="DateTime" Precision="3" />
+    <Property Name="stdcost" Type="Double" />
+    <Property Name="nxtstdcost" Type="Double" />
+    <Property Name="nxtstddate" Type="DateTime" Precision="3" />
+    <Property Name="oldstdcost" Type="Double" />
+    <Property Name="avcost" Type="Double" />
+    <Property Name="repcost" Type="Double" />
+    <Property Name="valueprice" Type="Double" />
+    <Property Name="ordercost" Type="Double" />
+    <Property Name="storagecost" Type="Double" />
+    <Property Name="demandytd" Type="Double" />
+    <Property Name="lostsalesytd" Type="Double" />
+    <Property Name="mingmpc" Type="Double" />
+    <Property Name="maxgmpc" Type="Double" />
+    <Property Name="basegmpc" Type="Double" />
+    <Property Name="reportseq" Type="Int32" />
+    <Property Name="accesscount" Type="Int32" />
+    <Property Name="abcrankno" Type="Int32" />
+    <Property Name="abclastrank" Type="Int32" />
+    <Property Name="abclastdate" Type="DateTime" Precision="3" />
+    <Property Name="prodint" Type="Int32" Nullable="false" />
+    <Property Name="life" Type="Int16" />
+    <Property Name="idealset" Type="Int32" />
+    <Property Name="brand" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="contind" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="introseason" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="reordmethod" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="customsdesc" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="prodstruct" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="labeltype" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="sourcecode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="licencecode" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="foodstamp" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="shelldep" Type="Double" />
+    <Property Name="bottledep" Type="Double" />
+    <Property Name="paytable" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="competeprice" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="knownvalue" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="manufacturer" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="buyer" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="replenmethod" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="backsalhist" Type="Int16" />
+    <Property Name="wksstockheld" Type="Double" />
+    <Property Name="replenstdte" Type="DateTime" Precision="3" />
+    <Property Name="replenenddte" Type="DateTime" Precision="3" />
+    <Property Name="statchgdate" Type="DateTime" Precision="3" />
+    <Property Name="range" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="CommodityID" Type="Int32" />
+    <Property Name="VarTableCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="CoordinateGroup" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="Silhouette" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedOffline" Type="Boolean" Nullable="false" />
+    <Property Name="CreateUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="LongDesc" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="StatChgUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="PrimaryMaterial" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="KitDisassemblyAction" Type="Byte" Nullable="false" />
+    <Property Name="Stockable" Type="Boolean" Nullable="false" />
+    <Property Name="Consignment" Type="Boolean" Nullable="false" />
+    <Property Name="SpecialOrder" Type="Boolean" Nullable="false" />
+    <Property Name="NonMarkdownReason" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="AvReceivedCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ReceivedQty" Type="Int32" Nullable="false" />
+    <Property Name="DefaultVendorProductID" Type="Int32" />
+    <Property Name="level4" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="level5" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="AltMerchHierarchy1ID" Type="Int32" />
+    <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+    <Property Name="InnerPack" Type="Int32" Nullable="false" />
+    <Property Name="MasterPack" Type="Int32" Nullable="false" />
+    <Property Name="MarkdownDate" Type="DateTime" Precision="3" />
+    <Property Name="PreTicket" Type="Boolean" Nullable="false" />
+    <Property Name="Assorted" Type="Boolean" Nullable="false" />
+    <Property Name="AllocUnits" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="SetQty" Type="Int32" />
+    <Property Name="CartonQty" Type="Int32" Nullable="false" />
+    <Property Name="PalletQty" Type="Int32" Nullable="false" />
+    <Property Name="WebDate" Type="DateTime" Precision="3" />
+    <Property Name="CopyDate" Type="DateTime" Precision="3" />
+    <Property Name="PhotoDate" Type="DateTime" Precision="3" />
+    <Property Name="PhotoLocation" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SetType" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Replenished" Type="Boolean" Nullable="false" />
+    <Property Name="ReplenishmentSourceType" Type="Byte" Nullable="false" />
+    <Property Name="POSMarkdown" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="VMI" Type="Boolean" Nullable="false" />
+    <Property Name="Scaled" Type="Boolean" Nullable="false" />
+    <Property Name="PriceCompareUnits" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="PriceCompareFactor" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SalesUnitsID" Type="Int32" />
+    <Property Name="AltSalesUnitsID" Type="Int32" />
+    <Property Name="AllocUnitsID" Type="Int32" />
+    <Property Name="PDQUnitsID" Type="Int32" />
+    <Property Name="AltSalesUnitsSKU" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="HazMatClass" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="SecurityTagType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="SellingRestriction" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="POSKeyword" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="CommissionPercent" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+    <Property Name="Fee" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NeverOutOfStock" Type="Boolean" Nullable="false" />
+    <Property Name="FarmerTaxExempt" Type="Boolean" Nullable="false" />
+    <Property Name="SerialNumRequired" Type="Boolean" Nullable="false" />
+    <Property Name="WarrantyAvailable" Type="Boolean" Nullable="false" />
+    <Property Name="PreventEnteringQtyForRepeatItemInPOS" Type="Boolean" Nullable="false" />
+    <Property Name="FoodStampCanBeUsed" Type="Boolean" Nullable="false" />
+    <Property Name="AssociatedProdint" Type="Int32" />
+    <Property Name="POSScriptLine1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="POSScriptLine2" Type="String" MaxLength="31" FixedLength="false" Unicode="false" />
+    <Property Name="AllowPriceOverrideInPOS" Type="Boolean" Nullable="false" />
+    <Property Name="ForceEnteringQtyInPOS" Type="Boolean" Nullable="false" />
+    <Property Name="WebPublishedDate" Type="DateTime" Precision="3" />
+    <Property Name="NonMerchType" Type="Byte" Nullable="false" />
+    <Property Name="HTSCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ProPricingGroup" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ProPricingType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="ShipQtyMayExceedAvailable" Type="Boolean" Nullable="false" />
+    <Property Name="WarehouseReplenishmentStartDate" Type="DateTime" Precision="0" />
+    <Property Name="WarehouseReplenishmentEndDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="brnstkchks" Relationship="Self.fk_brnstkchks_2" FromRole="products" ToRole="brnstkchks" />
+    <NavigationProperty Name="productcodes" Relationship="Self.fk_productcodes_1" FromRole="products" ToRole="productcodes" />
+    <NavigationProperty Name="productcodes1" Relationship="Self.productcodes_FK3" FromRole="products" ToRole="productcodes" />
+    <NavigationProperty Name="supplier1" Relationship="Self.fk_products_19" FromRole="products" ToRole="suppliers" />
+    <NavigationProperty Name="products1" Relationship="Self.fk_products_26" FromRole="products" ToRole="products1" />
+    <NavigationProperty Name="product1" Relationship="Self.fk_products_26" FromRole="products1" ToRole="products" />
+    <NavigationProperty Name="supplier2" Relationship="Self.fk_products_3" FromRole="products" ToRole="suppliers" />
+    <NavigationProperty Name="purchordlines" Relationship="Self.fk_purchordline_3" FromRole="products" ToRole="purchordline" />
+    <NavigationProperty Name="supproducts" Relationship="Self.fk_supproducts_2" FromRole="products" ToRole="supproducts" />
+  </EntityType>
+  <EntityType Name="purchcost">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="purchlineint" Type="Int32" Nullable="false" />
+    <Property Name="costcode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="homecurrency" Type="Int16" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SourceType" Type="Byte" Nullable="false" />
+    <Property Name="SourceID" Type="Int32" />
+    <Property Name="CreatedOffline" Type="Boolean" Nullable="false" />
+    <Property Name="NetCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="LandedCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="TotalCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DutiableCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="FromHeader" Type="Boolean" Nullable="false" />
+    <Property Name="costvalue" Type="Decimal" Precision="9" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="purchorder">
+    <Key>
+      <PropertyRef Name="ordernumber" />
+    </Key>
+    <Property Name="suppint" Type="Int32" Nullable="false" />
+    <Property Name="ordernumber" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="buyer" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="suppbrint" Type="Int32" />
+    <Property Name="seasoncode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="orderdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="createdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="amenddate" Type="DateTime" Precision="3" />
+    <Property Name="printdate" Type="DateTime" Precision="3" />
+    <Property Name="makeupdate" Type="DateTime" Precision="3" />
+    <Property Name="makeupprint" Type="DateTime" Precision="3" />
+    <Property Name="location" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="deliverydate" Type="DateTime" Precision="3" />
+    <Property Name="canceldate" Type="DateTime" Precision="3" />
+    <Property Name="ackreference" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ackdate" Type="DateTime" Precision="3" />
+    <Property Name="authuser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="authdate" Type="DateTime" Precision="3" />
+    <Property Name="plint" Type="Int32" />
+    <Property Name="settlement" Type="Double" />
+    <Property Name="settletype" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="buyingmethod" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="currency" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="currrate" Type="Double" />
+    <Property Name="usercode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="transint" Type="Int32" Nullable="false" />
+    <Property Name="makeupstatus" Type="Int16" />
+    <Property Name="printprice" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="openorder" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ordertype" Type="Int16" Nullable="false" />
+    <Property Name="splint" Type="Int32" />
+    <Property Name="printstatus" Type="Int16" />
+    <Property Name="dealnumber" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="amendno" Type="Int32" />
+    <Property Name="allowbo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="compafter" Type="Int32" />
+    <Property Name="channelcode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="faxsubmitref" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="faxstatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="type" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="shipdate" Type="DateTime" Precision="3" />
+    <Property Name="carrier" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="firstdeldate" Type="DateTime" Precision="3" />
+    <Property Name="lastdeldate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOffline" Type="Boolean" Nullable="false" />
+    <Property Name="SendEDI" Type="Byte" Nullable="false" />
+    <Property Name="AmendUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="TransportMethod" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="VendorPromoCode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="KitAssemblyOrderID" Type="Int32" />
+    <Property Name="CheckOutUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CheckOutDate" Type="DateTime" Precision="3" />
+    <Property Name="AllocStatus" Type="Byte" Nullable="false" />
+    <Property Name="UserClosed" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DateClosed" Type="DateTime" Precision="3" />
+    <Property Name="BuyerCommissionPC" Type="Decimal" Precision="4" Scale="2" />
+    <Property Name="Reference1" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="PriceListCurrRate" Type="Decimal" Precision="19" Scale="9" Nullable="false" />
+    <Property Name="PurchaseType" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="YrWeek" Type="Int32" />
+    <Property Name="EmailDate" Type="DateTime" Precision="3" />
+    <Property Name="EmailCount" Type="Int32" Nullable="false" />
+    <Property Name="EmailFailed" Type="Boolean" Nullable="false" />
+    <Property Name="EmailFailedText" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="EmailTryCount" Type="Int32" Nullable="false" />
+    <Property Name="ReplenishmentOrder" Type="Boolean" Nullable="false" />
+    <Property Name="EmailAgain" Type="Boolean" Nullable="false" />
+    <Property Name="PurchaseContractID" Type="Int32" />
+    <Property Name="Reference2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="DateInterfaced" Type="DateTime" Precision="3" />
+    <Property Name="DateEDIFirstSent" Type="DateTime" Precision="3" />
+    <Property Name="DateEDILastSent" Type="DateTime" Precision="3" />
+    <Property Name="LastEDIControlNumber" Type="Int32" />
+    <Property Name="DoNotDeliverAfterDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VendorLocationID" Type="Int32" />
+    <Property Name="VMITransactionID" Type="Int32" />
+    <Property Name="SendToPOS" Type="Boolean" Nullable="false" />
+    <Property Name="DateBooked" Type="DateTime" Precision="0" />
+    <Property Name="VersionDate" Type="DateTime" Precision="3" />
+    <Property Name="PayMethod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PayMethodGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="SpecialInstructions1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SpecialInstructions2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SpecialInstructionsGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ShippingInstructions" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ShippingInstructionsGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="CancellationNote" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="NewStoreCostDiscount" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="QualifiesForNewStoreDiscount" Type="Boolean" Nullable="false" />
+    <Property Name="MergedIntoPO" Type="Boolean" Nullable="false" />
+    <Property Name="FinalLocationCode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="AckStatus" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ASNFirstReceivedDate" Type="DateTime" Precision="0" />
+    <Property Name="ASNLastReceivedDate" Type="DateTime" Precision="0" />
+    <Property Name="CustomID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ChangeReason" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ChangeReasonGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="EDISentCount" Type="Byte" Nullable="false" />
+    <Property Name="DateLastModified" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CustomerOrderID" Type="Int32" />
+    <Property Name="DateAmendedForEDI" Type="DateTime" Precision="3" />
+    <Property Name="SpecialOrderStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SpecialOrderStatusGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="SpecialOrderCancellationStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SpecialOrderCancellationStatusGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="SpecialOrderAuthorizeCancellationNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SpecialOrderAuthorizeReactivationNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateAuthorizedSpecialOrderCancellation" Type="DateTime" Precision="3" />
+    <Property Name="UserAuthorizedSpecialOrderCancellation" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DateAuthorizedSpecialOrderReactivation" Type="DateTime" Precision="3" />
+    <Property Name="UserAuthorizedSpecialOrderReactivation" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="purchordline">
+    <Key>
+      <PropertyRef Name="transint" />
+      <PropertyRef Name="transline" />
+    </Key>
+    <Property Name="transint" Type="Int32" Nullable="false" />
+    <Property Name="transline" Type="Int16" Nullable="false" />
+    <Property Name="location" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="deliverydate" Type="DateTime" Precision="3" />
+    <Property Name="canceldate" Type="DateTime" Precision="3" />
+    <Property Name="varint" Type="Int32" Nullable="false" />
+    <Property Name="prodint" Type="Int32" Nullable="false" />
+    <Property Name="baseproduct" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="quantity" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="makeupqty" Type="Int32" Nullable="false" />
+    <Property Name="purchunits" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="unitcost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="netcost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="unitretail" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="bandingunits" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="packagetype" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="origin" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="suppprodref" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="quoteref" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="quotedate" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="amendstatus" Type="Int16" />
+    <Property Name="makeupstatus" Type="Int16" />
+    <Property Name="purchlineint" Type="Int32" Nullable="false" />
+    <Property Name="supprodint" Type="Int32" />
+    <Property Name="delschstatus" Type="Int16" />
+    <Property Name="CreatedOffline" Type="Boolean" Nullable="false" />
+    <Property Name="LandedCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DutiableCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="MultiBrand" Type="Boolean" Nullable="false" />
+    <Property Name="BoxCount" Type="Int32" Nullable="false" />
+    <Property Name="PreTicket" Type="Boolean" Nullable="false" />
+    <Property Name="SampleQty" Type="Int32" Nullable="false" />
+    <Property Name="YrWeek" Type="Int32" />
+    <Property Name="QtyPerPurchUnit" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="QtyInPurchUnits" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="FirstCostPerPurchUnit" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="PurchUnitsID" Type="Int32" />
+    <Property Name="TaxRate" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="MergedIntoPOLineID" Type="Int32" />
+    <Property Name="CustomerOrderLineID" Type="Int32" />
+    <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateAmendedForEDI" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateReopened" Type="DateTime" Precision="3" />
+    <Property Name="QtyFromEDILastSent" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="SpecialOrderDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="productcode" Relationship="Self.fk_purchordline_2" FromRole="purchordline" ToRole="productcodes" />
+    <NavigationProperty Name="product" Relationship="Self.fk_purchordline_3" FromRole="purchordline" ToRole="products" />
+    <NavigationProperty Name="supproduct" Relationship="Self.fk_purchordline_7" FromRole="purchordline" ToRole="supproducts" />
+  </EntityType>
+  <EntityType Name="reasoncode">
+    <Key>
+      <PropertyRef Name="languageid" />
+      <PropertyRef Name="typecode" />
+      <PropertyRef Name="reasoncode1" />
+    </Key>
+    <Property Name="languageid" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="typecode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="reasoncode1" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="supplier">
+    <Key>
+      <PropertyRef Name="supplier1" />
+    </Key>
+    <Property Name="supplier1" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="shortname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="commsline" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="hoaccountno" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="grpaccountno" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="category" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="typecode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="class" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="accounttype" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="buyer" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="ordermethod" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="merchplan" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="invmethod" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="paymethod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="currency" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="retmethod" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="creditproc" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="minlead" Type="Int32" />
+    <Property Name="maxlead" Type="Int32" />
+    <Property Name="leadtimetype" Type="Int16" Nullable="false" />
+    <Property Name="orderbranch" Type="Int32" />
+    <Property Name="historylevel" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="suppprod" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="lastmovedate" Type="DateTime" Precision="3" />
+    <Property Name="createdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="amenddate" Type="DateTime" Precision="3" />
+    <Property Name="deletedate" Type="DateTime" Precision="3" />
+    <Property Name="suppint" Type="Int32" Nullable="false" />
+    <Property Name="suspreason" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="suspreasonra" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="suspreasonap" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="suspdate" Type="DateTime" Precision="3" />
+    <Property Name="suspuser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="reinstdate" Type="DateTime" Precision="3" />
+    <Property Name="reinstuser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="minorder" Type="Int32" />
+    <Property Name="maxorder" Type="Int32" />
+    <Property Name="anacode" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="discount" Type="Double" />
+    <Property Name="languageid" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="settletype" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="taxregno" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="printprice" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="supptype" Type="Int16" />
+    <Property Name="buymethod" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="stdindclass" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="dbrating" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="reportcat" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="carrier" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="multilocords" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="maxdelval" Type="Int32" />
+    <Property Name="mindelval" Type="Int32" />
+    <Property Name="allowbo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="compafter" Type="Int32" />
+    <Property Name="sa01" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa02" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa03" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa04" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa05" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa06" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa07" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa08" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa09" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa10" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa11" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa12" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa13" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa14" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa15" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa16" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa17" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa18" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa19" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa20" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa21" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa22" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa23" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa24" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="sa25" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EdiTestCodeQualifier" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="EdiTestCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="EdiLiveCodeQualifier" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="EdiLiveCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="EdiStatus" Type="Byte" Nullable="false" />
+    <Property Name="EdiFormat" Type="Byte" Nullable="false" />
+    <Property Name="EdiVersion" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="EdiTestStartDate" Type="DateTime" Precision="3" />
+    <Property Name="EdiLiveStartDate" Type="DateTime" Precision="3" />
+    <Property Name="EdiSuspendDate" Type="DateTime" Precision="3" />
+    <Property Name="EdiPo" Type="Byte" Nullable="false" />
+    <Property Name="EdiPoAck" Type="Boolean" Nullable="false" />
+    <Property Name="EdiPoAmend" Type="Boolean" Nullable="false" />
+    <Property Name="EdiInvoice" Type="Boolean" Nullable="false" />
+    <Property Name="EdiAsn" Type="Boolean" Nullable="false" />
+    <Property Name="EdiPayment" Type="Boolean" Nullable="false" />
+    <Property Name="EdiCatalog" Type="Boolean" Nullable="false" />
+    <Property Name="EdiFuncAck" Type="Boolean" Nullable="false" />
+    <Property Name="AutoAuthorizeOrders" Type="Byte" Nullable="false" />
+    <Property Name="TransportMethod" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Import" Type="Boolean" Nullable="false" />
+    <Property Name="Brand" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="Fulfillment" Type="Boolean" Nullable="false" />
+    <Property Name="FFShipMode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="FFShipModeInt" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="FFHandlingCharge" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="FFHandlingChargeInt" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="FFItemHandlingCharge" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="FFItemHandlingChargeInt" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="FFShipChargeType" Type="Byte" Nullable="false" />
+    <Property Name="FFShipChargeCountType" Type="Byte" Nullable="false" />
+    <Property Name="FFUsePackaging" Type="Boolean" Nullable="false" />
+    <Property Name="FFPackagingOptimizationType" Type="Byte" Nullable="false" />
+    <Property Name="CreatedOffline" Type="Boolean" Nullable="false" />
+    <Property Name="Interfaced" Type="Boolean" Nullable="false" />
+    <Property Name="DateInterfaced" Type="DateTime" Precision="3" />
+    <Property Name="PreTicket" Type="Boolean" Nullable="false" />
+    <Property Name="DUNS" Type="Int32" Nullable="false" />
+    <Property Name="RequireVendorProduct" Type="Byte" Nullable="false" />
+    <Property Name="RequireVendorUPC" Type="Byte" Nullable="false" />
+    <Property Name="Edi850ControlNumber" Type="Int32" Nullable="false" />
+    <Property Name="VMI" Type="Boolean" Nullable="false" />
+    <Property Name="AutoReceiveASN" Type="Byte" Nullable="false" />
+    <Property Name="CancelAfterDays" Type="Byte" Nullable="false" />
+    <Property Name="Edi850DTM001InUse" Type="Boolean" Nullable="false" />
+    <Property Name="Edi850DTM010InUse" Type="Boolean" Nullable="false" />
+    <Property Name="Edi850DTM037InUse" Type="Boolean" Nullable="false" />
+    <Property Name="Edi850DTM038InUse" Type="Boolean" Nullable="false" />
+    <Property Name="Edi850DTM074InUse" Type="Boolean" Nullable="false" />
+    <Property Name="EdiLastInvoiceCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="EdiLastASNCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="VendorLocationsInUse" Type="Boolean" Nullable="false" />
+    <Property Name="EdiUseTildeAsSegmentTerminator" Type="Byte" Nullable="false" />
+    <Property Name="EnforceVendorCompanyLocationRules" Type="Byte" Nullable="false" />
+    <Property Name="UseSystemTolerance" Type="Boolean" Nullable="false" />
+    <Property Name="ImportingCompany" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ImportingCompanyGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="SbaContractInUse" Type="Boolean" Nullable="false" />
+    <Property Name="SbaContractStartDate" Type="DateTime" Precision="0" />
+    <Property Name="CommercialDiscountPercent" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="CommercialDiscountPercentStartDate" Type="DateTime" Precision="0" />
+    <Property Name="DefectiveMerchandiseDiscountPercent" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="DefectiveMerchandiseDiscountPercentStartDate" Type="DateTime" Precision="0" />
+    <Property Name="EdiProvider" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EdiProviderGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="EdiMessagingProtocol" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="EdiMessagingProtocolGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="OrderPlanRequired" Type="Boolean" Nullable="false" />
+    <Property Name="AllowBrokenPacks" Type="Boolean" Nullable="false" />
+    <Property Name="NewStoreDiscountDays" Type="Byte" Nullable="false" />
+    <Property Name="EdiProductActivity" Type="Boolean" Nullable="false" />
+    <Property Name="UpdateCostOnASN" Type="Boolean" Nullable="false" />
+    <Property Name="RebateVendor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RebateVendorGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="VerticallyIntegratedRetailer" Type="Boolean" Nullable="false" />
+    <Property Name="SpecialOrders" Type="Boolean" Nullable="false" />
+    <Property Name="SpecialOrdersSpecRequired" Type="Boolean" Nullable="false" />
+    <Property Name="Edi850DTM001DeliveryDateInUse" Type="Boolean" Nullable="false" />
+    <Property Name="Edi850SDQInUse" Type="Boolean" Nullable="false" />
+    <Property Name="Edi850TD5InUse" Type="Boolean" Nullable="false" />
+    <Property Name="Edi850ITDInUse" Type="Boolean" Nullable="false" />
+    <Property Name="EdiFuncAckForInvoice" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="products" Relationship="Self.fk_products_19" FromRole="suppliers" ToRole="products" />
+    <NavigationProperty Name="products1" Relationship="Self.fk_products_3" FromRole="suppliers" ToRole="products" />
+    <NavigationProperty Name="suppliers1" Relationship="Self.fk_suppliers_1" FromRole="suppliers" ToRole="suppliers1" />
+    <NavigationProperty Name="supplier2" Relationship="Self.fk_suppliers_1" FromRole="suppliers1" ToRole="suppliers" />
+    <NavigationProperty Name="suppliers11" Relationship="Self.fk_suppliers_2" FromRole="suppliers" ToRole="suppliers1" />
+    <NavigationProperty Name="supplier3" Relationship="Self.fk_suppliers_2" FromRole="suppliers1" ToRole="suppliers" />
+    <NavigationProperty Name="structlevels" Relationship="mi9_mms_fs_trainModel.fk_structlevels_4" FromRole="supplier" ToRole="structlevel" />
+  </EntityType>
+  <EntityType Name="supproduct">
+    <Key>
+      <PropertyRef Name="supprodint" />
+    </Key>
+    <Property Name="suppint" Type="Int32" Nullable="false" />
+    <Property Name="supproduct1" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="supprodint" Type="Int32" Nullable="false" />
+    <Property Name="prodint" Type="Int32" />
+    <Property Name="varint" Type="Int32" />
+    <Property Name="description" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="reference" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="anacode" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="retailprice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="rrpvat" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="vatcode" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="convcode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="salesunits" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="minorder" Type="Int32" />
+    <Property Name="maxorder" Type="Int32" />
+    <Property Name="minvalue" Type="Int32" />
+    <Property Name="maxvalue" Type="Int32" />
+    <Property Name="minlead" Type="Int16" />
+    <Property Name="maxlead" Type="Int16" />
+    <Property Name="leadtimetype" Type="Int16" />
+    <Property Name="life" Type="Int16" />
+    <Property Name="origin" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="preference" Type="Int16" Nullable="false" />
+    <Property Name="suppbrint" Type="Int32" />
+    <Property Name="introdate" Type="DateTime" Precision="3" />
+    <Property Name="discondate" Type="DateTime" Precision="3" />
+    <Property Name="suspreason" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="suspdate" Type="DateTime" Precision="3" />
+    <Property Name="suspuser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="reinstdate" Type="DateTime" Precision="3" />
+    <Property Name="reinstuser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="createdate" Type="DateTime" Precision="3" />
+    <Property Name="amenddate" Type="DateTime" Precision="3" />
+    <Property Name="deletedate" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="discount" Type="Double" />
+    <Property Name="settletype" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="mindelqty" Type="Int32" />
+    <Property Name="maxdelqty" Type="Int32" />
+    <Property Name="mindelval" Type="Int32" />
+    <Property Name="maxdelval" Type="Int32" />
+    <Property Name="bandingunits" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="sourcepercent" Type="Int16" />
+    <Property Name="CreatedOffline" Type="Boolean" Nullable="false" />
+    <Property Name="vardesc1" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="vardesc2" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="basesupprodint" Type="Int32" />
+    <Property Name="OrderMultiple" Type="Int32" />
+    <Property Name="ImportCertificate" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="ImportCertificateStartDate" Type="DateTime" Precision="0" />
+    <Property Name="ImportCertificateEndDate" Type="DateTime" Precision="0" />
+    <Property Name="ImportCertificateInProgress" Type="Boolean" Nullable="false" />
+    <Property Name="SafetyCertificate" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="UserCreated" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="UserAmended" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="CountryMfr" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="CountryDispatch" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="UserActiveChanged" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="DateActiveChanged" Type="DateTime" Precision="3" />
+    <Property Name="DateLastModified" Type="DateTime" Precision="3" />
+    <Property Name="AvailableForWebFF" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="productcode" Relationship="Self.fk_supproducts_3" FromRole="supproducts" ToRole="productcodes" />
+    <NavigationProperty Name="productcodes" Relationship="Self.productcodes_FK2" FromRole="supproducts" ToRole="productcodes" />
+    <NavigationProperty Name="product" Relationship="Self.fk_supproducts_2" FromRole="supproducts" ToRole="products" />
+    <NavigationProperty Name="purchordlines" Relationship="Self.fk_purchordline_7" FromRole="supproducts" ToRole="purchordline" />
+    <NavigationProperty Name="supproducts1" Relationship="Self.fk_supproducts_10" FromRole="supproducts" ToRole="supproducts1" />
+    <NavigationProperty Name="supproduct2" Relationship="Self.fk_supproducts_10" FromRole="supproducts1" ToRole="supproducts" />
+    <NavigationProperty Name="supprodunits" Relationship="Self.fk_supprodunits_1" FromRole="supproducts" ToRole="supprodunits" />
+  </EntityType>
+  <EntityType Name="supprodunit">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="supprodint" Type="Int32" Nullable="false" />
+    <Property Name="purchunits" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="anacode" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="Int16" Nullable="false" />
+    <Property Name="CreatedOffline" Type="Boolean" Nullable="false" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductUnitID" Type="Int32" />
+    <Property Name="Primary" Type="Boolean" Nullable="false" />
+    <Property Name="OrderMultiple" Type="Int32" />
+    <Property Name="MinQty" Type="Int32" />
+    <Property Name="MaxQty" Type="Int32" />
+    <Property Name="MinCost" Type="Int32" />
+    <Property Name="MaxCost" Type="Int32" />
+    <Property Name="MinWeight" Type="Int32" />
+    <Property Name="MaxWeight" Type="Int32" />
+    <Property Name="MinCube" Type="Int32" />
+    <Property Name="MaxCube" Type="Int32" />
+    <NavigationProperty Name="supproduct" Relationship="Self.fk_supprodunits_1" FromRole="supprodunits" ToRole="supproducts" />
+  </EntityType>
+  <EntityType Name="varcode">
+    <Key>
+      <PropertyRef Name="vartype" />
+      <PropertyRef Name="varcode1" />
+    </Key>
+    <Property Name="vartype" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="varcode1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="vargroup" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="varcodeint" Type="Int32" Nullable="false" />
+    <Property Name="Sequence" Type="Int32" />
+    <Property Name="Code1" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="Code2" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="NRFCode" Type="Int32" />
+    <Property Name="ColourARGB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="productcodes" Relationship="Self.productcodes_FK9" FromRole="varcodes" ToRole="productcodes" />
+  </EntityType>
+  <EntityType Name="consigdoc">
+    <Key>
+      <PropertyRef Name="warehouse" />
+      <PropertyRef Name="levelid" />
+      <PropertyRef Name="processname" />
+    </Key>
+    <Property Name="warehouse" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="consignment" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="levelid" Type="Int16" Nullable="false" />
+    <Property Name="processname" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="consighdr" Relationship="Self.fk_consigdocs_2" FromRole="consigdocs" ToRole="consighdrs" />
+  </EntityType>
+  <EntityType Name="purchordhist">
+    <Key>
+      <PropertyRef Name="transint" />
+      <PropertyRef Name="orderdate" />
+      <PropertyRef Name="openorder" />
+    </Key>
+    <Property Name="transint" Type="Int32" Nullable="false" />
+    <Property Name="buyer" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="suppbrint" Type="Int32" />
+    <Property Name="seasoncode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="orderdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="location" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="deliverydate" Type="DateTime" Precision="3" />
+    <Property Name="canceldate" Type="DateTime" Precision="3" />
+    <Property Name="ackreference" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="ackdate" Type="DateTime" Precision="3" />
+    <Property Name="plint" Type="Int32" />
+    <Property Name="settlement" Type="Double" />
+    <Property Name="settletype" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="buyingmethod" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="currrate" Type="Double" />
+    <Property Name="printprice" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="openorder" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="splint" Type="Int32" />
+    <Property Name="amenddate" Type="DateTime" Precision="3" />
+    <Property Name="amenduser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="fk_branches_2">
+    <End Role="branches" Type="Self.branch" Multiplicity="0..1" />
+    <End Role="branches1" Type="Self.branch" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="branches">
+        <PropertyRef Name="branchcode" />
+      </Principal>
+      <Dependent Role="branches1">
+        <PropertyRef Name="mastbranch" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_brnstocks_1">
+    <End Role="branches" Type="Self.branch" Multiplicity="1" />
+    <End Role="brnstocks" Type="Self.brnstock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="branches">
+        <PropertyRef Name="branchcode" />
+      </Principal>
+      <Dependent Role="brnstocks">
+        <PropertyRef Name="branchcode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_btranshdrs_2">
+    <End Role="branches" Type="Self.branch" Multiplicity="1" />
+    <End Role="btranshdrs" Type="Self.btranshdr" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="branches">
+        <PropertyRef Name="branchcode" />
+      </Principal>
+      <Dependent Role="btranshdrs">
+        <PropertyRef Name="branchcode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_btranshdrs_4">
+    <End Role="branches" Type="Self.branch" Multiplicity="0..1" />
+    <End Role="btranshdrs" Type="Self.btranshdr" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="branches">
+        <PropertyRef Name="branchcode" />
+      </Principal>
+      <Dependent Role="btranshdrs">
+        <PropertyRef Name="branchother" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_brnstkchks_2">
+    <End Role="products" Type="Self.product" Multiplicity="1" />
+    <End Role="brnstkchks" Type="Self.brnstkchk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="prodint" />
+      </Principal>
+      <Dependent Role="brnstkchks">
+        <PropertyRef Name="prodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_brnstocks_2">
+    <End Role="productcodes" Type="Self.productcode" Multiplicity="1" />
+    <End Role="brnstocks" Type="Self.brnstock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productcodes">
+        <PropertyRef Name="varint" />
+      </Principal>
+      <Dependent Role="brnstocks">
+        <PropertyRef Name="varint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_btranslines_2">
+    <End Role="productcodes" Type="Self.productcode" Multiplicity="1" />
+    <End Role="btranslines" Type="Self.btransline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productcodes">
+        <PropertyRef Name="varint" />
+      </Principal>
+      <Dependent Role="btranslines">
+        <PropertyRef Name="prodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_consigdests_1">
+    <End Role="consighdrs" Type="Self.consighdr" Multiplicity="1" />
+    <End Role="consigdests" Type="Self.consigdest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="consighdrs">
+        <PropertyRef Name="consignment" />
+        <PropertyRef Name="warehouse" />
+      </Principal>
+      <Dependent Role="consigdests">
+        <PropertyRef Name="consignment" />
+        <PropertyRef Name="warehouse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_consigdocs_2">
+    <End Role="consighdrs" Type="Self.consighdr" Multiplicity="0..1" />
+    <End Role="consigdocs" Type="Self.consigdoc" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="consighdrs">
+        <PropertyRef Name="consignment" />
+        <PropertyRef Name="warehouse" />
+      </Principal>
+      <Dependent Role="consigdocs">
+        <PropertyRef Name="consignment" />
+        <PropertyRef Name="warehouse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_consiglines_2">
+    <End Role="productcodes" Type="Self.productcode" Multiplicity="1" />
+    <End Role="consiglines" Type="Self.consigline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productcodes">
+        <PropertyRef Name="varint" />
+      </Principal>
+      <Dependent Role="consiglines">
+        <PropertyRef Name="varint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_productcodes_1">
+    <End Role="products" Type="Self.product" Multiplicity="1" />
+    <End Role="productcodes" Type="Self.productcode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="prodint" />
+      </Principal>
+      <Dependent Role="productcodes">
+        <PropertyRef Name="prodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_purchordline_2">
+    <End Role="productcodes" Type="Self.productcode" Multiplicity="1" />
+    <End Role="purchordline" Type="Self.purchordline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productcodes">
+        <PropertyRef Name="varint" />
+      </Principal>
+      <Dependent Role="purchordline">
+        <PropertyRef Name="varint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_supproducts_3">
+    <End Role="productcodes" Type="Self.productcode" Multiplicity="0..1" />
+    <End Role="supproducts" Type="Self.supproduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productcodes">
+        <PropertyRef Name="varint" />
+      </Principal>
+      <Dependent Role="supproducts">
+        <PropertyRef Name="varint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productcodes_FK2">
+    <End Role="supproducts" Type="Self.supproduct" Multiplicity="0..1" />
+    <End Role="productcodes" Type="Self.productcode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="supproducts">
+        <PropertyRef Name="supprodint" />
+      </Principal>
+      <Dependent Role="productcodes">
+        <PropertyRef Name="DefaultVendorProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productcodes_FK3">
+    <End Role="products" Type="Self.product" Multiplicity="0..1" />
+    <End Role="productcodes" Type="Self.productcode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="prodint" />
+      </Principal>
+      <Dependent Role="productcodes">
+        <PropertyRef Name="prodint2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productcodes_FK8">
+    <End Role="productcodes" Type="Self.productcode" Multiplicity="0..1" />
+    <End Role="productcodes1" Type="Self.productcode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productcodes">
+        <PropertyRef Name="varint" />
+      </Principal>
+      <Dependent Role="productcodes1">
+        <PropertyRef Name="MergeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productcodes_FK9">
+    <End Role="varcodes" Type="Self.varcode" Multiplicity="0..1" />
+    <End Role="productcodes" Type="Self.productcode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="varcodes">
+        <PropertyRef Name="vartype" />
+        <PropertyRef Name="varcode1" />
+      </Principal>
+      <Dependent Role="productcodes">
+        <PropertyRef Name="SizeType" />
+        <PropertyRef Name="SizeCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_products_19">
+    <End Role="suppliers" Type="Self.supplier" Multiplicity="0..1" />
+    <End Role="products" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suppliers">
+        <PropertyRef Name="supplier1" />
+      </Principal>
+      <Dependent Role="products">
+        <PropertyRef Name="manufacturer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_products_26">
+    <End Role="products" Type="Self.product" Multiplicity="0..1" />
+    <End Role="products1" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="prodint" />
+      </Principal>
+      <Dependent Role="products1">
+        <PropertyRef Name="AssociatedProdint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_products_3">
+    <End Role="suppliers" Type="Self.supplier" Multiplicity="0..1" />
+    <End Role="products" Type="Self.product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suppliers">
+        <PropertyRef Name="supplier1" />
+      </Principal>
+      <Dependent Role="products">
+        <PropertyRef Name="supplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_purchordline_3">
+    <End Role="products" Type="Self.product" Multiplicity="1" />
+    <End Role="purchordline" Type="Self.purchordline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="prodint" />
+      </Principal>
+      <Dependent Role="purchordline">
+        <PropertyRef Name="prodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_supproducts_2">
+    <End Role="products" Type="Self.product" Multiplicity="0..1" />
+    <End Role="supproducts" Type="Self.supproduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="prodint" />
+      </Principal>
+      <Dependent Role="supproducts">
+        <PropertyRef Name="prodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_purchordline_7">
+    <End Role="supproducts" Type="Self.supproduct" Multiplicity="0..1" />
+    <End Role="purchordline" Type="Self.purchordline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="supproducts">
+        <PropertyRef Name="supprodint" />
+      </Principal>
+      <Dependent Role="purchordline">
+        <PropertyRef Name="supprodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_suppliers_1">
+    <End Role="suppliers" Type="Self.supplier" Multiplicity="0..1" />
+    <End Role="suppliers1" Type="Self.supplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suppliers">
+        <PropertyRef Name="supplier1" />
+      </Principal>
+      <Dependent Role="suppliers1">
+        <PropertyRef Name="hoaccountno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_suppliers_2">
+    <End Role="suppliers" Type="Self.supplier" Multiplicity="0..1" />
+    <End Role="suppliers1" Type="Self.supplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suppliers">
+        <PropertyRef Name="supplier1" />
+      </Principal>
+      <Dependent Role="suppliers1">
+        <PropertyRef Name="grpaccountno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_supproducts_10">
+    <End Role="supproducts" Type="Self.supproduct" Multiplicity="0..1" />
+    <End Role="supproducts1" Type="Self.supproduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="supproducts">
+        <PropertyRef Name="supprodint" />
+      </Principal>
+      <Dependent Role="supproducts1">
+        <PropertyRef Name="basesupprodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_supprodunits_1">
+    <End Role="supproducts" Type="Self.supproduct" Multiplicity="1" />
+    <End Role="supprodunits" Type="Self.supprodunit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="supproducts">
+        <PropertyRef Name="supprodint" />
+      </Principal>
+      <Dependent Role="supprodunits">
+        <PropertyRef Name="supprodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="mi9_mms_fs_trainEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="branches" EntityType="Self.branch" />
+    <EntitySet Name="brnstkchks" EntityType="Self.brnstkchk" />
+    <EntitySet Name="brnstocks" EntityType="Self.brnstock" />
+    <EntitySet Name="btranscounts" EntityType="Self.btranscount" />
+    <EntitySet Name="btransdiscs" EntityType="Self.btransdisc" />
+    <EntitySet Name="btranshdrs" EntityType="Self.btranshdr" />
+    <EntitySet Name="btransifdatas" EntityType="Self.btransifdata" />
+    <EntitySet Name="btranslines" EntityType="Self.btransline" />
+    <EntitySet Name="consigdests" EntityType="Self.consigdest" />
+    <EntitySet Name="consighdrs" EntityType="Self.consighdr" />
+    <EntitySet Name="consiglines" EntityType="Self.consigline" />
+    <EntitySet Name="pricechghdrs" EntityType="Self.pricechghdr" />
+    <EntitySet Name="proddescs" EntityType="Self.proddesc" />
+    <EntitySet Name="productcodes" EntityType="Self.productcode" />
+    <EntitySet Name="products" EntityType="Self.product" />
+    <EntitySet Name="purchcosts" EntityType="Self.purchcost" />
+    <EntitySet Name="purchorders" EntityType="Self.purchorder" />
+    <EntitySet Name="purchordlines" EntityType="Self.purchordline" />
+    <EntitySet Name="reasoncodes" EntityType="Self.reasoncode" />
+    <EntitySet Name="suppliers" EntityType="Self.supplier" />
+    <EntitySet Name="supproducts" EntityType="Self.supproduct" />
+    <EntitySet Name="supprodunits" EntityType="Self.supprodunit" />
+    <EntitySet Name="varcodes" EntityType="Self.varcode" />
+    <EntitySet Name="consigdocs" EntityType="Self.consigdoc" />
+    <EntitySet Name="purchordhists" EntityType="Self.purchordhist" />
+    <AssociationSet Name="fk_branches_2" Association="Self.fk_branches_2">
+      <End Role="branches" EntitySet="branches" />
+      <End Role="branches1" EntitySet="branches" />
+    </AssociationSet>
+    <AssociationSet Name="fk_brnstocks_1" Association="Self.fk_brnstocks_1">
+      <End Role="branches" EntitySet="branches" />
+      <End Role="brnstocks" EntitySet="brnstocks" />
+    </AssociationSet>
+    <AssociationSet Name="fk_btranshdrs_2" Association="Self.fk_btranshdrs_2">
+      <End Role="branches" EntitySet="branches" />
+      <End Role="btranshdrs" EntitySet="btranshdrs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_btranshdrs_4" Association="Self.fk_btranshdrs_4">
+      <End Role="branches" EntitySet="branches" />
+      <End Role="btranshdrs" EntitySet="btranshdrs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_brnstkchks_2" Association="Self.fk_brnstkchks_2">
+      <End Role="products" EntitySet="products" />
+      <End Role="brnstkchks" EntitySet="brnstkchks" />
+    </AssociationSet>
+    <AssociationSet Name="fk_brnstocks_2" Association="Self.fk_brnstocks_2">
+      <End Role="productcodes" EntitySet="productcodes" />
+      <End Role="brnstocks" EntitySet="brnstocks" />
+    </AssociationSet>
+    <AssociationSet Name="fk_btranslines_2" Association="Self.fk_btranslines_2">
+      <End Role="productcodes" EntitySet="productcodes" />
+      <End Role="btranslines" EntitySet="btranslines" />
+    </AssociationSet>
+    <AssociationSet Name="fk_consigdests_1" Association="Self.fk_consigdests_1">
+      <End Role="consighdrs" EntitySet="consighdrs" />
+      <End Role="consigdests" EntitySet="consigdests" />
+    </AssociationSet>
+    <AssociationSet Name="fk_consigdocs_2" Association="Self.fk_consigdocs_2">
+      <End Role="consighdrs" EntitySet="consighdrs" />
+      <End Role="consigdocs" EntitySet="consigdocs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_consiglines_2" Association="Self.fk_consiglines_2">
+      <End Role="productcodes" EntitySet="productcodes" />
+      <End Role="consiglines" EntitySet="consiglines" />
+    </AssociationSet>
+    <AssociationSet Name="fk_productcodes_1" Association="Self.fk_productcodes_1">
+      <End Role="products" EntitySet="products" />
+      <End Role="productcodes" EntitySet="productcodes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_purchordline_2" Association="Self.fk_purchordline_2">
+      <End Role="productcodes" EntitySet="productcodes" />
+      <End Role="purchordline" EntitySet="purchordlines" />
+    </AssociationSet>
+    <AssociationSet Name="fk_supproducts_3" Association="Self.fk_supproducts_3">
+      <End Role="productcodes" EntitySet="productcodes" />
+      <End Role="supproducts" EntitySet="supproducts" />
+    </AssociationSet>
+    <AssociationSet Name="productcodes_FK2" Association="Self.productcodes_FK2">
+      <End Role="supproducts" EntitySet="supproducts" />
+      <End Role="productcodes" EntitySet="productcodes" />
+    </AssociationSet>
+    <AssociationSet Name="productcodes_FK3" Association="Self.productcodes_FK3">
+      <End Role="products" EntitySet="products" />
+      <End Role="productcodes" EntitySet="productcodes" />
+    </AssociationSet>
+    <AssociationSet Name="productcodes_FK8" Association="Self.productcodes_FK8">
+      <End Role="productcodes" EntitySet="productcodes" />
+      <End Role="productcodes1" EntitySet="productcodes" />
+    </AssociationSet>
+    <AssociationSet Name="productcodes_FK9" Association="Self.productcodes_FK9">
+      <End Role="varcodes" EntitySet="varcodes" />
+      <End Role="productcodes" EntitySet="productcodes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_products_19" Association="Self.fk_products_19">
+      <End Role="suppliers" EntitySet="suppliers" />
+      <End Role="products" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="fk_products_26" Association="Self.fk_products_26">
+      <End Role="products" EntitySet="products" />
+      <End Role="products1" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="fk_products_3" Association="Self.fk_products_3">
+      <End Role="suppliers" EntitySet="suppliers" />
+      <End Role="products" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="fk_purchordline_3" Association="Self.fk_purchordline_3">
+      <End Role="products" EntitySet="products" />
+      <End Role="purchordline" EntitySet="purchordlines" />
+    </AssociationSet>
+    <AssociationSet Name="fk_supproducts_2" Association="Self.fk_supproducts_2">
+      <End Role="products" EntitySet="products" />
+      <End Role="supproducts" EntitySet="supproducts" />
+    </AssociationSet>
+    <AssociationSet Name="fk_purchordline_7" Association="Self.fk_purchordline_7">
+      <End Role="supproducts" EntitySet="supproducts" />
+      <End Role="purchordline" EntitySet="purchordlines" />
+    </AssociationSet>
+    <AssociationSet Name="fk_suppliers_1" Association="Self.fk_suppliers_1">
+      <End Role="suppliers" EntitySet="suppliers" />
+      <End Role="suppliers1" EntitySet="suppliers" />
+    </AssociationSet>
+    <AssociationSet Name="fk_suppliers_2" Association="Self.fk_suppliers_2">
+      <End Role="suppliers" EntitySet="suppliers" />
+      <End Role="suppliers1" EntitySet="suppliers" />
+    </AssociationSet>
+    <AssociationSet Name="fk_supproducts_10" Association="Self.fk_supproducts_10">
+      <End Role="supproducts" EntitySet="supproducts" />
+      <End Role="supproducts1" EntitySet="supproducts" />
+    </AssociationSet>
+    <AssociationSet Name="fk_supprodunits_1" Association="Self.fk_supprodunits_1">
+      <End Role="supproducts" EntitySet="supproducts" />
+      <End Role="supprodunits" EntitySet="supprodunits" />
+    </AssociationSet>
+    <EntitySet Name="prodkeys" EntityType="mi9_mms_fs_trainModel.prodkey" />
+    <EntitySet Name="structlevels" EntityType="mi9_mms_fs_trainModel.structlevel" />
+    <EntitySet Name="TOFS_RetailPrice" EntityType="mi9_mms_fs_trainModel.TOFS_RetailPrice" />
+    <AssociationSet Name="fk_prodkeys_1" Association="mi9_mms_fs_trainModel.fk_prodkeys_1">
+      <End Role="productcode" EntitySet="productcodes" />
+      <End Role="prodkey" EntitySet="prodkeys" />
+    </AssociationSet>
+    <AssociationSet Name="fk_structlevels_4" Association="mi9_mms_fs_trainModel.fk_structlevels_4">
+      <End Role="supplier" EntitySet="suppliers" />
+      <End Role="structlevel" EntitySet="structlevels" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="prodkey">
+    <Key>
+      <PropertyRef Name="prodaltkey" />
+      <PropertyRef Name="keytype" />
+    </Key>
+    <Property Name="prodaltkey" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="prodint" Type="Int32" Nullable="false" />
+    <Property Name="keytype" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="Primary" Type="Boolean" Nullable="false" />
+    <Property Name="ProductUnitID" Type="Int32" />
+    <Property Name="PrimaryForUnit" Type="Boolean" Nullable="false" />
+    <Property Name="prodaltkeyNoZeros" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <NavigationProperty Name="productcode" Relationship="mi9_mms_fs_trainModel.fk_prodkeys_1" FromRole="prodkey" ToRole="productcode" />
+  </EntityType>
+  <EntityType Name="structlevel">
+    <Key>
+      <PropertyRef Name="levint" />
+    </Key>
+    <Property Name="level1" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="level2" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="level3" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="shortdesc" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="vatcode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="historylevel" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="orderind" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="autoallocate" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="mingmpc" Type="Double" />
+    <Property Name="maxgmpc" Type="Double" />
+    <Property Name="costmethod" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="issuemethod" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="salesnomcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="purchnomcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="stocknomcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="purchunits" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="stockunits" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="salesunits" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="supplier" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="buyer" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="abccode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="disccat" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="commcat" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="seasoncode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="resprodcode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="distplan" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="forecast" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="suppriority" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="surcharge" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="merchmodel" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="carrmethod" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="carrcharge" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="misccharge" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="handling" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="prodstruct" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="vartable1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="vartable2" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="dummyind" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="hitcount" Type="Int32" />
+    <Property Name="popcount" Type="Int32" />
+    <Property Name="amenddate" Type="DateTime" Precision="3" />
+    <Property Name="createdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="deletedate" Type="DateTime" Precision="3" />
+    <Property Name="deleteind" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="accessdate" Type="DateTime" Precision="3" />
+    <Property Name="convcode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="levint" Type="Int32" Nullable="false" />
+    <Property Name="priceband" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="gradetable" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="keydatetype" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="replenmethod" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="wksstockheld" Type="Double" />
+    <Property Name="backsalhist" Type="Int16" />
+    <Property Name="dumpvarint" Type="Int32" />
+    <Property Name="featsetcode" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="vargroup1" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="vargroup2" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="customsdesc" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="primarymaterial" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="countrymfr" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cubefactor" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="weight" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="prodclass" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="LabelType" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="Consignment" Type="Boolean" Nullable="false" />
+    <Property Name="level4" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="level5" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="ProductClusterGroupID" Type="Int32" />
+    <Property Name="MHClusterGroupID" Type="Int32" />
+    <Property Name="ClusterID" Type="Int32" />
+    <Property Name="AllocUnits" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="ProductAttributeSetCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="RetailCostMultiplier" Type="Decimal" Precision="5" Scale="4" />
+    <Property Name="ExpenseItemReasonGLU" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ExpenseItemReason" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CountryOrigin" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CountryGLU" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Replenished" Type="Boolean" />
+    <NavigationProperty Name="supplier1" Relationship="mi9_mms_fs_trainModel.fk_structlevels_4" FromRole="structlevel" ToRole="supplier" />
+  </EntityType>
+  <EntityType Name="TOFS_RetailPrice">
+    <Key>
+      <PropertyRef Name="Varint" />
+    </Key>
+    <Property Name="Varint" Type="Int32" Nullable="false" />
+    <Property Name="Retail_Price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Price_List" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="fk_prodkeys_1">
+    <End Type="mi9_mms_fs_trainModel.productcode" Role="productcode" Multiplicity="1" />
+    <End Type="mi9_mms_fs_trainModel.prodkey" Role="prodkey" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productcode">
+        <PropertyRef Name="varint" />
+      </Principal>
+      <Dependent Role="prodkey">
+        <PropertyRef Name="prodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_structlevels_4">
+    <End Type="mi9_mms_fs_trainModel.supplier" Role="supplier" Multiplicity="0..1" />
+    <End Type="mi9_mms_fs_trainModel.structlevel" Role="structlevel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="supplier">
+        <PropertyRef Name="supplier1" />
+      </Principal>
+      <Dependent Role="structlevel">
+        <PropertyRef Name="supplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

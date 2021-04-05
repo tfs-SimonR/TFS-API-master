@@ -1,0 +1,140 @@
+2019-12-23 12:10:23.5532|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/Stockbranch?guid=07fda175104f429d9bd700617e7f7f30&storeId=111
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : GetRCRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 12:10:33.3436|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/Stockbranch?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : GetRCRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 12:10:41.6955|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/Stockbranch?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : GetRCRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 12:12:36.3183|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/Stockbranch?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : GetRCRequestReservation
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 12:20:34.5159|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 12:22:18.1029|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 12:28:14.3894|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 12:34:18.7494|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 12:44:08.9335|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 12:53:07.7496|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 12:55:07.9594|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 13:01:11.2204|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 13:03:16.6891|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 13:18:14.6125|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 13:33:05.5462|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=07fda175104f429d9bd700617e7f7f30&storeId=201
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 13:33:23.8706|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 13:37:24.5302|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 13:39:03.4804|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 13:40:28.3328|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-12-23 14:23:01.2804|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetStoresWithStock?guid=07fda175104f429d9bd700617e7f7f30&storeId=011
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetStoresWithStock
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

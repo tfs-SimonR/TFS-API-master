@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CashManagmentModelStoreContainer" CdmEntityContainer="CashDbContext">
+    <EntitySetMapping Name="tbl_CashManagement">
+      <EntityTypeMapping TypeName="CashManagmentModel.tbl_CashManagement">
+        <MappingFragment StoreEntitySet="tbl_CashManagement">
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="RJTillId" ColumnName="RJTillId" />
+          <ScalarProperty Name="SPQTillId" ColumnName="SPQTillId" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+          <ScalarProperty Name="ClosingFloat" ColumnName="ClosingFloat" />
+          <ScalarProperty Name="CashAmount" ColumnName="CashAmount" />
+          <ScalarProperty Name="Love2Shop" ColumnName="Love2Shop" />
+          <ScalarProperty Name="GiftVoucherTotal" ColumnName="GiftVoucherTotal" />
+          <ScalarProperty Name="CreditCardTotal" ColumnName="CreditCardTotal" />
+          <ScalarProperty Name="Income" ColumnName="Income" />
+          <ScalarProperty Name="Expense" ColumnName="Expense" />
+          <ScalarProperty Name="isLocked" ColumnName="isLocked" />
+          <ScalarProperty Name="SubmittedBy" ColumnName="SubmittedBy" />
+          <ScalarProperty Name="LockedDateTime" ColumnName="LockedDateTime" />
+          <ScalarProperty Name="LockedBy" ColumnName="LockedBy" />
+          <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+          <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+          <ScalarProperty Name="TradingDate" ColumnName="TradingDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="tillisLive" ColumnName="tillisLive" />
+          <ScalarProperty Name="isClosed" ColumnName="isClosed" />
+          <ScalarProperty Name="ClosingDateTime" ColumnName="ClosingDateTime" />
+          <ScalarProperty Name="isSparq" ColumnName="isSparq" />
+          <ScalarProperty Name="expectedAmount" ColumnName="expectedAmount" />
+          <ScalarProperty Name="LSVexpectedAmount" ColumnName="LSVexpectedAmount" />
+          <ScalarProperty Name="LSVdiscrepancyAmount" ColumnName="LSVdiscrepancyAmount" />
+          <ScalarProperty Name="discrepencyAmount" ColumnName="discrepencyAmount" />
+          <ScalarProperty Name="isLSVdiscrepancy" ColumnName="isLSVdiscrepancy" />
+          <ScalarProperty Name="isDescrepency" ColumnName="isDescrepency" />
+          <ScalarProperty Name="netSales" ColumnName="netSales" />
+          <ScalarProperty Name="marketing1100" ColumnName="marketing1100" />
+          <ScalarProperty Name="lottery1101" ColumnName="lottery1101" />
+          <ScalarProperty Name="parking1102" ColumnName="parking1102" />
+          <ScalarProperty Name="postage1103" ColumnName="postage1103" />
+          <ScalarProperty Name="windows1104" ColumnName="windows1104" />
+          <ScalarProperty Name="personalvehicle1105" ColumnName="personalvehicle1105" />
+          <ScalarProperty Name="carhire1106" ColumnName="carhire1106" />
+          <ScalarProperty Name="publictransport1107" ColumnName="publictransport1107" />
+          <ScalarProperty Name="bankcharge1108" ColumnName="bankcharge1108" />
+          <ScalarProperty Name="milk1109" ColumnName="milk1109" />
+          <ScalarProperty Name="customerservice1126" ColumnName="customerservice1126" />
+          <ScalarProperty Name="tofsclubcard1198" ColumnName="tofsclubcard1198" />
+          <ScalarProperty Name="wages1116" ColumnName="wages1116" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_store_till_availabilty">
+      <EntityTypeMapping TypeName="CashManagmentModel.tbl_store_till_availabilty">
+        <MappingFragment StoreEntitySet="tbl_store_till_availabilty">
+          <ScalarProperty Name="TillFloat" ColumnName="TillFloat" />
+          <ScalarProperty Name="isSparq" ColumnName="isSparq" />
+          <ScalarProperty Name="DateTakenOffline" ColumnName="DateTakenOffline" />
+          <ScalarProperty Name="isAlive" ColumnName="isAlive" />
+          <ScalarProperty Name="TillId" ColumnName="TillId" />
+          <ScalarProperty Name="storeNumber" ColumnName="storeNumber" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

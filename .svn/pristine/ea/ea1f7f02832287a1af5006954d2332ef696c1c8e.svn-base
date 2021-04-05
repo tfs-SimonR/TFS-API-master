@@ -1,0 +1,49 @@
+2019-01-17 07:51:04.0201|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storeDelivery/006
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-17 07:58:43.2557|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storeDelivery/006
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-17 07:58:45.4454|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storeDelivery/006
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-17 08:05:55.0289|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storeDelivery/001
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-17 09:03:09.9243|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storeDelivery/002
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-17 09:03:17.4065|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storeDelivery/240
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-01-17 09:03:28.5043|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/handyscanner/storeDelivery/147
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetStoreDelivery
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

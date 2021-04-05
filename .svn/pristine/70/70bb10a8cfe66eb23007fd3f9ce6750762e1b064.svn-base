@@ -1,0 +1,112 @@
+2019-03-20 08:32:21.3699|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/stockatstoreandradius15/241/10254606
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-20 08:37:27.3655|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/stockatstoreandradius15/241/10254606
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-20 09:03:22.9763|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/stockatstoreandradius15/241/10254606
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-20 09:20:53.4873|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/stockatstoreandradius15/241/10254606
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-20 09:26:14.6998|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/stockatstoreandradius15/241/10254606
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-20 09:39:24.6142|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/stockatstoreandradius15/241/10254606
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-20 09:40:52.5317|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/stockatstoreandradius15/241/10254606
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-20 09:56:19.9258|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/stockatstoreandradius15/241/10254606
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-20 09:59:47.8834|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/stockatstoreandradius15/241/10254606
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-20 10:16:31.4435|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/stockatstoreandradius15/025/10254606
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-20 10:18:56.2889|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/stockatstoreandradius15/025/10254606
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-20 10:20:21.2747|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/stockatstoreandradius15/025/10254606
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-20 10:20:58.9282|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/stockatstoreandradius15/025/10254606
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-20 10:21:46.2711|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/stockatstoreandradius15/025/10254606
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-20 10:28:08.5029|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/stockatstoreandradius15/025/10254606
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2019-03-20 10:28:44.8141|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/HandyScanner/stockatstoreandradius15/025/10254606
+Controller : TFS_API.Controllers.HandyScannerController
+Action : GetDistance
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

@@ -1,0 +1,188 @@
+﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="Scripts/jquery.validate.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta charset="UTF-8">
+    <style>
+        .tier_price_break {
+            border-radius: 8px;
+            border: 1px solid #cde2f5;
+            background: #fff;
+        }
+
+            .tier_price_break thead th {
+                border: none;
+                border-bottom: 1px solid #cde2f5;
+            }
+
+                .tier_price_break thead th:nth-child(2) {
+                    border-left: 1px solid #cde2f5;
+                }
+
+            .tier_price_break tbody td {
+                border: 1px solid transparent;
+            }
+    </style>
+</head>
+<body>
+    <br /><br /><br /><br /><br />
+    <div class="container">
+        <section>
+            <table class="table table-striped tier_price_break">
+                <tbody>
+                    <tr>
+                        <td class="tier_price_break tbody td">
+                            <form id="customerDetails" class="well form-horizontal" method="post">
+                                <fieldset>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Customer Details</label>
+                                        <div class="col-md-8 ">
+                                     
+                                            <div class="input-group col-md-4">
+                                                <input class="form-control py-2" type="search" value="Search By Customer Details..." id="searchString">
+                                                <span class="input-group-append">
+                                                    <button class="btn btn-outline-secondary" type="button">
+                                                        <i class="glyphicon glyphicon-earphone"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="divData" class="hidden">
+                                        <table class="table table-striped tier_price_break" id="tblData">
+                                            <thead>
+                                                <tr>
+                                                    <td>Id</td>
+                                                    <td>First Name</td>
+                                                    <td>Last Name</td>
+                                                    <td>Post Code</td>
+                                                    <td>Email</td>
+                                                    <td>Phone Number</td>
+                                                    <td>TOFS Card Number</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tblBody"></tbody>
+                                        </table>
+                                    </div>
+                                    <br />
+                                    <div class="form-group">
+                                        <button name="submit" id="submit" value="" type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="btnCancel" class="btn btn-danger btn-lg btn-block" onclick="self.close()" type="button" value="Cancel" />
+                                    </div>
+                                    <!--Bootstrap alert to display error message if the login fails-->
+                                    <div id="alerts-container"></div>
+                                </fieldset>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</body>
+</html>
+<!--BACKSTRETCH-->
+<!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+<script>
+    $().ready(function () {
+        $("#customerDetails").validate({
+            rules: {
+                searchString: {
+                    required: true
+
+                }
+            },
+            highlight: function (element) {
+                $(element).closest('.form-group').addClass('has-error');
+            },
+            unhighlight: function (element) {
+                $(element).closest('.form-group').removeClass('has-error');
+            },
+            errorElement: 'span',
+            errorClass: 'help-block',
+            errorPlacement: function (error, element) {
+                if (element.parent('.input-group').length) {
+                    error.insertAfter(element.parent());
+                } else {
+                    error.insertAfter(element);
+                }
+            },
+            messages: {
+                searchString: {
+                    required: "Search string required"
+                }
+            },
+            submitHandler: function (form) {
+                var searchRandom = $('#searchString').val();
+
+                $.ajax({
+                    // GET from our API
+                    url: '/api/v1/Customer/GetCustomerSearch/' + searchRandom,
+                    method: 'GET',
+                    contentType: 'application/json',
+                    success: function (data) {
+                        ClearPopupFormValues();
+                        $('#divData').removeClass('hidden');
+                        $('#tblBody').empty();
+                        $.each(data, function (index, value) {
+                            var row = $('<tr><td>' + value.Id + '</td><td>'
+                                + value.firstname + '</td><td>'
+                                + value.lastname + '</td><td>'
+                                + value.postcode + '</td><td>'
+                                + value.email + '</td><td>'
+                                + value.phonenumber + '</td><td>'
+                                + value.clubcardnumber + '</td></tr>');
+                            $('#tblData').append(row);
+                        });
+                    }
+                });
+                return false; // required to block normal submit since you used ajax
+            }
+        });
+    });
+
+    function ClearPopupFormValues() {
+        $('#searchString').val("");
+    }
+
+    //Show Alerts
+    function showAlert(message, type, closeDelay) {
+
+        if ($("#alerts-container").length === 0) {
+            // alerts-container does not exist, create it
+            $("body").append($('<div id="alerts-container" style="position: fixed;width: 50%; left: 25%; top: 10%;">'));
+        }
+        $('#alerts-container').html('');
+        // default to alert-info; other options include success, warning, danger
+        type = type || "info";
+
+        // create the alert div
+        var alert = $('<div class="alert alert-' + type + ' fade in">')
+            .append(
+                $('<button type="button" class="close" data-dismiss="alert">')
+                    .append("&times;")
+            )
+            .append(message);
+
+        // add the alert div to top of alerts-container, use append() to add to bottom
+        $("#alerts-container").prepend(alert);
+
+        // if closeDelay was passed - set a timeout to close the alert
+        if (closeDelay)
+            window.setTimeout(function () { alert.alert("close") }, closeDelay);
+    }
+</script>
+<!--BACKSTRETCH-->
+<!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
+<script src="Scripts/jquery.backstretch.min.js"></script>
+<script>
+    $.backstretch("/Content/Images/wallpaper.bmp", { speed: 500 });
+</script>

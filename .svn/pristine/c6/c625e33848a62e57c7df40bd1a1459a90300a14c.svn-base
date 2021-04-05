@@ -1,0 +1,1726 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Mi9ModelStoreContainer" CdmEntityContainer="Mi9DBEntities">
+    <EntitySetMapping Name="altdescs">
+      <EntityTypeMapping TypeName="Mi9Model.altdesc">
+        <MappingFragment StoreEntitySet="altdescs">
+          <ScalarProperty Name="languageid" ColumnName="languageid" />
+          <ScalarProperty Name="levint" ColumnName="levint" />
+          <ScalarProperty Name="usageind" ColumnName="usageind" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CreatedOffline" ColumnName="CreatedOffline" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lookupcodes">
+      <EntityTypeMapping TypeName="Mi9Model.lookupcode">
+        <MappingFragment StoreEntitySet="lookupcodes">
+          <ScalarProperty Name="codetype" ColumnName="codetype" />
+          <ScalarProperty Name="code" ColumnName="code" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="shortdesc" ColumnName="shortdesc" />
+          <ScalarProperty Name="auxvalue1" ColumnName="auxvalue1" />
+          <ScalarProperty Name="auxvalue2" ColumnName="auxvalue2" />
+          <ScalarProperty Name="floatvalue" ColumnName="floatvalue" />
+          <ScalarProperty Name="intvalue" ColumnName="intvalue" />
+          <ScalarProperty Name="inviolate" ColumnName="inviolate" />
+          <ScalarProperty Name="notepad" ColumnName="notepad" />
+          <ScalarProperty Name="AuxValue3" ColumnName="AuxValue3" />
+          <ScalarProperty Name="AuxValue4" ColumnName="AuxValue4" />
+          <ScalarProperty Name="AuxValue5" ColumnName="AuxValue5" />
+          <ScalarProperty Name="FloatValue2" ColumnName="FloatValue2" />
+          <ScalarProperty Name="FloatValue3" ColumnName="FloatValue3" />
+          <ScalarProperty Name="IntValue2" ColumnName="IntValue2" />
+          <ScalarProperty Name="IntValue3" ColumnName="IntValue3" />
+          <ScalarProperty Name="AuxValue6" ColumnName="AuxValue6" />
+          <ScalarProperty Name="AuxValue7" ColumnName="AuxValue7" />
+          <ScalarProperty Name="AuxValue8" ColumnName="AuxValue8" />
+          <ScalarProperty Name="AuxValue9" ColumnName="AuxValue9" />
+          <ScalarProperty Name="AuxValue10" ColumnName="AuxValue10" />
+          <ScalarProperty Name="FloatValue4" ColumnName="FloatValue4" />
+          <ScalarProperty Name="FloatValue5" ColumnName="FloatValue5" />
+          <ScalarProperty Name="IntValue4" ColumnName="IntValue4" />
+          <ScalarProperty Name="IntValue5" ColumnName="IntValue5" />
+          <ScalarProperty Name="Interfaced" ColumnName="Interfaced" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="prodkeys">
+      <EntityTypeMapping TypeName="Mi9Model.prodkey">
+        <MappingFragment StoreEntitySet="prodkeys">
+          <ScalarProperty Name="prodaltkey" ColumnName="prodaltkey" />
+          <ScalarProperty Name="prodint" ColumnName="prodint" />
+          <ScalarProperty Name="keytype" ColumnName="keytype" />
+          <ScalarProperty Name="Primary" ColumnName="Primary" />
+          <ScalarProperty Name="ProductUnitID" ColumnName="ProductUnitID" />
+          <ScalarProperty Name="PrimaryForUnit" ColumnName="PrimaryForUnit" />
+          <ScalarProperty Name="prodaltkeyNoZeros" ColumnName="prodaltkeyNoZeros" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productcodes">
+      <EntityTypeMapping TypeName="Mi9Model.productcode">
+        <MappingFragment StoreEntitySet="productcodes">
+          <ScalarProperty Name="variantcode" ColumnName="variantcode" />
+          <ScalarProperty Name="prodint" ColumnName="prodint" />
+          <ScalarProperty Name="varint" ColumnName="varint" />
+          <ScalarProperty Name="vatcode" ColumnName="vatcode" />
+          <ScalarProperty Name="repcost" ColumnName="repcost" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="baseproduct" ColumnName="baseproduct" />
+          <ScalarProperty Name="sequenceno" ColumnName="sequenceno" />
+          <ScalarProperty Name="varcode1" ColumnName="varcode1" />
+          <ScalarProperty Name="varcode2" ColumnName="varcode2" />
+          <ScalarProperty Name="vardesc1" ColumnName="vardesc1" />
+          <ScalarProperty Name="vardesc2" ColumnName="vardesc2" />
+          <ScalarProperty Name="SeasonIntroduced" ColumnName="SeasonIntroduced" />
+          <ScalarProperty Name="CoordinateGroup" ColumnName="CoordinateGroup" />
+          <ScalarProperty Name="Silhouette" ColumnName="Silhouette" />
+          <ScalarProperty Name="InventoryStatus" ColumnName="InventoryStatus" />
+          <ScalarProperty Name="CountryOrigin" ColumnName="CountryOrigin" />
+          <ScalarProperty Name="CountryMfr" ColumnName="CountryMfr" />
+          <ScalarProperty Name="CountryDispatch" ColumnName="CountryDispatch" />
+          <ScalarProperty Name="pa01" ColumnName="pa01" />
+          <ScalarProperty Name="pa02" ColumnName="pa02" />
+          <ScalarProperty Name="pa03" ColumnName="pa03" />
+          <ScalarProperty Name="pa04" ColumnName="pa04" />
+          <ScalarProperty Name="pa05" ColumnName="pa05" />
+          <ScalarProperty Name="pa06" ColumnName="pa06" />
+          <ScalarProperty Name="pa07" ColumnName="pa07" />
+          <ScalarProperty Name="pa08" ColumnName="pa08" />
+          <ScalarProperty Name="pa09" ColumnName="pa09" />
+          <ScalarProperty Name="pa10" ColumnName="pa10" />
+          <ScalarProperty Name="pa11" ColumnName="pa11" />
+          <ScalarProperty Name="pa12" ColumnName="pa12" />
+          <ScalarProperty Name="pa13" ColumnName="pa13" />
+          <ScalarProperty Name="pa14" ColumnName="pa14" />
+          <ScalarProperty Name="pa15" ColumnName="pa15" />
+          <ScalarProperty Name="pa16" ColumnName="pa16" />
+          <ScalarProperty Name="pa17" ColumnName="pa17" />
+          <ScalarProperty Name="pa18" ColumnName="pa18" />
+          <ScalarProperty Name="pa19" ColumnName="pa19" />
+          <ScalarProperty Name="pa20" ColumnName="pa20" />
+          <ScalarProperty Name="pa21" ColumnName="pa21" />
+          <ScalarProperty Name="pa22" ColumnName="pa22" />
+          <ScalarProperty Name="pa23" ColumnName="pa23" />
+          <ScalarProperty Name="pa24" ColumnName="pa24" />
+          <ScalarProperty Name="pa25" ColumnName="pa25" />
+          <ScalarProperty Name="CreatedOffline" ColumnName="CreatedOffline" />
+          <ScalarProperty Name="DefaultVendorProductID" ColumnName="DefaultVendorProductID" />
+          <ScalarProperty Name="Web" ColumnName="Web" />
+          <ScalarProperty Name="prodint2" ColumnName="prodint2" />
+          <ScalarProperty Name="WebRejected" ColumnName="WebRejected" />
+          <ScalarProperty Name="ClusterID" ColumnName="ClusterID" />
+          <ScalarProperty Name="WIPClusterID" ColumnName="WIPClusterID" />
+          <ScalarProperty Name="TargetYrWeek" ColumnName="TargetYrWeek" />
+          <ScalarProperty Name="AdCode" ColumnName="AdCode" />
+          <ScalarProperty Name="POSMarkdown" ColumnName="POSMarkdown" />
+          <ScalarProperty Name="MarkdownDate" ColumnName="MarkdownDate" />
+          <ScalarProperty Name="MergeID" ColumnName="MergeID" />
+          <ScalarProperty Name="MergeDate" ColumnName="MergeDate" />
+          <ScalarProperty Name="MergeUser" ColumnName="MergeUser" />
+          <ScalarProperty Name="ColourARGB" ColumnName="ColourARGB" />
+          <ScalarProperty Name="SizeType" ColumnName="SizeType" />
+          <ScalarProperty Name="SizeCode" ColumnName="SizeCode" />
+          <ScalarProperty Name="SizeDesc" ColumnName="SizeDesc" />
+          <ScalarProperty Name="ProductOptionID" ColumnName="ProductOptionID" />
+          <ScalarProperty Name="ProductOptionCode" ColumnName="ProductOptionCode" />
+          <ScalarProperty Name="CouponFamily1" ColumnName="CouponFamily1" />
+          <ScalarProperty Name="CouponFamily2" ColumnName="CouponFamily2" />
+          <ScalarProperty Name="pa26" ColumnName="pa26" />
+          <ScalarProperty Name="pa27" ColumnName="pa27" />
+          <ScalarProperty Name="pa28" ColumnName="pa28" />
+          <ScalarProperty Name="pa29" ColumnName="pa29" />
+          <ScalarProperty Name="pa30" ColumnName="pa30" />
+          <ScalarProperty Name="pa31" ColumnName="pa31" />
+          <ScalarProperty Name="pa32" ColumnName="pa32" />
+          <ScalarProperty Name="pa33" ColumnName="pa33" />
+          <ScalarProperty Name="pa34" ColumnName="pa34" />
+          <ScalarProperty Name="pa35" ColumnName="pa35" />
+          <ScalarProperty Name="pa36" ColumnName="pa36" />
+          <ScalarProperty Name="pa37" ColumnName="pa37" />
+          <ScalarProperty Name="pa38" ColumnName="pa38" />
+          <ScalarProperty Name="pa39" ColumnName="pa39" />
+          <ScalarProperty Name="pa40" ColumnName="pa40" />
+          <ScalarProperty Name="pa41" ColumnName="pa41" />
+          <ScalarProperty Name="pa42" ColumnName="pa42" />
+          <ScalarProperty Name="pa43" ColumnName="pa43" />
+          <ScalarProperty Name="pa44" ColumnName="pa44" />
+          <ScalarProperty Name="pa45" ColumnName="pa45" />
+          <ScalarProperty Name="pa46" ColumnName="pa46" />
+          <ScalarProperty Name="pa47" ColumnName="pa47" />
+          <ScalarProperty Name="pa48" ColumnName="pa48" />
+          <ScalarProperty Name="pa49" ColumnName="pa49" />
+          <ScalarProperty Name="pa50" ColumnName="pa50" />
+          <ScalarProperty Name="pa51" ColumnName="pa51" />
+          <ScalarProperty Name="pa52" ColumnName="pa52" />
+          <ScalarProperty Name="pa53" ColumnName="pa53" />
+          <ScalarProperty Name="pa54" ColumnName="pa54" />
+          <ScalarProperty Name="pa55" ColumnName="pa55" />
+          <ScalarProperty Name="pa56" ColumnName="pa56" />
+          <ScalarProperty Name="pa57" ColumnName="pa57" />
+          <ScalarProperty Name="pa58" ColumnName="pa58" />
+          <ScalarProperty Name="pa59" ColumnName="pa59" />
+          <ScalarProperty Name="pa60" ColumnName="pa60" />
+          <ScalarProperty Name="pa61" ColumnName="pa61" />
+          <ScalarProperty Name="pa62" ColumnName="pa62" />
+          <ScalarProperty Name="pa63" ColumnName="pa63" />
+          <ScalarProperty Name="pa64" ColumnName="pa64" />
+          <ScalarProperty Name="pa65" ColumnName="pa65" />
+          <ScalarProperty Name="pa66" ColumnName="pa66" />
+          <ScalarProperty Name="pa67" ColumnName="pa67" />
+          <ScalarProperty Name="pa68" ColumnName="pa68" />
+          <ScalarProperty Name="pa69" ColumnName="pa69" />
+          <ScalarProperty Name="pa70" ColumnName="pa70" />
+          <ScalarProperty Name="pa71" ColumnName="pa71" />
+          <ScalarProperty Name="pa72" ColumnName="pa72" />
+          <ScalarProperty Name="pa73" ColumnName="pa73" />
+          <ScalarProperty Name="pa74" ColumnName="pa74" />
+          <ScalarProperty Name="pa75" ColumnName="pa75" />
+          <ScalarProperty Name="pa76" ColumnName="pa76" />
+          <ScalarProperty Name="pa77" ColumnName="pa77" />
+          <ScalarProperty Name="pa78" ColumnName="pa78" />
+          <ScalarProperty Name="pa79" ColumnName="pa79" />
+          <ScalarProperty Name="pa80" ColumnName="pa80" />
+          <ScalarProperty Name="pa81" ColumnName="pa81" />
+          <ScalarProperty Name="pa82" ColumnName="pa82" />
+          <ScalarProperty Name="pa83" ColumnName="pa83" />
+          <ScalarProperty Name="pa84" ColumnName="pa84" />
+          <ScalarProperty Name="pa85" ColumnName="pa85" />
+          <ScalarProperty Name="pa86" ColumnName="pa86" />
+          <ScalarProperty Name="pa87" ColumnName="pa87" />
+          <ScalarProperty Name="pa88" ColumnName="pa88" />
+          <ScalarProperty Name="pa89" ColumnName="pa89" />
+          <ScalarProperty Name="pa90" ColumnName="pa90" />
+          <ScalarProperty Name="pa91" ColumnName="pa91" />
+          <ScalarProperty Name="pa92" ColumnName="pa92" />
+          <ScalarProperty Name="pa93" ColumnName="pa93" />
+          <ScalarProperty Name="pa94" ColumnName="pa94" />
+          <ScalarProperty Name="pa95" ColumnName="pa95" />
+          <ScalarProperty Name="pa96" ColumnName="pa96" />
+          <ScalarProperty Name="pa97" ColumnName="pa97" />
+          <ScalarProperty Name="pa98" ColumnName="pa98" />
+          <ScalarProperty Name="pa99" ColumnName="pa99" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="Mi9Model.product">
+        <MappingFragment StoreEntitySet="products">
+          <ScalarProperty Name="prodcode" ColumnName="prodcode" />
+          <ScalarProperty Name="velcode" ColumnName="velcode" />
+          <ScalarProperty Name="altkey" ColumnName="altkey" />
+          <ScalarProperty Name="barcode" ColumnName="barcode" />
+          <ScalarProperty Name="proddesc" ColumnName="proddesc" />
+          <ScalarProperty Name="longdescind" ColumnName="longdescind" />
+          <ScalarProperty Name="level1" ColumnName="level1" />
+          <ScalarProperty Name="level2" ColumnName="level2" />
+          <ScalarProperty Name="level3" ColumnName="level3" />
+          <ScalarProperty Name="prodquality" ColumnName="prodquality" />
+          <ScalarProperty Name="prodstatus" ColumnName="prodstatus" />
+          <ScalarProperty Name="prodtype" ColumnName="prodtype" />
+          <ScalarProperty Name="prodhistlev" ColumnName="prodhistlev" />
+          <ScalarProperty Name="prodorderind" ColumnName="prodorderind" />
+          <ScalarProperty Name="prodallocind" ColumnName="prodallocind" />
+          <ScalarProperty Name="kitind" ColumnName="kitind" />
+          <ScalarProperty Name="packcode" ColumnName="packcode" />
+          <ScalarProperty Name="supplier" ColumnName="supplier" />
+          <ScalarProperty Name="supptable" ColumnName="supptable" />
+          <ScalarProperty Name="avlead" ColumnName="avlead" />
+          <ScalarProperty Name="vatcode" ColumnName="vatcode" />
+          <ScalarProperty Name="cubefactor" ColumnName="cubefactor" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="facing" ColumnName="facing" />
+          <ScalarProperty Name="height" ColumnName="height" />
+          <ScalarProperty Name="width" ColumnName="width" />
+          <ScalarProperty Name="depth" ColumnName="depth" />
+          <ScalarProperty Name="length" ColumnName="length" />
+          <ScalarProperty Name="convcode" ColumnName="convcode" />
+          <ScalarProperty Name="purchunits" ColumnName="purchunits" />
+          <ScalarProperty Name="stockunits" ColumnName="stockunits" />
+          <ScalarProperty Name="salesunits" ColumnName="salesunits" />
+          <ScalarProperty Name="abcclass" ColumnName="abcclass" />
+          <ScalarProperty Name="analcode1" ColumnName="analcode1" />
+          <ScalarProperty Name="analcode2" ColumnName="analcode2" />
+          <ScalarProperty Name="analcode3" ColumnName="analcode3" />
+          <ScalarProperty Name="analcode4" ColumnName="analcode4" />
+          <ScalarProperty Name="analcode5" ColumnName="analcode5" />
+          <ScalarProperty Name="prodclass" ColumnName="prodclass" />
+          <ScalarProperty Name="disccat" ColumnName="disccat" />
+          <ScalarProperty Name="commcat" ColumnName="commcat" />
+          <ScalarProperty Name="resprodcode" ColumnName="resprodcode" />
+          <ScalarProperty Name="seasoncode" ColumnName="seasoncode" />
+          <ScalarProperty Name="misccharge" ColumnName="misccharge" />
+          <ScalarProperty Name="merchmodel" ColumnName="merchmodel" />
+          <ScalarProperty Name="carrmethod" ColumnName="carrmethod" />
+          <ScalarProperty Name="carrcharge" ColumnName="carrcharge" />
+          <ScalarProperty Name="handcharge" ColumnName="handcharge" />
+          <ScalarProperty Name="surcharge" ColumnName="surcharge" />
+          <ScalarProperty Name="salesnomcode" ColumnName="salesnomcode" />
+          <ScalarProperty Name="purchnomcode" ColumnName="purchnomcode" />
+          <ScalarProperty Name="stocknomcode" ColumnName="stocknomcode" />
+          <ScalarProperty Name="lastmovedate" ColumnName="lastmovedate" />
+          <ScalarProperty Name="amenddate" ColumnName="amenddate" />
+          <ScalarProperty Name="amenduser" ColumnName="amenduser" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="deletedate" ColumnName="deletedate" />
+          <ScalarProperty Name="introdate" ColumnName="introdate" />
+          <ScalarProperty Name="discondate" ColumnName="discondate" />
+          <ScalarProperty Name="suspdate" ColumnName="suspdate" />
+          <ScalarProperty Name="lastcheckdte" ColumnName="lastcheckdte" />
+          <ScalarProperty Name="nextcheckdte" ColumnName="nextcheckdte" />
+          <ScalarProperty Name="stdcost" ColumnName="stdcost" />
+          <ScalarProperty Name="nxtstdcost" ColumnName="nxtstdcost" />
+          <ScalarProperty Name="nxtstddate" ColumnName="nxtstddate" />
+          <ScalarProperty Name="oldstdcost" ColumnName="oldstdcost" />
+          <ScalarProperty Name="avcost" ColumnName="avcost" />
+          <ScalarProperty Name="repcost" ColumnName="repcost" />
+          <ScalarProperty Name="valueprice" ColumnName="valueprice" />
+          <ScalarProperty Name="ordercost" ColumnName="ordercost" />
+          <ScalarProperty Name="storagecost" ColumnName="storagecost" />
+          <ScalarProperty Name="demandytd" ColumnName="demandytd" />
+          <ScalarProperty Name="lostsalesytd" ColumnName="lostsalesytd" />
+          <ScalarProperty Name="mingmpc" ColumnName="mingmpc" />
+          <ScalarProperty Name="maxgmpc" ColumnName="maxgmpc" />
+          <ScalarProperty Name="basegmpc" ColumnName="basegmpc" />
+          <ScalarProperty Name="reportseq" ColumnName="reportseq" />
+          <ScalarProperty Name="accesscount" ColumnName="accesscount" />
+          <ScalarProperty Name="abcrankno" ColumnName="abcrankno" />
+          <ScalarProperty Name="abclastrank" ColumnName="abclastrank" />
+          <ScalarProperty Name="abclastdate" ColumnName="abclastdate" />
+          <ScalarProperty Name="prodint" ColumnName="prodint" />
+          <ScalarProperty Name="life" ColumnName="life" />
+          <ScalarProperty Name="idealset" ColumnName="idealset" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="contind" ColumnName="contind" />
+          <ScalarProperty Name="introseason" ColumnName="introseason" />
+          <ScalarProperty Name="reordmethod" ColumnName="reordmethod" />
+          <ScalarProperty Name="customsdesc" ColumnName="customsdesc" />
+          <ScalarProperty Name="prodstruct" ColumnName="prodstruct" />
+          <ScalarProperty Name="labeltype" ColumnName="labeltype" />
+          <ScalarProperty Name="sourcecode" ColumnName="sourcecode" />
+          <ScalarProperty Name="licencecode" ColumnName="licencecode" />
+          <ScalarProperty Name="foodstamp" ColumnName="foodstamp" />
+          <ScalarProperty Name="shelldep" ColumnName="shelldep" />
+          <ScalarProperty Name="bottledep" ColumnName="bottledep" />
+          <ScalarProperty Name="paytable" ColumnName="paytable" />
+          <ScalarProperty Name="competeprice" ColumnName="competeprice" />
+          <ScalarProperty Name="knownvalue" ColumnName="knownvalue" />
+          <ScalarProperty Name="manufacturer" ColumnName="manufacturer" />
+          <ScalarProperty Name="buyer" ColumnName="buyer" />
+          <ScalarProperty Name="replenmethod" ColumnName="replenmethod" />
+          <ScalarProperty Name="backsalhist" ColumnName="backsalhist" />
+          <ScalarProperty Name="wksstockheld" ColumnName="wksstockheld" />
+          <ScalarProperty Name="replenstdte" ColumnName="replenstdte" />
+          <ScalarProperty Name="replenenddte" ColumnName="replenenddte" />
+          <ScalarProperty Name="statchgdate" ColumnName="statchgdate" />
+          <ScalarProperty Name="range" ColumnName="range" />
+          <ScalarProperty Name="CommodityID" ColumnName="CommodityID" />
+          <ScalarProperty Name="VarTableCode" ColumnName="VarTableCode" />
+          <ScalarProperty Name="CoordinateGroup" ColumnName="CoordinateGroup" />
+          <ScalarProperty Name="Silhouette" ColumnName="Silhouette" />
+          <ScalarProperty Name="CreatedOffline" ColumnName="CreatedOffline" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="LongDesc" ColumnName="LongDesc" />
+          <ScalarProperty Name="StatChgUser" ColumnName="StatChgUser" />
+          <ScalarProperty Name="PrimaryMaterial" ColumnName="PrimaryMaterial" />
+          <ScalarProperty Name="KitDisassemblyAction" ColumnName="KitDisassemblyAction" />
+          <ScalarProperty Name="Stockable" ColumnName="Stockable" />
+          <ScalarProperty Name="Consignment" ColumnName="Consignment" />
+          <ScalarProperty Name="SpecialOrder" ColumnName="SpecialOrder" />
+          <ScalarProperty Name="NonMarkdownReason" ColumnName="NonMarkdownReason" />
+          <ScalarProperty Name="AvReceivedCost" ColumnName="AvReceivedCost" />
+          <ScalarProperty Name="ReceivedQty" ColumnName="ReceivedQty" />
+          <ScalarProperty Name="DefaultVendorProductID" ColumnName="DefaultVendorProductID" />
+          <ScalarProperty Name="level4" ColumnName="level4" />
+          <ScalarProperty Name="level5" ColumnName="level5" />
+          <ScalarProperty Name="AltMerchHierarchy1ID" ColumnName="AltMerchHierarchy1ID" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="InnerPack" ColumnName="InnerPack" />
+          <ScalarProperty Name="MasterPack" ColumnName="MasterPack" />
+          <ScalarProperty Name="MarkdownDate" ColumnName="MarkdownDate" />
+          <ScalarProperty Name="PreTicket" ColumnName="PreTicket" />
+          <ScalarProperty Name="Assorted" ColumnName="Assorted" />
+          <ScalarProperty Name="AllocUnits" ColumnName="AllocUnits" />
+          <ScalarProperty Name="SetQty" ColumnName="SetQty" />
+          <ScalarProperty Name="CartonQty" ColumnName="CartonQty" />
+          <ScalarProperty Name="PalletQty" ColumnName="PalletQty" />
+          <ScalarProperty Name="WebDate" ColumnName="WebDate" />
+          <ScalarProperty Name="CopyDate" ColumnName="CopyDate" />
+          <ScalarProperty Name="PhotoDate" ColumnName="PhotoDate" />
+          <ScalarProperty Name="PhotoLocation" ColumnName="PhotoLocation" />
+          <ScalarProperty Name="SetType" ColumnName="SetType" />
+          <ScalarProperty Name="Replenished" ColumnName="Replenished" />
+          <ScalarProperty Name="ReplenishmentSourceType" ColumnName="ReplenishmentSourceType" />
+          <ScalarProperty Name="POSMarkdown" ColumnName="POSMarkdown" />
+          <ScalarProperty Name="VMI" ColumnName="VMI" />
+          <ScalarProperty Name="Scaled" ColumnName="Scaled" />
+          <ScalarProperty Name="PriceCompareUnits" ColumnName="PriceCompareUnits" />
+          <ScalarProperty Name="PriceCompareFactor" ColumnName="PriceCompareFactor" />
+          <ScalarProperty Name="SalesUnitsID" ColumnName="SalesUnitsID" />
+          <ScalarProperty Name="AltSalesUnitsID" ColumnName="AltSalesUnitsID" />
+          <ScalarProperty Name="AllocUnitsID" ColumnName="AllocUnitsID" />
+          <ScalarProperty Name="PDQUnitsID" ColumnName="PDQUnitsID" />
+          <ScalarProperty Name="AltSalesUnitsSKU" ColumnName="AltSalesUnitsSKU" />
+          <ScalarProperty Name="HazMatClass" ColumnName="HazMatClass" />
+          <ScalarProperty Name="SecurityTagType" ColumnName="SecurityTagType" />
+          <ScalarProperty Name="SellingRestriction" ColumnName="SellingRestriction" />
+          <ScalarProperty Name="POSKeyword" ColumnName="POSKeyword" />
+          <ScalarProperty Name="CommissionPercent" ColumnName="CommissionPercent" />
+          <ScalarProperty Name="Fee" ColumnName="Fee" />
+          <ScalarProperty Name="NeverOutOfStock" ColumnName="NeverOutOfStock" />
+          <ScalarProperty Name="FarmerTaxExempt" ColumnName="FarmerTaxExempt" />
+          <ScalarProperty Name="SerialNumRequired" ColumnName="SerialNumRequired" />
+          <ScalarProperty Name="WarrantyAvailable" ColumnName="WarrantyAvailable" />
+          <ScalarProperty Name="PreventEnteringQtyForRepeatItemInPOS" ColumnName="PreventEnteringQtyForRepeatItemInPOS" />
+          <ScalarProperty Name="FoodStampCanBeUsed" ColumnName="FoodStampCanBeUsed" />
+          <ScalarProperty Name="AssociatedProdint" ColumnName="AssociatedProdint" />
+          <ScalarProperty Name="POSScriptLine1" ColumnName="POSScriptLine1" />
+          <ScalarProperty Name="POSScriptLine2" ColumnName="POSScriptLine2" />
+          <ScalarProperty Name="AllowPriceOverrideInPOS" ColumnName="AllowPriceOverrideInPOS" />
+          <ScalarProperty Name="ForceEnteringQtyInPOS" ColumnName="ForceEnteringQtyInPOS" />
+          <ScalarProperty Name="WebPublishedDate" ColumnName="WebPublishedDate" />
+          <ScalarProperty Name="NonMerchType" ColumnName="NonMerchType" />
+          <ScalarProperty Name="HTSCode" ColumnName="HTSCode" />
+          <ScalarProperty Name="ProPricingGroup" ColumnName="ProPricingGroup" />
+          <ScalarProperty Name="ProPricingType" ColumnName="ProPricingType" />
+          <ScalarProperty Name="ShipQtyMayExceedAvailable" ColumnName="ShipQtyMayExceedAvailable" />
+          <ScalarProperty Name="WarehouseReplenishmentStartDate" ColumnName="WarehouseReplenishmentStartDate" />
+          <ScalarProperty Name="WarehouseReplenishmentEndDate" ColumnName="WarehouseReplenishmentEndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="features">
+      <EntityTypeMapping TypeName="Mi9Model.feature">
+        <MappingFragment StoreEntitySet="features">
+          <ScalarProperty Name="sourceint" ColumnName="sourceint" />
+          <ScalarProperty Name="typecode" ColumnName="typecode" />
+          <ScalarProperty Name="feature1" ColumnName="feature" />
+          <ScalarProperty Name="featureset" ColumnName="featureset" />
+          <ScalarProperty Name="property" ColumnName="property" />
+          <ScalarProperty Name="sequenceno" ColumnName="sequenceno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TOFS_RetailPrice">
+      <EntityTypeMapping TypeName="Mi9Model.TOFS_RetailPrice">
+        <MappingFragment StoreEntitySet="TOFS_RetailPrice">
+          <ScalarProperty Name="Varint" ColumnName="Varint" />
+          <ScalarProperty Name="Retail_Price" ColumnName="Retail_Price" />
+          <ScalarProperty Name="Price_List" ColumnName="Price_List" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="suppliers">
+      <EntityTypeMapping TypeName="Mi9Model.supplier">
+        <MappingFragment StoreEntitySet="suppliers">
+          <ScalarProperty Name="EdiFuncAckForInvoice" ColumnName="EdiFuncAckForInvoice" />
+          <ScalarProperty Name="Edi850ITDInUse" ColumnName="Edi850ITDInUse" />
+          <ScalarProperty Name="Edi850TD5InUse" ColumnName="Edi850TD5InUse" />
+          <ScalarProperty Name="Edi850SDQInUse" ColumnName="Edi850SDQInUse" />
+          <ScalarProperty Name="Edi850DTM001DeliveryDateInUse" ColumnName="Edi850DTM001DeliveryDateInUse" />
+          <ScalarProperty Name="SpecialOrdersSpecRequired" ColumnName="SpecialOrdersSpecRequired" />
+          <ScalarProperty Name="SpecialOrders" ColumnName="SpecialOrders" />
+          <ScalarProperty Name="VerticallyIntegratedRetailer" ColumnName="VerticallyIntegratedRetailer" />
+          <ScalarProperty Name="RebateVendorGLU" ColumnName="RebateVendorGLU" />
+          <ScalarProperty Name="RebateVendor" ColumnName="RebateVendor" />
+          <ScalarProperty Name="UpdateCostOnASN" ColumnName="UpdateCostOnASN" />
+          <ScalarProperty Name="EdiProductActivity" ColumnName="EdiProductActivity" />
+          <ScalarProperty Name="NewStoreDiscountDays" ColumnName="NewStoreDiscountDays" />
+          <ScalarProperty Name="AllowBrokenPacks" ColumnName="AllowBrokenPacks" />
+          <ScalarProperty Name="OrderPlanRequired" ColumnName="OrderPlanRequired" />
+          <ScalarProperty Name="EdiMessagingProtocolGLU" ColumnName="EdiMessagingProtocolGLU" />
+          <ScalarProperty Name="EdiMessagingProtocol" ColumnName="EdiMessagingProtocol" />
+          <ScalarProperty Name="EdiProviderGLU" ColumnName="EdiProviderGLU" />
+          <ScalarProperty Name="EdiProvider" ColumnName="EdiProvider" />
+          <ScalarProperty Name="DefectiveMerchandiseDiscountPercentStartDate" ColumnName="DefectiveMerchandiseDiscountPercentStartDate" />
+          <ScalarProperty Name="DefectiveMerchandiseDiscountPercent" ColumnName="DefectiveMerchandiseDiscountPercent" />
+          <ScalarProperty Name="CommercialDiscountPercentStartDate" ColumnName="CommercialDiscountPercentStartDate" />
+          <ScalarProperty Name="CommercialDiscountPercent" ColumnName="CommercialDiscountPercent" />
+          <ScalarProperty Name="SbaContractStartDate" ColumnName="SbaContractStartDate" />
+          <ScalarProperty Name="SbaContractInUse" ColumnName="SbaContractInUse" />
+          <ScalarProperty Name="ImportingCompanyGLU" ColumnName="ImportingCompanyGLU" />
+          <ScalarProperty Name="ImportingCompany" ColumnName="ImportingCompany" />
+          <ScalarProperty Name="UseSystemTolerance" ColumnName="UseSystemTolerance" />
+          <ScalarProperty Name="EnforceVendorCompanyLocationRules" ColumnName="EnforceVendorCompanyLocationRules" />
+          <ScalarProperty Name="EdiUseTildeAsSegmentTerminator" ColumnName="EdiUseTildeAsSegmentTerminator" />
+          <ScalarProperty Name="VendorLocationsInUse" ColumnName="VendorLocationsInUse" />
+          <ScalarProperty Name="EdiLastASNCode" ColumnName="EdiLastASNCode" />
+          <ScalarProperty Name="EdiLastInvoiceCode" ColumnName="EdiLastInvoiceCode" />
+          <ScalarProperty Name="Edi850DTM074InUse" ColumnName="Edi850DTM074InUse" />
+          <ScalarProperty Name="Edi850DTM038InUse" ColumnName="Edi850DTM038InUse" />
+          <ScalarProperty Name="Edi850DTM037InUse" ColumnName="Edi850DTM037InUse" />
+          <ScalarProperty Name="Edi850DTM010InUse" ColumnName="Edi850DTM010InUse" />
+          <ScalarProperty Name="Edi850DTM001InUse" ColumnName="Edi850DTM001InUse" />
+          <ScalarProperty Name="CancelAfterDays" ColumnName="CancelAfterDays" />
+          <ScalarProperty Name="AutoReceiveASN" ColumnName="AutoReceiveASN" />
+          <ScalarProperty Name="VMI" ColumnName="VMI" />
+          <ScalarProperty Name="Edi850ControlNumber" ColumnName="Edi850ControlNumber" />
+          <ScalarProperty Name="RequireVendorUPC" ColumnName="RequireVendorUPC" />
+          <ScalarProperty Name="RequireVendorProduct" ColumnName="RequireVendorProduct" />
+          <ScalarProperty Name="DUNS" ColumnName="DUNS" />
+          <ScalarProperty Name="PreTicket" ColumnName="PreTicket" />
+          <ScalarProperty Name="DateInterfaced" ColumnName="DateInterfaced" />
+          <ScalarProperty Name="Interfaced" ColumnName="Interfaced" />
+          <ScalarProperty Name="CreatedOffline" ColumnName="CreatedOffline" />
+          <ScalarProperty Name="FFPackagingOptimizationType" ColumnName="FFPackagingOptimizationType" />
+          <ScalarProperty Name="FFUsePackaging" ColumnName="FFUsePackaging" />
+          <ScalarProperty Name="FFShipChargeCountType" ColumnName="FFShipChargeCountType" />
+          <ScalarProperty Name="FFShipChargeType" ColumnName="FFShipChargeType" />
+          <ScalarProperty Name="FFItemHandlingChargeInt" ColumnName="FFItemHandlingChargeInt" />
+          <ScalarProperty Name="FFItemHandlingCharge" ColumnName="FFItemHandlingCharge" />
+          <ScalarProperty Name="FFHandlingChargeInt" ColumnName="FFHandlingChargeInt" />
+          <ScalarProperty Name="FFHandlingCharge" ColumnName="FFHandlingCharge" />
+          <ScalarProperty Name="FFShipModeInt" ColumnName="FFShipModeInt" />
+          <ScalarProperty Name="FFShipMode" ColumnName="FFShipMode" />
+          <ScalarProperty Name="Fulfillment" ColumnName="Fulfillment" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="Import" ColumnName="Import" />
+          <ScalarProperty Name="TransportMethod" ColumnName="TransportMethod" />
+          <ScalarProperty Name="AutoAuthorizeOrders" ColumnName="AutoAuthorizeOrders" />
+          <ScalarProperty Name="EdiFuncAck" ColumnName="EdiFuncAck" />
+          <ScalarProperty Name="EdiCatalog" ColumnName="EdiCatalog" />
+          <ScalarProperty Name="EdiPayment" ColumnName="EdiPayment" />
+          <ScalarProperty Name="EdiAsn" ColumnName="EdiAsn" />
+          <ScalarProperty Name="EdiInvoice" ColumnName="EdiInvoice" />
+          <ScalarProperty Name="EdiPoAmend" ColumnName="EdiPoAmend" />
+          <ScalarProperty Name="EdiPoAck" ColumnName="EdiPoAck" />
+          <ScalarProperty Name="EdiPo" ColumnName="EdiPo" />
+          <ScalarProperty Name="EdiSuspendDate" ColumnName="EdiSuspendDate" />
+          <ScalarProperty Name="EdiLiveStartDate" ColumnName="EdiLiveStartDate" />
+          <ScalarProperty Name="EdiTestStartDate" ColumnName="EdiTestStartDate" />
+          <ScalarProperty Name="EdiVersion" ColumnName="EdiVersion" />
+          <ScalarProperty Name="EdiFormat" ColumnName="EdiFormat" />
+          <ScalarProperty Name="EdiStatus" ColumnName="EdiStatus" />
+          <ScalarProperty Name="EdiLiveCode" ColumnName="EdiLiveCode" />
+          <ScalarProperty Name="EdiLiveCodeQualifier" ColumnName="EdiLiveCodeQualifier" />
+          <ScalarProperty Name="EdiTestCode" ColumnName="EdiTestCode" />
+          <ScalarProperty Name="EdiTestCodeQualifier" ColumnName="EdiTestCodeQualifier" />
+          <ScalarProperty Name="sa25" ColumnName="sa25" />
+          <ScalarProperty Name="sa24" ColumnName="sa24" />
+          <ScalarProperty Name="sa23" ColumnName="sa23" />
+          <ScalarProperty Name="sa22" ColumnName="sa22" />
+          <ScalarProperty Name="sa21" ColumnName="sa21" />
+          <ScalarProperty Name="sa20" ColumnName="sa20" />
+          <ScalarProperty Name="sa19" ColumnName="sa19" />
+          <ScalarProperty Name="sa18" ColumnName="sa18" />
+          <ScalarProperty Name="sa17" ColumnName="sa17" />
+          <ScalarProperty Name="sa16" ColumnName="sa16" />
+          <ScalarProperty Name="sa15" ColumnName="sa15" />
+          <ScalarProperty Name="sa14" ColumnName="sa14" />
+          <ScalarProperty Name="sa13" ColumnName="sa13" />
+          <ScalarProperty Name="sa12" ColumnName="sa12" />
+          <ScalarProperty Name="sa11" ColumnName="sa11" />
+          <ScalarProperty Name="sa10" ColumnName="sa10" />
+          <ScalarProperty Name="sa09" ColumnName="sa09" />
+          <ScalarProperty Name="sa08" ColumnName="sa08" />
+          <ScalarProperty Name="sa07" ColumnName="sa07" />
+          <ScalarProperty Name="sa06" ColumnName="sa06" />
+          <ScalarProperty Name="sa05" ColumnName="sa05" />
+          <ScalarProperty Name="sa04" ColumnName="sa04" />
+          <ScalarProperty Name="sa03" ColumnName="sa03" />
+          <ScalarProperty Name="sa02" ColumnName="sa02" />
+          <ScalarProperty Name="sa01" ColumnName="sa01" />
+          <ScalarProperty Name="compafter" ColumnName="compafter" />
+          <ScalarProperty Name="allowbo" ColumnName="allowbo" />
+          <ScalarProperty Name="mindelval" ColumnName="mindelval" />
+          <ScalarProperty Name="maxdelval" ColumnName="maxdelval" />
+          <ScalarProperty Name="multilocords" ColumnName="multilocords" />
+          <ScalarProperty Name="carrier" ColumnName="carrier" />
+          <ScalarProperty Name="reportcat" ColumnName="reportcat" />
+          <ScalarProperty Name="dbrating" ColumnName="dbrating" />
+          <ScalarProperty Name="stdindclass" ColumnName="stdindclass" />
+          <ScalarProperty Name="buymethod" ColumnName="buymethod" />
+          <ScalarProperty Name="supptype" ColumnName="supptype" />
+          <ScalarProperty Name="printprice" ColumnName="printprice" />
+          <ScalarProperty Name="taxregno" ColumnName="taxregno" />
+          <ScalarProperty Name="settletype" ColumnName="settletype" />
+          <ScalarProperty Name="languageid" ColumnName="languageid" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="anacode" ColumnName="anacode" />
+          <ScalarProperty Name="maxorder" ColumnName="maxorder" />
+          <ScalarProperty Name="minorder" ColumnName="minorder" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="reinstuser" ColumnName="reinstuser" />
+          <ScalarProperty Name="reinstdate" ColumnName="reinstdate" />
+          <ScalarProperty Name="suspuser" ColumnName="suspuser" />
+          <ScalarProperty Name="suspdate" ColumnName="suspdate" />
+          <ScalarProperty Name="suspreasonap" ColumnName="suspreasonap" />
+          <ScalarProperty Name="suspreasonra" ColumnName="suspreasonra" />
+          <ScalarProperty Name="suspreason" ColumnName="suspreason" />
+          <ScalarProperty Name="suppint" ColumnName="suppint" />
+          <ScalarProperty Name="deletedate" ColumnName="deletedate" />
+          <ScalarProperty Name="amenddate" ColumnName="amenddate" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="lastmovedate" ColumnName="lastmovedate" />
+          <ScalarProperty Name="suppprod" ColumnName="suppprod" />
+          <ScalarProperty Name="historylevel" ColumnName="historylevel" />
+          <ScalarProperty Name="orderbranch" ColumnName="orderbranch" />
+          <ScalarProperty Name="leadtimetype" ColumnName="leadtimetype" />
+          <ScalarProperty Name="maxlead" ColumnName="maxlead" />
+          <ScalarProperty Name="minlead" ColumnName="minlead" />
+          <ScalarProperty Name="creditproc" ColumnName="creditproc" />
+          <ScalarProperty Name="retmethod" ColumnName="retmethod" />
+          <ScalarProperty Name="currency" ColumnName="currency" />
+          <ScalarProperty Name="paymethod" ColumnName="paymethod" />
+          <ScalarProperty Name="invmethod" ColumnName="invmethod" />
+          <ScalarProperty Name="merchplan" ColumnName="merchplan" />
+          <ScalarProperty Name="ordermethod" ColumnName="ordermethod" />
+          <ScalarProperty Name="buyer" ColumnName="buyer" />
+          <ScalarProperty Name="accounttype" ColumnName="accounttype" />
+          <ScalarProperty Name="class" ColumnName="class" />
+          <ScalarProperty Name="typecode" ColumnName="typecode" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="grpaccountno" ColumnName="grpaccountno" />
+          <ScalarProperty Name="hoaccountno" ColumnName="hoaccountno" />
+          <ScalarProperty Name="commsline" ColumnName="commsline" />
+          <ScalarProperty Name="shortname" ColumnName="shortname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="supplier1" ColumnName="supplier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="supproducts">
+      <EntityTypeMapping TypeName="Mi9Model.supproduct">
+        <MappingFragment StoreEntitySet="supproducts">
+          <ScalarProperty Name="AvailableForWebFF" ColumnName="AvailableForWebFF" />
+          <ScalarProperty Name="DateLastModified" ColumnName="DateLastModified" />
+          <ScalarProperty Name="DateActiveChanged" ColumnName="DateActiveChanged" />
+          <ScalarProperty Name="UserActiveChanged" ColumnName="UserActiveChanged" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="CountryDispatch" ColumnName="CountryDispatch" />
+          <ScalarProperty Name="CountryMfr" ColumnName="CountryMfr" />
+          <ScalarProperty Name="UserAmended" ColumnName="UserAmended" />
+          <ScalarProperty Name="UserCreated" ColumnName="UserCreated" />
+          <ScalarProperty Name="SafetyCertificate" ColumnName="SafetyCertificate" />
+          <ScalarProperty Name="ImportCertificateInProgress" ColumnName="ImportCertificateInProgress" />
+          <ScalarProperty Name="ImportCertificateEndDate" ColumnName="ImportCertificateEndDate" />
+          <ScalarProperty Name="ImportCertificateStartDate" ColumnName="ImportCertificateStartDate" />
+          <ScalarProperty Name="ImportCertificate" ColumnName="ImportCertificate" />
+          <ScalarProperty Name="OrderMultiple" ColumnName="OrderMultiple" />
+          <ScalarProperty Name="basesupprodint" ColumnName="basesupprodint" />
+          <ScalarProperty Name="vardesc2" ColumnName="vardesc2" />
+          <ScalarProperty Name="vardesc1" ColumnName="vardesc1" />
+          <ScalarProperty Name="CreatedOffline" ColumnName="CreatedOffline" />
+          <ScalarProperty Name="sourcepercent" ColumnName="sourcepercent" />
+          <ScalarProperty Name="bandingunits" ColumnName="bandingunits" />
+          <ScalarProperty Name="maxdelval" ColumnName="maxdelval" />
+          <ScalarProperty Name="mindelval" ColumnName="mindelval" />
+          <ScalarProperty Name="maxdelqty" ColumnName="maxdelqty" />
+          <ScalarProperty Name="mindelqty" ColumnName="mindelqty" />
+          <ScalarProperty Name="settletype" ColumnName="settletype" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="deletedate" ColumnName="deletedate" />
+          <ScalarProperty Name="amenddate" ColumnName="amenddate" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="reinstuser" ColumnName="reinstuser" />
+          <ScalarProperty Name="reinstdate" ColumnName="reinstdate" />
+          <ScalarProperty Name="suspuser" ColumnName="suspuser" />
+          <ScalarProperty Name="suspdate" ColumnName="suspdate" />
+          <ScalarProperty Name="suspreason" ColumnName="suspreason" />
+          <ScalarProperty Name="discondate" ColumnName="discondate" />
+          <ScalarProperty Name="introdate" ColumnName="introdate" />
+          <ScalarProperty Name="suppbrint" ColumnName="suppbrint" />
+          <ScalarProperty Name="preference" ColumnName="preference" />
+          <ScalarProperty Name="origin" ColumnName="origin" />
+          <ScalarProperty Name="life" ColumnName="life" />
+          <ScalarProperty Name="leadtimetype" ColumnName="leadtimetype" />
+          <ScalarProperty Name="maxlead" ColumnName="maxlead" />
+          <ScalarProperty Name="minlead" ColumnName="minlead" />
+          <ScalarProperty Name="maxvalue" ColumnName="maxvalue" />
+          <ScalarProperty Name="minvalue" ColumnName="minvalue" />
+          <ScalarProperty Name="maxorder" ColumnName="maxorder" />
+          <ScalarProperty Name="minorder" ColumnName="minorder" />
+          <ScalarProperty Name="salesunits" ColumnName="salesunits" />
+          <ScalarProperty Name="convcode" ColumnName="convcode" />
+          <ScalarProperty Name="vatcode" ColumnName="vatcode" />
+          <ScalarProperty Name="rrpvat" ColumnName="rrpvat" />
+          <ScalarProperty Name="retailprice" ColumnName="retailprice" />
+          <ScalarProperty Name="anacode" ColumnName="anacode" />
+          <ScalarProperty Name="reference" ColumnName="reference" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="varint" ColumnName="varint" />
+          <ScalarProperty Name="prodint" ColumnName="prodint" />
+          <ScalarProperty Name="supprodint" ColumnName="supprodint" />
+          <ScalarProperty Name="supproduct1" ColumnName="supproduct" />
+          <ScalarProperty Name="suppint" ColumnName="suppint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="brnstocks">
+      <EntityTypeMapping TypeName="Mi9Model.brnstock">
+        <MappingFragment StoreEntitySet="brnstocks">
+          <ScalarProperty Name="TransferHeldQty" ColumnName="TransferHeldQty" />
+          <ScalarProperty Name="CrossDockQty" ColumnName="CrossDockQty" />
+          <ScalarProperty Name="LastSoldDate" ColumnName="LastSoldDate" />
+          <ScalarProperty Name="FirstSoldDate" ColumnName="FirstSoldDate" />
+          <ScalarProperty Name="lastdeldate" ColumnName="lastdeldate" />
+          <ScalarProperty Name="firstdeldate" ColumnName="firstdeldate" />
+          <ScalarProperty Name="carryovercst" ColumnName="carryovercst" />
+          <ScalarProperty Name="carryoverqty" ColumnName="carryoverqty" />
+          <ScalarProperty Name="lastcost" ColumnName="lastcost" />
+          <ScalarProperty Name="stdcost" ColumnName="stdcost" />
+          <ScalarProperty Name="discrepancy" ColumnName="discrepancy" />
+          <ScalarProperty Name="lastcheckdte" ColumnName="lastcheckdte" />
+          <ScalarProperty Name="stockcheck" ColumnName="stockcheck" />
+          <ScalarProperty Name="quarantine" ColumnName="quarantine" />
+          <ScalarProperty Name="allocated" ColumnName="allocated" />
+          <ScalarProperty Name="damaged" ColumnName="damaged" />
+          <ScalarProperty Name="showroom" ColumnName="showroom" />
+          <ScalarProperty Name="retail" ColumnName="retail" />
+          <ScalarProperty Name="avcost" ColumnName="avcost" />
+          <ScalarProperty Name="onorder" ColumnName="onorder" />
+          <ScalarProperty Name="lastmovedate" ColumnName="lastmovedate" />
+          <ScalarProperty Name="varint" ColumnName="varint" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="structlevels">
+      <EntityTypeMapping TypeName="Mi9Model.structlevel">
+        <MappingFragment StoreEntitySet="structlevels">
+          <ScalarProperty Name="Replenished" ColumnName="Replenished" />
+          <ScalarProperty Name="CountryGLU" ColumnName="CountryGLU" />
+          <ScalarProperty Name="CountryOrigin" ColumnName="CountryOrigin" />
+          <ScalarProperty Name="ExpenseItemReason" ColumnName="ExpenseItemReason" />
+          <ScalarProperty Name="ExpenseItemReasonGLU" ColumnName="ExpenseItemReasonGLU" />
+          <ScalarProperty Name="RetailCostMultiplier" ColumnName="RetailCostMultiplier" />
+          <ScalarProperty Name="ProductAttributeSetCode" ColumnName="ProductAttributeSetCode" />
+          <ScalarProperty Name="AllocUnits" ColumnName="AllocUnits" />
+          <ScalarProperty Name="ClusterID" ColumnName="ClusterID" />
+          <ScalarProperty Name="MHClusterGroupID" ColumnName="MHClusterGroupID" />
+          <ScalarProperty Name="ProductClusterGroupID" ColumnName="ProductClusterGroupID" />
+          <ScalarProperty Name="level5" ColumnName="level5" />
+          <ScalarProperty Name="level4" ColumnName="level4" />
+          <ScalarProperty Name="Consignment" ColumnName="Consignment" />
+          <ScalarProperty Name="LabelType" ColumnName="LabelType" />
+          <ScalarProperty Name="prodclass" ColumnName="prodclass" />
+          <ScalarProperty Name="weight" ColumnName="weight" />
+          <ScalarProperty Name="cubefactor" ColumnName="cubefactor" />
+          <ScalarProperty Name="countrymfr" ColumnName="countrymfr" />
+          <ScalarProperty Name="primarymaterial" ColumnName="primarymaterial" />
+          <ScalarProperty Name="customsdesc" ColumnName="customsdesc" />
+          <ScalarProperty Name="vargroup2" ColumnName="vargroup2" />
+          <ScalarProperty Name="vargroup1" ColumnName="vargroup1" />
+          <ScalarProperty Name="featsetcode" ColumnName="featsetcode" />
+          <ScalarProperty Name="dumpvarint" ColumnName="dumpvarint" />
+          <ScalarProperty Name="backsalhist" ColumnName="backsalhist" />
+          <ScalarProperty Name="wksstockheld" ColumnName="wksstockheld" />
+          <ScalarProperty Name="replenmethod" ColumnName="replenmethod" />
+          <ScalarProperty Name="keydatetype" ColumnName="keydatetype" />
+          <ScalarProperty Name="gradetable" ColumnName="gradetable" />
+          <ScalarProperty Name="priceband" ColumnName="priceband" />
+          <ScalarProperty Name="levint" ColumnName="levint" />
+          <ScalarProperty Name="convcode" ColumnName="convcode" />
+          <ScalarProperty Name="accessdate" ColumnName="accessdate" />
+          <ScalarProperty Name="deleteind" ColumnName="deleteind" />
+          <ScalarProperty Name="deletedate" ColumnName="deletedate" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="amenddate" ColumnName="amenddate" />
+          <ScalarProperty Name="popcount" ColumnName="popcount" />
+          <ScalarProperty Name="hitcount" ColumnName="hitcount" />
+          <ScalarProperty Name="dummyind" ColumnName="dummyind" />
+          <ScalarProperty Name="vartable2" ColumnName="vartable2" />
+          <ScalarProperty Name="vartable1" ColumnName="vartable1" />
+          <ScalarProperty Name="prodstruct" ColumnName="prodstruct" />
+          <ScalarProperty Name="handling" ColumnName="handling" />
+          <ScalarProperty Name="misccharge" ColumnName="misccharge" />
+          <ScalarProperty Name="carrcharge" ColumnName="carrcharge" />
+          <ScalarProperty Name="carrmethod" ColumnName="carrmethod" />
+          <ScalarProperty Name="merchmodel" ColumnName="merchmodel" />
+          <ScalarProperty Name="surcharge" ColumnName="surcharge" />
+          <ScalarProperty Name="suppriority" ColumnName="suppriority" />
+          <ScalarProperty Name="forecast" ColumnName="forecast" />
+          <ScalarProperty Name="distplan" ColumnName="distplan" />
+          <ScalarProperty Name="resprodcode" ColumnName="resprodcode" />
+          <ScalarProperty Name="seasoncode" ColumnName="seasoncode" />
+          <ScalarProperty Name="commcat" ColumnName="commcat" />
+          <ScalarProperty Name="disccat" ColumnName="disccat" />
+          <ScalarProperty Name="abccode" ColumnName="abccode" />
+          <ScalarProperty Name="buyer" ColumnName="buyer" />
+          <ScalarProperty Name="supplier" ColumnName="supplier" />
+          <ScalarProperty Name="salesunits" ColumnName="salesunits" />
+          <ScalarProperty Name="stockunits" ColumnName="stockunits" />
+          <ScalarProperty Name="purchunits" ColumnName="purchunits" />
+          <ScalarProperty Name="stocknomcode" ColumnName="stocknomcode" />
+          <ScalarProperty Name="purchnomcode" ColumnName="purchnomcode" />
+          <ScalarProperty Name="salesnomcode" ColumnName="salesnomcode" />
+          <ScalarProperty Name="issuemethod" ColumnName="issuemethod" />
+          <ScalarProperty Name="costmethod" ColumnName="costmethod" />
+          <ScalarProperty Name="maxgmpc" ColumnName="maxgmpc" />
+          <ScalarProperty Name="mingmpc" ColumnName="mingmpc" />
+          <ScalarProperty Name="autoallocate" ColumnName="autoallocate" />
+          <ScalarProperty Name="orderind" ColumnName="orderind" />
+          <ScalarProperty Name="historylevel" ColumnName="historylevel" />
+          <ScalarProperty Name="vatcode" ColumnName="vatcode" />
+          <ScalarProperty Name="shortdesc" ColumnName="shortdesc" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="level3" ColumnName="level3" />
+          <ScalarProperty Name="level2" ColumnName="level2" />
+          <ScalarProperty Name="level1" ColumnName="level1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="btranshdrs">
+      <EntityTypeMapping TypeName="Mi9Model.btranshdr">
+        <MappingFragment StoreEntitySet="btranshdrs">
+          <ScalarProperty Name="PIHeaderID" ColumnName="PIHeaderID" />
+          <ScalarProperty Name="TotalAbsoluteRetail" ColumnName="TotalAbsoluteRetail" />
+          <ScalarProperty Name="TotalAbsoluteCost" ColumnName="TotalAbsoluteCost" />
+          <ScalarProperty Name="DateConfirmed" ColumnName="DateConfirmed" />
+          <ScalarProperty Name="UserConfirmed" ColumnName="UserConfirmed" />
+          <ScalarProperty Name="DateRejected" ColumnName="DateRejected" />
+          <ScalarProperty Name="UserRejected" ColumnName="UserRejected" />
+          <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
+          <ScalarProperty Name="UserApproved" ColumnName="UserApproved" />
+          <ScalarProperty Name="DateAmended" ColumnName="DateAmended" />
+          <ScalarProperty Name="UserAmended" ColumnName="UserAmended" />
+          <ScalarProperty Name="CustomerShipmentID" ColumnName="CustomerShipmentID" />
+          <ScalarProperty Name="CustomerOrderID" ColumnName="CustomerOrderID" />
+          <ScalarProperty Name="DateExtractedToBI" ColumnName="DateExtractedToBI" />
+          <ScalarProperty Name="KitAssemblyID" ColumnName="KitAssemblyID" />
+          <ScalarProperty Name="KitDisassemblyID" ColumnName="KitDisassemblyID" />
+          <ScalarProperty Name="Reference2" ColumnName="Reference2" />
+          <ScalarProperty Name="AdjOtherLocCode" ColumnName="AdjOtherLocCode" />
+          <ScalarProperty Name="AdjOtherTranCode" ColumnName="AdjOtherTranCode" />
+          <ScalarProperty Name="TargetCode" ColumnName="TargetCode" />
+          <ScalarProperty Name="ShipCode" ColumnName="ShipCode" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="WhDeliveryID" ColumnName="WhDeliveryID" />
+          <ScalarProperty Name="Reference" ColumnName="Reference" />
+          <ScalarProperty Name="SalesAudit" ColumnName="SalesAudit" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="KitAssemblyOrderID" ColumnName="KitAssemblyOrderID" />
+          <ScalarProperty Name="source" ColumnName="source" />
+          <ScalarProperty Name="postransint" ColumnName="postransint" />
+          <ScalarProperty Name="transint" ColumnName="transint" />
+          <ScalarProperty Name="processdate" ColumnName="processdate" />
+          <ScalarProperty Name="usercode" ColumnName="usercode" />
+          <ScalarProperty Name="download" ColumnName="download" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="nominal" ColumnName="nominal" />
+          <ScalarProperty Name="branchother" ColumnName="branchother" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="transdate" ColumnName="transdate" />
+          <ScalarProperty Name="reasoncode" ColumnName="reasoncode" />
+          <ScalarProperty Name="typecode" ColumnName="typecode" />
+          <ScalarProperty Name="transnumber" ColumnName="transnumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="btranslines">
+      <EntityTypeMapping TypeName="Mi9Model.btransline">
+        <MappingFragment StoreEntitySet="btranslines">
+          <ScalarProperty Name="StoreSubcategoryID" ColumnName="StoreSubcategoryID" />
+          <ScalarProperty Name="CustomerShipmentLineID" ColumnName="CustomerShipmentLineID" />
+          <ScalarProperty Name="CustomerOrderLineID" ColumnName="CustomerOrderLineID" />
+          <ScalarProperty Name="PromoCode" ColumnName="PromoCode" />
+          <ScalarProperty Name="Replenished" ColumnName="Replenished" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="DbProcessedCount" ColumnName="DbProcessedCount" />
+          <ScalarProperty Name="DbProcessStatus" ColumnName="DbProcessStatus" />
+          <ScalarProperty Name="OldQty" ColumnName="OldQty" />
+          <ScalarProperty Name="kitvarint" ColumnName="kitvarint" />
+          <ScalarProperty Name="fiscyrpercode" ColumnName="fiscyrpercode" />
+          <ScalarProperty Name="stklcm" ColumnName="stklcm" />
+          <ScalarProperty Name="stklcost" ColumnName="stklcost" />
+          <ScalarProperty Name="stklretail" ColumnName="stklretail" />
+          <ScalarProperty Name="kitlineint" ColumnName="kitlineint" />
+          <ScalarProperty Name="translineint" ColumnName="translineint" />
+          <ScalarProperty Name="reasoncode" ColumnName="reasoncode" />
+          <ScalarProperty Name="barcode" ColumnName="barcode" />
+          <ScalarProperty Name="plutax" ColumnName="plutax" />
+          <ScalarProperty Name="pluvalue" ColumnName="pluvalue" />
+          <ScalarProperty Name="transdate" ColumnName="transdate" />
+          <ScalarProperty Name="stklevel" ColumnName="stklevel" />
+          <ScalarProperty Name="subcategory" ColumnName="subcategory" />
+          <ScalarProperty Name="weeknumber" ColumnName="weeknumber" />
+          <ScalarProperty Name="costcode" ColumnName="costcode" />
+          <ScalarProperty Name="download" ColumnName="download" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="retailtax" ColumnName="retailtax" />
+          <ScalarProperty Name="retailvalue" ColumnName="retailvalue" />
+          <ScalarProperty Name="costvalue" ColumnName="costvalue" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="prodint" ColumnName="prodint" />
+          <ScalarProperty Name="transline" ColumnName="transline" />
+          <ScalarProperty Name="transint" ColumnName="transint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="fiscperiods">
+      <EntityTypeMapping TypeName="Mi9Model.fiscperiod">
+        <MappingFragment StoreEntitySet="fiscperiods">
+          <ScalarProperty Name="DateCloseRequested" ColumnName="DateCloseRequested" />
+          <ScalarProperty Name="UserCloseRequested" ColumnName="UserCloseRequested" />
+          <ScalarProperty Name="ExtractedToGL" ColumnName="ExtractedToGL" />
+          <ScalarProperty Name="CloseRequested" ColumnName="CloseRequested" />
+          <ScalarProperty Name="closed" ColumnName="closed" />
+          <ScalarProperty Name="periodtype" ColumnName="periodtype" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="fiscalyear" ColumnName="fiscalyear" />
+          <ScalarProperty Name="fiscalperiod" ColumnName="fiscalperiod" />
+          <ScalarProperty Name="typecode" ColumnName="typecode" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="branches">
+      <EntityTypeMapping TypeName="Mi9Model.branch">
+        <MappingFragment StoreEntitySet="branches">
+          <ScalarProperty Name="ShipScheduleSameAsRepl" ColumnName="ShipScheduleSameAsRepl" />
+          <ScalarProperty Name="ShipSaturday" ColumnName="ShipSaturday" />
+          <ScalarProperty Name="ShipFriday" ColumnName="ShipFriday" />
+          <ScalarProperty Name="ShipThursday" ColumnName="ShipThursday" />
+          <ScalarProperty Name="ShipWednesday" ColumnName="ShipWednesday" />
+          <ScalarProperty Name="ShipTuesday" ColumnName="ShipTuesday" />
+          <ScalarProperty Name="ShipMonday" ColumnName="ShipMonday" />
+          <ScalarProperty Name="ShipSunday" ColumnName="ShipSunday" />
+          <ScalarProperty Name="DefaultTaxCode" ColumnName="DefaultTaxCode" />
+          <ScalarProperty Name="FulfillsCustomerOrders" ColumnName="FulfillsCustomerOrders" />
+          <ScalarProperty Name="SmallFormat" ColumnName="SmallFormat" />
+          <ScalarProperty Name="PICountDays" ColumnName="PICountDays" />
+          <ScalarProperty Name="EDISenderIDQualifierGLU" ColumnName="EDISenderIDQualifierGLU" />
+          <ScalarProperty Name="EDISenderIDQualifier" ColumnName="EDISenderIDQualifier" />
+          <ScalarProperty Name="EDISenderID" ColumnName="EDISenderID" />
+          <ScalarProperty Name="Email2" ColumnName="Email2" />
+          <ScalarProperty Name="Email1" ColumnName="Email1" />
+          <ScalarProperty Name="AltCode" ColumnName="AltCode" />
+          <ScalarProperty Name="MarketGLU" ColumnName="MarketGLU" />
+          <ScalarProperty Name="MarketCode" ColumnName="MarketCode" />
+          <ScalarProperty Name="POSTransNumber" ColumnName="POSTransNumber" />
+          <ScalarProperty Name="PrimaryForManagedAtWarehouse" ColumnName="PrimaryForManagedAtWarehouse" />
+          <ScalarProperty Name="EmailCorpCoReturn" ColumnName="EmailCorpCoReturn" />
+          <ScalarProperty Name="EmailHouseCoReturn" ColumnName="EmailHouseCoReturn" />
+          <ScalarProperty Name="EmailCorpCoShip" ColumnName="EmailCorpCoShip" />
+          <ScalarProperty Name="EmailHouseCoShip" ColumnName="EmailHouseCoShip" />
+          <ScalarProperty Name="EmailCorpCoEntry" ColumnName="EmailCorpCoEntry" />
+          <ScalarProperty Name="EmailHouseCoEntry" ColumnName="EmailHouseCoEntry" />
+          <ScalarProperty Name="UPSAccount" ColumnName="UPSAccount" />
+          <ScalarProperty Name="ChannelType" ColumnName="ChannelType" />
+          <ScalarProperty Name="FAWriteOffUseCorp" ColumnName="FAWriteOffUseCorp" />
+          <ScalarProperty Name="FACostUseCorp" ColumnName="FACostUseCorp" />
+          <ScalarProperty Name="FAInvoiceUseCorp" ColumnName="FAInvoiceUseCorp" />
+          <ScalarProperty Name="FAWriteOffAccount" ColumnName="FAWriteOffAccount" />
+          <ScalarProperty Name="FACostAccount" ColumnName="FACostAccount" />
+          <ScalarProperty Name="FAInvoiceAccount" ColumnName="FAInvoiceAccount" />
+          <ScalarProperty Name="PlanogramGLU" ColumnName="PlanogramGLU" />
+          <ScalarProperty Name="Planogram" ColumnName="Planogram" />
+          <ScalarProperty Name="TaxIncluded" ColumnName="TaxIncluded" />
+          <ScalarProperty Name="ReplSaturday" ColumnName="ReplSaturday" />
+          <ScalarProperty Name="ReplFriday" ColumnName="ReplFriday" />
+          <ScalarProperty Name="ReplThursday" ColumnName="ReplThursday" />
+          <ScalarProperty Name="ReplWednesday" ColumnName="ReplWednesday" />
+          <ScalarProperty Name="ReplTuesday" ColumnName="ReplTuesday" />
+          <ScalarProperty Name="ReplMonday" ColumnName="ReplMonday" />
+          <ScalarProperty Name="ReplSunday" ColumnName="ReplSunday" />
+          <ScalarProperty Name="LeadTime" ColumnName="LeadTime" />
+          <ScalarProperty Name="TransInHomeCurrency" ColumnName="TransInHomeCurrency" />
+          <ScalarProperty Name="DateEndReplen" ColumnName="DateEndReplen" />
+          <ScalarProperty Name="DateStartReplen" ColumnName="DateStartReplen" />
+          <ScalarProperty Name="ShipInCartons" ColumnName="ShipInCartons" />
+          <ScalarProperty Name="SingleDestinationPO" ColumnName="SingleDestinationPO" />
+          <ScalarProperty Name="InventoryManagedAtWarehouseCode" ColumnName="InventoryManagedAtWarehouseCode" />
+          <ScalarProperty Name="OpeningCash" ColumnName="OpeningCash" />
+          <ScalarProperty Name="ChangeInSameMall" ColumnName="ChangeInSameMall" />
+          <ScalarProperty Name="RelocationDate4" ColumnName="RelocationDate4" />
+          <ScalarProperty Name="RelocationDate3" ColumnName="RelocationDate3" />
+          <ScalarProperty Name="RelocationDate2" ColumnName="RelocationDate2" />
+          <ScalarProperty Name="RelocationDate1" ColumnName="RelocationDate1" />
+          <ScalarProperty Name="LeaseExpirationDate" ColumnName="LeaseExpirationDate" />
+          <ScalarProperty Name="PossessionPerLeaseDate" ColumnName="PossessionPerLeaseDate" />
+          <ScalarProperty Name="LeaseCommenceDate" ColumnName="LeaseCommenceDate" />
+          <ScalarProperty Name="FireLine2" ColumnName="FireLine2" />
+          <ScalarProperty Name="FireLine1" ColumnName="FireLine1" />
+          <ScalarProperty Name="HoldTruckReceipt" ColumnName="HoldTruckReceipt" />
+          <ScalarProperty Name="DelRestrictions" ColumnName="DelRestrictions" />
+          <ScalarProperty Name="LoadingDock" ColumnName="LoadingDock" />
+          <ScalarProperty Name="HVACUnits" ColumnName="HVACUnits" />
+          <ScalarProperty Name="CeilingHeight" ColumnName="CeilingHeight" />
+          <ScalarProperty Name="CeilingType" ColumnName="CeilingType" />
+          <ScalarProperty Name="BuildingType" ColumnName="BuildingType" />
+          <ScalarProperty Name="ShoppingCenter2" ColumnName="ShoppingCenter2" />
+          <ScalarProperty Name="ShoppingCenter1" ColumnName="ShoppingCenter1" />
+          <ScalarProperty Name="BackRoomSize" ColumnName="BackRoomSize" />
+          <ScalarProperty Name="SellingSize" ColumnName="SellingSize" />
+          <ScalarProperty Name="GLForBankCode2" ColumnName="GLForBankCode2" />
+          <ScalarProperty Name="BankAccount2" ColumnName="BankAccount2" />
+          <ScalarProperty Name="BankCode2" ColumnName="BankCode2" />
+          <ScalarProperty Name="GLForBankCode1" ColumnName="GLForBankCode1" />
+          <ScalarProperty Name="BankAccount1" ColumnName="BankAccount1" />
+          <ScalarProperty Name="BankCode1" ColumnName="BankCode1" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="AltCoHierarchy1ID" ColumnName="AltCoHierarchy1ID" />
+          <ScalarProperty Name="CoLevel5" ColumnName="CoLevel5" />
+          <ScalarProperty Name="CoLevel4" ColumnName="CoLevel4" />
+          <ScalarProperty Name="ShrinkPercent" ColumnName="ShrinkPercent" />
+          <ScalarProperty Name="Comparative" ColumnName="Comparative" />
+          <ScalarProperty Name="GLCorpCostCentre" ColumnName="GLCorpCostCentre" />
+          <ScalarProperty Name="GLCompany" ColumnName="GLCompany" />
+          <ScalarProperty Name="GLEntity" ColumnName="GLEntity" />
+          <ScalarProperty Name="ba25" ColumnName="ba25" />
+          <ScalarProperty Name="ba24" ColumnName="ba24" />
+          <ScalarProperty Name="ba23" ColumnName="ba23" />
+          <ScalarProperty Name="ba22" ColumnName="ba22" />
+          <ScalarProperty Name="ba21" ColumnName="ba21" />
+          <ScalarProperty Name="ba20" ColumnName="ba20" />
+          <ScalarProperty Name="ba19" ColumnName="ba19" />
+          <ScalarProperty Name="ba18" ColumnName="ba18" />
+          <ScalarProperty Name="ba17" ColumnName="ba17" />
+          <ScalarProperty Name="ba16" ColumnName="ba16" />
+          <ScalarProperty Name="ba15" ColumnName="ba15" />
+          <ScalarProperty Name="ba14" ColumnName="ba14" />
+          <ScalarProperty Name="ba13" ColumnName="ba13" />
+          <ScalarProperty Name="ba12" ColumnName="ba12" />
+          <ScalarProperty Name="ba11" ColumnName="ba11" />
+          <ScalarProperty Name="ba10" ColumnName="ba10" />
+          <ScalarProperty Name="ba09" ColumnName="ba09" />
+          <ScalarProperty Name="ba08" ColumnName="ba08" />
+          <ScalarProperty Name="ba07" ColumnName="ba07" />
+          <ScalarProperty Name="ba06" ColumnName="ba06" />
+          <ScalarProperty Name="ba05" ColumnName="ba05" />
+          <ScalarProperty Name="ba04" ColumnName="ba04" />
+          <ScalarProperty Name="ba03" ColumnName="ba03" />
+          <ScalarProperty Name="ba02" ColumnName="ba02" />
+          <ScalarProperty Name="ba01" ColumnName="ba01" />
+          <ScalarProperty Name="CommissionPercent" ColumnName="CommissionPercent" />
+          <ScalarProperty Name="SaleGoalProfileID" ColumnName="SaleGoalProfileID" />
+          <ScalarProperty Name="autoreplen" ColumnName="autoreplen" />
+          <ScalarProperty Name="costcentre" ColumnName="costcentre" />
+          <ScalarProperty Name="printloc" ColumnName="printloc" />
+          <ScalarProperty Name="plandate" ColumnName="plandate" />
+          <ScalarProperty Name="remodeldate" ColumnName="remodeldate" />
+          <ScalarProperty Name="grandopendte" ColumnName="grandopendte" />
+          <ScalarProperty Name="sizegrade" ColumnName="sizegrade" />
+          <ScalarProperty Name="replenmethod" ColumnName="replenmethod" />
+          <ScalarProperty Name="franchisee" ColumnName="franchisee" />
+          <ScalarProperty Name="pricegroup" ColumnName="pricegroup" />
+          <ScalarProperty Name="languageid" ColumnName="languageid" />
+          <ScalarProperty Name="bankcode" ColumnName="bankcode" />
+          <ScalarProperty Name="keydatelist" ColumnName="keydatelist" />
+          <ScalarProperty Name="commsmethod" ColumnName="commsmethod" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="levint" ColumnName="levint" />
+          <ScalarProperty Name="integritylok" ColumnName="integritylok" />
+          <ScalarProperty Name="deletedate" ColumnName="deletedate" />
+          <ScalarProperty Name="amenddate" ColumnName="amenddate" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="closedate" ColumnName="closedate" />
+          <ScalarProperty Name="opendate" ColumnName="opendate" />
+          <ScalarProperty Name="stkchkdate" ColumnName="stkchkdate" />
+          <ScalarProperty Name="auditdate" ColumnName="auditdate" />
+          <ScalarProperty Name="notepad" ColumnName="notepad" />
+          <ScalarProperty Name="operstatus" ColumnName="operstatus" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="delroute" ColumnName="delroute" />
+          <ScalarProperty Name="reptype" ColumnName="reptype" />
+          <ScalarProperty Name="repsource" ColumnName="repsource" />
+          <ScalarProperty Name="merchplan" ColumnName="merchplan" />
+          <ScalarProperty Name="holplan" ColumnName="holplan" />
+          <ScalarProperty Name="tradplan" ColumnName="tradplan" />
+          <ScalarProperty Name="catalogue" ColumnName="catalogue" />
+          <ScalarProperty Name="lifts" ColumnName="lifts" />
+          <ScalarProperty Name="floors" ColumnName="floors" />
+          <ScalarProperty Name="staff" ColumnName="staff" />
+          <ScalarProperty Name="storegroup" ColumnName="storegroup" />
+          <ScalarProperty Name="locntype" ColumnName="locntype" />
+          <ScalarProperty Name="branchsize" ColumnName="branchsize" />
+          <ScalarProperty Name="branchtype" ColumnName="branchtype" />
+          <ScalarProperty Name="positionind" ColumnName="positionind" />
+          <ScalarProperty Name="league" ColumnName="league" />
+          <ScalarProperty Name="mastbranch" ColumnName="mastbranch" />
+          <ScalarProperty Name="mastind" ColumnName="mastind" />
+          <ScalarProperty Name="commsline" ColumnName="commsline" />
+          <ScalarProperty Name="shortname" ColumnName="shortname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="colevel3" ColumnName="colevel3" />
+          <ScalarProperty Name="colevel2" ColumnName="colevel2" />
+          <ScalarProperty Name="colevel1" ColumnName="colevel1" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="brnstats">
+      <EntityTypeMapping TypeName="Mi9Model.brnstat">
+        <MappingFragment StoreEntitySet="brnstats">
+          <ScalarProperty Name="YrPeriod" ColumnName="YrPeriod" />
+          <ScalarProperty Name="taxvalue" ColumnName="taxvalue" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="retailvalue" ColumnName="retailvalue" />
+          <ScalarProperty Name="costvalue" ColumnName="costvalue" />
+          <ScalarProperty Name="class" ColumnName="class" />
+          <ScalarProperty Name="prodint" ColumnName="prodint" />
+          <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+          <ScalarProperty Name="period" ColumnName="period" />
+          <ScalarProperty Name="yearno" ColumnName="yearno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="consigdests">
+      <EntityTypeMapping TypeName="Mi9Model.consigdest">
+        <MappingFragment StoreEntitySet="consigdests">
+          <ScalarProperty Name="UserReceivedInStore" ColumnName="UserReceivedInStore" />
+          <ScalarProperty Name="DateReceivedInStore" ColumnName="DateReceivedInStore" />
+          <ScalarProperty Name="LastChildShipCodeSuffix" ColumnName="LastChildShipCodeSuffix" />
+          <ScalarProperty Name="ParentShipDestID" ColumnName="ParentShipDestID" />
+          <ScalarProperty Name="UserShippedInStore" ColumnName="UserShippedInStore" />
+          <ScalarProperty Name="DateShippedInStore" ColumnName="DateShippedInStore" />
+          <ScalarProperty Name="UserApprovedInStore" ColumnName="UserApprovedInStore" />
+          <ScalarProperty Name="DateApprovedInStore" ColumnName="DateApprovedInStore" />
+          <ScalarProperty Name="UserAmendedInStore" ColumnName="UserAmendedInStore" />
+          <ScalarProperty Name="DateAmendedInStore" ColumnName="DateAmendedInStore" />
+          <ScalarProperty Name="StoreSuggestionCode" ColumnName="StoreSuggestionCode" />
+          <ScalarProperty Name="UserCancelledInStore" ColumnName="UserCancelledInStore" />
+          <ScalarProperty Name="DateCancelledInStore" ColumnName="DateCancelledInStore" />
+          <ScalarProperty Name="UserCreatedInStore" ColumnName="UserCreatedInStore" />
+          <ScalarProperty Name="DateCreatedInStore" ColumnName="DateCreatedInStore" />
+          <ScalarProperty Name="DateLastModified" ColumnName="DateLastModified" />
+          <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
+          <ScalarProperty Name="UserApproved" ColumnName="UserApproved" />
+          <ScalarProperty Name="DateRejected" ColumnName="DateRejected" />
+          <ScalarProperty Name="UserRejected" ColumnName="UserRejected" />
+          <ScalarProperty Name="TruckNumber" ColumnName="TruckNumber" />
+          <ScalarProperty Name="DriverReference" ColumnName="DriverReference" />
+          <ScalarProperty Name="ShipReference" ColumnName="ShipReference" />
+          <ScalarProperty Name="ShipMethodCodeGLU" ColumnName="ShipMethodCodeGLU" />
+          <ScalarProperty Name="ShipMethodCode" ColumnName="ShipMethodCode" />
+          <ScalarProperty Name="VendorLocationID" ColumnName="VendorLocationID" />
+          <ScalarProperty Name="RowVer" ColumnName="RowVer" />
+          <ScalarProperty Name="DateReopened" ColumnName="DateReopened" />
+          <ScalarProperty Name="UserReopened" ColumnName="UserReopened" />
+          <ScalarProperty Name="DateCancelled" ColumnName="DateCancelled" />
+          <ScalarProperty Name="UserCancelled" ColumnName="UserCancelled" />
+          <ScalarProperty Name="SourceSubLocationID" ColumnName="SourceSubLocationID" />
+          <ScalarProperty Name="RTVDisposalMethod" ColumnName="RTVDisposalMethod" />
+          <ScalarProperty Name="ShippingCost" ColumnName="ShippingCost" />
+          <ScalarProperty Name="DateInterfaced" ColumnName="DateInterfaced" />
+          <ScalarProperty Name="ParcelType" ColumnName="ParcelType" />
+          <ScalarProperty Name="ParcelCnt" ColumnName="ParcelCnt" />
+          <ScalarProperty Name="PickStatus" ColumnName="PickStatus" />
+          <ScalarProperty Name="AllocStatus" ColumnName="AllocStatus" />
+          <ScalarProperty Name="ReceiveUser" ColumnName="ReceiveUser" />
+          <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+          <ScalarProperty Name="ShipUser" ColumnName="ShipUser" />
+          <ScalarProperty Name="ShipDate" ColumnName="ShipDate" />
+          <ScalarProperty Name="KitAssemblyOrderDestinationID" ColumnName="KitAssemblyOrderDestinationID" />
+          <ScalarProperty Name="reference2" ColumnName="reference2" />
+          <ScalarProperty Name="reasoncode" ColumnName="reasoncode" />
+          <ScalarProperty Name="category" ColumnName="category" />
+          <ScalarProperty Name="reference" ColumnName="reference" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="notepad" ColumnName="notepad" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="postcode" ColumnName="postcode" />
+          <ScalarProperty Name="address4" ColumnName="address4" />
+          <ScalarProperty Name="address3" ColumnName="address3" />
+          <ScalarProperty Name="address2" ColumnName="address2" />
+          <ScalarProperty Name="address1" ColumnName="address1" />
+          <ScalarProperty Name="freighttax" ColumnName="freighttax" />
+          <ScalarProperty Name="freightchg" ColumnName="freightchg" />
+          <ScalarProperty Name="payterms" ColumnName="payterms" />
+          <ScalarProperty Name="delroutedoc" ColumnName="delroutedoc" />
+          <ScalarProperty Name="destdoc" ColumnName="destdoc" />
+          <ScalarProperty Name="droppoint" ColumnName="droppoint" />
+          <ScalarProperty Name="delroute" ColumnName="delroute" />
+          <ScalarProperty Name="condestint" ColumnName="condestint" />
+          <ScalarProperty Name="destination" ColumnName="destination" />
+          <ScalarProperty Name="desttype" ColumnName="desttype" />
+          <ScalarProperty Name="consignment" ColumnName="consignment" />
+          <ScalarProperty Name="warehouse" ColumnName="warehouse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="consighdrs">
+      <EntityTypeMapping TypeName="Mi9Model.consighdr">
+        <MappingFragment StoreEntitySet="consighdrs">
+          <ScalarProperty Name="UserCreatedInStore" ColumnName="UserCreatedInStore" />
+          <ScalarProperty Name="DateCreatedInStore" ColumnName="DateCreatedInStore" />
+          <ScalarProperty Name="AllowAddProductsDuringPack" ColumnName="AllowAddProductsDuringPack" />
+          <ScalarProperty Name="DateExtractedToAP" ColumnName="DateExtractedToAP" />
+          <ScalarProperty Name="RTVCancelReasonGLU" ColumnName="RTVCancelReasonGLU" />
+          <ScalarProperty Name="RTVCancelReasonCode" ColumnName="RTVCancelReasonCode" />
+          <ScalarProperty Name="RTVRejectedDate" ColumnName="RTVRejectedDate" />
+          <ScalarProperty Name="RTVRejectedUser" ColumnName="RTVRejectedUser" />
+          <ScalarProperty Name="RTVRejectNotes" ColumnName="RTVRejectNotes" />
+          <ScalarProperty Name="RTVAuthRequestedDate" ColumnName="RTVAuthRequestedDate" />
+          <ScalarProperty Name="RTVAuthRequestedUser" ColumnName="RTVAuthRequestedUser" />
+          <ScalarProperty Name="StoreInitiated" ColumnName="StoreInitiated" />
+          <ScalarProperty Name="TransferRequestID" ColumnName="TransferRequestID" />
+          <ScalarProperty Name="RTV" ColumnName="RTV" />
+          <ScalarProperty Name="ReasonCode" ColumnName="ReasonCode" />
+          <ScalarProperty Name="BuyerCode" ColumnName="BuyerCode" />
+          <ScalarProperty Name="TransferAll" ColumnName="TransferAll" />
+          <ScalarProperty Name="TransferRequest" ColumnName="TransferRequest" />
+          <ScalarProperty Name="ChannelType" ColumnName="ChannelType" />
+          <ScalarProperty Name="ManyToOne" ColumnName="ManyToOne" />
+          <ScalarProperty Name="AuthorizeDate" ColumnName="AuthorizeDate" />
+          <ScalarProperty Name="AuthorizeUser" ColumnName="AuthorizeUser" />
+          <ScalarProperty Name="AmendUser" ColumnName="AmendUser" />
+          <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+          <ScalarProperty Name="authorityno" ColumnName="authorityno" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="exceptions" ColumnName="exceptions" />
+          <ScalarProperty Name="consigdoc" ColumnName="consigdoc" />
+          <ScalarProperty Name="confirmdate" ColumnName="confirmdate" />
+          <ScalarProperty Name="issuedate" ColumnName="issuedate" />
+          <ScalarProperty Name="despatchdate" ColumnName="despatchdate" />
+          <ScalarProperty Name="amenddate" ColumnName="amenddate" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="notepad" ColumnName="notepad" />
+          <ScalarProperty Name="carrier" ColumnName="carrier" />
+          <ScalarProperty Name="collect" ColumnName="collect" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="consignment" ColumnName="consignment" />
+          <ScalarProperty Name="warehouse" ColumnName="warehouse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="consiglines">
+      <EntityTypeMapping TypeName="Mi9Model.consigline">
+        <MappingFragment StoreEntitySet="consiglines">
+          <ScalarProperty Name="DestLocUnitPrice" ColumnName="DestLocUnitPrice" />
+          <ScalarProperty Name="DestLocAverageCost" ColumnName="DestLocAverageCost" />
+          <ScalarProperty Name="PackedQty" ColumnName="PackedQty" />
+          <ScalarProperty Name="InTransitQuantity" ColumnName="InTransitQuantity" />
+          <ScalarProperty Name="WIPQty" ColumnName="WIPQty" />
+          <ScalarProperty Name="ReasonCode" ColumnName="ReasonCode" />
+          <ScalarProperty Name="RequestQty" ColumnName="RequestQty" />
+          <ScalarProperty Name="download" ColumnName="download" />
+          <ScalarProperty Name="discrepqty" ColumnName="discrepqty" />
+          <ScalarProperty Name="othervalue" ColumnName="othervalue" />
+          <ScalarProperty Name="unitretail" ColumnName="unitretail" />
+          <ScalarProperty Name="avcost" ColumnName="avcost" />
+          <ScalarProperty Name="receiveqty" ColumnName="receiveqty" />
+          <ScalarProperty Name="issueqty" ColumnName="issueqty" />
+          <ScalarProperty Name="batchint" ColumnName="batchint" />
+          <ScalarProperty Name="varint" ColumnName="varint" />
+          <ScalarProperty Name="destordint" ColumnName="destordint" />
+          <ScalarProperty Name="destordline" ColumnName="destordline" />
+          <ScalarProperty Name="destordref" ColumnName="destordref" />
+          <ScalarProperty Name="conlineint" ColumnName="conlineint" />
+          <ScalarProperty Name="transline" ColumnName="transline" />
+          <ScalarProperty Name="condestint" ColumnName="condestint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchorders">
+      <EntityTypeMapping TypeName="Mi9Model.purchorder">
+        <MappingFragment StoreEntitySet="purchorders">
+          <ScalarProperty Name="UserAuthorizedSpecialOrderReactivation" ColumnName="UserAuthorizedSpecialOrderReactivation" />
+          <ScalarProperty Name="DateAuthorizedSpecialOrderReactivation" ColumnName="DateAuthorizedSpecialOrderReactivation" />
+          <ScalarProperty Name="UserAuthorizedSpecialOrderCancellation" ColumnName="UserAuthorizedSpecialOrderCancellation" />
+          <ScalarProperty Name="DateAuthorizedSpecialOrderCancellation" ColumnName="DateAuthorizedSpecialOrderCancellation" />
+          <ScalarProperty Name="SpecialOrderAuthorizeReactivationNotes" ColumnName="SpecialOrderAuthorizeReactivationNotes" />
+          <ScalarProperty Name="SpecialOrderAuthorizeCancellationNotes" ColumnName="SpecialOrderAuthorizeCancellationNotes" />
+          <ScalarProperty Name="SpecialOrderCancellationStatusGLU" ColumnName="SpecialOrderCancellationStatusGLU" />
+          <ScalarProperty Name="SpecialOrderCancellationStatus" ColumnName="SpecialOrderCancellationStatus" />
+          <ScalarProperty Name="SpecialOrderStatusGLU" ColumnName="SpecialOrderStatusGLU" />
+          <ScalarProperty Name="SpecialOrderStatus" ColumnName="SpecialOrderStatus" />
+          <ScalarProperty Name="DateAmendedForEDI" ColumnName="DateAmendedForEDI" />
+          <ScalarProperty Name="CustomerOrderID" ColumnName="CustomerOrderID" />
+          <ScalarProperty Name="DateLastModified" ColumnName="DateLastModified" />
+          <ScalarProperty Name="EDISentCount" ColumnName="EDISentCount" />
+          <ScalarProperty Name="ChangeReasonGLU" ColumnName="ChangeReasonGLU" />
+          <ScalarProperty Name="ChangeReason" ColumnName="ChangeReason" />
+          <ScalarProperty Name="CustomID" ColumnName="CustomID" />
+          <ScalarProperty Name="ASNLastReceivedDate" ColumnName="ASNLastReceivedDate" />
+          <ScalarProperty Name="ASNFirstReceivedDate" ColumnName="ASNFirstReceivedDate" />
+          <ScalarProperty Name="AckStatus" ColumnName="AckStatus" />
+          <ScalarProperty Name="FinalLocationCode" ColumnName="FinalLocationCode" />
+          <ScalarProperty Name="MergedIntoPO" ColumnName="MergedIntoPO" />
+          <ScalarProperty Name="QualifiesForNewStoreDiscount" ColumnName="QualifiesForNewStoreDiscount" />
+          <ScalarProperty Name="NewStoreCostDiscount" ColumnName="NewStoreCostDiscount" />
+          <ScalarProperty Name="CancellationNote" ColumnName="CancellationNote" />
+          <ScalarProperty Name="ShippingInstructionsGLU" ColumnName="ShippingInstructionsGLU" />
+          <ScalarProperty Name="ShippingInstructions" ColumnName="ShippingInstructions" />
+          <ScalarProperty Name="SpecialInstructionsGLU" ColumnName="SpecialInstructionsGLU" />
+          <ScalarProperty Name="SpecialInstructions2" ColumnName="SpecialInstructions2" />
+          <ScalarProperty Name="SpecialInstructions1" ColumnName="SpecialInstructions1" />
+          <ScalarProperty Name="PayMethodGLU" ColumnName="PayMethodGLU" />
+          <ScalarProperty Name="PayMethod" ColumnName="PayMethod" />
+          <ScalarProperty Name="VersionDate" ColumnName="VersionDate" />
+          <ScalarProperty Name="DateBooked" ColumnName="DateBooked" />
+          <ScalarProperty Name="SendToPOS" ColumnName="SendToPOS" />
+          <ScalarProperty Name="VMITransactionID" ColumnName="VMITransactionID" />
+          <ScalarProperty Name="VendorLocationID" ColumnName="VendorLocationID" />
+          <ScalarProperty Name="DoNotDeliverAfterDate" ColumnName="DoNotDeliverAfterDate" />
+          <ScalarProperty Name="LastEDIControlNumber" ColumnName="LastEDIControlNumber" />
+          <ScalarProperty Name="DateEDILastSent" ColumnName="DateEDILastSent" />
+          <ScalarProperty Name="DateEDIFirstSent" ColumnName="DateEDIFirstSent" />
+          <ScalarProperty Name="DateInterfaced" ColumnName="DateInterfaced" />
+          <ScalarProperty Name="Reference2" ColumnName="Reference2" />
+          <ScalarProperty Name="PurchaseContractID" ColumnName="PurchaseContractID" />
+          <ScalarProperty Name="EmailAgain" ColumnName="EmailAgain" />
+          <ScalarProperty Name="ReplenishmentOrder" ColumnName="ReplenishmentOrder" />
+          <ScalarProperty Name="EmailTryCount" ColumnName="EmailTryCount" />
+          <ScalarProperty Name="EmailFailedText" ColumnName="EmailFailedText" />
+          <ScalarProperty Name="EmailFailed" ColumnName="EmailFailed" />
+          <ScalarProperty Name="EmailCount" ColumnName="EmailCount" />
+          <ScalarProperty Name="EmailDate" ColumnName="EmailDate" />
+          <ScalarProperty Name="YrWeek" ColumnName="YrWeek" />
+          <ScalarProperty Name="PurchaseType" ColumnName="PurchaseType" />
+          <ScalarProperty Name="PriceListCurrRate" ColumnName="PriceListCurrRate" />
+          <ScalarProperty Name="Reference1" ColumnName="Reference1" />
+          <ScalarProperty Name="BuyerCommissionPC" ColumnName="BuyerCommissionPC" />
+          <ScalarProperty Name="DateClosed" ColumnName="DateClosed" />
+          <ScalarProperty Name="UserClosed" ColumnName="UserClosed" />
+          <ScalarProperty Name="AllocStatus" ColumnName="AllocStatus" />
+          <ScalarProperty Name="CheckOutDate" ColumnName="CheckOutDate" />
+          <ScalarProperty Name="CheckOutUser" ColumnName="CheckOutUser" />
+          <ScalarProperty Name="KitAssemblyOrderID" ColumnName="KitAssemblyOrderID" />
+          <ScalarProperty Name="VendorPromoCode" ColumnName="VendorPromoCode" />
+          <ScalarProperty Name="TransportMethod" ColumnName="TransportMethod" />
+          <ScalarProperty Name="AmendUser" ColumnName="AmendUser" />
+          <ScalarProperty Name="SendEDI" ColumnName="SendEDI" />
+          <ScalarProperty Name="CreatedOffline" ColumnName="CreatedOffline" />
+          <ScalarProperty Name="lastdeldate" ColumnName="lastdeldate" />
+          <ScalarProperty Name="firstdeldate" ColumnName="firstdeldate" />
+          <ScalarProperty Name="carrier" ColumnName="carrier" />
+          <ScalarProperty Name="shipdate" ColumnName="shipdate" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="faxstatus" ColumnName="faxstatus" />
+          <ScalarProperty Name="faxsubmitref" ColumnName="faxsubmitref" />
+          <ScalarProperty Name="channelcode" ColumnName="channelcode" />
+          <ScalarProperty Name="compafter" ColumnName="compafter" />
+          <ScalarProperty Name="allowbo" ColumnName="allowbo" />
+          <ScalarProperty Name="amendno" ColumnName="amendno" />
+          <ScalarProperty Name="dealnumber" ColumnName="dealnumber" />
+          <ScalarProperty Name="printstatus" ColumnName="printstatus" />
+          <ScalarProperty Name="splint" ColumnName="splint" />
+          <ScalarProperty Name="ordertype" ColumnName="ordertype" />
+          <ScalarProperty Name="openorder" ColumnName="openorder" />
+          <ScalarProperty Name="printprice" ColumnName="printprice" />
+          <ScalarProperty Name="makeupstatus" ColumnName="makeupstatus" />
+          <ScalarProperty Name="transint" ColumnName="transint" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="usercode" ColumnName="usercode" />
+          <ScalarProperty Name="currrate" ColumnName="currrate" />
+          <ScalarProperty Name="currency" ColumnName="currency" />
+          <ScalarProperty Name="buyingmethod" ColumnName="buyingmethod" />
+          <ScalarProperty Name="settletype" ColumnName="settletype" />
+          <ScalarProperty Name="settlement" ColumnName="settlement" />
+          <ScalarProperty Name="plint" ColumnName="plint" />
+          <ScalarProperty Name="authdate" ColumnName="authdate" />
+          <ScalarProperty Name="authuser" ColumnName="authuser" />
+          <ScalarProperty Name="ackdate" ColumnName="ackdate" />
+          <ScalarProperty Name="ackreference" ColumnName="ackreference" />
+          <ScalarProperty Name="canceldate" ColumnName="canceldate" />
+          <ScalarProperty Name="deliverydate" ColumnName="deliverydate" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="makeupprint" ColumnName="makeupprint" />
+          <ScalarProperty Name="makeupdate" ColumnName="makeupdate" />
+          <ScalarProperty Name="printdate" ColumnName="printdate" />
+          <ScalarProperty Name="amenddate" ColumnName="amenddate" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="orderdate" ColumnName="orderdate" />
+          <ScalarProperty Name="seasoncode" ColumnName="seasoncode" />
+          <ScalarProperty Name="suppbrint" ColumnName="suppbrint" />
+          <ScalarProperty Name="buyer" ColumnName="buyer" />
+          <ScalarProperty Name="ordernumber" ColumnName="ordernumber" />
+          <ScalarProperty Name="suppint" ColumnName="suppint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchordlines">
+      <EntityTypeMapping TypeName="Mi9Model.purchordline">
+        <MappingFragment StoreEntitySet="purchordline">
+          <ScalarProperty Name="SpecialOrderDescription" ColumnName="SpecialOrderDescription" />
+          <ScalarProperty Name="QtyFromEDILastSent" ColumnName="QtyFromEDILastSent" />
+          <ScalarProperty Name="DateReopened" ColumnName="DateReopened" />
+          <ScalarProperty Name="DateAmendedForEDI" ColumnName="DateAmendedForEDI" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+          <ScalarProperty Name="CustomerOrderLineID" ColumnName="CustomerOrderLineID" />
+          <ScalarProperty Name="MergedIntoPOLineID" ColumnName="MergedIntoPOLineID" />
+          <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+          <ScalarProperty Name="PurchUnitsID" ColumnName="PurchUnitsID" />
+          <ScalarProperty Name="FirstCostPerPurchUnit" ColumnName="FirstCostPerPurchUnit" />
+          <ScalarProperty Name="QtyInPurchUnits" ColumnName="QtyInPurchUnits" />
+          <ScalarProperty Name="QtyPerPurchUnit" ColumnName="QtyPerPurchUnit" />
+          <ScalarProperty Name="YrWeek" ColumnName="YrWeek" />
+          <ScalarProperty Name="SampleQty" ColumnName="SampleQty" />
+          <ScalarProperty Name="PreTicket" ColumnName="PreTicket" />
+          <ScalarProperty Name="BoxCount" ColumnName="BoxCount" />
+          <ScalarProperty Name="MultiBrand" ColumnName="MultiBrand" />
+          <ScalarProperty Name="DutiableCost" ColumnName="DutiableCost" />
+          <ScalarProperty Name="LandedCost" ColumnName="LandedCost" />
+          <ScalarProperty Name="CreatedOffline" ColumnName="CreatedOffline" />
+          <ScalarProperty Name="delschstatus" ColumnName="delschstatus" />
+          <ScalarProperty Name="supprodint" ColumnName="supprodint" />
+          <ScalarProperty Name="purchlineint" ColumnName="purchlineint" />
+          <ScalarProperty Name="makeupstatus" ColumnName="makeupstatus" />
+          <ScalarProperty Name="amendstatus" ColumnName="amendstatus" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="quotedate" ColumnName="quotedate" />
+          <ScalarProperty Name="quoteref" ColumnName="quoteref" />
+          <ScalarProperty Name="suppprodref" ColumnName="suppprodref" />
+          <ScalarProperty Name="origin" ColumnName="origin" />
+          <ScalarProperty Name="packagetype" ColumnName="packagetype" />
+          <ScalarProperty Name="bandingunits" ColumnName="bandingunits" />
+          <ScalarProperty Name="unitretail" ColumnName="unitretail" />
+          <ScalarProperty Name="netcost" ColumnName="netcost" />
+          <ScalarProperty Name="unitcost" ColumnName="unitcost" />
+          <ScalarProperty Name="purchunits" ColumnName="purchunits" />
+          <ScalarProperty Name="makeupqty" ColumnName="makeupqty" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="baseproduct" ColumnName="baseproduct" />
+          <ScalarProperty Name="prodint" ColumnName="prodint" />
+          <ScalarProperty Name="varint" ColumnName="varint" />
+          <ScalarProperty Name="canceldate" ColumnName="canceldate" />
+          <ScalarProperty Name="deliverydate" ColumnName="deliverydate" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="transline" ColumnName="transline" />
+          <ScalarProperty Name="transint" ColumnName="transint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="statuscodes">
+      <EntityTypeMapping TypeName="Mi9Model.statuscode">
+        <MappingFragment StoreEntitySet="statuscodes">
+          <ScalarProperty Name="included" ColumnName="included" />
+          <ScalarProperty Name="intvalue" ColumnName="intvalue" />
+          <ScalarProperty Name="shortdesc" ColumnName="shortdesc" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="statcode" ColumnName="statcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tfs_store_details">
+      <EntityTypeMapping TypeName="Mi9Model.tfs_store_details">
+        <MappingFragment StoreEntitySet="tfs_store_details">
+          <ScalarProperty Name="postcode" ColumnName="postcode" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="area" ColumnName="area" />
+          <ScalarProperty Name="isMeraki" ColumnName="isMeraki" />
+          <ScalarProperty Name="store_address" ColumnName="store_address" />
+          <ScalarProperty Name="store_name" ColumnName="store_name" />
+          <ScalarProperty Name="properties_lat" ColumnName="properties_lat" />
+          <ScalarProperty Name="properties_long" ColumnName="properties_long" />
+          <ScalarProperty Name="storeId" ColumnName="storeId" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tfs_stockhome_feedback">
+      <EntityTypeMapping TypeName="Mi9Model.tfs_stockhome_feedback">
+        <MappingFragment StoreEntitySet="tfs_stockhome_feedback">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="comments" ColumnName="comments" />
+          <ScalarProperty Name="userid" ColumnName="userid" />
+          <ScalarProperty Name="storeid" ColumnName="storeid" />
+          <ScalarProperty Name="RowId" ColumnName="RowId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="whstocks">
+      <EntityTypeMapping TypeName="Mi9Model.whstock">
+        <MappingFragment StoreEntitySet="whstocks">
+          <ScalarProperty Name="batchesind" ColumnName="batchesind" />
+          <ScalarProperty Name="allocstock" ColumnName="allocstock" />
+          <ScalarProperty Name="lastmovedate" ColumnName="lastmovedate" />
+          <ScalarProperty Name="stock" ColumnName="stock" />
+          <ScalarProperty Name="batchint" ColumnName="batchint" />
+          <ScalarProperty Name="varint" ColumnName="varint" />
+          <ScalarProperty Name="binint" ColumnName="binint" />
+          <ScalarProperty Name="warehouse" ColumnName="warehouse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="whlocs">
+      <EntityTypeMapping TypeName="Mi9Model.whloc">
+        <MappingFragment StoreEntitySet="whlocs">
+          <ScalarProperty Name="WmsBinLocationCode" ColumnName="WmsBinLocationCode" />
+          <ScalarProperty Name="ZoneID" ColumnName="ZoneID" />
+          <ScalarProperty Name="typepriority" ColumnName="typepriority" />
+          <ScalarProperty Name="realbin" ColumnName="realbin" />
+          <ScalarProperty Name="includeinrpl" ColumnName="includeinrpl" />
+          <ScalarProperty Name="negstock" ColumnName="negstock" />
+          <ScalarProperty Name="stkchkdate" ColumnName="stkchkdate" />
+          <ScalarProperty Name="specialbin" ColumnName="specialbin" />
+          <ScalarProperty Name="binloc4" ColumnName="binloc4" />
+          <ScalarProperty Name="binloc3" ColumnName="binloc3" />
+          <ScalarProperty Name="binloc2" ColumnName="binloc2" />
+          <ScalarProperty Name="binloc1" ColumnName="binloc1" />
+          <ScalarProperty Name="bintype" ColumnName="bintype" />
+          <ScalarProperty Name="quartype" ColumnName="quartype" />
+          <ScalarProperty Name="picksequence" ColumnName="picksequence" />
+          <ScalarProperty Name="capunits" ColumnName="capunits" />
+          <ScalarProperty Name="capacity" ColumnName="capacity" />
+          <ScalarProperty Name="binint" ColumnName="binint" />
+          <ScalarProperty Name="binlocation" ColumnName="binlocation" />
+          <ScalarProperty Name="warehouse" ColumnName="warehouse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TOFS_CostPrice">
+      <EntityTypeMapping TypeName="Mi9Model.TOFS_CostPrice">
+        <MappingFragment StoreEntitySet="TOFS_CostPrice">
+          <ScalarProperty Name="currency" ColumnName="currency" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="prodint" ColumnName="prodint" />
+          <ScalarProperty Name="prodcode" ColumnName="prodcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TFS_Store_Updated">
+      <EntityTypeMapping TypeName="Mi9Model.TFS_Store_Updated">
+        <MappingFragment StoreEntitySet="TFS_Store_Updated">
+          <ScalarProperty Name="CAMPING_AND_BBQ" ColumnName="CAMPING AND BBQ" />
+          <ScalarProperty Name="SOLAR_LIGHTS" ColumnName="SOLAR LIGHTS" />
+          <ScalarProperty Name="GARDEN_POTS_ETC" ColumnName="GARDEN POTS ETC" />
+          <ScalarProperty Name="ORNAMENTS" ColumnName="ORNAMENTS" />
+          <ScalarProperty Name="ELECTRIC" ColumnName="ELECTRIC" />
+          <ScalarProperty Name="GARDEN_ACCESSORIES" ColumnName="GARDEN ACCESSORIES" />
+          <ScalarProperty Name="STORE_FURNITURE" ColumnName="STORE FURNITURE" />
+          <ScalarProperty Name="GARDENING" ColumnName="GARDENING" />
+          <ScalarProperty Name="BIRD" ColumnName="BIRD" />
+          <ScalarProperty Name="PETS" ColumnName="PETS" />
+          <ScalarProperty Name="WOOL" ColumnName="WOOL" />
+          <ScalarProperty Name="STATIONERY" ColumnName="STATIONERY" />
+          <ScalarProperty Name="HOUSEHOLD_ESSENTIALS" ColumnName="HOUSEHOLD ESSENTIALS" />
+          <ScalarProperty Name="LAUNDRY" ColumnName="LAUNDRY" />
+          <ScalarProperty Name="DISHWASHING" ColumnName="DISHWASHING" />
+          <ScalarProperty Name="DRINKS" ColumnName="DRINKS" />
+          <ScalarProperty Name="GROCERY" ColumnName="GROCERY" />
+          <ScalarProperty Name="OUTDOOR_TOYS" ColumnName="OUTDOOR TOYS" />
+          <ScalarProperty Name="TOYS" ColumnName="TOYS" />
+          <ScalarProperty Name="KITCHEN" ColumnName="KITCHEN" />
+          <ScalarProperty Name="CLEANERS" ColumnName="CLEANERS" />
+          <ScalarProperty Name="ELECTRICAL" ColumnName="ELECTRICAL" />
+          <ScalarProperty Name="BEDSETS" ColumnName="BEDSETS" />
+          <ScalarProperty Name="PLAIN_DYE_BEDLINEN" ColumnName="PLAIN DYE BEDLINEN" />
+          <ScalarProperty Name="PILLOWS" ColumnName="PILLOWS" />
+          <ScalarProperty Name="DUVETS" ColumnName="DUVETS" />
+          <ScalarProperty Name="BATHROOM_TEXT" ColumnName="BATHROOM TEXT" />
+          <ScalarProperty Name="BATHR_ACCESSORIES" ColumnName="BATHR ACCESSORIES" />
+          <ScalarProperty Name="TOWELS" ColumnName="TOWELS" />
+          <ScalarProperty Name="BED___BATH" ColumnName="BED &amp; BATH" />
+          <ScalarProperty Name="COOKWARE" ColumnName="COOKWARE" />
+          <ScalarProperty Name="TABLEWARE" ColumnName="TABLEWARE" />
+          <ScalarProperty Name="KITCHEN___DINING" ColumnName="KITCHEN &amp; DINING" />
+          <ScalarProperty Name="LAUNDRY___DOMESTIC" ColumnName="LAUNDRY &amp; DOMESTIC" />
+          <ScalarProperty Name="DIY" ColumnName="DIY" />
+          <ScalarProperty Name="PLASTICS" ColumnName="PLASTICS" />
+          <ScalarProperty Name="HARDWARE" ColumnName="HARDWARE" />
+          <ScalarProperty Name="LIVING" ColumnName="LIVING" />
+          <ScalarProperty Name="COSMETICS" ColumnName="COSMETICS" />
+          <ScalarProperty Name="MENS_PREMIUM" ColumnName="MENS PREMIUM" />
+          <ScalarProperty Name="LADIES_PREMIUM" ColumnName="LADIES PREMIUM" />
+          <ScalarProperty Name="LADIES_U15" ColumnName="LADIES U15" />
+          <ScalarProperty Name="MENS_U15" ColumnName="MENS U15" />
+          <ScalarProperty Name="FRAGRANCE" ColumnName="FRAGRANCE" />
+          <ScalarProperty Name="SKINCARE" ColumnName="SKINCARE" />
+          <ScalarProperty Name="BEAUTY" ColumnName="BEAUTY" />
+          <ScalarProperty Name="BOXER_SHORTS" ColumnName="BOXER SHORTS" />
+          <ScalarProperty Name="MENS_BASICS" ColumnName="MENS BASICS" />
+          <ScalarProperty Name="LADIES_BASICS" ColumnName="LADIES BASICS" />
+          <ScalarProperty Name="SUMMER_BAGS" ColumnName="SUMMER BAGS" />
+          <ScalarProperty Name="LEATHER_BAGS" ColumnName="LEATHER BAGS" />
+          <ScalarProperty Name="FASHION_BAGS" ColumnName="FASHION BAGS" />
+          <ScalarProperty Name="BUDGET_BAGS" ColumnName="BUDGET BAGS" />
+          <ScalarProperty Name="FASHION_ACCS" ColumnName="FASHION ACCS" />
+          <ScalarProperty Name="SPORTS" ColumnName="SPORTS" />
+          <ScalarProperty Name="MENS_SOCKS" ColumnName="MENS SOCKS" />
+          <ScalarProperty Name="LADIES" ColumnName="LADIES" />
+          <ScalarProperty Name="SOCKS" ColumnName="SOCKS" />
+          <ScalarProperty Name="KARRIMOR1" ColumnName="KARRIMOR1" />
+          <ScalarProperty Name="OUTDOOR" ColumnName="OUTDOOR" />
+          <ScalarProperty Name="ADIDAS" ColumnName="ADIDAS" />
+          <ScalarProperty Name="TRAINERS2" ColumnName="TRAINERS2" />
+          <ScalarProperty Name="MENS_BRANDED_FOOTWEAR" ColumnName="MENS BRANDED FOOTWEAR" />
+          <ScalarProperty Name="CUSHION_WALK" ColumnName="CUSHION WALK" />
+          <ScalarProperty Name="CASUALS" ColumnName="CASUALS" />
+          <ScalarProperty Name="SLIPPERS1" ColumnName="SLIPPERS1" />
+          <ScalarProperty Name="STEEL_TOES" ColumnName="STEEL TOES" />
+          <ScalarProperty Name="BOOTS" ColumnName="BOOTS" />
+          <ScalarProperty Name="TRAINERS1" ColumnName="TRAINERS1" />
+          <ScalarProperty Name="MENS_FOOTWEAR" ColumnName="MENS FOOTWEAR" />
+          <ScalarProperty Name="SLAZ" ColumnName="SLAZ" />
+          <ScalarProperty Name="ADI" ColumnName="ADI" />
+          <ScalarProperty Name="MENS_SPORTSWEAR" ColumnName="MENS SPORTSWEAR" />
+          <ScalarProperty Name="SHORTS_SWIM" ColumnName="SHORTS/SWIM" />
+          <ScalarProperty Name="JEANS" ColumnName="JEANS" />
+          <ScalarProperty Name="POLOS" ColumnName="POLOS" />
+          <ScalarProperty Name="T_SHIRTS" ColumnName="T-SHIRTS" />
+          <ScalarProperty Name="SHIRTS" ColumnName="SHIRTS" />
+          <ScalarProperty Name="MENSWEAR" ColumnName="MENSWEAR" />
+          <ScalarProperty Name="TRESPASS" ColumnName="TRESPASS" />
+          <ScalarProperty Name="SKECHER_TRAINERS" ColumnName="SKECHER TRAINERS" />
+          <ScalarProperty Name="SKECHER" ColumnName="SKECHER" />
+          <ScalarProperty Name="ROCKET_DOG" ColumnName="ROCKET DOG" />
+          <ScalarProperty Name="KARRIMOR" ColumnName="KARRIMOR" />
+          <ScalarProperty Name="TRAINERS" ColumnName="TRAINERS" />
+          <ScalarProperty Name="LADIES_BRANDED_FOOTWEAR" ColumnName="LADIES BRANDED FOOTWEAR" />
+          <ScalarProperty Name="SLIPPERS" ColumnName="SLIPPERS" />
+          <ScalarProperty Name="LADIES_FOOTWEAR" ColumnName="LADIES FOOTWEAR" />
+          <ScalarProperty Name="JACKETS_COATS" ColumnName="JACKETS/COATS" />
+          <ScalarProperty Name="TEES___TOPS" ColumnName="TEES &amp; TOPS" />
+          <ScalarProperty Name="SPORTSWEAR" ColumnName="SPORTSWEAR" />
+          <ScalarProperty Name="LADIESWEAR" ColumnName="LADIESWEAR" />
+          <ScalarProperty Name="KIDS_FOOTWEAR" ColumnName="KIDS FOOTWEAR" />
+          <ScalarProperty Name="KIDSWEAR" ColumnName="KIDSWEAR" />
+          <ScalarProperty Name="TROLLEY_CASES" ColumnName="TROLLEY CASES" />
+          <ScalarProperty Name="TRAVEL" ColumnName="TRAVEL" />
+          <ScalarProperty Name="Custom_Field_15" ColumnName="Custom Field 15" />
+          <ScalarProperty Name="Custom_Field_14" ColumnName="Custom Field 14" />
+          <ScalarProperty Name="Custom_Field_13" ColumnName="Custom Field 13" />
+          <ScalarProperty Name="Custom_Field_12" ColumnName="Custom Field 12" />
+          <ScalarProperty Name="Custom_Field_11" ColumnName="Custom Field 11" />
+          <ScalarProperty Name="Custom_Field_10" ColumnName="Custom Field 10" />
+          <ScalarProperty Name="Custom_Field_9" ColumnName="Custom Field 9" />
+          <ScalarProperty Name="Custom_Field_8" ColumnName="Custom Field 8" />
+          <ScalarProperty Name="Custom_Field_7" ColumnName="Custom Field 7" />
+          <ScalarProperty Name="Custom_Field_6" ColumnName="Custom Field 6" />
+          <ScalarProperty Name="Custom_Field_5" ColumnName="Custom Field 5" />
+          <ScalarProperty Name="Custom_Field_4" ColumnName="Custom Field 4" />
+          <ScalarProperty Name="Custom_Field_3" ColumnName="Custom Field 3" />
+          <ScalarProperty Name="Custom_Field_2" ColumnName="Custom Field 2" />
+          <ScalarProperty Name="Custom_Field_1" ColumnName="Custom Field 1" />
+          <ScalarProperty Name="St_Andrew_s_Day_Opening_Time" ColumnName="St Andrew's Day Opening Time" />
+          <ScalarProperty Name="UK_Summer_Bank_Holiday_Opening_Time" ColumnName="UK Summer Bank Holiday Opening Time" />
+          <ScalarProperty Name="Scotland_Summer_Bank_Holiday_Opening_Time" ColumnName="Scotland Summer Bank Holiday Opening Time" />
+          <ScalarProperty Name="Spring_Bank_Holiday_Opening_Time" ColumnName="Spring Bank Holiday Opening Time" />
+          <ScalarProperty Name="St_Patrick_s_Day_Opening_Time" ColumnName="St Patrick's Day Opening Time" />
+          <ScalarProperty Name="C2nd_Jan_Opening_Time" ColumnName="2nd Jan Opening Time" />
+          <ScalarProperty Name="New_Year_s_Day_Opening_Time" ColumnName="New Year's Day Opening Time" />
+          <ScalarProperty Name="New_Year_s_Eve_Opening_Time" ColumnName="New Year's Eve Opening Time" />
+          <ScalarProperty Name="Boxing_Day_Opening_Time" ColumnName="Boxing Day Opening Time" />
+          <ScalarProperty Name="Christmas_Eve_Opening_Time" ColumnName="Christmas Eve Opening Time" />
+          <ScalarProperty Name="Easter_Monday_Opening_Time_" ColumnName="Easter Monday Opening Time " />
+          <ScalarProperty Name="Easter_Sunday_Opening_Time_" ColumnName="Easter Sunday Opening Time " />
+          <ScalarProperty Name="Easter_Saturday_Opening_Time_" ColumnName="Easter Saturday Opening Time " />
+          <ScalarProperty Name="Easter_Friday_Opening_Time_" ColumnName="Easter Friday Opening Time " />
+          <ScalarProperty Name="SundayOpeningTimes" ColumnName="SundayOpeningTimes" />
+          <ScalarProperty Name="SaturdayOpeningTimes" ColumnName="SaturdayOpeningTimes" />
+          <ScalarProperty Name="FridayOpeningTimes" ColumnName="FridayOpeningTimes" />
+          <ScalarProperty Name="ThursdayOpeningTimes" ColumnName="ThursdayOpeningTimes" />
+          <ScalarProperty Name="WednesdayOpeningTimes" ColumnName="WednesdayOpeningTimes" />
+          <ScalarProperty Name="TuesdayOpeningTimes" ColumnName="TuesdayOpeningTimes" />
+          <ScalarProperty Name="MondayOpeningTimes" ColumnName="MondayOpeningTimes" />
+          <ScalarProperty Name="Period_12_TOFS_Club_Email_Target_" ColumnName="Period 12 TOFS Club Email Target " />
+          <ScalarProperty Name="Period_11_TOFS_Club_Email_Target_" ColumnName="Period 11 TOFS Club Email Target " />
+          <ScalarProperty Name="Period_10_TOFS_Club_Email_Target_" ColumnName="Period 10 TOFS Club Email Target " />
+          <ScalarProperty Name="Period_9_TOFS_Club_Email_Target_" ColumnName="Period 9 TOFS Club Email Target " />
+          <ScalarProperty Name="Period_8_TOFS_Club_Email_Target_" ColumnName="Period 8 TOFS Club Email Target " />
+          <ScalarProperty Name="Period_7_TOFS_Club_Email_Target_" ColumnName="Period 7 TOFS Club Email Target " />
+          <ScalarProperty Name="Period_6_TOFS_Club_Email_Target_" ColumnName="Period 6 TOFS Club Email Target " />
+          <ScalarProperty Name="Period_5_TOFS_Club_Email_Target_" ColumnName="Period 5 TOFS Club Email Target " />
+          <ScalarProperty Name="Period_4_TOFS_Club_Email_Target_" ColumnName="Period 4 TOFS Club Email Target " />
+          <ScalarProperty Name="Period_3_TOFS_Club_Email_Target_" ColumnName="Period 3 TOFS Club Email Target " />
+          <ScalarProperty Name="Period_2_TOFS_Club_Email_Target_" ColumnName="Period 2 TOFS Club Email Target " />
+          <ScalarProperty Name="Period_1_TOFS_Club_Email_Target_" ColumnName="Period 1 TOFS Club Email Target " />
+          <ScalarProperty Name="Period_12_TOFS_Club_Target_" ColumnName="Period 12 TOFS Club Target " />
+          <ScalarProperty Name="Period_11_TOFS_Club_Target_" ColumnName="Period 11 TOFS Club Target " />
+          <ScalarProperty Name="Period_10_TOFS_Club_Target_" ColumnName="Period 10 TOFS Club Target " />
+          <ScalarProperty Name="Period_9_TOFS_Club_Target_" ColumnName="Period 9 TOFS Club Target " />
+          <ScalarProperty Name="Period_8_TOFS_Club_Target_" ColumnName="Period 8 TOFS Club Target " />
+          <ScalarProperty Name="Period_7_TOFS_Club_Target_" ColumnName="Period 7 TOFS Club Target " />
+          <ScalarProperty Name="Period_6_TOFS_Club_Target_" ColumnName="Period 6 TOFS Club Target " />
+          <ScalarProperty Name="Period_5_TOFS_Club_Target_" ColumnName="Period 5 TOFS Club Target " />
+          <ScalarProperty Name="Period_4_TOFS_Club_Target_" ColumnName="Period 4 TOFS Club Target " />
+          <ScalarProperty Name="Period_3_TOFS_Club_Target_" ColumnName="Period 3 TOFS Club Target " />
+          <ScalarProperty Name="Period_2_TOFS_Club_Target_" ColumnName="Period 2 TOFS Club Target " />
+          <ScalarProperty Name="Period_1_TOFS_Club_Target_" ColumnName="Period 1 TOFS Club Target " />
+          <ScalarProperty Name="Difficult_to_find" ColumnName="Difficult to find" />
+          <ScalarProperty Name="Seasonal_Flyers_Stores" ColumnName="Seasonal Flyers Stores" />
+          <ScalarProperty Name="Dates_Seasonal" ColumnName="Dates Seasonal" />
+          <ScalarProperty Name="Seasonality" ColumnName="Seasonality" />
+          <ScalarProperty Name="High_level_Store_Grade___S_S" ColumnName="High level Store Grade - S/S" />
+          <ScalarProperty Name="High_level_Store_Grade___A_W" ColumnName="High level Store Grade - A/W" />
+          <ScalarProperty Name="Refresh_Date" ColumnName="Refresh Date" />
+          <ScalarProperty Name="Refresh_Store" ColumnName="Refresh Store" />
+          <ScalarProperty Name="ClosingDate" ColumnName="ClosingDate" />
+          <ScalarProperty Name="OpeningDate" ColumnName="OpeningDate" />
+          <ScalarProperty Name="ClosedDate" ColumnName="ClosedDate" />
+          <ScalarProperty Name="OpenDate" ColumnName="OpenDate" />
+          <ScalarProperty Name="StoreStatus" ColumnName="StoreStatus" />
+          <ScalarProperty Name="Do_you_have_a_Customer_only_Lift_" ColumnName="Do you have a Customer only Lift?" />
+          <ScalarProperty Name="Are_fines_issued_" ColumnName="Are fines issued?" />
+          <ScalarProperty Name="Are_there_carpark_signs__notices_in_your_carpark__" ColumnName="Are there carpark signs/ notices in your carpark?/" />
+          <ScalarProperty Name="If__Yes__what_company_" ColumnName="If 'Yes' what company?" />
+          <ScalarProperty Name="Is_it_managed_by_a_carpark_management_company_" ColumnName="Is it managed by a carpark management company?" />
+          <ScalarProperty Name="Do_you_share_with_other_businesses_" ColumnName="Do you share with other businesses?" />
+          <ScalarProperty Name="Is_it_controlled_by_The_Original_Factory_Shop_" ColumnName="Is it controlled by The Original Factory Shop?" />
+          <ScalarProperty Name="Car_park" ColumnName="Car park" />
+          <ScalarProperty Name="Number_of_Tills" ColumnName="Number of Tills" />
+          <ScalarProperty Name="Outside_space" ColumnName="Outside space" />
+          <ScalarProperty Name="Number_of_Entrances_" ColumnName="Number of Entrances " />
+          <ScalarProperty Name="Number_of_sales_floors" ColumnName="Number of sales floors" />
+          <ScalarProperty Name="AreaManager" ColumnName="AreaManager" />
+          <ScalarProperty Name="AreaNumber" ColumnName="AreaNumber" />
+          <ScalarProperty Name="StoreFacebook" ColumnName="StoreFacebook" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="Address4" ColumnName="Address4" />
+          <ScalarProperty Name="Address3" ColumnName="Address3" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="AssistantStoreManager" ColumnName="AssistantStoreManager" />
+          <ScalarProperty Name="StoreManager" ColumnName="StoreManager" />
+          <ScalarProperty Name="StoreDescription" ColumnName="StoreDescription" />
+          <ScalarProperty Name="StoreNumber" ColumnName="StoreNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rpricehdrs">
+      <EntityTypeMapping TypeName="Mi9Model.rpricehdr">
+        <MappingFragment StoreEntitySet="rpricehdrs">
+          <ScalarProperty Name="RetailPriceAltUOM" ColumnName="RetailPriceAltUOM" />
+          <ScalarProperty Name="WasStatusResetToNew" ColumnName="WasStatusResetToNew" />
+          <ScalarProperty Name="DateStatusChanged" ColumnName="DateStatusChanged" />
+          <ScalarProperty Name="PriceChangeID" ColumnName="PriceChangeID" />
+          <ScalarProperty Name="PriceChangeLineID" ColumnName="PriceChangeLineID" />
+          <ScalarProperty Name="PriceType" ColumnName="PriceType" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CreatedOffline" ColumnName="CreatedOffline" />
+          <ScalarProperty Name="startcost" ColumnName="startcost" />
+          <ScalarProperty Name="amenduser" ColumnName="amenduser" />
+          <ScalarProperty Name="amenddate" ColumnName="amenddate" />
+          <ScalarProperty Name="createuser" ColumnName="createuser" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="reasoncode" ColumnName="reasoncode" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="joincode" ColumnName="joincode" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="retailprice" ColumnName="retailprice" />
+          <ScalarProperty Name="varint" ColumnName="varint" />
+          <ScalarProperty Name="plint" ColumnName="plint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rpricehists">
+      <EntityTypeMapping TypeName="Mi9Model.rpricehist">
+        <MappingFragment StoreEntitySet="rpricehist">
+          <ScalarProperty Name="RetailPriceAltUOM" ColumnName="RetailPriceAltUOM" />
+          <ScalarProperty Name="DateStatusChanged" ColumnName="DateStatusChanged" />
+          <ScalarProperty Name="PriceChangeID" ColumnName="PriceChangeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PriceChangeLineID" ColumnName="PriceChangeLineID" />
+          <ScalarProperty Name="PriceType" ColumnName="PriceType" />
+          <ScalarProperty Name="endcost" ColumnName="endcost" />
+          <ScalarProperty Name="startcost" ColumnName="startcost" />
+          <ScalarProperty Name="amenduser" ColumnName="amenduser" />
+          <ScalarProperty Name="amenddate" ColumnName="amenddate" />
+          <ScalarProperty Name="createuser" ColumnName="createuser" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="joincode" ColumnName="joincode" />
+          <ScalarProperty Name="reasoncode" ColumnName="reasoncode" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="retailprice" ColumnName="retailprice" />
+          <ScalarProperty Name="varint" ColumnName="varint" />
+          <ScalarProperty Name="plint" ColumnName="plint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

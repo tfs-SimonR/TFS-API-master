@@ -1,0 +1,1901 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="tfs_hs_holdingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="consigdests">
+          <Key>
+            <PropertyRef Name="consignment" />
+          </Key>
+          <Property Name="warehouse" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="consignment" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="desttype" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="destination" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="condestint" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="delroute" Type="varchar" MaxLength="3" />
+          <Property Name="droppoint" Type="int" StoreGeneratedPattern="Identity" />
+          <Property Name="destdoc" Type="varchar" MaxLength="50" />
+          <Property Name="delroutedoc" Type="varchar" MaxLength="12" />
+          <Property Name="payterms" Type="varchar" MaxLength="4" />
+          <Property Name="freightchg" Type="float" />
+          <Property Name="freighttax" Type="money" />
+          <Property Name="address1" Type="varchar" MaxLength="32" />
+          <Property Name="address2" Type="varchar" MaxLength="32" />
+          <Property Name="address3" Type="varchar" MaxLength="32" />
+          <Property Name="address4" Type="varchar" MaxLength="32" />
+          <Property Name="postcode" Type="varchar" MaxLength="12" />
+          <Property Name="country" Type="varchar" MaxLength="3" />
+          <Property Name="notepad" Type="int" />
+          <Property Name="status" Type="varchar(max)" />
+          <Property Name="reference" Type="varchar" MaxLength="20" />
+          <Property Name="category" Type="varchar" MaxLength="1" />
+          <Property Name="reasoncode" Type="varchar" MaxLength="12" />
+          <Property Name="reference2" Type="varchar" MaxLength="12" />
+          <Property Name="KitAssemblyOrderDestinationID" Type="int" />
+          <Property Name="ShipDate" Type="datetime" />
+          <Property Name="ShipUser" Type="varchar" MaxLength="4" />
+          <Property Name="ReceiveDate" Type="datetime" />
+          <Property Name="ReceiveUser" Type="varchar" MaxLength="4" />
+          <Property Name="AllocStatus" Type="tinyint" />
+          <Property Name="PickStatus" Type="tinyint" />
+          <Property Name="ParcelCnt" Type="int" />
+          <Property Name="ParcelType" Type="varchar" MaxLength="3" />
+          <Property Name="DateInterfaced" Type="datetime" />
+          <Property Name="ShippingCost" Type="numeric" Precision="19" Scale="4" />
+          <Property Name="RTVDisposalMethod" Type="tinyint" />
+          <Property Name="SourceSubLocationID" Type="int" />
+          <Property Name="UserCancelled" Type="varchar" MaxLength="4" />
+          <Property Name="DateCancelled" Type="datetime" />
+          <Property Name="UserReopened" Type="varchar" MaxLength="4" />
+          <Property Name="DateReopened" Type="datetime" />
+          <Property Name="RowVer" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="VendorLocationID" Type="int" />
+          <Property Name="ShipMethodCode" Type="varchar" MaxLength="20" />
+          <Property Name="ShipMethodCodeGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="ShipReference" Type="nvarchar" MaxLength="50" />
+          <Property Name="DriverReference" Type="nvarchar" MaxLength="50" />
+          <Property Name="TruckNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserRejected" Type="varchar" MaxLength="4" />
+          <Property Name="DateRejected" Type="datetime" />
+          <Property Name="UserApproved" Type="varchar" MaxLength="4" />
+          <Property Name="DateApproved" Type="datetime" />
+          <Property Name="DateLastModified" Type="datetime" />
+          <Property Name="DateCreatedInStore" Type="datetime" />
+          <Property Name="UserCreatedInStore" Type="nvarchar(max)" />
+          <Property Name="DateCancelledInStore" Type="datetime" />
+          <Property Name="UserCancelledInStore" Type="nvarchar(max)" />
+          <Property Name="StoreSuggestionCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateAmendedInStore" Type="datetime" />
+          <Property Name="UserAmendedInStore" Type="nvarchar(max)" />
+          <Property Name="DateApprovedInStore" Type="datetime" />
+          <Property Name="UserApprovedInStore" Type="nvarchar(max)" />
+          <Property Name="DateShippedInStore" Type="datetime" />
+          <Property Name="UserShippedInStore" Type="nvarchar(max)" />
+          <Property Name="ParentShipDestID" Type="int" />
+          <Property Name="LastChildShipCodeSuffix" Type="int" />
+          <Property Name="DateReceivedInStore" Type="datetime" />
+          <Property Name="UserReceivedInStore" Type="nvarchar(max)" />
+          <Property Name="sourceName" Type="nvarchar" MaxLength="50" />
+          <Property Name="destName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="consighdrs">
+          <Key>
+            <PropertyRef Name="consignment" />
+          </Key>
+          <Property Name="warehouse" Type="varchar" MaxLength="4" Nullable="false" />
+          <Property Name="consignment" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="collect" Type="varchar" MaxLength="1" />
+          <Property Name="carrier" Type="varchar" MaxLength="4" />
+          <Property Name="notepad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="createdate" Type="datetime" Nullable="false" />
+          <Property Name="amenddate" Type="datetime" />
+          <Property Name="despatchdate" Type="datetime" />
+          <Property Name="issuedate" Type="datetime" />
+          <Property Name="confirmdate" Type="datetime" />
+          <Property Name="consigdoc" Type="varchar" MaxLength="50" />
+          <Property Name="exceptions" Type="smallint" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="authorityno" Type="varchar" MaxLength="50" />
+          <Property Name="CreateUser" Type="varchar" MaxLength="4" />
+          <Property Name="AmendUser" Type="varchar" MaxLength="4" />
+          <Property Name="AuthorizeUser" Type="varchar" MaxLength="4" />
+          <Property Name="AuthorizeDate" Type="datetime" />
+          <Property Name="ManyToOne" Type="bit" Nullable="false" />
+          <Property Name="ChannelType" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="TransferRequest" Type="bit" Nullable="false" />
+          <Property Name="TransferAll" Type="bit" Nullable="false" />
+          <Property Name="BuyerCode" Type="varchar" MaxLength="8" />
+          <Property Name="ReasonCode" Type="varchar" MaxLength="2" />
+          <Property Name="RTV" Type="bit" Nullable="false" />
+          <Property Name="TransferRequestID" Type="int" />
+          <Property Name="StoreInitiated" Type="bit" Nullable="false" />
+          <Property Name="RTVAuthRequestedUser" Type="varchar" MaxLength="4" />
+          <Property Name="RTVAuthRequestedDate" Type="datetime" />
+          <Property Name="RTVRejectNotes" Type="nvarchar" MaxLength="300" />
+          <Property Name="RTVRejectedUser" Type="varchar" MaxLength="4" />
+          <Property Name="RTVRejectedDate" Type="datetime" />
+          <Property Name="RTVCancelReasonCode" Type="varchar" MaxLength="20" />
+          <Property Name="RTVCancelReasonGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="DateExtractedToAP" Type="datetime" />
+          <Property Name="AllowAddProductsDuringPack" Type="bit" Nullable="false" />
+          <Property Name="DateCreatedInStore" Type="datetime" />
+          <Property Name="UserCreatedInStore" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="consiglines">
+          <Key>
+            <PropertyRef Name="transline" />
+          </Key>
+          <Property Name="condestint" Type="int" Nullable="false" />
+          <Property Name="transline" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="conlineint" Type="int" Nullable="false" />
+          <Property Name="destordref" Type="varchar" MaxLength="12" />
+          <Property Name="destordline" Type="int" />
+          <Property Name="destordint" Type="int" />
+          <Property Name="varint" Type="int" Nullable="false" />
+          <Property Name="batchint" Type="int" />
+          <Property Name="issueqty" Type="int" Nullable="false" />
+          <Property Name="receiveqty" Type="int" />
+          <Property Name="avcost" Type="float" Nullable="false" />
+          <Property Name="unitretail" Type="money" />
+          <Property Name="othervalue" Type="money" />
+          <Property Name="discrepqty" Type="int" />
+          <Property Name="download" Type="smallint" Nullable="false" />
+          <Property Name="RequestQty" Type="int" Nullable="false" />
+          <Property Name="ReasonCode" Type="varchar" MaxLength="12" />
+          <Property Name="WIPQty" Type="int" />
+          <Property Name="InTransitQuantity" Type="int" StoreGeneratedPattern="Computed" />
+          <Property Name="PackedQty" Type="int" Nullable="false" />
+          <Property Name="DestLocAverageCost" Type="numeric" Precision="19" Scale="4" />
+          <Property Name="DestLocUnitPrice" Type="numeric" Precision="19" Scale="4" />
+          <Property Name="description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="hs_processed_consighdrs">
+          <Key>
+            <PropertyRef Name="rowid" />
+          </Key>
+          <Property Name="rowid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="consignment" Type="nvarchar" MaxLength="50" />
+          <Property Name="date_bookedin" Type="datetime" />
+          <Property Name="isBookedin" Type="bit" Nullable="false" />
+          <Property Name="storeid" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="hs_processed_interstore">
+          <Key>
+            <PropertyRef Name="rowid" />
+          </Key>
+          <Property Name="rowid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="gdonumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="date_booked_in" Type="datetime" />
+          <Property Name="isBookedin" Type="bit" />
+          <Property Name="storeid" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="hs_processed_purchorders">
+          <Key>
+            <PropertyRef Name="rowid" />
+          </Key>
+          <Property Name="rowid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ponumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="date_booked_in" Type="datetime" />
+          <Property Name="isBookedin" Type="bit" />
+          <Property Name="storeid" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="purchorders">
+          <Key>
+            <PropertyRef Name="ordernumber" />
+          </Key>
+          <Property Name="suppint" Type="int" />
+          <Property Name="ordernumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="orderdate" Type="datetime" />
+          <Property Name="status" Type="smallint" />
+          <Property Name="transint" Type="int" />
+          <Property Name="shipdate" Type="datetime" />
+          <Property Name="location" Type="varchar" MaxLength="4" />
+          <Property Name="lastdeldate" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tfs_hs_holding.dbo.purchordline' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="purchordline">
+          <Key>
+            <PropertyRef Name="transint" />
+            <PropertyRef Name="transline" />
+            <PropertyRef Name="varint" />
+            <PropertyRef Name="prodint" />
+            <PropertyRef Name="baseproduct" />
+            <PropertyRef Name="quantity" />
+            <PropertyRef Name="makeupqty" />
+            <PropertyRef Name="unitcost" />
+            <PropertyRef Name="netcost" />
+            <PropertyRef Name="unitretail" />
+            <PropertyRef Name="status" />
+            <PropertyRef Name="purchlineint" />
+            <PropertyRef Name="CreatedOffline" />
+            <PropertyRef Name="LandedCost" />
+            <PropertyRef Name="DutiableCost" />
+            <PropertyRef Name="MultiBrand" />
+            <PropertyRef Name="BoxCount" />
+            <PropertyRef Name="PreTicket" />
+            <PropertyRef Name="SampleQty" />
+            <PropertyRef Name="QtyPerPurchUnit" />
+            <PropertyRef Name="QtyInPurchUnits" />
+            <PropertyRef Name="FirstCostPerPurchUnit" />
+            <PropertyRef Name="TaxRate" />
+            <PropertyRef Name="DateCreated" />
+            <PropertyRef Name="DateAmendedForEDI" />
+          </Key>
+          <Property Name="transint" Type="int" Nullable="false" />
+          <Property Name="transline" Type="smallint" Nullable="false" />
+          <Property Name="location" Type="varchar" MaxLength="4" />
+          <Property Name="deliverydate" Type="datetime" />
+          <Property Name="canceldate" Type="datetime" />
+          <Property Name="varint" Type="int" Nullable="false" />
+          <Property Name="prodint" Type="int" Nullable="false" />
+          <Property Name="baseproduct" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="quantity" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="makeupqty" Type="int" Nullable="false" />
+          <Property Name="purchunits" Type="varchar" MaxLength="4" />
+          <Property Name="unitcost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="netcost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="unitretail" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="bandingunits" Type="varchar" MaxLength="4" />
+          <Property Name="packagetype" Type="varchar" MaxLength="3" />
+          <Property Name="origin" Type="varchar" MaxLength="3" />
+          <Property Name="suppprodref" Type="varchar" MaxLength="20" />
+          <Property Name="quoteref" Type="varchar" MaxLength="20" />
+          <Property Name="quotedate" Type="datetime" />
+          <Property Name="status" Type="smallint" Nullable="false" />
+          <Property Name="amendstatus" Type="smallint" />
+          <Property Name="makeupstatus" Type="smallint" />
+          <Property Name="purchlineint" Type="int" Nullable="false" />
+          <Property Name="supprodint" Type="int" />
+          <Property Name="delschstatus" Type="smallint" />
+          <Property Name="CreatedOffline" Type="bit" Nullable="false" />
+          <Property Name="LandedCost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="DutiableCost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="MultiBrand" Type="bit" Nullable="false" />
+          <Property Name="BoxCount" Type="int" Nullable="false" />
+          <Property Name="PreTicket" Type="bit" Nullable="false" />
+          <Property Name="SampleQty" Type="int" Nullable="false" />
+          <Property Name="YrWeek" Type="int" />
+          <Property Name="QtyPerPurchUnit" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="QtyInPurchUnits" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="FirstCostPerPurchUnit" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="PurchUnitsID" Type="int" />
+          <Property Name="TaxRate" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="MergedIntoPOLineID" Type="int" />
+          <Property Name="CustomerOrderLineID" Type="int" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+          <Property Name="DateAmendedForEDI" Type="datetime" Nullable="false" />
+          <Property Name="DateReopened" Type="datetime" />
+          <Property Name="QtyFromEDILastSent" Type="numeric" Precision="19" Scale="4" />
+          <Property Name="SpecialOrderDescription" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tfs_hs_holding.dbo.statuscodes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="statuscodes">
+          <Key>
+            <PropertyRef Name="statcode" />
+            <PropertyRef Name="status" />
+            <PropertyRef Name="description" />
+            <PropertyRef Name="intvalue" />
+            <PropertyRef Name="included" />
+          </Key>
+          <Property Name="statcode" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="status" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="shortdesc" Type="varchar" MaxLength="12" />
+          <Property Name="intvalue" Type="smallint" Nullable="false" />
+          <Property Name="included" Type="varchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tfs_hs_holding.dbo.suppliers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="suppliers">
+          <Key>
+            <PropertyRef Name="supplier" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="shortname" />
+            <PropertyRef Name="accounttype" />
+            <PropertyRef Name="leadtimetype" />
+            <PropertyRef Name="createdate" />
+            <PropertyRef Name="suppint" />
+            <PropertyRef Name="EdiStatus" />
+            <PropertyRef Name="EdiFormat" />
+            <PropertyRef Name="EdiPo" />
+            <PropertyRef Name="EdiPoAck" />
+            <PropertyRef Name="EdiPoAmend" />
+            <PropertyRef Name="EdiInvoice" />
+            <PropertyRef Name="EdiAsn" />
+            <PropertyRef Name="EdiPayment" />
+            <PropertyRef Name="EdiCatalog" />
+            <PropertyRef Name="EdiFuncAck" />
+            <PropertyRef Name="AutoAuthorizeOrders" />
+            <PropertyRef Name="Import" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="Fulfillment" />
+            <PropertyRef Name="FFShipChargeType" />
+            <PropertyRef Name="FFShipChargeCountType" />
+            <PropertyRef Name="FFUsePackaging" />
+            <PropertyRef Name="FFPackagingOptimizationType" />
+            <PropertyRef Name="CreatedOffline" />
+            <PropertyRef Name="Interfaced" />
+            <PropertyRef Name="PreTicket" />
+            <PropertyRef Name="DUNS" />
+            <PropertyRef Name="RequireVendorProduct" />
+            <PropertyRef Name="RequireVendorUPC" />
+            <PropertyRef Name="Edi850ControlNumber" />
+            <PropertyRef Name="VMI" />
+            <PropertyRef Name="AutoReceiveASN" />
+            <PropertyRef Name="CancelAfterDays" />
+            <PropertyRef Name="Edi850DTM001InUse" />
+            <PropertyRef Name="Edi850DTM010InUse" />
+            <PropertyRef Name="Edi850DTM037InUse" />
+            <PropertyRef Name="Edi850DTM038InUse" />
+            <PropertyRef Name="Edi850DTM074InUse" />
+            <PropertyRef Name="VendorLocationsInUse" />
+            <PropertyRef Name="EdiUseTildeAsSegmentTerminator" />
+            <PropertyRef Name="EnforceVendorCompanyLocationRules" />
+            <PropertyRef Name="UseSystemTolerance" />
+            <PropertyRef Name="ImportingCompanyGLU" />
+            <PropertyRef Name="SbaContractInUse" />
+            <PropertyRef Name="CommercialDiscountPercent" />
+            <PropertyRef Name="DefectiveMerchandiseDiscountPercent" />
+            <PropertyRef Name="EdiProviderGLU" />
+            <PropertyRef Name="EdiMessagingProtocolGLU" />
+            <PropertyRef Name="OrderPlanRequired" />
+            <PropertyRef Name="AllowBrokenPacks" />
+            <PropertyRef Name="NewStoreDiscountDays" />
+            <PropertyRef Name="EdiProductActivity" />
+            <PropertyRef Name="UpdateCostOnASN" />
+            <PropertyRef Name="RebateVendorGLU" />
+            <PropertyRef Name="VerticallyIntegratedRetailer" />
+            <PropertyRef Name="SpecialOrders" />
+            <PropertyRef Name="SpecialOrdersSpecRequired" />
+            <PropertyRef Name="Edi850DTM001DeliveryDateInUse" />
+            <PropertyRef Name="Edi850SDQInUse" />
+            <PropertyRef Name="Edi850TD5InUse" />
+            <PropertyRef Name="Edi850ITDInUse" />
+            <PropertyRef Name="EdiFuncAckForInvoice" />
+          </Key>
+          <Property Name="supplier" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="shortname" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="commsline" Type="varchar" MaxLength="15" />
+          <Property Name="hoaccountno" Type="varchar" MaxLength="12" />
+          <Property Name="grpaccountno" Type="varchar" MaxLength="12" />
+          <Property Name="category" Type="varchar" MaxLength="3" />
+          <Property Name="typecode" Type="varchar" MaxLength="3" />
+          <Property Name="class" Type="varchar" MaxLength="3" />
+          <Property Name="accounttype" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="buyer" Type="varchar" MaxLength="8" />
+          <Property Name="ordermethod" Type="varchar" MaxLength="1" />
+          <Property Name="merchplan" Type="varchar" MaxLength="3" />
+          <Property Name="invmethod" Type="varchar" MaxLength="1" />
+          <Property Name="paymethod" Type="varchar" MaxLength="20" />
+          <Property Name="currency" Type="varchar" MaxLength="3" />
+          <Property Name="retmethod" Type="varchar" MaxLength="1" />
+          <Property Name="creditproc" Type="varchar" MaxLength="1" />
+          <Property Name="minlead" Type="int" />
+          <Property Name="maxlead" Type="int" />
+          <Property Name="leadtimetype" Type="smallint" Nullable="false" />
+          <Property Name="orderbranch" Type="int" />
+          <Property Name="historylevel" Type="varchar" MaxLength="1" />
+          <Property Name="suppprod" Type="varchar" MaxLength="1" />
+          <Property Name="lastmovedate" Type="datetime" />
+          <Property Name="createdate" Type="datetime" Nullable="false" />
+          <Property Name="amenddate" Type="datetime" />
+          <Property Name="deletedate" Type="datetime" />
+          <Property Name="suppint" Type="int" Nullable="false" />
+          <Property Name="suspreason" Type="varchar" MaxLength="2" />
+          <Property Name="suspreasonra" Type="varchar" MaxLength="2" />
+          <Property Name="suspreasonap" Type="varchar" MaxLength="2" />
+          <Property Name="suspdate" Type="datetime" />
+          <Property Name="suspuser" Type="varchar" MaxLength="4" />
+          <Property Name="reinstdate" Type="datetime" />
+          <Property Name="reinstuser" Type="varchar" MaxLength="4" />
+          <Property Name="status" Type="varchar" MaxLength="1" />
+          <Property Name="minorder" Type="int" />
+          <Property Name="maxorder" Type="int" />
+          <Property Name="anacode" Type="varchar" MaxLength="13" />
+          <Property Name="discount" Type="float" />
+          <Property Name="languageid" Type="varchar" MaxLength="2" />
+          <Property Name="settletype" Type="varchar" MaxLength="3" />
+          <Property Name="taxregno" Type="varchar" MaxLength="32" />
+          <Property Name="printprice" Type="varchar" MaxLength="1" />
+          <Property Name="supptype" Type="smallint" />
+          <Property Name="buymethod" Type="varchar" MaxLength="4" />
+          <Property Name="stdindclass" Type="varchar" MaxLength="4" />
+          <Property Name="dbrating" Type="varchar" MaxLength="4" />
+          <Property Name="reportcat" Type="varchar" MaxLength="1" />
+          <Property Name="carrier" Type="varchar" MaxLength="4" />
+          <Property Name="multilocords" Type="varchar" MaxLength="1" />
+          <Property Name="maxdelval" Type="int" />
+          <Property Name="mindelval" Type="int" />
+          <Property Name="allowbo" Type="varchar" MaxLength="1" />
+          <Property Name="compafter" Type="int" />
+          <Property Name="sa01" Type="varchar" MaxLength="20" />
+          <Property Name="sa02" Type="varchar" MaxLength="20" />
+          <Property Name="sa03" Type="varchar" MaxLength="20" />
+          <Property Name="sa04" Type="varchar" MaxLength="20" />
+          <Property Name="sa05" Type="varchar" MaxLength="20" />
+          <Property Name="sa06" Type="varchar" MaxLength="20" />
+          <Property Name="sa07" Type="varchar" MaxLength="20" />
+          <Property Name="sa08" Type="varchar" MaxLength="20" />
+          <Property Name="sa09" Type="varchar" MaxLength="20" />
+          <Property Name="sa10" Type="varchar" MaxLength="20" />
+          <Property Name="sa11" Type="varchar" MaxLength="20" />
+          <Property Name="sa12" Type="varchar" MaxLength="20" />
+          <Property Name="sa13" Type="varchar" MaxLength="20" />
+          <Property Name="sa14" Type="varchar" MaxLength="20" />
+          <Property Name="sa15" Type="varchar" MaxLength="20" />
+          <Property Name="sa16" Type="varchar" MaxLength="20" />
+          <Property Name="sa17" Type="varchar" MaxLength="20" />
+          <Property Name="sa18" Type="varchar" MaxLength="20" />
+          <Property Name="sa19" Type="varchar" MaxLength="20" />
+          <Property Name="sa20" Type="varchar" MaxLength="20" />
+          <Property Name="sa21" Type="varchar" MaxLength="20" />
+          <Property Name="sa22" Type="varchar" MaxLength="20" />
+          <Property Name="sa23" Type="varchar" MaxLength="20" />
+          <Property Name="sa24" Type="varchar" MaxLength="20" />
+          <Property Name="sa25" Type="varchar" MaxLength="20" />
+          <Property Name="EdiTestCodeQualifier" Type="varchar" MaxLength="2" />
+          <Property Name="EdiTestCode" Type="varchar" MaxLength="15" />
+          <Property Name="EdiLiveCodeQualifier" Type="varchar" MaxLength="2" />
+          <Property Name="EdiLiveCode" Type="varchar" MaxLength="15" />
+          <Property Name="EdiStatus" Type="tinyint" Nullable="false" />
+          <Property Name="EdiFormat" Type="tinyint" Nullable="false" />
+          <Property Name="EdiVersion" Type="varchar" MaxLength="12" />
+          <Property Name="EdiTestStartDate" Type="datetime" />
+          <Property Name="EdiLiveStartDate" Type="datetime" />
+          <Property Name="EdiSuspendDate" Type="datetime" />
+          <Property Name="EdiPo" Type="tinyint" Nullable="false" />
+          <Property Name="EdiPoAck" Type="bit" Nullable="false" />
+          <Property Name="EdiPoAmend" Type="bit" Nullable="false" />
+          <Property Name="EdiInvoice" Type="bit" Nullable="false" />
+          <Property Name="EdiAsn" Type="bit" Nullable="false" />
+          <Property Name="EdiPayment" Type="bit" Nullable="false" />
+          <Property Name="EdiCatalog" Type="bit" Nullable="false" />
+          <Property Name="EdiFuncAck" Type="bit" Nullable="false" />
+          <Property Name="AutoAuthorizeOrders" Type="tinyint" Nullable="false" />
+          <Property Name="TransportMethod" Type="varchar" MaxLength="2" />
+          <Property Name="Import" Type="bit" Nullable="false" />
+          <Property Name="Brand" Type="varchar" MaxLength="12" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="Fulfillment" Type="bit" Nullable="false" />
+          <Property Name="FFShipMode" Type="varchar" MaxLength="2" />
+          <Property Name="FFShipModeInt" Type="varchar" MaxLength="2" />
+          <Property Name="FFHandlingCharge" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="FFHandlingChargeInt" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="FFItemHandlingCharge" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="FFItemHandlingChargeInt" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="FFShipChargeType" Type="tinyint" Nullable="false" />
+          <Property Name="FFShipChargeCountType" Type="tinyint" Nullable="false" />
+          <Property Name="FFUsePackaging" Type="bit" Nullable="false" />
+          <Property Name="FFPackagingOptimizationType" Type="tinyint" Nullable="false" />
+          <Property Name="CreatedOffline" Type="bit" Nullable="false" />
+          <Property Name="Interfaced" Type="bit" Nullable="false" />
+          <Property Name="DateInterfaced" Type="datetime" />
+          <Property Name="PreTicket" Type="bit" Nullable="false" />
+          <Property Name="DUNS" Type="int" Nullable="false" />
+          <Property Name="RequireVendorProduct" Type="tinyint" Nullable="false" />
+          <Property Name="RequireVendorUPC" Type="tinyint" Nullable="false" />
+          <Property Name="Edi850ControlNumber" Type="int" Nullable="false" />
+          <Property Name="VMI" Type="bit" Nullable="false" />
+          <Property Name="AutoReceiveASN" Type="tinyint" Nullable="false" />
+          <Property Name="CancelAfterDays" Type="tinyint" Nullable="false" />
+          <Property Name="Edi850DTM001InUse" Type="bit" Nullable="false" />
+          <Property Name="Edi850DTM010InUse" Type="bit" Nullable="false" />
+          <Property Name="Edi850DTM037InUse" Type="bit" Nullable="false" />
+          <Property Name="Edi850DTM038InUse" Type="bit" Nullable="false" />
+          <Property Name="Edi850DTM074InUse" Type="bit" Nullable="false" />
+          <Property Name="EdiLastInvoiceCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="EdiLastASNCode" Type="varchar" MaxLength="20" />
+          <Property Name="VendorLocationsInUse" Type="bit" Nullable="false" />
+          <Property Name="EdiUseTildeAsSegmentTerminator" Type="tinyint" Nullable="false" />
+          <Property Name="EnforceVendorCompanyLocationRules" Type="tinyint" Nullable="false" />
+          <Property Name="UseSystemTolerance" Type="bit" Nullable="false" />
+          <Property Name="ImportingCompany" Type="varchar" MaxLength="20" />
+          <Property Name="ImportingCompanyGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="SbaContractInUse" Type="bit" Nullable="false" />
+          <Property Name="SbaContractStartDate" Type="date" />
+          <Property Name="CommercialDiscountPercent" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="CommercialDiscountPercentStartDate" Type="date" />
+          <Property Name="DefectiveMerchandiseDiscountPercent" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="DefectiveMerchandiseDiscountPercentStartDate" Type="date" />
+          <Property Name="EdiProvider" Type="varchar" MaxLength="20" />
+          <Property Name="EdiProviderGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="EdiMessagingProtocol" Type="varchar" MaxLength="20" />
+          <Property Name="EdiMessagingProtocolGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="OrderPlanRequired" Type="bit" Nullable="false" />
+          <Property Name="AllowBrokenPacks" Type="bit" Nullable="false" />
+          <Property Name="NewStoreDiscountDays" Type="tinyint" Nullable="false" />
+          <Property Name="EdiProductActivity" Type="bit" Nullable="false" />
+          <Property Name="UpdateCostOnASN" Type="bit" Nullable="false" />
+          <Property Name="RebateVendor" Type="varchar" MaxLength="20" />
+          <Property Name="RebateVendorGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="VerticallyIntegratedRetailer" Type="bit" Nullable="false" />
+          <Property Name="SpecialOrders" Type="bit" Nullable="false" />
+          <Property Name="SpecialOrdersSpecRequired" Type="bit" Nullable="false" />
+          <Property Name="Edi850DTM001DeliveryDateInUse" Type="bit" Nullable="false" />
+          <Property Name="Edi850SDQInUse" Type="bit" Nullable="false" />
+          <Property Name="Edi850TD5InUse" Type="bit" Nullable="false" />
+          <Property Name="Edi850ITDInUse" Type="bit" Nullable="false" />
+          <Property Name="EdiFuncAckForInvoice" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_PP_ThresholdValues">
+          <Key>
+            <PropertyRef Name="rowId" />
+          </Key>
+          <Property Name="rowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="thresholdvalue" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="createdby" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="datecreated" Type="datetime" Nullable="false" />
+          <Property Name="dateupdated" Type="datetime" />
+          <Property Name="updatedby" Type="nvarchar" MaxLength="50" />
+          <Property Name="isInUse" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_ProfitProtectionHeldItems">
+          <Key>
+            <PropertyRef Name="RowId" />
+          </Key>
+          <Property Name="RowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateWrittenOff" Type="datetime" Nullable="false" />
+          <Property Name="userid" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="storename" Type="nvarchar" MaxLength="50" />
+          <Property Name="storeid" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="sku" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="nvarchar(max)" />
+          <Property Name="varint" Type="int" Nullable="false" />
+          <Property Name="quantity" Type="int" Nullable="false" />
+          <Property Name="reasoncode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="retailpriceperitem" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="costvalueperitem" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="costtotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="triggeramount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="eventdate" Type="datetime" Nullable="false" />
+          <Property Name="isHeld" Type="bit" />
+          <Property Name="uniquefilename" Type="nvarchar" MaxLength="128" />
+          <Property Name="isDeleted" Type="bit" />
+          <Property Name="DateDeleted" Type="datetime" />
+          <Property Name="DeletedBy" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TOFS_12WeeksSales">
+          <Key>
+            <PropertyRef Name="rowId" />
+          </Key>
+          <Property Name="rowId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="branchcode" Type="varchar" MaxLength="4" />
+          <Property Name="varint" Type="int" />
+          <Property Name="salesweek" Type="varchar" MaxLength="6" />
+          <Property Name="Sales" Type="int" />
+        </EntityType>
+        <EntityContainer Name="tfs_hs_holdingModelStoreContainer">
+          <EntitySet Name="consigdests" EntityType="Self.consigdests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="consighdrs" EntityType="Self.consighdrs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="consiglines" EntityType="Self.consiglines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hs_processed_consighdrs" EntityType="Self.hs_processed_consighdrs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hs_processed_interstore" EntityType="Self.hs_processed_interstore" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hs_processed_purchorders" EntityType="Self.hs_processed_purchorders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="purchorders" EntityType="Self.purchorders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_PP_ThresholdValues" EntityType="Self.tbl_PP_ThresholdValues" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ProfitProtectionHeldItems" EntityType="Self.tbl_ProfitProtectionHeldItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TOFS_12WeeksSales" EntityType="Self.TOFS_12WeeksSales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="purchordline" EntityType="Self.purchordline" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [purchordline].[transint] AS [transint], 
+    [purchordline].[transline] AS [transline], 
+    [purchordline].[location] AS [location], 
+    [purchordline].[deliverydate] AS [deliverydate], 
+    [purchordline].[canceldate] AS [canceldate], 
+    [purchordline].[varint] AS [varint], 
+    [purchordline].[prodint] AS [prodint], 
+    [purchordline].[baseproduct] AS [baseproduct], 
+    [purchordline].[quantity] AS [quantity], 
+    [purchordline].[makeupqty] AS [makeupqty], 
+    [purchordline].[purchunits] AS [purchunits], 
+    [purchordline].[unitcost] AS [unitcost], 
+    [purchordline].[netcost] AS [netcost], 
+    [purchordline].[unitretail] AS [unitretail], 
+    [purchordline].[bandingunits] AS [bandingunits], 
+    [purchordline].[packagetype] AS [packagetype], 
+    [purchordline].[origin] AS [origin], 
+    [purchordline].[suppprodref] AS [suppprodref], 
+    [purchordline].[quoteref] AS [quoteref], 
+    [purchordline].[quotedate] AS [quotedate], 
+    [purchordline].[status] AS [status], 
+    [purchordline].[amendstatus] AS [amendstatus], 
+    [purchordline].[makeupstatus] AS [makeupstatus], 
+    [purchordline].[purchlineint] AS [purchlineint], 
+    [purchordline].[supprodint] AS [supprodint], 
+    [purchordline].[delschstatus] AS [delschstatus], 
+    [purchordline].[CreatedOffline] AS [CreatedOffline], 
+    [purchordline].[LandedCost] AS [LandedCost], 
+    [purchordline].[DutiableCost] AS [DutiableCost], 
+    [purchordline].[MultiBrand] AS [MultiBrand], 
+    [purchordline].[BoxCount] AS [BoxCount], 
+    [purchordline].[PreTicket] AS [PreTicket], 
+    [purchordline].[SampleQty] AS [SampleQty], 
+    [purchordline].[YrWeek] AS [YrWeek], 
+    [purchordline].[QtyPerPurchUnit] AS [QtyPerPurchUnit], 
+    [purchordline].[QtyInPurchUnits] AS [QtyInPurchUnits], 
+    [purchordline].[FirstCostPerPurchUnit] AS [FirstCostPerPurchUnit], 
+    [purchordline].[PurchUnitsID] AS [PurchUnitsID], 
+    [purchordline].[TaxRate] AS [TaxRate], 
+    [purchordline].[MergedIntoPOLineID] AS [MergedIntoPOLineID], 
+    [purchordline].[CustomerOrderLineID] AS [CustomerOrderLineID], 
+    [purchordline].[DateCreated] AS [DateCreated], 
+    [purchordline].[DateAmendedForEDI] AS [DateAmendedForEDI], 
+    [purchordline].[DateReopened] AS [DateReopened], 
+    [purchordline].[QtyFromEDILastSent] AS [QtyFromEDILastSent], 
+    [purchordline].[SpecialOrderDescription] AS [SpecialOrderDescription]
+    FROM [dbo].[purchordline] AS [purchordline]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="statuscodes" EntityType="Self.statuscodes" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [statuscodes].[statcode] AS [statcode], 
+    [statuscodes].[status] AS [status], 
+    [statuscodes].[description] AS [description], 
+    [statuscodes].[shortdesc] AS [shortdesc], 
+    [statuscodes].[intvalue] AS [intvalue], 
+    [statuscodes].[included] AS [included]
+    FROM [dbo].[statuscodes] AS [statuscodes]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="suppliers" EntityType="Self.suppliers" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [suppliers].[supplier] AS [supplier], 
+    [suppliers].[name] AS [name], 
+    [suppliers].[shortname] AS [shortname], 
+    [suppliers].[commsline] AS [commsline], 
+    [suppliers].[hoaccountno] AS [hoaccountno], 
+    [suppliers].[grpaccountno] AS [grpaccountno], 
+    [suppliers].[category] AS [category], 
+    [suppliers].[typecode] AS [typecode], 
+    [suppliers].[class] AS [class], 
+    [suppliers].[accounttype] AS [accounttype], 
+    [suppliers].[buyer] AS [buyer], 
+    [suppliers].[ordermethod] AS [ordermethod], 
+    [suppliers].[merchplan] AS [merchplan], 
+    [suppliers].[invmethod] AS [invmethod], 
+    [suppliers].[paymethod] AS [paymethod], 
+    [suppliers].[currency] AS [currency], 
+    [suppliers].[retmethod] AS [retmethod], 
+    [suppliers].[creditproc] AS [creditproc], 
+    [suppliers].[minlead] AS [minlead], 
+    [suppliers].[maxlead] AS [maxlead], 
+    [suppliers].[leadtimetype] AS [leadtimetype], 
+    [suppliers].[orderbranch] AS [orderbranch], 
+    [suppliers].[historylevel] AS [historylevel], 
+    [suppliers].[suppprod] AS [suppprod], 
+    [suppliers].[lastmovedate] AS [lastmovedate], 
+    [suppliers].[createdate] AS [createdate], 
+    [suppliers].[amenddate] AS [amenddate], 
+    [suppliers].[deletedate] AS [deletedate], 
+    [suppliers].[suppint] AS [suppint], 
+    [suppliers].[suspreason] AS [suspreason], 
+    [suppliers].[suspreasonra] AS [suspreasonra], 
+    [suppliers].[suspreasonap] AS [suspreasonap], 
+    [suppliers].[suspdate] AS [suspdate], 
+    [suppliers].[suspuser] AS [suspuser], 
+    [suppliers].[reinstdate] AS [reinstdate], 
+    [suppliers].[reinstuser] AS [reinstuser], 
+    [suppliers].[status] AS [status], 
+    [suppliers].[minorder] AS [minorder], 
+    [suppliers].[maxorder] AS [maxorder], 
+    [suppliers].[anacode] AS [anacode], 
+    [suppliers].[discount] AS [discount], 
+    [suppliers].[languageid] AS [languageid], 
+    [suppliers].[settletype] AS [settletype], 
+    [suppliers].[taxregno] AS [taxregno], 
+    [suppliers].[printprice] AS [printprice], 
+    [suppliers].[supptype] AS [supptype], 
+    [suppliers].[buymethod] AS [buymethod], 
+    [suppliers].[stdindclass] AS [stdindclass], 
+    [suppliers].[dbrating] AS [dbrating], 
+    [suppliers].[reportcat] AS [reportcat], 
+    [suppliers].[carrier] AS [carrier], 
+    [suppliers].[multilocords] AS [multilocords], 
+    [suppliers].[maxdelval] AS [maxdelval], 
+    [suppliers].[mindelval] AS [mindelval], 
+    [suppliers].[allowbo] AS [allowbo], 
+    [suppliers].[compafter] AS [compafter], 
+    [suppliers].[sa01] AS [sa01], 
+    [suppliers].[sa02] AS [sa02], 
+    [suppliers].[sa03] AS [sa03], 
+    [suppliers].[sa04] AS [sa04], 
+    [suppliers].[sa05] AS [sa05], 
+    [suppliers].[sa06] AS [sa06], 
+    [suppliers].[sa07] AS [sa07], 
+    [suppliers].[sa08] AS [sa08], 
+    [suppliers].[sa09] AS [sa09], 
+    [suppliers].[sa10] AS [sa10], 
+    [suppliers].[sa11] AS [sa11], 
+    [suppliers].[sa12] AS [sa12], 
+    [suppliers].[sa13] AS [sa13], 
+    [suppliers].[sa14] AS [sa14], 
+    [suppliers].[sa15] AS [sa15], 
+    [suppliers].[sa16] AS [sa16], 
+    [suppliers].[sa17] AS [sa17], 
+    [suppliers].[sa18] AS [sa18], 
+    [suppliers].[sa19] AS [sa19], 
+    [suppliers].[sa20] AS [sa20], 
+    [suppliers].[sa21] AS [sa21], 
+    [suppliers].[sa22] AS [sa22], 
+    [suppliers].[sa23] AS [sa23], 
+    [suppliers].[sa24] AS [sa24], 
+    [suppliers].[sa25] AS [sa25], 
+    [suppliers].[EdiTestCodeQualifier] AS [EdiTestCodeQualifier], 
+    [suppliers].[EdiTestCode] AS [EdiTestCode], 
+    [suppliers].[EdiLiveCodeQualifier] AS [EdiLiveCodeQualifier], 
+    [suppliers].[EdiLiveCode] AS [EdiLiveCode], 
+    [suppliers].[EdiStatus] AS [EdiStatus], 
+    [suppliers].[EdiFormat] AS [EdiFormat], 
+    [suppliers].[EdiVersion] AS [EdiVersion], 
+    [suppliers].[EdiTestStartDate] AS [EdiTestStartDate], 
+    [suppliers].[EdiLiveStartDate] AS [EdiLiveStartDate], 
+    [suppliers].[EdiSuspendDate] AS [EdiSuspendDate], 
+    [suppliers].[EdiPo] AS [EdiPo], 
+    [suppliers].[EdiPoAck] AS [EdiPoAck], 
+    [suppliers].[EdiPoAmend] AS [EdiPoAmend], 
+    [suppliers].[EdiInvoice] AS [EdiInvoice], 
+    [suppliers].[EdiAsn] AS [EdiAsn], 
+    [suppliers].[EdiPayment] AS [EdiPayment], 
+    [suppliers].[EdiCatalog] AS [EdiCatalog], 
+    [suppliers].[EdiFuncAck] AS [EdiFuncAck], 
+    [suppliers].[AutoAuthorizeOrders] AS [AutoAuthorizeOrders], 
+    [suppliers].[TransportMethod] AS [TransportMethod], 
+    [suppliers].[Import] AS [Import], 
+    [suppliers].[Brand] AS [Brand], 
+    [suppliers].[Active] AS [Active], 
+    [suppliers].[Fulfillment] AS [Fulfillment], 
+    [suppliers].[FFShipMode] AS [FFShipMode], 
+    [suppliers].[FFShipModeInt] AS [FFShipModeInt], 
+    [suppliers].[FFHandlingCharge] AS [FFHandlingCharge], 
+    [suppliers].[FFHandlingChargeInt] AS [FFHandlingChargeInt], 
+    [suppliers].[FFItemHandlingCharge] AS [FFItemHandlingCharge], 
+    [suppliers].[FFItemHandlingChargeInt] AS [FFItemHandlingChargeInt], 
+    [suppliers].[FFShipChargeType] AS [FFShipChargeType], 
+    [suppliers].[FFShipChargeCountType] AS [FFShipChargeCountType], 
+    [suppliers].[FFUsePackaging] AS [FFUsePackaging], 
+    [suppliers].[FFPackagingOptimizationType] AS [FFPackagingOptimizationType], 
+    [suppliers].[CreatedOffline] AS [CreatedOffline], 
+    [suppliers].[Interfaced] AS [Interfaced], 
+    [suppliers].[DateInterfaced] AS [DateInterfaced], 
+    [suppliers].[PreTicket] AS [PreTicket], 
+    [suppliers].[DUNS] AS [DUNS], 
+    [suppliers].[RequireVendorProduct] AS [RequireVendorProduct], 
+    [suppliers].[RequireVendorUPC] AS [RequireVendorUPC], 
+    [suppliers].[Edi850ControlNumber] AS [Edi850ControlNumber], 
+    [suppliers].[VMI] AS [VMI], 
+    [suppliers].[AutoReceiveASN] AS [AutoReceiveASN], 
+    [suppliers].[CancelAfterDays] AS [CancelAfterDays], 
+    [suppliers].[Edi850DTM001InUse] AS [Edi850DTM001InUse], 
+    [suppliers].[Edi850DTM010InUse] AS [Edi850DTM010InUse], 
+    [suppliers].[Edi850DTM037InUse] AS [Edi850DTM037InUse], 
+    [suppliers].[Edi850DTM038InUse] AS [Edi850DTM038InUse], 
+    [suppliers].[Edi850DTM074InUse] AS [Edi850DTM074InUse], 
+    [suppliers].[EdiLastInvoiceCode] AS [EdiLastInvoiceCode], 
+    [suppliers].[EdiLastASNCode] AS [EdiLastASNCode], 
+    [suppliers].[VendorLocationsInUse] AS [VendorLocationsInUse], 
+    [suppliers].[EdiUseTildeAsSegmentTerminator] AS [EdiUseTildeAsSegmentTerminator], 
+    [suppliers].[EnforceVendorCompanyLocationRules] AS [EnforceVendorCompanyLocationRules], 
+    [suppliers].[UseSystemTolerance] AS [UseSystemTolerance], 
+    [suppliers].[ImportingCompany] AS [ImportingCompany], 
+    [suppliers].[ImportingCompanyGLU] AS [ImportingCompanyGLU], 
+    [suppliers].[SbaContractInUse] AS [SbaContractInUse], 
+    [suppliers].[SbaContractStartDate] AS [SbaContractStartDate], 
+    [suppliers].[CommercialDiscountPercent] AS [CommercialDiscountPercent], 
+    [suppliers].[CommercialDiscountPercentStartDate] AS [CommercialDiscountPercentStartDate], 
+    [suppliers].[DefectiveMerchandiseDiscountPercent] AS [DefectiveMerchandiseDiscountPercent], 
+    [suppliers].[DefectiveMerchandiseDiscountPercentStartDate] AS [DefectiveMerchandiseDiscountPercentStartDate], 
+    [suppliers].[EdiProvider] AS [EdiProvider], 
+    [suppliers].[EdiProviderGLU] AS [EdiProviderGLU], 
+    [suppliers].[EdiMessagingProtocol] AS [EdiMessagingProtocol], 
+    [suppliers].[EdiMessagingProtocolGLU] AS [EdiMessagingProtocolGLU], 
+    [suppliers].[OrderPlanRequired] AS [OrderPlanRequired], 
+    [suppliers].[AllowBrokenPacks] AS [AllowBrokenPacks], 
+    [suppliers].[NewStoreDiscountDays] AS [NewStoreDiscountDays], 
+    [suppliers].[EdiProductActivity] AS [EdiProductActivity], 
+    [suppliers].[UpdateCostOnASN] AS [UpdateCostOnASN], 
+    [suppliers].[RebateVendor] AS [RebateVendor], 
+    [suppliers].[RebateVendorGLU] AS [RebateVendorGLU], 
+    [suppliers].[VerticallyIntegratedRetailer] AS [VerticallyIntegratedRetailer], 
+    [suppliers].[SpecialOrders] AS [SpecialOrders], 
+    [suppliers].[SpecialOrdersSpecRequired] AS [SpecialOrdersSpecRequired], 
+    [suppliers].[Edi850DTM001DeliveryDateInUse] AS [Edi850DTM001DeliveryDateInUse], 
+    [suppliers].[Edi850SDQInUse] AS [Edi850SDQInUse], 
+    [suppliers].[Edi850TD5InUse] AS [Edi850TD5InUse], 
+    [suppliers].[Edi850ITDInUse] AS [Edi850ITDInUse], 
+    [suppliers].[EdiFuncAckForInvoice] AS [EdiFuncAckForInvoice]
+    FROM [dbo].[suppliers] AS [suppliers]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="tfs_hs_holdingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="consigdest">
+          <Key>
+            <PropertyRef Name="consignment" />
+          </Key>
+          <Property Name="warehouse" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="consignment" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="desttype" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="destination" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="condestint" Type="Int32" Nullable="false" />
+          <Property Name="delroute" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="droppoint" Type="Int32" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="destdoc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="delroutedoc" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="payterms" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="freightchg" Type="Double" />
+          <Property Name="freighttax" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="address1" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="address2" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="address3" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="address4" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="postcode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="country" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="notepad" Type="Int32" />
+          <Property Name="status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="reference" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="category" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="reasoncode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="reference2" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="KitAssemblyOrderDestinationID" Type="Int32" />
+          <Property Name="ShipDate" Type="DateTime" Precision="3" />
+          <Property Name="ShipUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="ReceiveDate" Type="DateTime" Precision="3" />
+          <Property Name="ReceiveUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="AllocStatus" Type="Byte" />
+          <Property Name="PickStatus" Type="Byte" />
+          <Property Name="ParcelCnt" Type="Int32" />
+          <Property Name="ParcelType" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="DateInterfaced" Type="DateTime" Precision="3" />
+          <Property Name="ShippingCost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="RTVDisposalMethod" Type="Byte" />
+          <Property Name="SourceSubLocationID" Type="Int32" />
+          <Property Name="UserCancelled" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="DateCancelled" Type="DateTime" Precision="3" />
+          <Property Name="UserReopened" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="DateReopened" Type="DateTime" Precision="3" />
+          <Property Name="RowVer" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="VendorLocationID" Type="Int32" />
+          <Property Name="ShipMethodCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ShipMethodCodeGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="ShipReference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DriverReference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TruckNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserRejected" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="DateRejected" Type="DateTime" Precision="3" />
+          <Property Name="UserApproved" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="DateApproved" Type="DateTime" Precision="3" />
+          <Property Name="DateLastModified" Type="DateTime" Precision="3" />
+          <Property Name="DateCreatedInStore" Type="DateTime" Precision="3" />
+          <Property Name="UserCreatedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateCancelledInStore" Type="DateTime" Precision="3" />
+          <Property Name="UserCancelledInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StoreSuggestionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateAmendedInStore" Type="DateTime" Precision="3" />
+          <Property Name="UserAmendedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateApprovedInStore" Type="DateTime" Precision="3" />
+          <Property Name="UserApprovedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateShippedInStore" Type="DateTime" Precision="3" />
+          <Property Name="UserShippedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ParentShipDestID" Type="Int32" />
+          <Property Name="LastChildShipCodeSuffix" Type="Int32" />
+          <Property Name="DateReceivedInStore" Type="DateTime" Precision="3" />
+          <Property Name="UserReceivedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="sourceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="destName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="consighdr">
+          <Key>
+            <PropertyRef Name="consignment" />
+          </Key>
+          <Property Name="warehouse" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="consignment" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="collect" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="carrier" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="notepad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="createdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="amenddate" Type="DateTime" Precision="3" />
+          <Property Name="despatchdate" Type="DateTime" Precision="3" />
+          <Property Name="issuedate" Type="DateTime" Precision="3" />
+          <Property Name="confirmdate" Type="DateTime" Precision="3" />
+          <Property Name="consigdoc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="exceptions" Type="Int16" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="authorityno" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreateUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="AmendUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="AuthorizeUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="AuthorizeDate" Type="DateTime" Precision="3" />
+          <Property Name="ManyToOne" Type="Boolean" Nullable="false" />
+          <Property Name="ChannelType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="TransferRequest" Type="Boolean" Nullable="false" />
+          <Property Name="TransferAll" Type="Boolean" Nullable="false" />
+          <Property Name="BuyerCode" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="ReasonCode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="RTV" Type="Boolean" Nullable="false" />
+          <Property Name="TransferRequestID" Type="Int32" />
+          <Property Name="StoreInitiated" Type="Boolean" Nullable="false" />
+          <Property Name="RTVAuthRequestedUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="RTVAuthRequestedDate" Type="DateTime" Precision="3" />
+          <Property Name="RTVRejectNotes" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="RTVRejectedUser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="RTVRejectedDate" Type="DateTime" Precision="3" />
+          <Property Name="RTVCancelReasonCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RTVCancelReasonGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="DateExtractedToAP" Type="DateTime" Precision="3" />
+          <Property Name="AllowAddProductsDuringPack" Type="Boolean" Nullable="false" />
+          <Property Name="DateCreatedInStore" Type="DateTime" Precision="3" />
+          <Property Name="UserCreatedInStore" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="consigline">
+          <Key>
+            <PropertyRef Name="transline" />
+          </Key>
+          <Property Name="condestint" Type="Int32" Nullable="false" />
+          <Property Name="transline" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="conlineint" Type="Int32" Nullable="false" />
+          <Property Name="destordref" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="destordline" Type="Int32" />
+          <Property Name="destordint" Type="Int32" />
+          <Property Name="varint" Type="Int32" Nullable="false" />
+          <Property Name="batchint" Type="Int32" />
+          <Property Name="issueqty" Type="Int32" Nullable="false" />
+          <Property Name="receiveqty" Type="Int32" />
+          <Property Name="avcost" Type="Double" Nullable="false" />
+          <Property Name="unitretail" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="othervalue" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="discrepqty" Type="Int32" />
+          <Property Name="download" Type="Int16" Nullable="false" />
+          <Property Name="RequestQty" Type="Int32" Nullable="false" />
+          <Property Name="ReasonCode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="WIPQty" Type="Int32" />
+          <Property Name="InTransitQuantity" Type="Int32" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="PackedQty" Type="Int32" Nullable="false" />
+          <Property Name="DestLocAverageCost" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="DestLocUnitPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="hs_processed_consighdrs">
+          <Key>
+            <PropertyRef Name="rowid" />
+          </Key>
+          <Property Name="rowid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="consignment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date_bookedin" Type="DateTime" Precision="3" />
+          <Property Name="isBookedin" Type="Boolean" Nullable="false" />
+          <Property Name="storeid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="hs_processed_interstore">
+          <Key>
+            <PropertyRef Name="rowid" />
+          </Key>
+          <Property Name="rowid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="gdonumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date_booked_in" Type="DateTime" Precision="3" />
+          <Property Name="isBookedin" Type="Boolean" />
+          <Property Name="storeid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="hs_processed_purchorders">
+          <Key>
+            <PropertyRef Name="rowid" />
+          </Key>
+          <Property Name="rowid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ponumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date_booked_in" Type="DateTime" Precision="3" />
+          <Property Name="isBookedin" Type="Boolean" />
+          <Property Name="storeid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="purchordline">
+          <Key>
+            <PropertyRef Name="transint" />
+            <PropertyRef Name="transline" />
+            <PropertyRef Name="varint" />
+            <PropertyRef Name="prodint" />
+            <PropertyRef Name="baseproduct" />
+            <PropertyRef Name="quantity" />
+            <PropertyRef Name="makeupqty" />
+            <PropertyRef Name="unitcost" />
+            <PropertyRef Name="netcost" />
+            <PropertyRef Name="unitretail" />
+            <PropertyRef Name="status" />
+            <PropertyRef Name="purchlineint" />
+            <PropertyRef Name="CreatedOffline" />
+            <PropertyRef Name="LandedCost" />
+            <PropertyRef Name="DutiableCost" />
+            <PropertyRef Name="MultiBrand" />
+            <PropertyRef Name="BoxCount" />
+            <PropertyRef Name="PreTicket" />
+            <PropertyRef Name="SampleQty" />
+            <PropertyRef Name="QtyPerPurchUnit" />
+            <PropertyRef Name="QtyInPurchUnits" />
+            <PropertyRef Name="FirstCostPerPurchUnit" />
+            <PropertyRef Name="TaxRate" />
+            <PropertyRef Name="DateCreated" />
+            <PropertyRef Name="DateAmendedForEDI" />
+          </Key>
+          <Property Name="transint" Type="Int32" Nullable="false" />
+          <Property Name="transline" Type="Int16" Nullable="false" />
+          <Property Name="location" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="deliverydate" Type="DateTime" Precision="3" />
+          <Property Name="canceldate" Type="DateTime" Precision="3" />
+          <Property Name="varint" Type="Int32" Nullable="false" />
+          <Property Name="prodint" Type="Int32" Nullable="false" />
+          <Property Name="baseproduct" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="quantity" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="makeupqty" Type="Int32" Nullable="false" />
+          <Property Name="purchunits" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="unitcost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="netcost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="unitretail" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="bandingunits" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="packagetype" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="origin" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="suppprodref" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="quoteref" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="quotedate" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Int16" Nullable="false" />
+          <Property Name="amendstatus" Type="Int16" />
+          <Property Name="makeupstatus" Type="Int16" />
+          <Property Name="purchlineint" Type="Int32" Nullable="false" />
+          <Property Name="supprodint" Type="Int32" />
+          <Property Name="delschstatus" Type="Int16" />
+          <Property Name="CreatedOffline" Type="Boolean" Nullable="false" />
+          <Property Name="LandedCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="DutiableCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="MultiBrand" Type="Boolean" Nullable="false" />
+          <Property Name="BoxCount" Type="Int32" Nullable="false" />
+          <Property Name="PreTicket" Type="Boolean" Nullable="false" />
+          <Property Name="SampleQty" Type="Int32" Nullable="false" />
+          <Property Name="YrWeek" Type="Int32" />
+          <Property Name="QtyPerPurchUnit" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="QtyInPurchUnits" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="FirstCostPerPurchUnit" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="PurchUnitsID" Type="Int32" />
+          <Property Name="TaxRate" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="MergedIntoPOLineID" Type="Int32" />
+          <Property Name="CustomerOrderLineID" Type="Int32" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateAmendedForEDI" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateReopened" Type="DateTime" Precision="3" />
+          <Property Name="QtyFromEDILastSent" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SpecialOrderDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="statuscode">
+          <Key>
+            <PropertyRef Name="statcode" />
+            <PropertyRef Name="status" />
+            <PropertyRef Name="description" />
+            <PropertyRef Name="intvalue" />
+            <PropertyRef Name="included" />
+          </Key>
+          <Property Name="statcode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="shortdesc" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="intvalue" Type="Int16" Nullable="false" />
+          <Property Name="included" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="supplier">
+          <Key>
+            <PropertyRef Name="supplier1" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="shortname" />
+            <PropertyRef Name="accounttype" />
+            <PropertyRef Name="leadtimetype" />
+            <PropertyRef Name="createdate" />
+            <PropertyRef Name="suppint" />
+            <PropertyRef Name="EdiStatus" />
+            <PropertyRef Name="EdiFormat" />
+            <PropertyRef Name="EdiPo" />
+            <PropertyRef Name="EdiPoAck" />
+            <PropertyRef Name="EdiPoAmend" />
+            <PropertyRef Name="EdiInvoice" />
+            <PropertyRef Name="EdiAsn" />
+            <PropertyRef Name="EdiPayment" />
+            <PropertyRef Name="EdiCatalog" />
+            <PropertyRef Name="EdiFuncAck" />
+            <PropertyRef Name="AutoAuthorizeOrders" />
+            <PropertyRef Name="Import" />
+            <PropertyRef Name="Active" />
+            <PropertyRef Name="Fulfillment" />
+            <PropertyRef Name="FFShipChargeType" />
+            <PropertyRef Name="FFShipChargeCountType" />
+            <PropertyRef Name="FFUsePackaging" />
+            <PropertyRef Name="FFPackagingOptimizationType" />
+            <PropertyRef Name="CreatedOffline" />
+            <PropertyRef Name="Interfaced" />
+            <PropertyRef Name="PreTicket" />
+            <PropertyRef Name="DUNS" />
+            <PropertyRef Name="RequireVendorProduct" />
+            <PropertyRef Name="RequireVendorUPC" />
+            <PropertyRef Name="Edi850ControlNumber" />
+            <PropertyRef Name="VMI" />
+            <PropertyRef Name="AutoReceiveASN" />
+            <PropertyRef Name="CancelAfterDays" />
+            <PropertyRef Name="Edi850DTM001InUse" />
+            <PropertyRef Name="Edi850DTM010InUse" />
+            <PropertyRef Name="Edi850DTM037InUse" />
+            <PropertyRef Name="Edi850DTM038InUse" />
+            <PropertyRef Name="Edi850DTM074InUse" />
+            <PropertyRef Name="VendorLocationsInUse" />
+            <PropertyRef Name="EdiUseTildeAsSegmentTerminator" />
+            <PropertyRef Name="EnforceVendorCompanyLocationRules" />
+            <PropertyRef Name="UseSystemTolerance" />
+            <PropertyRef Name="ImportingCompanyGLU" />
+            <PropertyRef Name="SbaContractInUse" />
+            <PropertyRef Name="CommercialDiscountPercent" />
+            <PropertyRef Name="DefectiveMerchandiseDiscountPercent" />
+            <PropertyRef Name="EdiProviderGLU" />
+            <PropertyRef Name="EdiMessagingProtocolGLU" />
+            <PropertyRef Name="OrderPlanRequired" />
+            <PropertyRef Name="AllowBrokenPacks" />
+            <PropertyRef Name="NewStoreDiscountDays" />
+            <PropertyRef Name="EdiProductActivity" />
+            <PropertyRef Name="UpdateCostOnASN" />
+            <PropertyRef Name="RebateVendorGLU" />
+            <PropertyRef Name="VerticallyIntegratedRetailer" />
+            <PropertyRef Name="SpecialOrders" />
+            <PropertyRef Name="SpecialOrdersSpecRequired" />
+            <PropertyRef Name="Edi850DTM001DeliveryDateInUse" />
+            <PropertyRef Name="Edi850SDQInUse" />
+            <PropertyRef Name="Edi850TD5InUse" />
+            <PropertyRef Name="Edi850ITDInUse" />
+            <PropertyRef Name="EdiFuncAckForInvoice" />
+          </Key>
+          <Property Name="supplier1" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="shortname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="commsline" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="hoaccountno" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="grpaccountno" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="category" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="typecode" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="class" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="accounttype" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="buyer" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="ordermethod" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="merchplan" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="invmethod" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="paymethod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="currency" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="retmethod" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="creditproc" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="minlead" Type="Int32" />
+          <Property Name="maxlead" Type="Int32" />
+          <Property Name="leadtimetype" Type="Int16" Nullable="false" />
+          <Property Name="orderbranch" Type="Int32" />
+          <Property Name="historylevel" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="suppprod" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="lastmovedate" Type="DateTime" Precision="3" />
+          <Property Name="createdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="amenddate" Type="DateTime" Precision="3" />
+          <Property Name="deletedate" Type="DateTime" Precision="3" />
+          <Property Name="suppint" Type="Int32" Nullable="false" />
+          <Property Name="suspreason" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="suspreasonra" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="suspreasonap" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="suspdate" Type="DateTime" Precision="3" />
+          <Property Name="suspuser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="reinstdate" Type="DateTime" Precision="3" />
+          <Property Name="reinstuser" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="minorder" Type="Int32" />
+          <Property Name="maxorder" Type="Int32" />
+          <Property Name="anacode" Type="String" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="discount" Type="Double" />
+          <Property Name="languageid" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="settletype" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="taxregno" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="printprice" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="supptype" Type="Int16" />
+          <Property Name="buymethod" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="stdindclass" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="dbrating" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="reportcat" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="carrier" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="multilocords" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="maxdelval" Type="Int32" />
+          <Property Name="mindelval" Type="Int32" />
+          <Property Name="allowbo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="compafter" Type="Int32" />
+          <Property Name="sa01" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa02" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa03" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa04" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa05" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa06" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa07" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa08" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa09" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa10" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa11" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa12" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa13" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa14" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa15" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa16" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa17" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa18" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa19" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa20" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa21" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa22" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa23" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa24" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="sa25" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EdiTestCodeQualifier" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="EdiTestCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="EdiLiveCodeQualifier" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="EdiLiveCode" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="EdiStatus" Type="Byte" Nullable="false" />
+          <Property Name="EdiFormat" Type="Byte" Nullable="false" />
+          <Property Name="EdiVersion" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="EdiTestStartDate" Type="DateTime" Precision="3" />
+          <Property Name="EdiLiveStartDate" Type="DateTime" Precision="3" />
+          <Property Name="EdiSuspendDate" Type="DateTime" Precision="3" />
+          <Property Name="EdiPo" Type="Byte" Nullable="false" />
+          <Property Name="EdiPoAck" Type="Boolean" Nullable="false" />
+          <Property Name="EdiPoAmend" Type="Boolean" Nullable="false" />
+          <Property Name="EdiInvoice" Type="Boolean" Nullable="false" />
+          <Property Name="EdiAsn" Type="Boolean" Nullable="false" />
+          <Property Name="EdiPayment" Type="Boolean" Nullable="false" />
+          <Property Name="EdiCatalog" Type="Boolean" Nullable="false" />
+          <Property Name="EdiFuncAck" Type="Boolean" Nullable="false" />
+          <Property Name="AutoAuthorizeOrders" Type="Byte" Nullable="false" />
+          <Property Name="TransportMethod" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Import" Type="Boolean" Nullable="false" />
+          <Property Name="Brand" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Fulfillment" Type="Boolean" Nullable="false" />
+          <Property Name="FFShipMode" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FFShipModeInt" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FFHandlingCharge" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="FFHandlingChargeInt" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="FFItemHandlingCharge" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="FFItemHandlingChargeInt" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="FFShipChargeType" Type="Byte" Nullable="false" />
+          <Property Name="FFShipChargeCountType" Type="Byte" Nullable="false" />
+          <Property Name="FFUsePackaging" Type="Boolean" Nullable="false" />
+          <Property Name="FFPackagingOptimizationType" Type="Byte" Nullable="false" />
+          <Property Name="CreatedOffline" Type="Boolean" Nullable="false" />
+          <Property Name="Interfaced" Type="Boolean" Nullable="false" />
+          <Property Name="DateInterfaced" Type="DateTime" Precision="3" />
+          <Property Name="PreTicket" Type="Boolean" Nullable="false" />
+          <Property Name="DUNS" Type="Int32" Nullable="false" />
+          <Property Name="RequireVendorProduct" Type="Byte" Nullable="false" />
+          <Property Name="RequireVendorUPC" Type="Byte" Nullable="false" />
+          <Property Name="Edi850ControlNumber" Type="Int32" Nullable="false" />
+          <Property Name="VMI" Type="Boolean" Nullable="false" />
+          <Property Name="AutoReceiveASN" Type="Byte" Nullable="false" />
+          <Property Name="CancelAfterDays" Type="Byte" Nullable="false" />
+          <Property Name="Edi850DTM001InUse" Type="Boolean" Nullable="false" />
+          <Property Name="Edi850DTM010InUse" Type="Boolean" Nullable="false" />
+          <Property Name="Edi850DTM037InUse" Type="Boolean" Nullable="false" />
+          <Property Name="Edi850DTM038InUse" Type="Boolean" Nullable="false" />
+          <Property Name="Edi850DTM074InUse" Type="Boolean" Nullable="false" />
+          <Property Name="EdiLastInvoiceCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="EdiLastASNCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VendorLocationsInUse" Type="Boolean" Nullable="false" />
+          <Property Name="EdiUseTildeAsSegmentTerminator" Type="Byte" Nullable="false" />
+          <Property Name="EnforceVendorCompanyLocationRules" Type="Byte" Nullable="false" />
+          <Property Name="UseSystemTolerance" Type="Boolean" Nullable="false" />
+          <Property Name="ImportingCompany" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ImportingCompanyGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="SbaContractInUse" Type="Boolean" Nullable="false" />
+          <Property Name="SbaContractStartDate" Type="DateTime" Precision="0" />
+          <Property Name="CommercialDiscountPercent" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="CommercialDiscountPercentStartDate" Type="DateTime" Precision="0" />
+          <Property Name="DefectiveMerchandiseDiscountPercent" Type="Decimal" Precision="5" Scale="2" Nullable="false" />
+          <Property Name="DefectiveMerchandiseDiscountPercentStartDate" Type="DateTime" Precision="0" />
+          <Property Name="EdiProvider" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EdiProviderGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="EdiMessagingProtocol" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EdiMessagingProtocolGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="OrderPlanRequired" Type="Boolean" Nullable="false" />
+          <Property Name="AllowBrokenPacks" Type="Boolean" Nullable="false" />
+          <Property Name="NewStoreDiscountDays" Type="Byte" Nullable="false" />
+          <Property Name="EdiProductActivity" Type="Boolean" Nullable="false" />
+          <Property Name="UpdateCostOnASN" Type="Boolean" Nullable="false" />
+          <Property Name="RebateVendor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="RebateVendorGLU" Type="String" MaxLength="4" FixedLength="false" Unicode="false" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="VerticallyIntegratedRetailer" Type="Boolean" Nullable="false" />
+          <Property Name="SpecialOrders" Type="Boolean" Nullable="false" />
+          <Property Name="SpecialOrdersSpecRequired" Type="Boolean" Nullable="false" />
+          <Property Name="Edi850DTM001DeliveryDateInUse" Type="Boolean" Nullable="false" />
+          <Property Name="Edi850SDQInUse" Type="Boolean" Nullable="false" />
+          <Property Name="Edi850TD5InUse" Type="Boolean" Nullable="false" />
+          <Property Name="Edi850ITDInUse" Type="Boolean" Nullable="false" />
+          <Property Name="EdiFuncAckForInvoice" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ProDbContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="consigdests" EntityType="Self.consigdest" />
+          <EntitySet Name="consighdrs" EntityType="Self.consighdr" />
+          <EntitySet Name="consiglines" EntityType="Self.consigline" />
+          <EntitySet Name="hs_processed_consighdrs" EntityType="Self.hs_processed_consighdrs" />
+          <EntitySet Name="hs_processed_interstore" EntityType="Self.hs_processed_interstore" />
+          <EntitySet Name="hs_processed_purchorders" EntityType="Self.hs_processed_purchorders" />
+          <EntitySet Name="purchordlines" EntityType="Self.purchordline" />
+          <EntitySet Name="statuscodes" EntityType="Self.statuscode" />
+          <EntitySet Name="suppliers" EntityType="Self.supplier" />
+          <EntitySet Name="purchorders" EntityType="tfs_hs_holdingModel.purchorder" />
+          <EntitySet Name="TOFS_12WeeksSales" EntityType="tfs_hs_holdingModel.TOFS_12WeeksSales" />
+          <EntitySet Name="tbl_PP_ThresholdValues" EntityType="tfs_hs_holdingModel.tbl_PP_ThresholdValues" />
+          <EntitySet Name="tbl_ProfitProtectionHeldItems" EntityType="tfs_hs_holdingModel.tbl_ProfitProtectionHeldItems" />
+        </EntityContainer>
+        <EntityType Name="purchorder">
+          <Key>
+            <PropertyRef Name="ordernumber" />
+          </Key>
+          <Property Name="suppint" Type="Int32" />
+          <Property Name="ordernumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="orderdate" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Int16" />
+          <Property Name="transint" Type="Int32" />
+          <Property Name="shipdate" Type="DateTime" Precision="3" />
+          <Property Name="location" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="lastdeldate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TOFS_12WeeksSales">
+          <Key>
+            <PropertyRef Name="rowId" />
+          </Key>
+          <Property Name="rowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="branchcode" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="varint" Type="Int32" />
+          <Property Name="salesweek" Type="String" MaxLength="6" FixedLength="false" Unicode="false" />
+          <Property Name="Sales" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_PP_ThresholdValues">
+          <Key>
+            <PropertyRef Name="rowId" />
+          </Key>
+          <Property Name="rowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="thresholdvalue" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="createdby" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="datecreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dateupdated" Type="DateTime" Precision="3" />
+          <Property Name="updatedby" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isInUse" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tbl_ProfitProtectionHeldItems">
+          <Key>
+            <PropertyRef Name="RowId" />
+          </Key>
+          <Property Name="RowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateWrittenOff" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="userid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="storeid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sku" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="varint" Type="Int32" Nullable="false" />
+          <Property Name="quantity" Type="Int32" Nullable="false" />
+          <Property Name="costvalueperitem" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="costtotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="eventdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="reasoncode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isHeld" Type="Boolean" />
+          <Property Name="uniquefilename" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="storename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="triggeramount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="retailpriceperitem" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="isDeleted" Type="Boolean" />
+          <Property Name="DateDeleted" Type="DateTime" Precision="3" />
+          <Property Name="DeletedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="tfs_hs_holdingModelStoreContainer" CdmEntityContainer="ProDbContext">
+          <EntitySetMapping Name="consigdests">
+            <EntityTypeMapping TypeName="tfs_hs_holdingModel.consigdest">
+              <MappingFragment StoreEntitySet="consigdests">
+                <ScalarProperty Name="warehouse" ColumnName="warehouse" />
+                <ScalarProperty Name="consignment" ColumnName="consignment" />
+                <ScalarProperty Name="desttype" ColumnName="desttype" />
+                <ScalarProperty Name="destination" ColumnName="destination" />
+                <ScalarProperty Name="condestint" ColumnName="condestint" />
+                <ScalarProperty Name="delroute" ColumnName="delroute" />
+                <ScalarProperty Name="droppoint" ColumnName="droppoint" />
+                <ScalarProperty Name="destdoc" ColumnName="destdoc" />
+                <ScalarProperty Name="delroutedoc" ColumnName="delroutedoc" />
+                <ScalarProperty Name="payterms" ColumnName="payterms" />
+                <ScalarProperty Name="freightchg" ColumnName="freightchg" />
+                <ScalarProperty Name="freighttax" ColumnName="freighttax" />
+                <ScalarProperty Name="address1" ColumnName="address1" />
+                <ScalarProperty Name="address2" ColumnName="address2" />
+                <ScalarProperty Name="address3" ColumnName="address3" />
+                <ScalarProperty Name="address4" ColumnName="address4" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="notepad" ColumnName="notepad" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="reference" ColumnName="reference" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="reasoncode" ColumnName="reasoncode" />
+                <ScalarProperty Name="reference2" ColumnName="reference2" />
+                <ScalarProperty Name="KitAssemblyOrderDestinationID" ColumnName="KitAssemblyOrderDestinationID" />
+                <ScalarProperty Name="ShipDate" ColumnName="ShipDate" />
+                <ScalarProperty Name="ShipUser" ColumnName="ShipUser" />
+                <ScalarProperty Name="ReceiveDate" ColumnName="ReceiveDate" />
+                <ScalarProperty Name="ReceiveUser" ColumnName="ReceiveUser" />
+                <ScalarProperty Name="AllocStatus" ColumnName="AllocStatus" />
+                <ScalarProperty Name="PickStatus" ColumnName="PickStatus" />
+                <ScalarProperty Name="ParcelCnt" ColumnName="ParcelCnt" />
+                <ScalarProperty Name="ParcelType" ColumnName="ParcelType" />
+                <ScalarProperty Name="DateInterfaced" ColumnName="DateInterfaced" />
+                <ScalarProperty Name="ShippingCost" ColumnName="ShippingCost" />
+                <ScalarProperty Name="RTVDisposalMethod" ColumnName="RTVDisposalMethod" />
+                <ScalarProperty Name="SourceSubLocationID" ColumnName="SourceSubLocationID" />
+                <ScalarProperty Name="UserCancelled" ColumnName="UserCancelled" />
+                <ScalarProperty Name="DateCancelled" ColumnName="DateCancelled" />
+                <ScalarProperty Name="UserReopened" ColumnName="UserReopened" />
+                <ScalarProperty Name="DateReopened" ColumnName="DateReopened" />
+                <ScalarProperty Name="RowVer" ColumnName="RowVer" />
+                <ScalarProperty Name="VendorLocationID" ColumnName="VendorLocationID" />
+                <ScalarProperty Name="ShipMethodCode" ColumnName="ShipMethodCode" />
+                <ScalarProperty Name="ShipMethodCodeGLU" ColumnName="ShipMethodCodeGLU" />
+                <ScalarProperty Name="ShipReference" ColumnName="ShipReference" />
+                <ScalarProperty Name="DriverReference" ColumnName="DriverReference" />
+                <ScalarProperty Name="TruckNumber" ColumnName="TruckNumber" />
+                <ScalarProperty Name="UserRejected" ColumnName="UserRejected" />
+                <ScalarProperty Name="DateRejected" ColumnName="DateRejected" />
+                <ScalarProperty Name="UserApproved" ColumnName="UserApproved" />
+                <ScalarProperty Name="DateApproved" ColumnName="DateApproved" />
+                <ScalarProperty Name="DateLastModified" ColumnName="DateLastModified" />
+                <ScalarProperty Name="DateCreatedInStore" ColumnName="DateCreatedInStore" />
+                <ScalarProperty Name="UserCreatedInStore" ColumnName="UserCreatedInStore" />
+                <ScalarProperty Name="DateCancelledInStore" ColumnName="DateCancelledInStore" />
+                <ScalarProperty Name="UserCancelledInStore" ColumnName="UserCancelledInStore" />
+                <ScalarProperty Name="StoreSuggestionCode" ColumnName="StoreSuggestionCode" />
+                <ScalarProperty Name="DateAmendedInStore" ColumnName="DateAmendedInStore" />
+                <ScalarProperty Name="UserAmendedInStore" ColumnName="UserAmendedInStore" />
+                <ScalarProperty Name="DateApprovedInStore" ColumnName="DateApprovedInStore" />
+                <ScalarProperty Name="UserApprovedInStore" ColumnName="UserApprovedInStore" />
+                <ScalarProperty Name="DateShippedInStore" ColumnName="DateShippedInStore" />
+                <ScalarProperty Name="UserShippedInStore" ColumnName="UserShippedInStore" />
+                <ScalarProperty Name="ParentShipDestID" ColumnName="ParentShipDestID" />
+                <ScalarProperty Name="LastChildShipCodeSuffix" ColumnName="LastChildShipCodeSuffix" />
+                <ScalarProperty Name="DateReceivedInStore" ColumnName="DateReceivedInStore" />
+                <ScalarProperty Name="UserReceivedInStore" ColumnName="UserReceivedInStore" />
+                <ScalarProperty Name="sourceName" ColumnName="sourceName" />
+                <ScalarProperty Name="destName" ColumnName="destName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="consighdrs">
+            <EntityTypeMapping TypeName="tfs_hs_holdingModel.consighdr">
+              <MappingFragment StoreEntitySet="consighdrs">
+                <ScalarProperty Name="warehouse" ColumnName="warehouse" />
+                <ScalarProperty Name="consignment" ColumnName="consignment" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="collect" ColumnName="collect" />
+                <ScalarProperty Name="carrier" ColumnName="carrier" />
+                <ScalarProperty Name="notepad" ColumnName="notepad" />
+                <ScalarProperty Name="createdate" ColumnName="createdate" />
+                <ScalarProperty Name="amenddate" ColumnName="amenddate" />
+                <ScalarProperty Name="despatchdate" ColumnName="despatchdate" />
+                <ScalarProperty Name="issuedate" ColumnName="issuedate" />
+                <ScalarProperty Name="confirmdate" ColumnName="confirmdate" />
+                <ScalarProperty Name="consigdoc" ColumnName="consigdoc" />
+                <ScalarProperty Name="exceptions" ColumnName="exceptions" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="authorityno" ColumnName="authorityno" />
+                <ScalarProperty Name="CreateUser" ColumnName="CreateUser" />
+                <ScalarProperty Name="AmendUser" ColumnName="AmendUser" />
+                <ScalarProperty Name="AuthorizeUser" ColumnName="AuthorizeUser" />
+                <ScalarProperty Name="AuthorizeDate" ColumnName="AuthorizeDate" />
+                <ScalarProperty Name="ManyToOne" ColumnName="ManyToOne" />
+                <ScalarProperty Name="ChannelType" ColumnName="ChannelType" />
+                <ScalarProperty Name="TransferRequest" ColumnName="TransferRequest" />
+                <ScalarProperty Name="TransferAll" ColumnName="TransferAll" />
+                <ScalarProperty Name="BuyerCode" ColumnName="BuyerCode" />
+                <ScalarProperty Name="ReasonCode" ColumnName="ReasonCode" />
+                <ScalarProperty Name="RTV" ColumnName="RTV" />
+                <ScalarProperty Name="TransferRequestID" ColumnName="TransferRequestID" />
+                <ScalarProperty Name="StoreInitiated" ColumnName="StoreInitiated" />
+                <ScalarProperty Name="RTVAuthRequestedUser" ColumnName="RTVAuthRequestedUser" />
+                <ScalarProperty Name="RTVAuthRequestedDate" ColumnName="RTVAuthRequestedDate" />
+                <ScalarProperty Name="RTVRejectNotes" ColumnName="RTVRejectNotes" />
+                <ScalarProperty Name="RTVRejectedUser" ColumnName="RTVRejectedUser" />
+                <ScalarProperty Name="RTVRejectedDate" ColumnName="RTVRejectedDate" />
+                <ScalarProperty Name="RTVCancelReasonCode" ColumnName="RTVCancelReasonCode" />
+                <ScalarProperty Name="RTVCancelReasonGLU" ColumnName="RTVCancelReasonGLU" />
+                <ScalarProperty Name="DateExtractedToAP" ColumnName="DateExtractedToAP" />
+                <ScalarProperty Name="AllowAddProductsDuringPack" ColumnName="AllowAddProductsDuringPack" />
+                <ScalarProperty Name="DateCreatedInStore" ColumnName="DateCreatedInStore" />
+                <ScalarProperty Name="UserCreatedInStore" ColumnName="UserCreatedInStore" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="consiglines">
+            <EntityTypeMapping TypeName="tfs_hs_holdingModel.consigline">
+              <MappingFragment StoreEntitySet="consiglines">
+                <ScalarProperty Name="condestint" ColumnName="condestint" />
+                <ScalarProperty Name="transline" ColumnName="transline" />
+                <ScalarProperty Name="conlineint" ColumnName="conlineint" />
+                <ScalarProperty Name="destordref" ColumnName="destordref" />
+                <ScalarProperty Name="destordline" ColumnName="destordline" />
+                <ScalarProperty Name="destordint" ColumnName="destordint" />
+                <ScalarProperty Name="varint" ColumnName="varint" />
+                <ScalarProperty Name="batchint" ColumnName="batchint" />
+                <ScalarProperty Name="issueqty" ColumnName="issueqty" />
+                <ScalarProperty Name="receiveqty" ColumnName="receiveqty" />
+                <ScalarProperty Name="avcost" ColumnName="avcost" />
+                <ScalarProperty Name="unitretail" ColumnName="unitretail" />
+                <ScalarProperty Name="othervalue" ColumnName="othervalue" />
+                <ScalarProperty Name="discrepqty" ColumnName="discrepqty" />
+                <ScalarProperty Name="download" ColumnName="download" />
+                <ScalarProperty Name="RequestQty" ColumnName="RequestQty" />
+                <ScalarProperty Name="ReasonCode" ColumnName="ReasonCode" />
+                <ScalarProperty Name="WIPQty" ColumnName="WIPQty" />
+                <ScalarProperty Name="InTransitQuantity" ColumnName="InTransitQuantity" />
+                <ScalarProperty Name="PackedQty" ColumnName="PackedQty" />
+                <ScalarProperty Name="DestLocAverageCost" ColumnName="DestLocAverageCost" />
+                <ScalarProperty Name="DestLocUnitPrice" ColumnName="DestLocUnitPrice" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hs_processed_consighdrs">
+            <EntityTypeMapping TypeName="tfs_hs_holdingModel.hs_processed_consighdrs">
+              <MappingFragment StoreEntitySet="hs_processed_consighdrs">
+                <ScalarProperty Name="rowid" ColumnName="rowid" />
+                <ScalarProperty Name="consignment" ColumnName="consignment" />
+                <ScalarProperty Name="date_bookedin" ColumnName="date_bookedin" />
+                <ScalarProperty Name="isBookedin" ColumnName="isBookedin" />
+                <ScalarProperty Name="storeid" ColumnName="storeid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hs_processed_interstore">
+            <EntityTypeMapping TypeName="tfs_hs_holdingModel.hs_processed_interstore">
+              <MappingFragment StoreEntitySet="hs_processed_interstore">
+                <ScalarProperty Name="rowid" ColumnName="rowid" />
+                <ScalarProperty Name="gdonumber" ColumnName="gdonumber" />
+                <ScalarProperty Name="date_booked_in" ColumnName="date_booked_in" />
+                <ScalarProperty Name="isBookedin" ColumnName="isBookedin" />
+                <ScalarProperty Name="storeid" ColumnName="storeid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hs_processed_purchorders">
+            <EntityTypeMapping TypeName="tfs_hs_holdingModel.hs_processed_purchorders">
+              <MappingFragment StoreEntitySet="hs_processed_purchorders">
+                <ScalarProperty Name="rowid" ColumnName="rowid" />
+                <ScalarProperty Name="ponumber" ColumnName="ponumber" />
+                <ScalarProperty Name="date_booked_in" ColumnName="date_booked_in" />
+                <ScalarProperty Name="isBookedin" ColumnName="isBookedin" />
+                <ScalarProperty Name="storeid" ColumnName="storeid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="purchordlines">
+            <EntityTypeMapping TypeName="tfs_hs_holdingModel.purchordline">
+              <MappingFragment StoreEntitySet="purchordline">
+                <ScalarProperty Name="transint" ColumnName="transint" />
+                <ScalarProperty Name="transline" ColumnName="transline" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="deliverydate" ColumnName="deliverydate" />
+                <ScalarProperty Name="canceldate" ColumnName="canceldate" />
+                <ScalarProperty Name="varint" ColumnName="varint" />
+                <ScalarProperty Name="prodint" ColumnName="prodint" />
+                <ScalarProperty Name="baseproduct" ColumnName="baseproduct" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="makeupqty" ColumnName="makeupqty" />
+                <ScalarProperty Name="purchunits" ColumnName="purchunits" />
+                <ScalarProperty Name="unitcost" ColumnName="unitcost" />
+                <ScalarProperty Name="netcost" ColumnName="netcost" />
+                <ScalarProperty Name="unitretail" ColumnName="unitretail" />
+                <ScalarProperty Name="bandingunits" ColumnName="bandingunits" />
+                <ScalarProperty Name="packagetype" ColumnName="packagetype" />
+                <ScalarProperty Name="origin" ColumnName="origin" />
+                <ScalarProperty Name="suppprodref" ColumnName="suppprodref" />
+                <ScalarProperty Name="quoteref" ColumnName="quoteref" />
+                <ScalarProperty Name="quotedate" ColumnName="quotedate" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="amendstatus" ColumnName="amendstatus" />
+                <ScalarProperty Name="makeupstatus" ColumnName="makeupstatus" />
+                <ScalarProperty Name="purchlineint" ColumnName="purchlineint" />
+                <ScalarProperty Name="supprodint" ColumnName="supprodint" />
+                <ScalarProperty Name="delschstatus" ColumnName="delschstatus" />
+                <ScalarProperty Name="CreatedOffline" ColumnName="CreatedOffline" />
+                <ScalarProperty Name="LandedCost" ColumnName="LandedCost" />
+                <ScalarProperty Name="DutiableCost" ColumnName="DutiableCost" />
+                <ScalarProperty Name="MultiBrand" ColumnName="MultiBrand" />
+                <ScalarProperty Name="BoxCount" ColumnName="BoxCount" />
+                <ScalarProperty Name="PreTicket" ColumnName="PreTicket" />
+                <ScalarProperty Name="SampleQty" ColumnName="SampleQty" />
+                <ScalarProperty Name="YrWeek" ColumnName="YrWeek" />
+                <ScalarProperty Name="QtyPerPurchUnit" ColumnName="QtyPerPurchUnit" />
+                <ScalarProperty Name="QtyInPurchUnits" ColumnName="QtyInPurchUnits" />
+                <ScalarProperty Name="FirstCostPerPurchUnit" ColumnName="FirstCostPerPurchUnit" />
+                <ScalarProperty Name="PurchUnitsID" ColumnName="PurchUnitsID" />
+                <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+                <ScalarProperty Name="MergedIntoPOLineID" ColumnName="MergedIntoPOLineID" />
+                <ScalarProperty Name="CustomerOrderLineID" ColumnName="CustomerOrderLineID" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateAmendedForEDI" ColumnName="DateAmendedForEDI" />
+                <ScalarProperty Name="DateReopened" ColumnName="DateReopened" />
+                <ScalarProperty Name="QtyFromEDILastSent" ColumnName="QtyFromEDILastSent" />
+                <ScalarProperty Name="SpecialOrderDescription" ColumnName="SpecialOrderDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="statuscodes">
+            <EntityTypeMapping TypeName="tfs_hs_holdingModel.statuscode">
+              <MappingFragment StoreEntitySet="statuscodes">
+                <ScalarProperty Name="statcode" ColumnName="statcode" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="shortdesc" ColumnName="shortdesc" />
+                <ScalarProperty Name="intvalue" ColumnName="intvalue" />
+                <ScalarProperty Name="included" ColumnName="included" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="suppliers">
+            <EntityTypeMapping TypeName="tfs_hs_holdingModel.supplier">
+              <MappingFragment StoreEntitySet="suppliers">
+                <ScalarProperty Name="supplier1" ColumnName="supplier" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="shortname" ColumnName="shortname" />
+                <ScalarProperty Name="commsline" ColumnName="commsline" />
+                <ScalarProperty Name="hoaccountno" ColumnName="hoaccountno" />
+                <ScalarProperty Name="grpaccountno" ColumnName="grpaccountno" />
+                <ScalarProperty Name="category" ColumnName="category" />
+                <ScalarProperty Name="typecode" ColumnName="typecode" />
+                <ScalarProperty Name="class" ColumnName="class" />
+                <ScalarProperty Name="accounttype" ColumnName="accounttype" />
+                <ScalarProperty Name="buyer" ColumnName="buyer" />
+                <ScalarProperty Name="ordermethod" ColumnName="ordermethod" />
+                <ScalarProperty Name="merchplan" ColumnName="merchplan" />
+                <ScalarProperty Name="invmethod" ColumnName="invmethod" />
+                <ScalarProperty Name="paymethod" ColumnName="paymethod" />
+                <ScalarProperty Name="currency" ColumnName="currency" />
+                <ScalarProperty Name="retmethod" ColumnName="retmethod" />
+                <ScalarProperty Name="creditproc" ColumnName="creditproc" />
+                <ScalarProperty Name="minlead" ColumnName="minlead" />
+                <ScalarProperty Name="maxlead" ColumnName="maxlead" />
+                <ScalarProperty Name="leadtimetype" ColumnName="leadtimetype" />
+                <ScalarProperty Name="orderbranch" ColumnName="orderbranch" />
+                <ScalarProperty Name="historylevel" ColumnName="historylevel" />
+                <ScalarProperty Name="suppprod" ColumnName="suppprod" />
+                <ScalarProperty Name="lastmovedate" ColumnName="lastmovedate" />
+                <ScalarProperty Name="createdate" ColumnName="createdate" />
+                <ScalarProperty Name="amenddate" ColumnName="amenddate" />
+                <ScalarProperty Name="deletedate" ColumnName="deletedate" />
+                <ScalarProperty Name="suppint" ColumnName="suppint" />
+                <ScalarProperty Name="suspreason" ColumnName="suspreason" />
+                <ScalarProperty Name="suspreasonra" ColumnName="suspreasonra" />
+                <ScalarProperty Name="suspreasonap" ColumnName="suspreasonap" />
+                <ScalarProperty Name="suspdate" ColumnName="suspdate" />
+                <ScalarProperty Name="suspuser" ColumnName="suspuser" />
+                <ScalarProperty Name="reinstdate" ColumnName="reinstdate" />
+                <ScalarProperty Name="reinstuser" ColumnName="reinstuser" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="minorder" ColumnName="minorder" />
+                <ScalarProperty Name="maxorder" ColumnName="maxorder" />
+                <ScalarProperty Name="anacode" ColumnName="anacode" />
+                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="languageid" ColumnName="languageid" />
+                <ScalarProperty Name="settletype" ColumnName="settletype" />
+                <ScalarProperty Name="taxregno" ColumnName="taxregno" />
+                <ScalarProperty Name="printprice" ColumnName="printprice" />
+                <ScalarProperty Name="supptype" ColumnName="supptype" />
+                <ScalarProperty Name="buymethod" ColumnName="buymethod" />
+                <ScalarProperty Name="stdindclass" ColumnName="stdindclass" />
+                <ScalarProperty Name="dbrating" ColumnName="dbrating" />
+                <ScalarProperty Name="reportcat" ColumnName="reportcat" />
+                <ScalarProperty Name="carrier" ColumnName="carrier" />
+                <ScalarProperty Name="multilocords" ColumnName="multilocords" />
+                <ScalarProperty Name="maxdelval" ColumnName="maxdelval" />
+                <ScalarProperty Name="mindelval" ColumnName="mindelval" />
+                <ScalarProperty Name="allowbo" ColumnName="allowbo" />
+                <ScalarProperty Name="compafter" ColumnName="compafter" />
+                <ScalarProperty Name="sa01" ColumnName="sa01" />
+                <ScalarProperty Name="sa02" ColumnName="sa02" />
+                <ScalarProperty Name="sa03" ColumnName="sa03" />
+                <ScalarProperty Name="sa04" ColumnName="sa04" />
+                <ScalarProperty Name="sa05" ColumnName="sa05" />
+                <ScalarProperty Name="sa06" ColumnName="sa06" />
+                <ScalarProperty Name="sa07" ColumnName="sa07" />
+                <ScalarProperty Name="sa08" ColumnName="sa08" />
+                <ScalarProperty Name="sa09" ColumnName="sa09" />
+                <ScalarProperty Name="sa10" ColumnName="sa10" />
+                <ScalarProperty Name="sa11" ColumnName="sa11" />
+                <ScalarProperty Name="sa12" ColumnName="sa12" />
+                <ScalarProperty Name="sa13" ColumnName="sa13" />
+                <ScalarProperty Name="sa14" ColumnName="sa14" />
+                <ScalarProperty Name="sa15" ColumnName="sa15" />
+                <ScalarProperty Name="sa16" ColumnName="sa16" />
+                <ScalarProperty Name="sa17" ColumnName="sa17" />
+                <ScalarProperty Name="sa18" ColumnName="sa18" />
+                <ScalarProperty Name="sa19" ColumnName="sa19" />
+                <ScalarProperty Name="sa20" ColumnName="sa20" />
+                <ScalarProperty Name="sa21" ColumnName="sa21" />
+                <ScalarProperty Name="sa22" ColumnName="sa22" />
+                <ScalarProperty Name="sa23" ColumnName="sa23" />
+                <ScalarProperty Name="sa24" ColumnName="sa24" />
+                <ScalarProperty Name="sa25" ColumnName="sa25" />
+                <ScalarProperty Name="EdiTestCodeQualifier" ColumnName="EdiTestCodeQualifier" />
+                <ScalarProperty Name="EdiTestCode" ColumnName="EdiTestCode" />
+                <ScalarProperty Name="EdiLiveCodeQualifier" ColumnName="EdiLiveCodeQualifier" />
+                <ScalarProperty Name="EdiLiveCode" ColumnName="EdiLiveCode" />
+                <ScalarProperty Name="EdiStatus" ColumnName="EdiStatus" />
+                <ScalarProperty Name="EdiFormat" ColumnName="EdiFormat" />
+                <ScalarProperty Name="EdiVersion" ColumnName="EdiVersion" />
+                <ScalarProperty Name="EdiTestStartDate" ColumnName="EdiTestStartDate" />
+                <ScalarProperty Name="EdiLiveStartDate" ColumnName="EdiLiveStartDate" />
+                <ScalarProperty Name="EdiSuspendDate" ColumnName="EdiSuspendDate" />
+                <ScalarProperty Name="EdiPo" ColumnName="EdiPo" />
+                <ScalarProperty Name="EdiPoAck" ColumnName="EdiPoAck" />
+                <ScalarProperty Name="EdiPoAmend" ColumnName="EdiPoAmend" />
+                <ScalarProperty Name="EdiInvoice" ColumnName="EdiInvoice" />
+                <ScalarProperty Name="EdiAsn" ColumnName="EdiAsn" />
+                <ScalarProperty Name="EdiPayment" ColumnName="EdiPayment" />
+                <ScalarProperty Name="EdiCatalog" ColumnName="EdiCatalog" />
+                <ScalarProperty Name="EdiFuncAck" ColumnName="EdiFuncAck" />
+                <ScalarProperty Name="AutoAuthorizeOrders" ColumnName="AutoAuthorizeOrders" />
+                <ScalarProperty Name="TransportMethod" ColumnName="TransportMethod" />
+                <ScalarProperty Name="Import" ColumnName="Import" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Fulfillment" ColumnName="Fulfillment" />
+                <ScalarProperty Name="FFShipMode" ColumnName="FFShipMode" />
+                <ScalarProperty Name="FFShipModeInt" ColumnName="FFShipModeInt" />
+                <ScalarProperty Name="FFHandlingCharge" ColumnName="FFHandlingCharge" />
+                <ScalarProperty Name="FFHandlingChargeInt" ColumnName="FFHandlingChargeInt" />
+                <ScalarProperty Name="FFItemHandlingCharge" ColumnName="FFItemHandlingCharge" />
+                <ScalarProperty Name="FFItemHandlingChargeInt" ColumnName="FFItemHandlingChargeInt" />
+                <ScalarProperty Name="FFShipChargeType" ColumnName="FFShipChargeType" />
+                <ScalarProperty Name="FFShipChargeCountType" ColumnName="FFShipChargeCountType" />
+                <ScalarProperty Name="FFUsePackaging" ColumnName="FFUsePackaging" />
+                <ScalarProperty Name="FFPackagingOptimizationType" ColumnName="FFPackagingOptimizationType" />
+                <ScalarProperty Name="CreatedOffline" ColumnName="CreatedOffline" />
+                <ScalarProperty Name="Interfaced" ColumnName="Interfaced" />
+                <ScalarProperty Name="DateInterfaced" ColumnName="DateInterfaced" />
+                <ScalarProperty Name="PreTicket" ColumnName="PreTicket" />
+                <ScalarProperty Name="DUNS" ColumnName="DUNS" />
+                <ScalarProperty Name="RequireVendorProduct" ColumnName="RequireVendorProduct" />
+                <ScalarProperty Name="RequireVendorUPC" ColumnName="RequireVendorUPC" />
+                <ScalarProperty Name="Edi850ControlNumber" ColumnName="Edi850ControlNumber" />
+                <ScalarProperty Name="VMI" ColumnName="VMI" />
+                <ScalarProperty Name="AutoReceiveASN" ColumnName="AutoReceiveASN" />
+                <ScalarProperty Name="CancelAfterDays" ColumnName="CancelAfterDays" />
+                <ScalarProperty Name="Edi850DTM001InUse" ColumnName="Edi850DTM001InUse" />
+                <ScalarProperty Name="Edi850DTM010InUse" ColumnName="Edi850DTM010InUse" />
+                <ScalarProperty Name="Edi850DTM037InUse" ColumnName="Edi850DTM037InUse" />
+                <ScalarProperty Name="Edi850DTM038InUse" ColumnName="Edi850DTM038InUse" />
+                <ScalarProperty Name="Edi850DTM074InUse" ColumnName="Edi850DTM074InUse" />
+                <ScalarProperty Name="EdiLastInvoiceCode" ColumnName="EdiLastInvoiceCode" />
+                <ScalarProperty Name="EdiLastASNCode" ColumnName="EdiLastASNCode" />
+                <ScalarProperty Name="VendorLocationsInUse" ColumnName="VendorLocationsInUse" />
+                <ScalarProperty Name="EdiUseTildeAsSegmentTerminator" ColumnName="EdiUseTildeAsSegmentTerminator" />
+                <ScalarProperty Name="EnforceVendorCompanyLocationRules" ColumnName="EnforceVendorCompanyLocationRules" />
+                <ScalarProperty Name="UseSystemTolerance" ColumnName="UseSystemTolerance" />
+                <ScalarProperty Name="ImportingCompany" ColumnName="ImportingCompany" />
+                <ScalarProperty Name="ImportingCompanyGLU" ColumnName="ImportingCompanyGLU" />
+                <ScalarProperty Name="SbaContractInUse" ColumnName="SbaContractInUse" />
+                <ScalarProperty Name="SbaContractStartDate" ColumnName="SbaContractStartDate" />
+                <ScalarProperty Name="CommercialDiscountPercent" ColumnName="CommercialDiscountPercent" />
+                <ScalarProperty Name="CommercialDiscountPercentStartDate" ColumnName="CommercialDiscountPercentStartDate" />
+                <ScalarProperty Name="DefectiveMerchandiseDiscountPercent" ColumnName="DefectiveMerchandiseDiscountPercent" />
+                <ScalarProperty Name="DefectiveMerchandiseDiscountPercentStartDate" ColumnName="DefectiveMerchandiseDiscountPercentStartDate" />
+                <ScalarProperty Name="EdiProvider" ColumnName="EdiProvider" />
+                <ScalarProperty Name="EdiProviderGLU" ColumnName="EdiProviderGLU" />
+                <ScalarProperty Name="EdiMessagingProtocol" ColumnName="EdiMessagingProtocol" />
+                <ScalarProperty Name="EdiMessagingProtocolGLU" ColumnName="EdiMessagingProtocolGLU" />
+                <ScalarProperty Name="OrderPlanRequired" ColumnName="OrderPlanRequired" />
+                <ScalarProperty Name="AllowBrokenPacks" ColumnName="AllowBrokenPacks" />
+                <ScalarProperty Name="NewStoreDiscountDays" ColumnName="NewStoreDiscountDays" />
+                <ScalarProperty Name="EdiProductActivity" ColumnName="EdiProductActivity" />
+                <ScalarProperty Name="UpdateCostOnASN" ColumnName="UpdateCostOnASN" />
+                <ScalarProperty Name="RebateVendor" ColumnName="RebateVendor" />
+                <ScalarProperty Name="RebateVendorGLU" ColumnName="RebateVendorGLU" />
+                <ScalarProperty Name="VerticallyIntegratedRetailer" ColumnName="VerticallyIntegratedRetailer" />
+                <ScalarProperty Name="SpecialOrders" ColumnName="SpecialOrders" />
+                <ScalarProperty Name="SpecialOrdersSpecRequired" ColumnName="SpecialOrdersSpecRequired" />
+                <ScalarProperty Name="Edi850DTM001DeliveryDateInUse" ColumnName="Edi850DTM001DeliveryDateInUse" />
+                <ScalarProperty Name="Edi850SDQInUse" ColumnName="Edi850SDQInUse" />
+                <ScalarProperty Name="Edi850TD5InUse" ColumnName="Edi850TD5InUse" />
+                <ScalarProperty Name="Edi850ITDInUse" ColumnName="Edi850ITDInUse" />
+                <ScalarProperty Name="EdiFuncAckForInvoice" ColumnName="EdiFuncAckForInvoice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="purchorders">
+            <EntityTypeMapping TypeName="tfs_hs_holdingModel.purchorder">
+              <MappingFragment StoreEntitySet="purchorders">
+                <ScalarProperty Name="lastdeldate" ColumnName="lastdeldate" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="shipdate" ColumnName="shipdate" />
+                <ScalarProperty Name="transint" ColumnName="transint" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="orderdate" ColumnName="orderdate" />
+                <ScalarProperty Name="ordernumber" ColumnName="ordernumber" />
+                <ScalarProperty Name="suppint" ColumnName="suppint" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TOFS_12WeeksSales">
+            <EntityTypeMapping TypeName="tfs_hs_holdingModel.TOFS_12WeeksSales">
+              <MappingFragment StoreEntitySet="TOFS_12WeeksSales">
+                <ScalarProperty Name="Sales" ColumnName="Sales" />
+                <ScalarProperty Name="salesweek" ColumnName="salesweek" />
+                <ScalarProperty Name="varint" ColumnName="varint" />
+                <ScalarProperty Name="branchcode" ColumnName="branchcode" />
+                <ScalarProperty Name="rowId" ColumnName="rowId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_PP_ThresholdValues">
+            <EntityTypeMapping TypeName="tfs_hs_holdingModel.tbl_PP_ThresholdValues">
+              <MappingFragment StoreEntitySet="tbl_PP_ThresholdValues">
+                <ScalarProperty Name="isInUse" ColumnName="isInUse" />
+                <ScalarProperty Name="updatedby" ColumnName="updatedby" />
+                <ScalarProperty Name="dateupdated" ColumnName="dateupdated" />
+                <ScalarProperty Name="datecreated" ColumnName="datecreated" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="thresholdvalue" ColumnName="thresholdvalue" />
+                <ScalarProperty Name="rowId" ColumnName="rowId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ProfitProtectionHeldItems">
+            <EntityTypeMapping TypeName="tfs_hs_holdingModel.tbl_ProfitProtectionHeldItems">
+              <MappingFragment StoreEntitySet="tbl_ProfitProtectionHeldItems">
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DateDeleted" ColumnName="DateDeleted" />
+                <ScalarProperty Name="isDeleted" ColumnName="isDeleted" />
+                <ScalarProperty Name="retailpriceperitem" ColumnName="retailpriceperitem" />
+                <ScalarProperty Name="triggeramount" ColumnName="triggeramount" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="storename" ColumnName="storename" />
+                <ScalarProperty Name="uniquefilename" ColumnName="uniquefilename" />
+                <ScalarProperty Name="isHeld" ColumnName="isHeld" />
+                <ScalarProperty Name="reasoncode" ColumnName="reasoncode" />
+                <ScalarProperty Name="eventdate" ColumnName="eventdate" />
+                <ScalarProperty Name="costtotal" ColumnName="costtotal" />
+                <ScalarProperty Name="costvalueperitem" ColumnName="costvalueperitem" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="varint" ColumnName="varint" />
+                <ScalarProperty Name="sku" ColumnName="sku" />
+                <ScalarProperty Name="storeid" ColumnName="storeid" />
+                <ScalarProperty Name="userid" ColumnName="userid" />
+                <ScalarProperty Name="DateWrittenOff" ColumnName="DateWrittenOff" />
+                <ScalarProperty Name="RowId" ColumnName="RowId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

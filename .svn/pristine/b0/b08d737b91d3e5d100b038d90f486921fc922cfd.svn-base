@@ -1,0 +1,117 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login V12</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="~/Scripts/Login_v12/images/icons/favicon.ico" />
+    <!--===============================================================================================-->
+    <link href="~/Scripts/Login_v12/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Scripts/Login_v12/fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Scripts/Login_v12/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Scripts/Login_v12/vendor/animate/animate.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Scripts/Login_v12/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Scripts/Login_v12/vendor/select2/select2.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+    <link href="~/Scripts/Login_v12/css/util.css" rel="stylesheet" />
+    <link href="~/Scripts/Login_v12/css/main.css" rel="stylesheet" />
+    <!--===============================================================================================-->
+</head>
+<body>
+
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('~/Content/Images/wallpaper.bmp');">
+            <div class="wrap-login100 p-t-190 p-b-30">
+                <form class="login100-form validate-form">
+                    <div class="login100-form-avatar">
+                        <img src="images/avatar-01.jpg" alt="AVATAR">
+                    </div>
+
+                    <span class="login100-form-title p-t-20 p-b-45">
+                        John Doe
+                    </span>
+
+                    <div class="wrap-input100 validate-input m-b-10" data-validate="Username is required">
+                        <input class="input100" id="txtUsername" type="text" name="username" placeholder="Username">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input m-b-10" data-validate="Password is required">
+                        <input class="input100" id="txtPassword" type="password" name="pass" placeholder="Password">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-lock"></i>
+                        </span>
+                    </div>
+
+                    <div class="container-login100-form-btn p-t-10">
+                        <button class="login100-form-btn" id="btnLogin">
+                            Login
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--===============================================================================================-->
+    <script src="~/Scripts/Login_v12/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Scripts/Login_v12/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/Scripts/Login_v12/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Scripts/Login_v12/vendor/select2/select2.js"></script>
+    <!--===============================================================================================-->
+<script src="~/Scripts/Login_v12/js/main.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#linkClose').click(function () {
+            $('#divError').hide('fade');
+        });
+
+        $('#btnLogin').click(function () {
+            $.ajax({
+                // Post username, password & the grant type to /token
+                url: '/api/v1/authentication',
+                method: 'POST',
+                contentType: 'application/json',
+                data: {
+                    username: $('#txtUsername').val(),
+                    password: $('#txtPassword').val(),
+                    grant_type: 'password'
+                },
+                // When the request completes successfully, save the
+                // access token in the browser session storage and
+                // redirect the user to Data.html page. We do not have
+                // this page yet. So please add it to the
+                // EmployeeService project before running it
+                success: function (response) {
+                    sessionStorage.setItem("accessToken", response.access_token);
+                    window.location.href = "/UserAccount/CreateUser";
+                },
+                // Display errors if any in the Bootstrap alert <div>
+                error: function (jqXHR) {
+                    $('#divErrorText').text(jqXHR.responseText);
+                    $('#divError').show('fade');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+2020-03-20 10:01:37.7514|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/productlookupapi/get-product-cost?sku=600564
+Controller : TFS_API.Controllers.ProductLookupAPIController
+Action : GetCostPrice
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-20 10:01:54.3427|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/productlookupapi/get-product-cost?sku=600564
+Controller : TFS_API.Controllers.ProductLookupAPIController
+Action : GetCostPrice
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-20 10:02:00.9104|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/productlookupapi/get-product-cost?sku=600564
+Controller : TFS_API.Controllers.ProductLookupAPIController
+Action : GetCostPrice
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-20 10:18:41.4449|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/productlookupapi/get-product-cost?sku=10289622
+Controller : TFS_API.Controllers.ProductLookupAPIController
+Action : GetCostPrice
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-20 10:19:44.8765|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/productlookupapi/get-product-cost?sku=600564
+Controller : TFS_API.Controllers.ProductLookupAPIController
+Action : GetCostPrice
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-03-20 17:02:17.1788|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/productlookupapi/get-product-cost?sku=600564
+Controller : TFS_API.Controllers.ProductLookupAPIController
+Action : GetCostPrice
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

@@ -1,0 +1,160 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+using CashManagementDAL;
+using TFS_API.Helpers;
+using TFS_API.Models.BindingModels;
+using TFS_API.Models.DTO;
+using TFS_API.Repositorys;
+using TFS_API.Services.Interfaces;
+
+namespace TFS_API.Controllers
+{
+    [RoutePrefix("api/v1/cash_management")]
+    public class CashAPIController : ApiController
+    {
+        private readonly IExceptionService _errorService;
+        private readonly UnitOfWork _unitOfWork;
+        static readonly UnitOfWork unitOfWork = new UnitOfWork();
+        CashRepository _repository = new CashRepository(unitOfWork);
+
+        public CashAPIController(IExceptionService errorService,
+        UnitOfWork unitOfWork)
+        {
+            _errorService = errorService;
+            _unitOfWork = unitOfWork;
+        }
+
+        [Route("PostEndOfDay")]
+        [HttpPost]
+        public HttpResponseMessage PostEndOfDay([FromBody]TillDataTransferDTO dto)
+        {
+            try
+            {
+                #region Date Variables
+                var startDateTime = DateTime.Today; //Today at 00:00:00
+                var endDateTime = DateTime.Today.AddDays(1).AddTicks(-1);
+                var thisWeek = DateTime.Today.Date.AddDays(-7);
+                var endofdayToday = DateTime.Today.AddDays(1).AddTicks(-1);
+                var dateRangelist = DataHelpers.Range(thisWeek, endofdayToday);
+                var dateTimes = dateRangelist.ToList();
+                #endregion
+
+                var getSparqRecords = _repository.GetRecordsToList(thisWeek, endofdayToday, dto.storeId);
+                var datesDontExist = dateTimes.Except(dateTimes.Where(o => getSparqRecords.Select(s => s.TradingDate).ToList().Contains(o.Date))).ToList();
+                if (datesDontExist.Any())
+                {
+                    foreach (var item in datesDontExist)
+                    {
+                        CreateCashingUpIfNotExist(item, dto);
+                    }
+                    return Request.CreateResponse(HttpStatusCode.OK);
+                }
+                else
+                {
+                    var getRecord = _repository.GetTodaysCashRecord(startDateTime, dto.storeId);
+
+                    getRecord.expectedAmount = dto.CashAmountExpected;
+                    getRecord.CreditCardTotal = dto.CreditCard;
+                    getRecord.Expense = dto.ExpensesTotal;
+                    getRecord.Love2Shop = dto.LSVExpected;
+                    getRecord.Income = dto.IncomeExpected;
+                    using (var unitOfWork = new UnitOfWork())
+                    {
+                        var cashRepository = new CashRepository(unitOfWork);
+                        cashRepository.Update(getRecord);
+                        unitOfWork.SaveChanges();
+                    }
+                    return Request.CreateResponse(HttpStatusCode.OK);
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                _errorService.Capture(ex);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.InnerException);
+            }
+        }
+
+        public void CreateCashingUpIfNotExist(DateTime createdate, TillDataTransferDTO dto)
+        {
+            try
+            {
+                #region GetTilLDetails
+                var getSpqActiveTills = _repository.GetSPQTills(dto.storeId);
+                var getRJActiveTills = _repository.GetRJTills(dto.storeId);
+                #endregion
+
+                using (var unitOfWork = new UnitOfWork())
+                {
+                    var cashRepository = new CashRepository(unitOfWork);
+                    foreach (var dataModel in from item in getSpqActiveTills
+                        where item.TillFloat != null && item.TillId != null
+                        select new tbl_CashManagement
+                        {
+                            StoreId = dto.storeId,
+                            SPQTillId = (int)item.TillId,
+                            TradingDate = createdate,
+                            TransactionDate = createdate,
+                            ClosingFloat = (decimal)item.TillFloat,
+                            CashAmount = 0.00m,
+                            GiftVoucherTotal = 0.00m,
+                            CreditCardTotal = dto.CreditCard,
+                            Love2Shop = dto.LSVExpected,
+                            Income = dto.IncomeExpected,
+                            Expense = dto.ExpensesTotal,
+                            isLocked = false,
+                            tillisLive = true,
+                            isClosed = false,
+                            isSparq = true,
+                            expectedAmount = dto.CashAmountExpected
+                        } into dataModel
+                        let checkifTodayExists = _repository.isExistingSPQ(createdate, dto.storeId, dataModel.SPQTillId)
+                        where !checkifTodayExists
+                        select dataModel)
+                    {
+                        cashRepository.Add(dataModel);
+                        unitOfWork.SaveChanges();
+                    }
+
+                    foreach (var dataModel in from rjitem in getRJActiveTills
+                        select new tbl_CashManagement
+                        {
+                            StoreId = dto.storeId,
+                            RJTillId = (int)rjitem.TillId,
+                            TradingDate = createdate,
+                            TransactionDate = createdate,
+                            ClosingFloat = (decimal)rjitem.TillFloat,
+                            CashAmount = 0.00m,
+                            GiftVoucherTotal = 0.00m,
+                            CreditCardTotal = 0.00m,
+                            Love2Shop = 0.00m,
+                            Income = 0.00m,
+                            Expense = 0.00m,
+                            isLocked = false,
+                            tillisLive = true,
+                            isClosed = false,
+                            isSparq = false
+                        } into dataModel
+                        let checkifTodayExists = _repository.isExistingRJ(createdate, dto.storeId, dataModel.RJTillId)
+                        where !checkifTodayExists
+                        select dataModel)
+                    {
+                        cashRepository.Add(dataModel);
+                        unitOfWork.SaveChanges();
+                    }
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                _errorService.Capture(ex);
+                throw;
+            }
+
+        }
+    }
+}

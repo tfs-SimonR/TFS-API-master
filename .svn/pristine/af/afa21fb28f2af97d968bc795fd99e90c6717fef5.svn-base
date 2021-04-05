@@ -1,0 +1,14 @@
+2020-02-17 08:38:08.4527|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetSKUPanelDatav2?guid=efe7e5fb8d1c413389311f880085580f&colour=Black&size=12 S
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetSKUPanelDatav2
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+
+2020-02-17 08:39:05.3635|INFO|TFS_API.Helpers.NLogger|JSON
+Method: GET
+URL: http://localhost:63154/api/v1/webpaneldata/RCGetSKUPanelDatav2?guid=efe7e5fb8d1c413389311f880085580f&colour=Black&size=12 S
+Controller : TFS_API.Controllers.ClickAndCollectWebController
+Action : RCGetSKUPanelDatav2
+Action Parameters : System.Web.Http.Tracing.ITraceWriterExtensions+<>c__DisplayClass14_0
+

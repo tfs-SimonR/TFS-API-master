@@ -1,0 +1,66 @@
+﻿@model Mi9DataAccessLayer.tfs_store_details
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tfs_store_details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.storeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.storeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.properties_long)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.properties_long)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.properties_lat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.properties_lat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.store_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.store_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.store_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.store_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isMeraki)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isMeraki)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RowId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

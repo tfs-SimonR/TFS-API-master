@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="59316c2161c24930acfa182312d58be3" Name="Diagram1" ZoomLevel="99">
+        <EntityTypeShape EntityType="Model.EPOSUser" Width="1.5" PointX="2.625" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ExceptionDetail" Width="1.5" PointX="4.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Image" Width="1.5" PointX="6.625" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Question" Width="1.5" PointX="8.25" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.tfs_store_details" Width="1.5" PointX="0.625" PointY="0.625" />
+        <EntityTypeShape EntityType="Model.QuestionAnswer" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.tbl_gdo_numbers" Width="1.5" PointX="3.375" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

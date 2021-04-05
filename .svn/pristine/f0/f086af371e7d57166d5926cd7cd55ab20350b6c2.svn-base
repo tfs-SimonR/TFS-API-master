@@ -1,0 +1,48 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Web;
+using ClickAndCollectDAL;
+using Mi9DataAccessLayer;
+using SPARQTestDAL;
+using TFS_API.Repositorys.Interfaces;
+using TFS_API.Factories.IFactories;
+
+namespace TFS_API.Repositorys
+{
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="TContext"></typeparam>
+    public class UnitOfWork : IDisposable, IUnitOfWork
+    {
+        private readonly SparqTestDbContext _context;
+        private readonly CCDBContext _ccdbContext;
+        private readonly Mi9DBEntities _mi9Context;
+        public UnitOfWork()
+        {
+            _context = new SparqTestDbContext();
+            _ccdbContext = new CCDBContext();
+            _mi9Context = new Mi9DBEntities();
+        }
+
+        public void SaveChanges()
+        {
+            Context.SaveChanges();
+            CCDBContext.SaveChanges();
+            MI9DBContext.SaveChanges();
+        }
+        public SparqTestDbContext Context => _context;
+        public CCDBContext CCDBContext => _ccdbContext;
+
+        public Mi9DBEntities MI9DBContext => _mi9Context;
+
+        public void Dispose()
+        {
+            _context.Dispose();
+            _ccdbContext.Dispose();
+        }
+    }
+}

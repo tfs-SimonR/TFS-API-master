@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TasksModelStoreContainer" CdmEntityContainer="TaskDBContext">
+    <EntitySetMapping Name="tbl_store_responses">
+      <EntityTypeMapping TypeName="TasksModel.tbl_store_responses">
+        <MappingFragment StoreEntitySet="tbl_store_responses">
+          <ScalarProperty Name="TA_id" ColumnName="TA_id" />
+          <ScalarProperty Name="response" ColumnName="response" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_tasks">
+      <EntityTypeMapping TypeName="TasksModel.tbl_tasks">
+        <MappingFragment StoreEntitySet="tbl_tasks">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="storeid" ColumnName="storeid" />
+          <ScalarProperty Name="decrption" ColumnName="decrption" />
+          <ScalarProperty Name="instructions" ColumnName="instructions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_task_actions">
+      <EntityTypeMapping TypeName="TasksModel.tbl_task_actions">
+        <MappingFragment StoreEntitySet="tbl_task_actions">
+          <ScalarProperty Name="param4" ColumnName="param4" />
+          <ScalarProperty Name="param3" ColumnName="param3" />
+          <ScalarProperty Name="param2" ColumnName="param2" />
+          <ScalarProperty Name="param1" ColumnName="param1" />
+          <ScalarProperty Name="questions" ColumnName="questions" />
+          <ScalarProperty Name="isMandatory" ColumnName="isMandatory" />
+          <ScalarProperty Name="actiontypeid" ColumnName="actiontypeid" />
+          <ScalarProperty Name="TA_id" ColumnName="TA_id" />
+          <ScalarProperty Name="taskid" ColumnName="taskid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_action_types">
+      <EntityTypeMapping TypeName="TasksModel.tbl_action_types">
+        <MappingFragment StoreEntitySet="tbl_action_types">
+          <ScalarProperty Name="action_type_description" ColumnName="action_type_description" />
+          <ScalarProperty Name="action_id" ColumnName="action_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

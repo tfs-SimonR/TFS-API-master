@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "ChangeLog";
+}
+
+<br clear="all" />
+<!-- START CONTENT -->
+<div id="content">
+
+    <h1>Change Log</h1>
+    <h2>Version 1.1.6296.30505 </h2>
+    <p>Release Date: </p>
+    <ul>
+        <li>PRG (Post/Redirect/Get) in place to stop double posting.</li>
+        <li>Concurrency Checking - Assinged Roles &Aacute; Quick Approve</li>
+        <li>Filter Messages - Addtional feedback to user.</li>
+        <li>Rules for bank holidays (Fulltime)</li>
+        <li>Bank Holidays flagged in Calendar</li>
+        @*<li>Profile - Hoverover for days remaining</li>*@
+        <li>Dashboard chart updates</li>
+        <li><strong>Bug - Corrected issue with deleting flexi events</strong></li>
+        <li>Assigned Role Admin Screen - Added addtional functionality to change user shift/team</li>
+        <li>Assigned Role Admin Screen - Added link to user profile</li>
+        <li>Timesheet - Each day is allowed multiple events instead of one</li>
+        <li>Quick Approve - Fixed Paging, results returned based on role</li>
+        <li>Logon redirect to users timesheet</li>
+        <li>Default values for users timesheet </li>
+        <li>Base ETAD reporting setup</li>
+        <li>Hovertext to translate decimal values to H:mm (Timesheet)</li>
+        <li>Added users on leave list</li>
+        <li><strong>Resourcing Views Added</strong></li>
+        <li>Fixed CSS/HTML Styling across multiple views</li>
+        <li>Added Quick Delete to Event Index</li>
+    </ul>
+
+    <h2>Version 1.1.6278</h2>
+    <p>Release Date: 10/03/2017</p>
+    <ul>
+        <li>Delete Event Update - Value from Event</li>
+        <li>Altered User Index Quires</li>
+        <li>Corrected AM/PM Leave Hours</li>
+        <li>Standardised Flexi Event Format for Timesheets(Views)</li>
+        <li>Changed Timesheet insert PM logic to mirror AM</li>
+        <li>Requester booking fixed.</li>
+        <li>Ordered Leave List for Profile View by Date Desc.</li>
+        <li>Half Day Duration Service call fixed.</li>
+        <li>Booking Controller code improved</li>
+    </ul>
+
+    <p>Known Issues</p>
+    <ul>
+        <li>Quick Approve - After the sixth action, exception is generated due to exchange not being able to process emails. Under investigation.</li>
+        <li>Any server reponse code overrides Profile submenu username.</li>
+        <li>Event Index search filter not working.</li>
+    </ul>
+
+    <h2>Version 1.1.6276</h2>
+    <p>Release Date: 08/03/2017</p>
+
+    <ul>
+        <li>Delete Event update as a flaw in the logic was found in testing.</li>
+        <li>Edit leave functionality improved - including concurrency <kbd>databaseValues = await db.DiaryEvent.FindAsync(ViewModel.RecordId);</kbd> stops more than one action being ommited at one time.</li>
+        <li>Timesheets not rendering and throwing errors for certain users, we had to rebuild the entire Controller GET method for this action.</li>
+        <li>Timesheets - Improved Validation <kbd>The string was not recognized as a valid DateTime. There is an unknown word starting at index 4. 08/03/2017 00:00:00</kbd></li>
+        <li>Corrected Mapping Issues for events displayed on Timesheet (Display/View)</li>
+        <li>Roles: Department Administrators onwards can access edit view for users timesheets.</li>
+        <li>Timesheets - Weekends are now flagged</li>
+        <li>Badge queries on dashboard not returning department specific data, <kbd>int GetSubDivision = DataHelpers.FindDefaultSubDivision(GetUserId); </kbd> these have now been changed and work as expected.</li>
+        <li>Inclusion of AssemblyInfo Class on Front End.</li>
+        <li>Rounded Flexisheet values to 2 DP.  <kbd>_fx.Duration = (_fx.Duration / 60) / 2;</kbd></li>
+        <li>Contact Form, with logging. <kbd>db.tbl_ ContactForm</kbd> </li>
+        <li>Created Changlog page.</li>
+        <li>Quick Approve Reworked - Working as Inteded</li>
+        <li>Advanced Edit - Edit Screen Added, Allows to edit standard events (Work in progress)</li>
+        <li>Assigned Roles - Index View Added</li>
+        <li>Assigned Roles - Can Edit Users Remaining Entitlements</li>
+        <li>Assigned Roles - Any edit operation for remaining values are now audited <kbd>db.aAudit.Add(aAudit);</kbd></li>
+        <li>Database Backups inplace</li>
+    </ul>
+
+    <h2>Version 1.1.6271</h2>
+    <p>Release Date: 04/03/2017</p>
+
+    <ul>
+        <li>No SubDivision view for DataPlatforms and other teams in that dept <kbd>Query = db.AssignedRoles.FirstOrDefault(x => x.UserID == StaffID);</kbd> created datahelper to solve the issue.</li>      
+    </ul>
+
+    <h2>Version 1.1.6270</h2>
+    <p>Release Date: 03/03/2017</p>
+
+    <ul>
+        <li>Users in wron division showing on leave calendar <kbd>int GetSubDivision = DataHelpers.FindDefaultSubDivision(GetUserId);</kbd> changed query to stop this.</li>
+        <li>Lighbox not showing Approve / Reject for Dept Admin</li>
+        <li>Leave Index View not working for Dept Admin<kbd> if (User.IsInRole("Global Admin") || (User.IsInRole("Department Admin")))</kbd>,fixed and now works as expected</li>
+    </ul>
+
+    <h2>Version 1.1.6269</h2>
+    <p>Release Date: 02/03/2017</p>
+
+    <ul>
+        <li>Users in own team were not showing on adding leave via calendar.</li>
+        <li>Account Creation validation changed on flexi leave, allowed -37.5 at the moment.</li>
+        <li>Half days AM / PM were not posting to the calendar.</li>
+        <li>Timesheet Monthly Improvements.</li>
+    </ul>
+
+</div>
+<!-- END CONTENT -->
+
+
+<div id="footer">
+    <p><a href="#top">Top of Page</a></p>
+    <p>Copyright &#169; 2019 The Original Factory Shop Ltd ;&middot;&nbsp; </p>
+</div>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+

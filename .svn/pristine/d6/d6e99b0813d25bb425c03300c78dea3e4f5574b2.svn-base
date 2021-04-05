@@ -1,0 +1,663 @@
+﻿using AuditDataAccessLayer;
+using EPOSDataAccess;
+using Mi9DataAccessLayer;
+using ProcessedDAL;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Validation;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
+using System.Web.Http;
+using System.Web.Http.Description;
+using TFS_API.Helpers;
+using TFS_API.Models;
+using TFS_API.Models.DTO;
+using TFS_API.Models.ViewModels;
+using TFS_API.Services;
+using TFS_API.Services.Interfaces;
+using consighdr = ProcessedDAL.consighdr;
+using HttpPostAttribute = System.Web.Http.HttpPostAttribute;
+using RouteAttribute = System.Web.Http.RouteAttribute;
+using RoutePrefixAttribute = System.Web.Http.RoutePrefixAttribute;
+
+namespace TFS_API.Controllers
+{
+
+    /// <summary>
+    /// 
+    /// </summary>
+    [RoutePrefix("api/v1/HandyScannerGoodsOut")]
+    public class HandyScannerGoodsOutController : ApiController
+    {
+        #region Setup
+        /*Setup DB context*/
+        public readonly ApplicationDbContext _db = new ApplicationDbContext();
+        public readonly Mi9DBEntities mi9db = new Mi9DBEntities();
+        //private readonly mi9_mms_fs_trainEntities mi9TestEntities = new mi9_mms_fs_trainEntities();
+        private readonly auditEntities _auditdb = new auditEntities();
+        private readonly EPOSDataConnection _gdodb = new EPOSDataConnection();
+        private readonly ProDbContext proDb = new ProDbContext();
+        private readonly IHandyScannerService _handyScannerService;
+        private readonly IExceptionService _errorService;
+        private readonly IAuditService _auditService;
+        private readonly IStoredProcedureService _storedProcedureService;
+        private readonly ICountingService _countingService;
+        private readonly ICreateFileService _createFileService;
+        #endregion
+
+        #region Ctor
+        /// <inheritdoc />
+        public HandyScannerGoodsOutController(
+            IHandyScannerService handyScannerService,
+            IExceptionService errorService,
+            IAuditService auditService,
+            IStoredProcedureService storedProcedureService,
+            ICountingService countingService,
+            ICreateFileService createFileService)
+        {
+            _errorService = errorService;
+            _handyScannerService = handyScannerService;
+            _auditService = auditService;
+            _storedProcedureService = storedProcedureService;
+            _countingService = countingService;
+            _createFileService = createFileService;
+        }
+        #endregion
+
+        #region Reason and Stores Lists
+        /// <summary>
+        /// Endpoint for returning list of stores and store Id's
+        /// </summary>
+        /// <returns></returns>
+        #if DEBUG
+        #else
+        [System.Web.Http.Authorize]
+        #endif
+        [System.Web.Http.Route("storeslist")]
+        public HttpResponseMessage GetStoresList()
+        {
+            try
+            {
+                var getStores = _handyScannerService.GetStoresList();
+                return Request.CreateResponse(HttpStatusCode.Accepted, getStores);
+
+
+            }
+            catch (Exception ex)
+            {
+                _errorService.Capture(ex);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ex.InnerException);
+
+            }
+        }
+
+        /// <summary>
+        /// List of supplier names, shortnames and supplier codes.
+        /// </summary>
+        /// <returns></returns>
+        public HttpResponseMessage GetSuppliers()
+        {
+            try
+            {
+                var getSuppliers = _handyScannerService.GetSupplierList();
+                return Request.CreateResponse(HttpStatusCode.Accepted, getSuppliers);
+            }
+            catch (Exception e)
+            {
+                _errorService.Capture(e);
+                return Request.CreateErrorResponse(HttpStatusCode.BadGateway, e.InnerException);
+            }
+        }
+
+        /// <summary>
+        /// Reason Code List
+        /// </summary>
+        /// <returns></returns>
+        #if DEBUG
+        #else
+        [System.Web.Http.Authorize]
+        #endif
+        [Route("reasoncodelist")]
+        public HttpResponseMessage GetResponseCodes()
+        {
+            try
+            {
+                var resonList = new List<ReasonCodes>
+                {
+                    new ReasonCodes {id = 1, description = "Buyers Recall"},
+                    new ReasonCodes {id = 2, description = "Faulty electrical returns"},
+                    new ReasonCodes {id = 3, description = "IST A.M Authorization"},
+                    new ReasonCodes {id = 4, description = "IST Customer Request"},
+                    new ReasonCodes {id = 5, description = "IST XD Transfer"},
+                    new ReasonCodes {id = 6, description = "Over Allocation"}
+                };
+                return Request.CreateResponse(HttpStatusCode.Accepted, resonList);
+
+            }
+                catch (Exception ex)
+                {
+                _errorService.Capture(ex);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "API Error Logged " + ex.InnerException);
+            }
+
+        }
+        #endregion
+
+        [Route("getseasoncodefromsku/{sku}")]
+        public HttpResponseMessage GetSeasonCode(string sku)
+        {
+            try
+            {
+                var getSeasonCode = (from productcodes in mi9db.productcodes
+                    join prodcuts in mi9db.products on productcodes.prodint equals prodcuts.prodint
+                    where productcodes.variantcode == sku
+                    select new
+                    {
+                        sku = productcodes.variantcode,
+                        description = prodcuts.proddesc,
+                        seasoncode = prodcuts.introseason
+
+                    }).FirstOrDefault();
+
+                return Request.CreateResponse(HttpStatusCode.OK, getSeasonCode);
+
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NoContent, "SKU " + sku + " Not found");
+            }
+        }
+
+         #if DEBUG
+        #else
+        [System.Web.Http.Authorize]
+        #endif
+        /// <summary>
+        /// Return to Supplier endpoint, this is for direct back to supplier only.
+        /// </summary>
+        /// <param name="vm"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        [Route("returnsuppliergoodsout")]
+        [HttpPost]
+        public async Task<HttpResponseMessage> PostSupplierGoodsOut([FromBody] List<CreateSupReturnDTO> vm)
+        {
+            try
+            {
+                var getGdo = _gdodb.tbl_gdo_numbers.FirstOrDefault(x => x.isUsed == false)?.RandomValue;
+                if (getGdo == null) throw new ArgumentNullException(nameof(getGdo));
+
+                var flatfile = new List<string>();
+                string store = null;
+                var storeid = "";
+                var destinationid = "";
+                var reasonCode = 0;
+                string storesourceName = null;
+                string storedestinationName = null;
+
+                foreach (var item in vm)
+                {
+                    storeid = item.store_id;
+                    destinationid = item.supplier_id;
+                    reasonCode = item.reason_id;
+                }
+
+                var gdoString = $"GDO{storeid}{getGdo}";
+                var gdoClipped = gdoString.Substring(0, gdoString.Length - 2);
+                var setGdo = _gdodb.tbl_gdo_numbers.FirstOrDefault(x => x.RandomValue == getGdo);
+
+                //Here is where we add to the processed HDR for later use
+                var processedHdrModel = new ProcessedDAL.consighdr
+                {
+                    consignment = gdoClipped,
+                    warehouse = storeid,
+                    description = gdoClipped,
+                    status = "T",
+                    ChannelType = "S",
+                    createdate = Convert.ToDateTime(DateTime.Now)
+                };
+                proDb.consighdrs.Add(processedHdrModel);
+
+                try
+                {
+                    proDb.SaveChanges();
+                }
+                catch (DbEntityValidationException e)
+                {
+                    //Create empty list to capture Validation error(s)
+                    var outputLines = new List<string>();
+
+                    foreach (var eve in e.EntityValidationErrors)
+                    {
+                        outputLines.Add(
+                            $"{DateTime.Now}: Entity of type \"{eve.Entry.Entity.GetType().Name}\" in state \"{eve.Entry.State}\" has the following validation errors:");
+                        outputLines.AddRange(eve.ValidationErrors.Select(ve =>
+                            $"- Property: \"{ve.PropertyName}\", Error: \"{ve.ErrorMessage}\""));
+                    }
+                    //Write to external file
+                    File.AppendAllLines(@"c:\temp\dbErrors.txt", outputLines);
+                    throw;
+                }
+
+                if (setGdo != null)
+                {
+                    setGdo.isUsed = true;
+                    setGdo.storesource = int.Parse(storeid);
+                    setGdo.storeddestination = int.Parse(destinationid);
+                    
+                    setGdo.generatedGDO = gdoClipped;
+                    _gdodb.Entry(setGdo).State = EntityState.Modified;
+                    await _gdodb.SaveChangesAsync();
+                }
+
+                var getSourceStoreName = mi9db.tfs_store_details.FirstOrDefault(x => x.storeId == storeid);
+                if (getSourceStoreName != null)
+                    storesourceName = getSourceStoreName.store_name;
+
+                var getDestinationStoreName = mi9db.tfs_store_details.FirstOrDefault(x => x.storeId == destinationid);
+                if (getDestinationStoreName != null)
+                    storedestinationName = getDestinationStoreName.store_name;
+
+                //Here is where we add information to the processed consigdest table
+                int createcondestint;
+                foreach (var item in vm)
+                {
+                    var processedDest= new ProcessedDAL.consigdest();
+                    processedDest.consignment = gdoClipped;
+                    processedDest.destination = item.supplier_id;
+                    processedDest.droppoint = 190;
+                    processedDest.DateCreatedInStore = Convert.ToDateTime(DateTime.Now);
+                    processedDest.status = "In Transit";
+                    processedDest.warehouse = storeid;
+                    processedDest.desttype = "05";
+                    processedDest.DateLastModified = Convert.ToDateTime(DateTime.Now);
+                    processedDest.sourceName = storesourceName;
+                    processedDest.destName = storedestinationName;
+                    proDb.consigdests.Add(processedDest);
+                    await proDb.SaveChangesAsync();
+
+                    var date = DateTime.Now.Date.ToString("ddMMyy");
+                    var time = DateTime.Now.ToString("hhmm");
+
+                    string TopDataLine;
+
+                    /*Lets create the return!*/
+                    TopDataLine = "RS" + item.store_id + "010000" + "0002" + date + time + item.supplier_id + "        " + item.ponumber + "          " + gdoClipped + "  ";
+
+                    store = item.store_id;
+                    flatfile.Add(TopDataLine);
+
+                    /*And then create the lines!*/
+
+                    foreach (var shipmentitems in item.return_items)
+                    {
+                        var getVarint = _countingService.GetVarInt(shipmentitems.sku);
+
+                        var getprointtest = (from a in mi9db.productcodes
+                            where a.varint == getVarint
+                            select a.prodint).FirstOrDefault();
+
+                        var getdes = (from a in mi9db.products
+                            where a.prodint == getprointtest
+                            select a.proddesc).FirstOrDefault();
+
+                        var processedlines = new ProcessedDAL.consigline
+                        {
+                            condestint = processedDest.condestint,
+                            issueqty = Convert.ToInt32(shipmentitems.sku_counted_qty),
+                            varint = Convert.ToInt32(shipmentitems.sku),
+                            ReasonCode = "5",
+                            description = getdes
+                        };
+
+                        var audit = _auditService.GoodsOutAudit(item.user_name, item.store_id, shipmentitems.sku,
+                            gdoClipped, shipmentitems.sku_counted_qty, item.supplier_id);
+
+                        _auditdb.tbl_goodsout_audit.Add(audit);
+                        await _auditdb.SaveChangesAsync();
+
+                        var getRetailPrice = (from products in mi9db.products
+                            join productcodes in mi9db.productcodes on products.prodint equals productcodes
+                                .prodint
+                            join retailprice in mi9db.TOFS_RetailPrice on productcodes.varint equals
+                                retailprice.Varint
+                            where products.prodint == getprointtest
+                            select retailprice.Retail_Price).FirstOrDefault();
+
+                        var stringtoInt = int.Parse(shipmentitems.sku_counted_qty);
+                        var totalValue = Math.Round((decimal) (stringtoInt * getRetailPrice), 2);
+
+                        var truncate = DataHelpers.TruncateDecimal(totalValue, 2);
+                        var removedecimalpoint = DataHelpers.ConvertdecimaltoInt(truncate);
+
+                        var intToString = DataHelpers.setQuantity(removedecimalpoint.ToString(CultureInfo.CurrentCulture));
+                        var qtytoEight = DataHelpers.setQuantity(shipmentitems.sku_counted_qty);
+
+                        string MovementLines;
+                        /*Each line MUST be 26 chars in length*/
+                        if (shipmentitems.sku.Length <= 6)
+                        {
+                            /*MV <ProductId> TotalValue (<Quantity> * <RetailPrice>) <Quantity>*/
+                            MovementLines = string.Format("MV" + shipmentitems.sku + "  " + intToString + " " + qtytoEight);
+
+                        }
+                        else
+                        {
+                            /*MV <ProductId> TotalValue (<Quantity> * <RetailPrice>) <Quantity>*/
+                            MovementLines = string.Format("MV" + shipmentitems.sku + intToString + " " + qtytoEight);
+
+                        }
+                        flatfile.Add(MovementLines);
+                        proDb.consiglines.Add(processedlines);
+                        await proDb.SaveChangesAsync();
+                    }
+                }
+                /*Call the service to create the file and update*/
+                _createFileService.CreateFile(store, flatfile);
+
+                return Request.CreateResponse(HttpStatusCode.Created, gdoString);
+            }
+            catch (Exception ex)
+            {
+                _errorService.Capture(ex);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "API Error Logged " + ex.InnerException);
+            }
+        }
+
+
+
+
+        /// <summary>
+        /// Creates Goods out from a Store, this will create IST only (Back to warehouse is IST also,
+        /// We dont create return to suppliers as this goes back to the Warehouse)
+        /// </summary>
+        /// <param name="vm"></param>
+        /// <returns></returns>
+        #if DEBUG
+        #else
+        [System.Web.Http.Authorize]
+        #endif
+        [Route("goodsout")]
+        [HttpPost]
+        public async Task<HttpResponseMessage> PostGoodsOut([FromBody] List<CreateISTDTO> vm)
+        {
+            try
+            {
+                foreach (var item in vm)
+                {
+                    if (item.store_id == "000")
+                    {
+                        return Request.CreateErrorResponse(HttpStatusCode.Forbidden, "STORE is 000");
+
+                    }
+                    
+                }
+
+                var getGdo = _gdodb.tbl_gdo_numbers.FirstOrDefault(x => x.isUsed == false)?.RandomValue;
+                if (getGdo == null) throw new ArgumentNullException(nameof(getGdo));
+
+                var flatfile = new List<string>();
+                var storeid = "";
+                var destinationid = "";
+                var reasonCode = 0;
+                string storesourceName = null;
+                string storedestinationName = null;
+
+                //TODO We will need to set this up for a warehouse login at a later date and use Store 903
+                foreach (var item in vm)
+                {
+                    storeid = item.store_id;
+                    if (item.user_name == "burnley")
+                        storeid = "913";
+
+                    destinationid = item.destination_store_id;
+                    reasonCode = item.reason_id;
+                }
+
+                var gdoString = $"GDO{storeid}{getGdo}";
+                var gdoClipped = gdoString.Substring(0, gdoString.Length - 2);
+
+                var setGdo = _gdodb.tbl_gdo_numbers.FirstOrDefault(x => x.RandomValue == getGdo);
+
+                var processedHdrModel = new consighdr
+                {
+                    consignment = gdoClipped,
+                    warehouse = storeid,
+                    description = gdoClipped,
+                    status = "T",
+                    ChannelType = "S",
+                    createdate = Convert.ToDateTime(DateTime.Now)
+                };
+                proDb.consighdrs.Add(processedHdrModel);
+                try
+                {
+                    proDb.SaveChanges();
+                }
+                catch (DbEntityValidationException e)
+                {
+                    var outputLines = new List<string>();
+                    foreach (var eve in e.EntityValidationErrors)
+                    {
+                        outputLines.Add(
+                            $"{DateTime.Now}: Entity of type \"{eve.Entry.Entity.GetType().Name}\" in state \"{eve.Entry.State}\" has the following validation errors:");
+                        outputLines.AddRange(eve.ValidationErrors.Select(ve =>
+                            $"- Property: \"{ve.PropertyName}\", Error: \"{ve.ErrorMessage}\""));
+                    }
+                    //Write to external file
+                    File.AppendAllLines(@"c:\temp\dbErrors.txt", outputLines);
+                    throw;
+                }
+
+                if (setGdo != null)
+                {
+                    setGdo.isUsed = true;
+                    setGdo.storesource = int.Parse(storeid);
+                    setGdo.storeddestination = int.Parse(destinationid);
+                    
+                    setGdo.generatedGDO = gdoClipped;
+                    _gdodb.Entry(setGdo).State = EntityState.Modified;
+                    await _gdodb.SaveChangesAsync();
+                }
+
+                var getSourceStoreName = mi9db.tfs_store_details.FirstOrDefault(x => x.storeId == storeid);
+                if (getSourceStoreName != null)
+                    storesourceName = getSourceStoreName.store_name;
+
+                var getDestinationStoreName = mi9db.tfs_store_details.FirstOrDefault(x => x.storeId == destinationid);
+                if (getDestinationStoreName != null)
+                    storedestinationName = getDestinationStoreName.store_name;
+
+                foreach (var item in vm)
+                {
+                    var processedDest = new ProcessedDAL.consigdest
+                    {
+                        consignment = gdoClipped,
+                        destination = item.destination_store_id,
+                        droppoint = 190,
+                        DateCreatedInStore = Convert.ToDateTime(DateTime.Now),
+                        status = "In Transit",
+                        warehouse = storeid,
+                        desttype = "01",
+                        DateLastModified = Convert.ToDateTime(DateTime.Now),
+                        sourceName = storesourceName,
+                        destName = storedestinationName
+                    };
+                    proDb.consigdests.Add(processedDest);
+                    await proDb.SaveChangesAsync();
+
+                    var date = DateTime.Now.Date.ToString("ddMMyy");
+                    var time = DateTime.Now.ToString("hhmm");
+                    string line1;
+
+                    /*If the shipment is back to the Warehouse we need to change the ID to MW in the header line*/
+                    if (item.destination_store_id == "900")
+                        line1 = "MW" + storeid + "010000" + "0002" + date + time + "900" + gdoClipped + "  ";
+                    else if (item.destination_store_id == "SUPPLIER")
+                        line1 = "RS" + storeid + "010000" + "0002" + date + time + item.destination_store_id +
+                                gdoClipped + "  ";
+                    else
+                        line1 = "MO" + storeid + "010000" + "0002" + date + time + item.destination_store_id +
+                                gdoClipped + "  ";
+
+                    flatfile.Add(line1);
+
+                    foreach (var shipmentitems in item.shipment_items)
+                    {
+                        var getVarint = _countingService.GetVarInt(shipmentitems.sku);
+
+                        var getprodint = (from a in mi9db.productcodes
+                            where a.varint == getVarint
+                            select a.prodint).FirstOrDefault();
+
+                        var getSkuDescription = (from a in mi9db.products
+                            where a.prodint == getprodint
+                            select a.proddesc).FirstOrDefault();
+                        if (getSkuDescription == null)
+                            getSkuDescription = "Description Not Found";
+
+                        var processedlines = new ProcessedDAL.consigline
+                        {
+                            condestint = processedDest.condestint,
+                            issueqty = Convert.ToInt32(shipmentitems.sku_counted_qty),
+                            varint = Convert.ToInt32(shipmentitems.sku),
+                            ReasonCode = "5",
+                            description = getSkuDescription
+                        };
+
+                        var audit = _auditService.GoodsOutAudit(item.user_name, storeid, shipmentitems.sku,
+                            gdoClipped, shipmentitems.sku_counted_qty, item.destination_store_id);
+
+                        _auditdb.tbl_goodsout_audit.Add(audit);
+                        await _auditdb.SaveChangesAsync();
+
+                        var getRetailPrice = (from products in mi9db.products
+                            join productcodes in mi9db.productcodes on products.prodint equals productcodes
+                                .prodint
+                            join retailprice in mi9db.TOFS_RetailPrice on productcodes.varint equals
+                                retailprice.Varint
+                            where products.prodint == getprodint
+                            select retailprice.Retail_Price).FirstOrDefault();
+                        if (getRetailPrice == null) getRetailPrice = 0;
+
+                        var stringtoInt = int.Parse(shipmentitems.sku_counted_qty);
+                        var totalValue = Math.Round((decimal) (stringtoInt * getRetailPrice), 2);
+
+                        var truncate = DataHelpers.TruncateDecimal(totalValue, 2);
+                        var removedecimalpoint = DataHelpers.ConvertdecimaltoInt(truncate);
+
+                        var intToString =
+                            DataHelpers.setQuantity(removedecimalpoint.ToString(CultureInfo.CurrentCulture));
+                        var qtytoEight = DataHelpers.setQuantity(shipmentitems.sku_counted_qty);
+
+                        string lines;
+                        if (shipmentitems.sku.Length <= 6)
+                            lines = string.Format("MV" + shipmentitems.sku + "  " + intToString + " " + qtytoEight);
+                        else
+                            lines = string.Format("MV" + shipmentitems.sku + intToString + " " + qtytoEight);
+                        flatfile.Add(lines);
+                        proDb.consiglines.Add(processedlines);
+                        await proDb.SaveChangesAsync();
+                    }
+                }
+
+                /*Call the service to create the file and update*/
+
+                _createFileService.CreateFile(storeid, flatfile);
+
+                return Request.CreateResponse(HttpStatusCode.Created, gdoString);
+            }
+            catch (Exception ex)
+            {
+                _errorService.Capture(ex);
+                return Request.CreateResponse(HttpStatusCode.Created, "API Error Logged " + ex.InnerException);
+            }
+        }
+
+        /// <summary>
+        /// Calls a dynamic stored procedure service, that will return any data type
+        /// </summary>
+        /// <param name="storeId"></param>
+        /// <returns></returns>
+        #if DEBUG
+        #else
+        [System.Web.Http.Authorize]
+        #endif
+        [Route("goodsoutsp/{storeid}")]
+        [ApiExplorerSettings(IgnoreApi = true)]
+        public HttpResponseMessage GetStoresTest(string storeId)
+        {
+            try
+            {
+                var parameterforSp = $"EXEC dbo.uspISTForStore {storeId} ";
+
+                dynamic data = _storedProcedureService.DataEnumerable(parameterforSp);
+
+                List<SPTestModel> list = new List<SPTestModel>();
+
+                if (data != null)
+                    foreach (var item in data)
+                    {
+                        list.Add(new SPTestModel
+                        {
+                            consignment = item.consignment,
+                            warehouse = item.warehouse,
+                            destination = item.destination,
+                            proddesc = item.proddesc,
+                            variantcode = item.variantcode,
+                            issueqty = item.issueqty,
+                            receiveqty = item.receiveqty
+                         
+                        });
+                    }
+
+                return list.Any() ? Request.CreateResponse(HttpStatusCode.Accepted, list) : Request.CreateResponse(HttpStatusCode.NotFound, "No consigments found for store " + storeId);
+                
+
+            }
+            catch (Exception ex)
+            {
+                _errorService.Capture(ex);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "API Error Logged " + ex.InnerException);
+            }
+           
+        }
+
+        /// <summary>
+        /// Returns a list of Goodsout Created in last 28 days from store.
+        /// </summary>
+        /// <param name="storeId"></param>
+        /// <returns></returns>
+        [Route("goodsouthistory/{storeid}")]
+        public HttpResponseMessage GetConsignhistory(string storeId)
+        {
+            try
+            {
+                var getRecords = _handyScannerService.GetPreviousGoodsOut(storeId);
+
+                if (getRecords.Count != 0)
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, getRecords);
+
+                }
+                else
+                {
+                    return Request.CreateResponse(HttpStatusCode.OK, getRecords);
+                }
+               // return getRecords.Count != 0 ? Request.CreateResponse(HttpStatusCode.Accepted, getRecords) : Request.CreateResponse(HttpStatusCode.OK);
+            }
+            catch (Exception ex)
+            {
+                _errorService.Capture(ex);
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "API Error Logged " + ex.InnerException);
+
+            }
+
+        }
+
+    }
+}

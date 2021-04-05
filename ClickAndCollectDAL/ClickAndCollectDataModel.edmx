@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ClickAndCollectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'tfs_ClickAndCollect_Test.dbo.ClickAndCollectMessages' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ClickAndCollectMessages">
+          <Key>
+            <PropertyRef Name="ReservationID" />
+            <PropertyRef Name="MessageId" />
+            <PropertyRef Name="MessageDate" />
+          </Key>
+          <Property Name="ReservationID" Type="bigint" Nullable="false" />
+          <Property Name="MessageId" Type="int" Nullable="false" />
+          <Property Name="MessageType" Type="nvarchar" MaxLength="50" />
+          <Property Name="MessageDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClickAndCollectProducts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="SKU" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClickAndCollectProductTranslation">
+          <Key>
+            <PropertyRef Name="guid" />
+          </Key>
+          <Property Name="guid" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="sku" Type="nvarchar" MaxLength="8" />
+          <Property Name="description" Type="nvarchar" MaxLength="50" />
+          <Property Name="hasVariant" Type="bit" />
+        </EntityType>
+        <EntityType Name="ClickAndCollectReservation">
+          <Key>
+            <PropertyRef Name="ReservationID" />
+          </Key>
+          <Property Name="ReservationID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StoreNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SKU" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="CustFirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CustSurName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CustPostCode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CustEmailAddress" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="TofsCardNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="CustMobileNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MarketingConsent" Type="bit" Nullable="false" />
+          <Property Name="MarketingConsentDate" Type="datetime" />
+          <Property Name="TermsAndCondsConsentDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ClickAndCollectReservationStatus">
+          <Key>
+            <PropertyRef Name="ReservationID" />
+          </Key>
+          <Property Name="ReservationID" Type="bigint" Nullable="false" />
+          <Property Name="ReservationStatus" Type="int" Nullable="false" />
+          <Property Name="StoreId" Type="nvarchar" MaxLength="10" />
+          <Property Name="StatusDate" Type="datetime" Nullable="false" />
+          <Property Name="PreviousStatus" Type="int" Nullable="false" />
+          <Property Name="LastAction" Type="nvarchar" MaxLength="50" />
+          <Property Name="BasketTransActionId" Type="nvarchar" MaxLength="50" />
+          <Property Name="RowVersion" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="DateCreated" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="ClickAndCollectModelStoreContainer">
+          <EntitySet Name="ClickAndCollectProducts" EntityType="Self.ClickAndCollectProducts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClickAndCollectProductTranslation" EntityType="Self.ClickAndCollectProductTranslation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClickAndCollectReservation" EntityType="Self.ClickAndCollectReservation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClickAndCollectReservationStatus" EntityType="Self.ClickAndCollectReservationStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClickAndCollectMessages" EntityType="Self.ClickAndCollectMessages" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ClickAndCollectMessages].[ReservationID] AS [ReservationID], 
+    [ClickAndCollectMessages].[MessageId] AS [MessageId], 
+    [ClickAndCollectMessages].[MessageType] AS [MessageType], 
+    [ClickAndCollectMessages].[MessageDate] AS [MessageDate]
+    FROM [dbo].[ClickAndCollectMessages] AS [ClickAndCollectMessages]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ClickAndCollectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ClickAndCollectProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClickAndCollectReservation">
+          <Key>
+            <PropertyRef Name="ReservationID" />
+          </Key>
+          <Property Name="ReservationID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StoreNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="CustFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CustSurName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CustPostCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CustEmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TofsCardNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CustMobileNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MarketingConsent" Type="Boolean" Nullable="false" />
+          <Property Name="MarketingConsentDate" Type="DateTime" Precision="3" />
+          <Property Name="TermsAndCondsConsentDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ClickAndCollectReservationStatu">
+          <Key>
+            <PropertyRef Name="ReservationID" />
+          </Key>
+          <Property Name="ReservationID" Type="Int64" Nullable="false" />
+          <Property Name="ReservationStatus" Type="Int32" Nullable="false" />
+          <Property Name="StatusDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PreviousStatus" Type="Int32" Nullable="false" />
+          <Property Name="LastAction" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BasketTransActionId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RowVersion" Type="Binary" MaxLength="8" FixedLength="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="DateCreated" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StoreId" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ClickAndCollectMessage">
+          <Key>
+            <PropertyRef Name="ReservationID" />
+            <PropertyRef Name="MessageId" />
+            <PropertyRef Name="MessageDate" />
+          </Key>
+          <Property Name="ReservationID" Type="Int64" Nullable="false" />
+          <Property Name="MessageId" Type="Int32" Nullable="false" />
+          <Property Name="MessageType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MessageDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="CCDBContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ClickAndCollectProducts" EntityType="Self.ClickAndCollectProduct" />
+          <EntitySet Name="ClickAndCollectReservations" EntityType="Self.ClickAndCollectReservation" />
+          <EntitySet Name="ClickAndCollectReservationStatus" EntityType="Self.ClickAndCollectReservationStatu" />
+          <EntitySet Name="ClickAndCollectMessages" EntityType="Self.ClickAndCollectMessage" />
+          <EntitySet Name="ClickAndCollectProductTranslations" EntityType="ClickAndCollectModel.ClickAndCollectProductTranslation" />
+        </EntityContainer>
+        <EntityType Name="ClickAndCollectProductTranslation">
+          <Key>
+            <PropertyRef Name="guid" />
+          </Key>
+          <Property Name="guid" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="sku" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="hasVariant" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ClickAndCollectModelStoreContainer" CdmEntityContainer="CCDBContext">
+          <EntitySetMapping Name="ClickAndCollectProducts">
+            <EntityTypeMapping TypeName="ClickAndCollectModel.ClickAndCollectProduct">
+              <MappingFragment StoreEntitySet="ClickAndCollectProducts">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClickAndCollectReservations">
+            <EntityTypeMapping TypeName="ClickAndCollectModel.ClickAndCollectReservation">
+              <MappingFragment StoreEntitySet="ClickAndCollectReservation">
+                <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
+                <ScalarProperty Name="StoreNumber" ColumnName="StoreNumber" />
+                <ScalarProperty Name="SKU" ColumnName="SKU" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="CustFirstName" ColumnName="CustFirstName" />
+                <ScalarProperty Name="CustSurName" ColumnName="CustSurName" />
+                <ScalarProperty Name="CustPostCode" ColumnName="CustPostCode" />
+                <ScalarProperty Name="CustEmailAddress" ColumnName="CustEmailAddress" />
+                <ScalarProperty Name="TofsCardNumber" ColumnName="TofsCardNumber" />
+                <ScalarProperty Name="CustMobileNumber" ColumnName="CustMobileNumber" />
+                <ScalarProperty Name="MarketingConsent" ColumnName="MarketingConsent" />
+                <ScalarProperty Name="MarketingConsentDate" ColumnName="MarketingConsentDate" />
+                <ScalarProperty Name="TermsAndCondsConsentDate" ColumnName="TermsAndCondsConsentDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClickAndCollectReservationStatus">
+            <EntityTypeMapping TypeName="ClickAndCollectModel.ClickAndCollectReservationStatu">
+              <MappingFragment StoreEntitySet="ClickAndCollectReservationStatus">
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
+                <ScalarProperty Name="ReservationStatus" ColumnName="ReservationStatus" />
+                <ScalarProperty Name="StatusDate" ColumnName="StatusDate" />
+                <ScalarProperty Name="PreviousStatus" ColumnName="PreviousStatus" />
+                <ScalarProperty Name="LastAction" ColumnName="LastAction" />
+                <ScalarProperty Name="BasketTransActionId" ColumnName="BasketTransActionId" />
+                <ScalarProperty Name="RowVersion" ColumnName="RowVersion" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClickAndCollectMessages">
+            <EntityTypeMapping TypeName="ClickAndCollectModel.ClickAndCollectMessage">
+              <MappingFragment StoreEntitySet="ClickAndCollectMessages">
+                <ScalarProperty Name="ReservationID" ColumnName="ReservationID" />
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+                <ScalarProperty Name="MessageType" ColumnName="MessageType" />
+                <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClickAndCollectProductTranslations">
+            <EntityTypeMapping TypeName="ClickAndCollectModel.ClickAndCollectProductTranslation">
+              <MappingFragment StoreEntitySet="ClickAndCollectProductTranslation">
+                <ScalarProperty Name="hasVariant" ColumnName="hasVariant" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="sku" ColumnName="sku" />
+                <ScalarProperty Name="guid" ColumnName="guid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

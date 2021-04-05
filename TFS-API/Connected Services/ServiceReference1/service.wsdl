@@ -1,0 +1,774 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://www.mi9retail.com/WCFServices/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.mi9retail.com/WCFServices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.mi9retail.com/WCFServices/Imports">
+      <xsd:import namespace="http://www.mi9retail.com/WCFServices/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/StdBusinessRules.Common" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/RemoteFacadeWCF.RetailHub" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/Avalara.AvaTax.Adapter.TaxService" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/System" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IRetailHubContract_Authenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_Authenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_Authenticate_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfo_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfo_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfo_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAllPermissionsForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPermissionsForUser" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAllPermissionsForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPermissionsForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAllPermissionsForUser_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAllPermissionsForUser_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAllPermissionsForUser_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndPermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoAndPermissions" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndPermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoAndPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndPermissions_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndPermissions_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndPermissions_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetGLUCodesBasedOnCriteria_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGLUCodesBasedOnCriteria" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetGLUCodesBasedOnCriteria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGLUCodesBasedOnCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetGLUCodesBasedOnCriteria_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetGLUCodesBasedOnCriteria_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetGLUCodesBasedOnCriteria_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetGLUCodesBasedOnCriteria_clsRequestPayloadNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsRequestPayloadNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUsersWithListsOrListFolders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersWithListsOrListFolders" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUsersWithListsOrListFolders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersWithListsOrListFoldersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUsersWithListsOrListFolders_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUsersWithListsOrListFolders_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUsersWithListsOrListFolders_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_RequestEmails_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestEmails" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_RequestEmails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestEmailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_RequestEmails_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_RequestEmails_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_RequestEmails_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_RequestEmails_clsRequestPayloadNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsRequestPayloadNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_RequestEmails_clsParameterInvalidFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterInvalidFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_Ping_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_Ping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAlertsForCurrentUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertsForCurrentUser" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAlertsForCurrentUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertsForCurrentUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAlertsForCurrentUser_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAlertsForCurrentUser_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAlertsForAllUsersAtSameLocation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertsForAllUsersAtSameLocation" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAlertsForAllUsersAtSameLocation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertsForAllUsersAtSameLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAlertsForAllUsersAtSameLocation_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAlertsForAllUsersAtSameLocation_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAlertsCountForCurrentUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertsCountForCurrentUser" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAlertsCountForCurrentUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertsCountForCurrentUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAlertsCountForCurrentUser_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetAlertsCountForCurrentUser_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetCrystalReportFilenamesByType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCrystalReportFilenamesByType" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetCrystalReportFilenamesByType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCrystalReportFilenamesByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetCrystalReportFilenamesByType_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetCrystalReportFilenamesByType_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_CreateReportCriteria_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateReportCriteria" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_CreateReportCriteria_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateReportCriteriaResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_CreateReportCriteria_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_CreateReportCriteria_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_CreateReportCriteria_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_CreateReportCriteria_clsRequestPayloadNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsRequestPayloadNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetCrystalReports_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCrystalReports" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetCrystalReports_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCrystalReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetCrystalReports_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetCrystalReports_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetCrystalReports_clsRequestPayloadNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsRequestPayloadNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PrintReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrintReport" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PrintReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrintReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PrintReport_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PrintReport_clsRequestPayloadNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsRequestPayloadNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PrintReport_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PrintReport_clsParameterInvalidFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterInvalidFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetListOfAvailableStoreReportsForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfAvailableStoreReportsForUser" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetListOfAvailableStoreReportsForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfAvailableStoreReportsForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetListOfAvailableStoreReportsForUser_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetListOfAvailableStoreReportsForUser_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetListOfAvailableCoStructureReportsForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfAvailableCoStructureReportsForUser" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetListOfAvailableCoStructureReportsForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListOfAvailableCoStructureReportsForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetListOfAvailableCoStructureReportsForUser_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetListOfAvailableCoStructureReportsForUser_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReport" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetReport_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetReport_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_DeleteAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAlert" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_DeleteAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_DeleteAlert_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_DeleteAlert_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_DeleteAlert_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_DeleteAlert_clsRequestPayloadNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsRequestPayloadNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_DeleteAlerts_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAlerts" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_DeleteAlerts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAlertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_DeleteAlerts_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_DeleteAlerts_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_DeleteAlerts_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_DeleteAlerts_clsRequestPayloadNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsRequestPayloadNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostInventoryChanges_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostInventoryChanges" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostInventoryChanges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostInventoryChangesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostInventoryChanges_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostInventoryChanges_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostInventoryChanges_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostInventoryChanges_clsRequestPayloadNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsRequestPayloadNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostStoreTransactions_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostStoreTransactions" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostStoreTransactions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostStoreTransactionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostStoreTransactions_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostStoreTransactions_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostStoreTransactions_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostStoreTransactions_clsRequestPayloadNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsRequestPayloadNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetEntityNotesConfiguration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntityNotesConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetEntityNotesConfiguration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntityNotesConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetEntityNotesConfiguration_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetEntityNotesConfiguration_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetEntityNotesConfiguration_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetEntityNotes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntityNotes" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetEntityNotes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEntityNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetEntityNotes_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetEntityNotes_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetEntityNotes_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_UpdateEntityNotes_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEntityNotes" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_UpdateEntityNotes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEntityNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_UpdateEntityNotes_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_UpdateEntityNotes_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_UpdateEntityNotes_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_UpdateEntityNotes_clsRequestPayloadNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsRequestPayloadNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndHHTPermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoAndHHTPermissions" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndHHTPermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoAndHHTPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndHHTPermissions_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndHHTPermissions_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndHHTPermissions_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndApplePermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoAndApplePermissions" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndApplePermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoAndApplePermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndApplePermissions_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndApplePermissions_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndApplePermissions_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndAndroidPermissions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoAndAndroidPermissions" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndAndroidPermissions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserInfoAndAndroidPermissionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndAndroidPermissions_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndAndroidPermissions_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetUserInfoAndAndroidPermissions_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetTax_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTax" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetTax_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTaxResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetTax_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetTax_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetTax_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetTax_clsRequestPayloadNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsRequestPayloadNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetTax_clsInvalidConfigurationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsInvalidConfigurationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetTax_clsAvalaraFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAvalaraFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetTax_clsTaxServiceNotInUseFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsTaxServiceNotInUseFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetTax_clsTaxServiceTaxableDocumentLinesNotSetFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsTaxServiceTaxableDocumentLinesNotSet" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_ExtractToTaxSystem_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExtractToTaxSystem" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_ExtractToTaxSystem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExtractToTaxSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_ExtractToTaxSystem_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_ExtractToTaxSystem_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_ExtractToTaxSystem_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_ExtractToTaxSystem_clsRequestPayloadNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsRequestPayloadNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_ExtractToTaxSystem_clsInvalidConfigurationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsInvalidConfigurationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_ExtractToTaxSystem_clsAvalaraFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAvalaraFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_ExtractToTaxSystem_clsTaxServiceNotInUseFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsTaxServiceNotInUseFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_ExtractToTaxSystem_clsTaxServiceTaxableDocumentLinesNotSetFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsTaxServiceTaxableDocumentLinesNotSet" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_IsTaxServiceInUse_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsTaxServiceInUse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_IsTaxServiceInUse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsTaxServiceInUseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_IsTaxServiceInUse_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_IsTaxServiceInUse_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_IsTaxServiceInUse_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostIntegration_InputMessage">
+    <wsdl:part name="parameters" element="tns:PostIntegration" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostIntegration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PostIntegrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostIntegration_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostIntegration_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_PostIntegration_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetIntegration_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIntegration" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetIntegration_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIntegrationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetIntegration_clsAuthenticationFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsAuthenticationFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetIntegration_clsUserDoesNotHavePermissionFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsUserDoesNotHavePermissionFault" />
+  </wsdl:message>
+  <wsdl:message name="IRetailHubContract_GetIntegration_clsParameterNotProvidedFaultFault_FaultMessage">
+    <wsdl:part name="detail" element="tns:clsParameterNotProvidedFault" />
+  </wsdl:message>
+  <wsdl:portType name="IRetailHubContract">
+    <wsdl:operation name="Authenticate">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/BaseService/Authenticate" message="tns:IRetailHubContract_Authenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/BaseService/AuthenticateResponse" message="tns:IRetailHubContract_Authenticate_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/BaseService/AuthenticateclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_Authenticate_clsAuthenticationFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfo" message="tns:IRetailHubContract_GetUserInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoResponse" message="tns:IRetailHubContract_GetUserInfo_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetUserInfo_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_GetUserInfo_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetUserInfo_clsParameterNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPermissionsForUser">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAllPermissionsForUser" message="tns:IRetailHubContract_GetAllPermissionsForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAllPermissionsForUserResponse" message="tns:IRetailHubContract_GetAllPermissionsForUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAllPermissionsForUserclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetAllPermissionsForUser_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAllPermissionsForUserclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_GetAllPermissionsForUser_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAllPermissionsForUserclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetAllPermissionsForUser_clsParameterNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndPermissions">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndPermissions" message="tns:IRetailHubContract_GetUserInfoAndPermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndPermissionsResponse" message="tns:IRetailHubContract_GetUserInfoAndPermissions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndPermissionsclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetUserInfoAndPermissions_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndPermissionsclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_GetUserInfoAndPermissions_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndPermissionsclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetUserInfoAndPermissions_clsParameterNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGLUCodesBasedOnCriteria">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetGLUCodesBasedOnCriteria" message="tns:IRetailHubContract_GetGLUCodesBasedOnCriteria_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetGLUCodesBasedOnCriteriaResponse" message="tns:IRetailHubContract_GetGLUCodesBasedOnCriteria_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetGLUCodesBasedOnCriteriaclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetGLUCodesBasedOnCriteria_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetGLUCodesBasedOnCriteriaclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_GetGLUCodesBasedOnCriteria_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetGLUCodesBasedOnCriteriaclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetGLUCodesBasedOnCriteria_clsParameterNotProvidedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetGLUCodesBasedOnCriteriaclsRequestPayloadNotProvidedFaultFault" name="clsRequestPayloadNotProvidedFaultFault" message="tns:IRetailHubContract_GetGLUCodesBasedOnCriteria_clsRequestPayloadNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersWithListsOrListFolders">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUsersWithListsOrListFolders" message="tns:IRetailHubContract_GetUsersWithListsOrListFolders_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUsersWithListsOrListFoldersResponse" message="tns:IRetailHubContract_GetUsersWithListsOrListFolders_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUsersWithListsOrListFoldersclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetUsersWithListsOrListFolders_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUsersWithListsOrListFoldersclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_GetUsersWithListsOrListFolders_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUsersWithListsOrListFoldersclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetUsersWithListsOrListFolders_clsParameterNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestEmails">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/RequestEmails" message="tns:IRetailHubContract_RequestEmails_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/RequestEmailsResponse" message="tns:IRetailHubContract_RequestEmails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/RequestEmailsclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_RequestEmails_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/RequestEmailsclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_RequestEmails_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/RequestEmailsclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_RequestEmails_clsParameterNotProvidedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/RequestEmailsclsRequestPayloadNotProvidedFaultFault" name="clsRequestPayloadNotProvidedFaultFault" message="tns:IRetailHubContract_RequestEmails_clsRequestPayloadNotProvidedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/RequestEmailsclsParameterInvalidFaultFault" name="clsParameterInvalidFaultFault" message="tns:IRetailHubContract_RequestEmails_clsParameterInvalidFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/Ping" message="tns:IRetailHubContract_Ping_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PingResponse" message="tns:IRetailHubContract_Ping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertsForCurrentUser">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsForCurrentUser" message="tns:IRetailHubContract_GetAlertsForCurrentUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsForCurrentUserResponse" message="tns:IRetailHubContract_GetAlertsForCurrentUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsForCurrentUserclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetAlertsForCurrentUser_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsForCurrentUserclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_GetAlertsForCurrentUser_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertsForAllUsersAtSameLocation">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsForAllUsersAtSameLocation" message="tns:IRetailHubContract_GetAlertsForAllUsersAtSameLocation_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsForAllUsersAtSameLocationResponse" message="tns:IRetailHubContract_GetAlertsForAllUsersAtSameLocation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsForAllUsersAtSameLocationclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetAlertsForAllUsersAtSameLocation_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsForAllUsersAtSameLocationclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_GetAlertsForAllUsersAtSameLocation_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertsCountForCurrentUser">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsCountForCurrentUser" message="tns:IRetailHubContract_GetAlertsCountForCurrentUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsCountForCurrentUserResponse" message="tns:IRetailHubContract_GetAlertsCountForCurrentUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsCountForCurrentUserclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetAlertsCountForCurrentUser_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsCountForCurrentUserclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_GetAlertsCountForCurrentUser_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCrystalReportFilenamesByType">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReportFilenamesByType" message="tns:IRetailHubContract_GetCrystalReportFilenamesByType_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReportFilenamesByTypeResponse" message="tns:IRetailHubContract_GetCrystalReportFilenamesByType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReportFilenamesByTypeclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetCrystalReportFilenamesByType_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReportFilenamesByTypeclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetCrystalReportFilenamesByType_clsParameterNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportCriteria">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/CreateReportCriteria" message="tns:IRetailHubContract_CreateReportCriteria_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/CreateReportCriteriaResponse" message="tns:IRetailHubContract_CreateReportCriteria_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/CreateReportCriteriaclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_CreateReportCriteria_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/CreateReportCriteriaclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_CreateReportCriteria_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/CreateReportCriteriaclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_CreateReportCriteria_clsParameterNotProvidedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/CreateReportCriteriaclsRequestPayloadNotProvidedFaultFault" name="clsRequestPayloadNotProvidedFaultFault" message="tns:IRetailHubContract_CreateReportCriteria_clsRequestPayloadNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCrystalReports">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReports" message="tns:IRetailHubContract_GetCrystalReports_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReportsResponse" message="tns:IRetailHubContract_GetCrystalReports_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReportsclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetCrystalReports_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReportsclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetCrystalReports_clsParameterNotProvidedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReportsclsRequestPayloadNotProvidedFaultFault" name="clsRequestPayloadNotProvidedFaultFault" message="tns:IRetailHubContract_GetCrystalReports_clsRequestPayloadNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintReport">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PrintReport" message="tns:IRetailHubContract_PrintReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PrintReportResponse" message="tns:IRetailHubContract_PrintReport_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PrintReportclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_PrintReport_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PrintReportclsRequestPayloadNotProvidedFaultFault" name="clsRequestPayloadNotProvidedFaultFault" message="tns:IRetailHubContract_PrintReport_clsRequestPayloadNotProvidedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PrintReportclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_PrintReport_clsParameterNotProvidedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PrintReportclsParameterInvalidFaultFault" name="clsParameterInvalidFaultFault" message="tns:IRetailHubContract_PrintReport_clsParameterInvalidFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfAvailableStoreReportsForUser">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetListOfAvailableStoreReportsForUser" message="tns:IRetailHubContract_GetListOfAvailableStoreReportsForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetListOfAvailableStoreReportsForUserResponse" message="tns:IRetailHubContract_GetListOfAvailableStoreReportsForUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetListOfAvailableStoreReportsForUserclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetListOfAvailableStoreReportsForUser_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetListOfAvailableStoreReportsForUserclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetListOfAvailableStoreReportsForUser_clsParameterNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfAvailableCoStructureReportsForUser">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetListOfAvailableCoStructureReportsForUser" message="tns:IRetailHubContract_GetListOfAvailableCoStructureReportsForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetListOfAvailableCoStructureReportsForUserResponse" message="tns:IRetailHubContract_GetListOfAvailableCoStructureReportsForUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetListOfAvailableCoStructureReportsForUserclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetListOfAvailableCoStructureReportsForUser_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetListOfAvailableCoStructureReportsForUserclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetListOfAvailableCoStructureReportsForUser_clsParameterNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReport">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetReport" message="tns:IRetailHubContract_GetReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetReportResponse" message="tns:IRetailHubContract_GetReport_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetReportclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetReport_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetReportclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetReport_clsParameterNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlert">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlert" message="tns:IRetailHubContract_DeleteAlert_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlertResponse" message="tns:IRetailHubContract_DeleteAlert_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlertclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_DeleteAlert_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlertclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_DeleteAlert_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlertclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_DeleteAlert_clsParameterNotProvidedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlertclsRequestPayloadNotProvidedFaultFault" name="clsRequestPayloadNotProvidedFaultFault" message="tns:IRetailHubContract_DeleteAlert_clsRequestPayloadNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlerts">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlerts" message="tns:IRetailHubContract_DeleteAlerts_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlertsResponse" message="tns:IRetailHubContract_DeleteAlerts_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlertsclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_DeleteAlerts_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlertsclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_DeleteAlerts_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlertsclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_DeleteAlerts_clsParameterNotProvidedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlertsclsRequestPayloadNotProvidedFaultFault" name="clsRequestPayloadNotProvidedFaultFault" message="tns:IRetailHubContract_DeleteAlerts_clsRequestPayloadNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostInventoryChanges">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostInventoryChanges" message="tns:IRetailHubContract_PostInventoryChanges_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostInventoryChangesResponse" message="tns:IRetailHubContract_PostInventoryChanges_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostInventoryChangesclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_PostInventoryChanges_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostInventoryChangesclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_PostInventoryChanges_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostInventoryChangesclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_PostInventoryChanges_clsParameterNotProvidedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostInventoryChangesclsRequestPayloadNotProvidedFaultFault" name="clsRequestPayloadNotProvidedFaultFault" message="tns:IRetailHubContract_PostInventoryChanges_clsRequestPayloadNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostStoreTransactions">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostStoreTransactions" message="tns:IRetailHubContract_PostStoreTransactions_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostStoreTransactionsResponse" message="tns:IRetailHubContract_PostStoreTransactions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostStoreTransactionsclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_PostStoreTransactions_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostStoreTransactionsclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_PostStoreTransactions_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostStoreTransactionsclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_PostStoreTransactions_clsParameterNotProvidedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostStoreTransactionsclsRequestPayloadNotProvidedFaultFault" name="clsRequestPayloadNotProvidedFaultFault" message="tns:IRetailHubContract_PostStoreTransactions_clsRequestPayloadNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityNotesConfiguration">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotesConfiguration" message="tns:IRetailHubContract_GetEntityNotesConfiguration_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotesConfigurationResponse" message="tns:IRetailHubContract_GetEntityNotesConfiguration_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotesConfigurationclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetEntityNotesConfiguration_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotesConfigurationclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_GetEntityNotesConfiguration_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotesConfigurationclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetEntityNotesConfiguration_clsParameterNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityNotes">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotes" message="tns:IRetailHubContract_GetEntityNotes_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotesResponse" message="tns:IRetailHubContract_GetEntityNotes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotesclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetEntityNotes_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotesclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_GetEntityNotes_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotesclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetEntityNotes_clsParameterNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntityNotes">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/UpdateEntityNotes" message="tns:IRetailHubContract_UpdateEntityNotes_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/UpdateEntityNotesResponse" message="tns:IRetailHubContract_UpdateEntityNotes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/UpdateEntityNotesclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_UpdateEntityNotes_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/UpdateEntityNotesclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_UpdateEntityNotes_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/UpdateEntityNotesclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_UpdateEntityNotes_clsParameterNotProvidedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/UpdateEntityNotesclsRequestPayloadNotProvidedFaultFault" name="clsRequestPayloadNotProvidedFaultFault" message="tns:IRetailHubContract_UpdateEntityNotes_clsRequestPayloadNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndHHTPermissions">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndHHTPermissions" message="tns:IRetailHubContract_GetUserInfoAndHHTPermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndHHTPermissionsResponse" message="tns:IRetailHubContract_GetUserInfoAndHHTPermissions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndHHTPermissionsclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetUserInfoAndHHTPermissions_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndHHTPermissionsclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_GetUserInfoAndHHTPermissions_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndHHTPermissionsclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetUserInfoAndHHTPermissions_clsParameterNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndApplePermissions">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndApplePermissions" message="tns:IRetailHubContract_GetUserInfoAndApplePermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndApplePermissionsResponse" message="tns:IRetailHubContract_GetUserInfoAndApplePermissions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndApplePermissionsclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetUserInfoAndApplePermissions_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndApplePermissionsclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_GetUserInfoAndApplePermissions_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndApplePermissionsclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetUserInfoAndApplePermissions_clsParameterNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndAndroidPermissions">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndAndroidPermissions" message="tns:IRetailHubContract_GetUserInfoAndAndroidPermissions_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndAndroidPermissionsResponse" message="tns:IRetailHubContract_GetUserInfoAndAndroidPermissions_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndAndroidPermissionsclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetUserInfoAndAndroidPermissions_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndAndroidPermissionsclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_GetUserInfoAndAndroidPermissions_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndAndroidPermissionsclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetUserInfoAndAndroidPermissions_clsParameterNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTax">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetTax" message="tns:IRetailHubContract_GetTax_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetTaxResponse" message="tns:IRetailHubContract_GetTax_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetTaxclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetTax_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetTaxclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_GetTax_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetTaxclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetTax_clsParameterNotProvidedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetTaxclsRequestPayloadNotProvidedFaultFault" name="clsRequestPayloadNotProvidedFaultFault" message="tns:IRetailHubContract_GetTax_clsRequestPayloadNotProvidedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetTaxclsInvalidConfigurationFaultFault" name="clsInvalidConfigurationFaultFault" message="tns:IRetailHubContract_GetTax_clsInvalidConfigurationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetTaxclsAvalaraFaultFault" name="clsAvalaraFaultFault" message="tns:IRetailHubContract_GetTax_clsAvalaraFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetTaxclsTaxServiceNotInUseFaultFault" name="clsTaxServiceNotInUseFaultFault" message="tns:IRetailHubContract_GetTax_clsTaxServiceNotInUseFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetTaxclsTaxServiceTaxableDocumentLinesNotSetFault" name="clsTaxServiceTaxableDocumentLinesNotSetFault" message="tns:IRetailHubContract_GetTax_clsTaxServiceTaxableDocumentLinesNotSetFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExtractToTaxSystem">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/ExtractToTaxSystem" message="tns:IRetailHubContract_ExtractToTaxSystem_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/ExtractToTaxSystemResponse" message="tns:IRetailHubContract_ExtractToTaxSystem_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/ExtractToTaxSystemclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_ExtractToTaxSystem_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/ExtractToTaxSystemclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_ExtractToTaxSystem_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/ExtractToTaxSystemclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_ExtractToTaxSystem_clsParameterNotProvidedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/ExtractToTaxSystemclsRequestPayloadNotProvidedFaultFault" name="clsRequestPayloadNotProvidedFaultFault" message="tns:IRetailHubContract_ExtractToTaxSystem_clsRequestPayloadNotProvidedFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/ExtractToTaxSystemclsInvalidConfigurationFaultFault" name="clsInvalidConfigurationFaultFault" message="tns:IRetailHubContract_ExtractToTaxSystem_clsInvalidConfigurationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/ExtractToTaxSystemclsAvalaraFaultFault" name="clsAvalaraFaultFault" message="tns:IRetailHubContract_ExtractToTaxSystem_clsAvalaraFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/ExtractToTaxSystemclsTaxServiceNotInUseFaultFault" name="clsTaxServiceNotInUseFaultFault" message="tns:IRetailHubContract_ExtractToTaxSystem_clsTaxServiceNotInUseFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/ExtractToTaxSystemclsTaxServiceTaxableDocumentLinesNotSetFault" name="clsTaxServiceTaxableDocumentLinesNotSetFault" message="tns:IRetailHubContract_ExtractToTaxSystem_clsTaxServiceTaxableDocumentLinesNotSetFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsTaxServiceInUse">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/IsTaxServiceInUse" message="tns:IRetailHubContract_IsTaxServiceInUse_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/IsTaxServiceInUseResponse" message="tns:IRetailHubContract_IsTaxServiceInUse_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/IsTaxServiceInUseclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_IsTaxServiceInUse_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/IsTaxServiceInUseclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_IsTaxServiceInUse_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/IsTaxServiceInUseclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_IsTaxServiceInUse_clsParameterNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PostIntegration">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostIntegration" message="tns:IRetailHubContract_PostIntegration_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostIntegrationResponse" message="tns:IRetailHubContract_PostIntegration_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostIntegrationclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_PostIntegration_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostIntegrationclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_PostIntegration_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostIntegrationclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_PostIntegration_clsParameterNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIntegration">
+      <wsdl:input wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetIntegration" message="tns:IRetailHubContract_GetIntegration_InputMessage" />
+      <wsdl:output wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetIntegrationResponse" message="tns:IRetailHubContract_GetIntegration_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetIntegrationclsAuthenticationFaultFault" name="clsAuthenticationFaultFault" message="tns:IRetailHubContract_GetIntegration_clsAuthenticationFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetIntegrationclsUserDoesNotHavePermissionFaultFault" name="clsUserDoesNotHavePermissionFaultFault" message="tns:IRetailHubContract_GetIntegration_clsUserDoesNotHavePermissionFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetIntegrationclsParameterNotProvidedFaultFault" name="clsParameterNotProvidedFaultFault" message="tns:IRetailHubContract_GetIntegration_clsParameterNotProvidedFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

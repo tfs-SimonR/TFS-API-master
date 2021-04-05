@@ -1,0 +1,72 @@
+﻿@model Mi9DataAccessLayer.tfs_store_details
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>tfs_store_details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.storeId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.storeId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.properties_long)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.properties_long)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.properties_lat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.properties_lat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.store_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.store_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.store_address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.store_address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isMeraki)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isMeraki)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

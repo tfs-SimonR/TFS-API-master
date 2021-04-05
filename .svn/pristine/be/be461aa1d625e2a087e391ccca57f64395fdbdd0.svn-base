@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="tfs_api_audit_liveModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="auditEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_audit_api" EntityType="tfs_api_audit_liveModel.tbl_audit_api" />
+    <EntitySet Name="tbl_PICount_Audit" EntityType="tfs_api_audit_liveModel.tbl_PICount_Audit" />
+    <EntitySet Name="tbl_ADHOCCount_Audit" EntityType="tfs_api_audit_liveModel.tbl_ADHOCCount_Audit" />
+    <EntitySet Name="tbl_SupplierToStore_Audit" EntityType="tfs_api_audit_liveModel.tbl_SupplierToStore_Audit" />
+    <EntitySet Name="tbl_WarehouseToStore_Audit" EntityType="tfs_api_audit_liveModel.tbl_WarehouseToStore_Audit" />
+    <EntitySet Name="tbl_goodsout_audit" EntityType="tfs_api_audit_liveModel.tbl_goodsout_audit" />
+    <EntitySet Name="tbl_InterStore_Audit" EntityType="tfs_api_audit_liveModel.tbl_InterStore_Audit" />
+    <EntitySet Name="tbl_authentication_audit" EntityType="tfs_api_audit_liveModel.tbl_authentication_audit" />
+    <EntitySet Name="tbl_SupplierMassAccept_Audit" EntityType="tfs_api_audit_liveModel.tbl_SupplierMassAccept_Audit" />
+    <EntitySet Name="tbl_cancel_allocations_audit" EntityType="tfs_api_audit_liveModel.tbl_cancel_allocations_audit" />
+    <EntitySet Name="tbl_PP_frontend_audit" EntityType="tfs_api_audit_liveModel.tbl_PP_frontend_audit" />
+    <EntitySet Name="tbl_writeoff_audit" EntityType="tfs_api_audit_liveModel.tbl_writeoff_audit" />
+  </EntityContainer>
+  <EntityType Name="tbl_audit_api">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StoreId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EventDate" Type="DateTime" Precision="3" />
+    <Property Name="StockAdjustLevel" Type="Int32" />
+    <Property Name="RetailValue" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="CostValue" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PriorResonCode" Type="Int32" />
+    <Property Name="PriorStatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EventType" Type="Int32" />
+    <Property Name="Area" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="condignment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="recordId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="condestint" Type="Int32" />
+    <Property Name="goodsout_sku_qty" Type="Int32" />
+    <Property Name="destinationstoreid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="controllerarea" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tbl_PICount_Audit">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateCounted" Type="DateTime" Precision="3" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PICount_ListId" Type="Int32" />
+    <Property Name="SKU" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StoreId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VarInt" Type="Int32" />
+    <Property Name="StockLevelDifference" Type="Int32" Nullable="false" />
+    <Property Name="PriceValue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CostValue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EventDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_ADHOCCount_Audit">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int32" Nullable="false" />
+    <Property Name="DateCounted" Type="DateTime" Precision="3" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StoreId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VarInt" Type="Int32" />
+    <Property Name="StockLevelDifference" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PriceValue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CostValue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EventDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tbl_SupplierToStore_Audit">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateCounted" Type="DateTime" Precision="3" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StoreId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VarInt" Type="Int32" />
+    <Property Name="StockLevelDifference" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PriceValue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CostValue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EventDate" Type="DateTime" Precision="3" />
+    <Property Name="ponumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_WarehouseToStore_Audit">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateCounted" Type="DateTime" Precision="3" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StoreId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VarInt" Type="Int32" />
+    <Property Name="StockLevelDifference" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PriceValue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CostValue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EventDate" Type="DateTime" Precision="3" />
+    <Property Name="consignment_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PriorStatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_goodsout_audit">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="StoreId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DestinationStoreId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sku" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sku_qty" Type="Int32" />
+    <Property Name="EventDate" Type="DateTime" Precision="3" />
+    <Property Name="consignment" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_InterStore_Audit">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateCounted" Type="DateTime" Precision="3" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SKU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="source_storeid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="destination_StoreId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VarInt" Type="Int32" />
+    <Property Name="StockLevelDifference" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="PriceValue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="CostValue" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="EventDate" Type="DateTime" Precision="3" />
+    <Property Name="consignment_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PriorStatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InsertRecordId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_authentication_audit">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int32" Nullable="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="timeloggedin" Type="DateTime" Precision="3" />
+    <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_SupplierMassAccept_Audit">
+    <Key>
+      <PropertyRef Name="RowId" />
+    </Key>
+    <Property Name="RowId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateAccepted" Type="DateTime" Precision="3" />
+    <Property Name="userId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="storeid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="varint" Type="Int32" />
+    <Property Name="EventDate" Type="DateTime" Precision="3" />
+    <Property Name="ponumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="reason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_cancel_allocations_audit">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sku" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dateupdated" Type="DateTime" Precision="3" />
+    <Property Name="storedprocedurecalled" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_PP_frontend_audit">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="eventdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="previousstatuscode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="previouscost" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="previousqty" Type="Int32" />
+    <Property Name="previousthreshold" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="tbl_writeoff_audit">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DateofWriteOff" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="userid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sku" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="storeid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="varint" Type="Int32" Nullable="false" />
+    <Property Name="stockleveldifference" Type="Int32" Nullable="false" />
+    <Property Name="writeofftotalqty" Type="Int32" Nullable="false" />
+    <Property Name="costvalue" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="writeofftotalcost" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="eventdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="reasonCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="descriptions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="retailperitem" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="retailvaluetotal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="reasoncodeDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

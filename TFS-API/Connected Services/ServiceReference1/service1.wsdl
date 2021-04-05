@@ -1,0 +1,2575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://www.mi9retail.com/WCFServices/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="clsRetailHubService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSHttpBinding_IRetailHubContract_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="WSHttpBinding_IRetailHubContract1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsoma:OptimizedMimeSerialization xmlns:wsoma="http://schemas.xmlsoap.org/ws/2004/09/policy/optimizedmimeserialization" />
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IRetailHubContract1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:import namespace="http://www.mi9retail.com/WCFServices/" location="" />
+  <wsdl:types />
+  <wsdl:binding name="WSHttpBinding_IRetailHubContract" type="i0:IRetailHubContract">
+    <wsp:PolicyReference URI="#WSHttpBinding_IRetailHubContract_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authenticate">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/BaseService/Authenticate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPermissionsForUser">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAllPermissionsForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndPermissions">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGLUCodesBasedOnCriteria">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetGLUCodesBasedOnCriteria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersWithListsOrListFolders">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUsersWithListsOrListFolders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RequestEmails">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/RequestEmails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterInvalidFaultFault">
+        <soap12:fault use="literal" name="clsParameterInvalidFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertsForCurrentUser">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsForCurrentUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertsForAllUsersAtSameLocation">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsForAllUsersAtSameLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertsCountForCurrentUser">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsCountForCurrentUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCrystalReportFilenamesByType">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReportFilenamesByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportCriteria">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/CreateReportCriteria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCrystalReports">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrintReport">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/PrintReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterInvalidFaultFault">
+        <soap12:fault use="literal" name="clsParameterInvalidFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfAvailableStoreReportsForUser">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetListOfAvailableStoreReportsForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfAvailableCoStructureReportsForUser">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetListOfAvailableCoStructureReportsForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetReport">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlert">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlerts">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlerts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostInventoryChanges">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostInventoryChanges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostStoreTransactions">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostStoreTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityNotesConfiguration">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotesConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityNotes">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntityNotes">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/UpdateEntityNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndHHTPermissions">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndHHTPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndApplePermissions">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndApplePermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndAndroidPermissions">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndAndroidPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTax">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetTax" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsInvalidConfigurationFaultFault">
+        <soap12:fault use="literal" name="clsInvalidConfigurationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsAvalaraFaultFault">
+        <soap12:fault use="literal" name="clsAvalaraFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsTaxServiceNotInUseFaultFault">
+        <soap12:fault use="literal" name="clsTaxServiceNotInUseFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsTaxServiceTaxableDocumentLinesNotSetFault">
+        <soap12:fault use="literal" name="clsTaxServiceTaxableDocumentLinesNotSetFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExtractToTaxSystem">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/ExtractToTaxSystem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsInvalidConfigurationFaultFault">
+        <soap12:fault use="literal" name="clsInvalidConfigurationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsAvalaraFaultFault">
+        <soap12:fault use="literal" name="clsAvalaraFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsTaxServiceNotInUseFaultFault">
+        <soap12:fault use="literal" name="clsTaxServiceNotInUseFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsTaxServiceTaxableDocumentLinesNotSetFault">
+        <soap12:fault use="literal" name="clsTaxServiceTaxableDocumentLinesNotSetFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsTaxServiceInUse">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/IsTaxServiceInUse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostIntegration">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostIntegration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIntegration">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetIntegration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WSHttpBinding_IRetailHubContract1" type="i0:IRetailHubContract">
+    <wsp:PolicyReference URI="#WSHttpBinding_IRetailHubContract1_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authenticate">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/BaseService/Authenticate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPermissionsForUser">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAllPermissionsForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndPermissions">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGLUCodesBasedOnCriteria">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetGLUCodesBasedOnCriteria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersWithListsOrListFolders">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUsersWithListsOrListFolders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RequestEmails">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/RequestEmails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterInvalidFaultFault">
+        <soap12:fault use="literal" name="clsParameterInvalidFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/Ping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertsForCurrentUser">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsForCurrentUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertsForAllUsersAtSameLocation">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsForAllUsersAtSameLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertsCountForCurrentUser">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsCountForCurrentUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCrystalReportFilenamesByType">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReportFilenamesByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportCriteria">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/CreateReportCriteria" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCrystalReports">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrintReport">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/PrintReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterInvalidFaultFault">
+        <soap12:fault use="literal" name="clsParameterInvalidFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfAvailableStoreReportsForUser">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetListOfAvailableStoreReportsForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfAvailableCoStructureReportsForUser">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetListOfAvailableCoStructureReportsForUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetReport">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlert">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlerts">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlerts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostInventoryChanges">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostInventoryChanges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostStoreTransactions">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostStoreTransactions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityNotesConfiguration">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotesConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityNotes">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntityNotes">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/UpdateEntityNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndHHTPermissions">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndHHTPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndApplePermissions">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndApplePermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndAndroidPermissions">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndAndroidPermissions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTax">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetTax" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsInvalidConfigurationFaultFault">
+        <soap12:fault use="literal" name="clsInvalidConfigurationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsAvalaraFaultFault">
+        <soap12:fault use="literal" name="clsAvalaraFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsTaxServiceNotInUseFaultFault">
+        <soap12:fault use="literal" name="clsTaxServiceNotInUseFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsTaxServiceTaxableDocumentLinesNotSetFault">
+        <soap12:fault use="literal" name="clsTaxServiceTaxableDocumentLinesNotSetFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExtractToTaxSystem">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/ExtractToTaxSystem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsInvalidConfigurationFaultFault">
+        <soap12:fault use="literal" name="clsInvalidConfigurationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsAvalaraFaultFault">
+        <soap12:fault use="literal" name="clsAvalaraFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsTaxServiceNotInUseFaultFault">
+        <soap12:fault use="literal" name="clsTaxServiceNotInUseFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsTaxServiceTaxableDocumentLinesNotSetFault">
+        <soap12:fault use="literal" name="clsTaxServiceTaxableDocumentLinesNotSetFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsTaxServiceInUse">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/IsTaxServiceInUse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostIntegration">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostIntegration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIntegration">
+      <soap12:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetIntegration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap12:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap12:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap12:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IRetailHubContract" type="i0:IRetailHubContract">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/BaseService/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPermissionsForUser">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAllPermissionsForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndPermissions">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndPermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGLUCodesBasedOnCriteria">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetGLUCodesBasedOnCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersWithListsOrListFolders">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUsersWithListsOrListFolders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RequestEmails">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/RequestEmails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterInvalidFaultFault">
+        <soap:fault use="literal" name="clsParameterInvalidFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertsForCurrentUser">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsForCurrentUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertsForAllUsersAtSameLocation">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsForAllUsersAtSameLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertsCountForCurrentUser">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsCountForCurrentUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCrystalReportFilenamesByType">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReportFilenamesByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportCriteria">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/CreateReportCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCrystalReports">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrintReport">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/PrintReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterInvalidFaultFault">
+        <soap:fault use="literal" name="clsParameterInvalidFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfAvailableStoreReportsForUser">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetListOfAvailableStoreReportsForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfAvailableCoStructureReportsForUser">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetListOfAvailableCoStructureReportsForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetReport">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlert">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlerts">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlerts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostInventoryChanges">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostInventoryChanges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostStoreTransactions">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostStoreTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityNotesConfiguration">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotesConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityNotes">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntityNotes">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/UpdateEntityNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndHHTPermissions">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndHHTPermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndApplePermissions">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndApplePermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndAndroidPermissions">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndAndroidPermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTax">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetTax" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsInvalidConfigurationFaultFault">
+        <soap:fault use="literal" name="clsInvalidConfigurationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsAvalaraFaultFault">
+        <soap:fault use="literal" name="clsAvalaraFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsTaxServiceNotInUseFaultFault">
+        <soap:fault use="literal" name="clsTaxServiceNotInUseFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsTaxServiceTaxableDocumentLinesNotSetFault">
+        <soap:fault use="literal" name="clsTaxServiceTaxableDocumentLinesNotSetFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExtractToTaxSystem">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/ExtractToTaxSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsInvalidConfigurationFaultFault">
+        <soap:fault use="literal" name="clsInvalidConfigurationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsAvalaraFaultFault">
+        <soap:fault use="literal" name="clsAvalaraFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsTaxServiceNotInUseFaultFault">
+        <soap:fault use="literal" name="clsTaxServiceNotInUseFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsTaxServiceTaxableDocumentLinesNotSetFault">
+        <soap:fault use="literal" name="clsTaxServiceTaxableDocumentLinesNotSetFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsTaxServiceInUse">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/IsTaxServiceInUse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostIntegration">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostIntegration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIntegration">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetIntegration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IRetailHubContract1" type="i0:IRetailHubContract">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IRetailHubContract1_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/BaseService/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfo">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPermissionsForUser">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAllPermissionsForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndPermissions">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndPermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGLUCodesBasedOnCriteria">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetGLUCodesBasedOnCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersWithListsOrListFolders">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUsersWithListsOrListFolders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RequestEmails">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/RequestEmails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterInvalidFaultFault">
+        <soap:fault use="literal" name="clsParameterInvalidFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertsForCurrentUser">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsForCurrentUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertsForAllUsersAtSameLocation">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsForAllUsersAtSameLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertsCountForCurrentUser">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetAlertsCountForCurrentUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCrystalReportFilenamesByType">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReportFilenamesByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReportCriteria">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/CreateReportCriteria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCrystalReports">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetCrystalReports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PrintReport">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/PrintReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterInvalidFaultFault">
+        <soap:fault use="literal" name="clsParameterInvalidFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfAvailableStoreReportsForUser">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetListOfAvailableStoreReportsForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetListOfAvailableCoStructureReportsForUser">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetListOfAvailableCoStructureReportsForUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetReport">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlert">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlerts">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/DeleteAlerts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostInventoryChanges">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostInventoryChanges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostStoreTransactions">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostStoreTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityNotesConfiguration">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotesConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntityNotes">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetEntityNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEntityNotes">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/UpdateEntityNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndHHTPermissions">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndHHTPermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndApplePermissions">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndApplePermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserInfoAndAndroidPermissions">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetUserInfoAndAndroidPermissions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTax">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetTax" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsInvalidConfigurationFaultFault">
+        <soap:fault use="literal" name="clsInvalidConfigurationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsAvalaraFaultFault">
+        <soap:fault use="literal" name="clsAvalaraFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsTaxServiceNotInUseFaultFault">
+        <soap:fault use="literal" name="clsTaxServiceNotInUseFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsTaxServiceTaxableDocumentLinesNotSetFault">
+        <soap:fault use="literal" name="clsTaxServiceTaxableDocumentLinesNotSetFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExtractToTaxSystem">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/ExtractToTaxSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsRequestPayloadNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsRequestPayloadNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsInvalidConfigurationFaultFault">
+        <soap:fault use="literal" name="clsInvalidConfigurationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsAvalaraFaultFault">
+        <soap:fault use="literal" name="clsAvalaraFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsTaxServiceNotInUseFaultFault">
+        <soap:fault use="literal" name="clsTaxServiceNotInUseFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsTaxServiceTaxableDocumentLinesNotSetFault">
+        <soap:fault use="literal" name="clsTaxServiceTaxableDocumentLinesNotSetFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="IsTaxServiceInUse">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/IsTaxServiceInUse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="PostIntegration">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/PostIntegration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIntegration">
+      <soap:operation soapAction="http://www.mi9retail.com/WCFServices/IRetailHubContract/GetIntegration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="clsAuthenticationFaultFault">
+        <soap:fault use="literal" name="clsAuthenticationFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsUserDoesNotHavePermissionFaultFault">
+        <soap:fault use="literal" name="clsUserDoesNotHavePermissionFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="clsParameterNotProvidedFaultFault">
+        <soap:fault use="literal" name="clsParameterNotProvidedFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="clsRetailHubService">
+    <wsdl:port name="WSHttpBinding_IRetailHubContract" binding="tns:WSHttpBinding_IRetailHubContract">
+      <soap12:address location="http://a-q-tof.tofs.mi9cloud.local/MI9-WCF-Test/RetailHubService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://a-q-tof.tofs.mi9cloud.local/MI9-WCF-Test/RetailHubService.svc</wsa10:Address>
+        <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
+          <Dns>localhost</Dns>
+        </Identity>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IRetailHubContract1" binding="tns:WSHttpBinding_IRetailHubContract1">
+      <soap12:address location="https://a-q-tof.tofs.mi9cloud.local/MI9-WCF-Test/RetailHubService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>https://a-q-tof.tofs.mi9cloud.local/MI9-WCF-Test/RetailHubService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IRetailHubContract" binding="tns:BasicHttpBinding_IRetailHubContract">
+      <soap:address location="http://a-q-tof.tofs.mi9cloud.local/MI9-WCF-Test/RetailHubService.svc/basicHttp" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IRetailHubContract1" binding="tns:BasicHttpBinding_IRetailHubContract1">
+      <soap:address location="https://a-q-tof.tofs.mi9cloud.local/MI9-WCF-Test/RetailHubService.svc/basicHttp" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

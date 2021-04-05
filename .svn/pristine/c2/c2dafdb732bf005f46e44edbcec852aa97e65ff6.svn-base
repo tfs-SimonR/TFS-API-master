@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TasksModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_store_responses">
+    <Key>
+      <PropertyRef Name="TA_id" />
+    </Key>
+    <Property Name="TA_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="response" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_tasks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="storeid" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="decrption" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="instructions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="TaskDBContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_store_responses" EntityType="Self.tbl_store_responses" />
+    <EntitySet Name="tbl_tasks" EntityType="Self.tbl_tasks" />
+    <EntitySet Name="tbl_task_actions" EntityType="TasksModel.tbl_task_actions" />
+    <EntitySet Name="tbl_action_types" EntityType="TasksModel.tbl_action_types" />
+  </EntityContainer>
+  <EntityType Name="tbl_task_actions">
+    <Key>
+      <PropertyRef Name="TA_id" />
+    </Key>
+    <Property Name="taskid" Type="Int32" />
+    <Property Name="TA_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="actiontypeid" Type="Int32" />
+    <Property Name="isMandatory" Type="Boolean" />
+    <Property Name="questions" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="param1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="param2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="param3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="param4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tbl_action_types">
+    <Key>
+      <PropertyRef Name="action_id" />
+    </Key>
+    <Property Name="action_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="action_type_description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

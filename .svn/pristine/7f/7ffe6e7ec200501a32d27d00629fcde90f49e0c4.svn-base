@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HoldingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="consigdests">
+    <Key>
+      <PropertyRef Name="consignment" />
+    </Key>
+    <Property Name="warehouse" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="consignment" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="desttype" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="destination" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="condestint" Type="int" Nullable="false" />
+    <Property Name="delroute" Type="varchar" MaxLength="3" />
+    <Property Name="droppoint" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="destdoc" Type="varchar" MaxLength="50" />
+    <Property Name="delroutedoc" Type="varchar" MaxLength="12" />
+    <Property Name="payterms" Type="varchar" MaxLength="4" />
+    <Property Name="freightchg" Type="float" />
+    <Property Name="freighttax" Type="money" />
+    <Property Name="address1" Type="varchar" MaxLength="32" />
+    <Property Name="address2" Type="varchar" MaxLength="32" />
+    <Property Name="address3" Type="varchar" MaxLength="32" />
+    <Property Name="address4" Type="varchar" MaxLength="32" />
+    <Property Name="postcode" Type="varchar" MaxLength="12" />
+    <Property Name="country" Type="varchar" MaxLength="3" />
+    <Property Name="notepad" Type="int" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="1" />
+    <Property Name="reference" Type="varchar" MaxLength="20" />
+    <Property Name="category" Type="varchar" MaxLength="1" />
+    <Property Name="reasoncode" Type="varchar" MaxLength="12" />
+    <Property Name="reference2" Type="varchar" MaxLength="12" />
+    <Property Name="KitAssemblyOrderDestinationID" Type="int" />
+    <Property Name="ShipDate" Type="datetime" />
+    <Property Name="ShipUser" Type="varchar" MaxLength="4" />
+    <Property Name="ReceiveDate" Type="datetime" />
+    <Property Name="ReceiveUser" Type="varchar" MaxLength="4" />
+    <Property Name="AllocStatus" Type="tinyint" Nullable="false" />
+    <Property Name="PickStatus" Type="tinyint" Nullable="false" />
+    <Property Name="ParcelCnt" Type="int" />
+    <Property Name="ParcelType" Type="varchar" MaxLength="3" />
+    <Property Name="DateInterfaced" Type="datetime" />
+    <Property Name="ShippingCost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="RTVDisposalMethod" Type="tinyint" Nullable="false" />
+    <Property Name="SourceSubLocationID" Type="int" Nullable="false" />
+    <Property Name="UserCancelled" Type="varchar" MaxLength="4" />
+    <Property Name="DateCancelled" Type="datetime" />
+    <Property Name="UserReopened" Type="varchar" MaxLength="4" />
+    <Property Name="DateReopened" Type="datetime" />
+    <Property Name="RowVer" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="VendorLocationID" Type="int" />
+    <Property Name="ShipMethodCode" Type="varchar" MaxLength="20" />
+    <Property Name="ShipMethodCodeGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="ShipReference" Type="nvarchar" MaxLength="50" />
+    <Property Name="DriverReference" Type="nvarchar" MaxLength="50" />
+    <Property Name="TruckNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserRejected" Type="varchar" MaxLength="4" />
+    <Property Name="DateRejected" Type="datetime" />
+    <Property Name="UserApproved" Type="varchar" MaxLength="4" />
+    <Property Name="DateApproved" Type="datetime" />
+    <Property Name="DateLastModified" Type="datetime" Nullable="false" />
+    <Property Name="DateCreatedInStore" Type="datetime" />
+    <Property Name="UserCreatedInStore" Type="nvarchar(max)" />
+    <Property Name="DateCancelledInStore" Type="datetime" />
+    <Property Name="UserCancelledInStore" Type="nvarchar(max)" />
+    <Property Name="StoreSuggestionCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateAmendedInStore" Type="datetime" />
+    <Property Name="UserAmendedInStore" Type="nvarchar(max)" />
+    <Property Name="DateApprovedInStore" Type="datetime" />
+    <Property Name="UserApprovedInStore" Type="nvarchar(max)" />
+    <Property Name="DateShippedInStore" Type="datetime" />
+    <Property Name="UserShippedInStore" Type="nvarchar(max)" />
+    <Property Name="ParentShipDestID" Type="int" />
+    <Property Name="LastChildShipCodeSuffix" Type="int" />
+    <Property Name="DateReceivedInStore" Type="datetime" />
+    <Property Name="UserReceivedInStore" Type="nvarchar(max)" />
+    <Property Name="sourceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="destName" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="consighdrs">
+    <Key>
+      <PropertyRef Name="consignment" />
+    </Key>
+    <Property Name="warehouse" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="consignment" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="collect" Type="varchar" MaxLength="1" />
+    <Property Name="carrier" Type="varchar" MaxLength="4" />
+    <Property Name="notepad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="createdate" Type="datetime" Nullable="false" />
+    <Property Name="amenddate" Type="datetime" />
+    <Property Name="despatchdate" Type="datetime" />
+    <Property Name="issuedate" Type="datetime" />
+    <Property Name="confirmdate" Type="datetime" />
+    <Property Name="consigdoc" Type="varchar" MaxLength="50" />
+    <Property Name="exceptions" Type="smallint" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="authorityno" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="4" />
+    <Property Name="AmendUser" Type="varchar" MaxLength="4" />
+    <Property Name="AuthorizeUser" Type="varchar" MaxLength="4" />
+    <Property Name="AuthorizeDate" Type="datetime" />
+    <Property Name="ManyToOne" Type="bit" Nullable="false" />
+    <Property Name="ChannelType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TransferRequest" Type="bit" Nullable="false" />
+    <Property Name="TransferAll" Type="bit" Nullable="false" />
+    <Property Name="BuyerCode" Type="varchar" MaxLength="8" />
+    <Property Name="ReasonCode" Type="varchar" MaxLength="2" />
+    <Property Name="RTV" Type="bit" Nullable="false" />
+    <Property Name="TransferRequestID" Type="int" />
+    <Property Name="StoreInitiated" Type="bit" Nullable="false" />
+    <Property Name="RTVAuthRequestedUser" Type="varchar" MaxLength="4" />
+    <Property Name="RTVAuthRequestedDate" Type="datetime" />
+    <Property Name="RTVRejectNotes" Type="nvarchar" MaxLength="300" />
+    <Property Name="RTVRejectedUser" Type="varchar" MaxLength="4" />
+    <Property Name="RTVRejectedDate" Type="datetime" />
+    <Property Name="RTVCancelReasonCode" Type="varchar" MaxLength="20" />
+    <Property Name="RTVCancelReasonGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="DateExtractedToAP" Type="datetime" />
+    <Property Name="AllowAddProductsDuringPack" Type="bit" Nullable="false" />
+    <Property Name="DateCreatedInStore" Type="datetime" />
+    <Property Name="UserCreatedInStore" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="consiglines">
+    <Key>
+      <PropertyRef Name="transline" />
+    </Key>
+    <Property Name="condestint" Type="int" Nullable="false" />
+    <Property Name="transline" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="conlineint" Type="int" Nullable="false" />
+    <Property Name="destordref" Type="varchar" MaxLength="12" />
+    <Property Name="destordline" Type="int" />
+    <Property Name="destordint" Type="int" />
+    <Property Name="varint" Type="int" Nullable="false" />
+    <Property Name="batchint" Type="int" />
+    <Property Name="issueqty" Type="int" Nullable="false" />
+    <Property Name="receiveqty" Type="int" />
+    <Property Name="avcost" Type="float" Nullable="false" />
+    <Property Name="unitretail" Type="money" />
+    <Property Name="othervalue" Type="money" />
+    <Property Name="discrepqty" Type="int" />
+    <Property Name="download" Type="smallint" Nullable="false" />
+    <Property Name="RequestQty" Type="int" Nullable="false" />
+    <Property Name="ReasonCode" Type="varchar" MaxLength="12" />
+    <Property Name="WIPQty" Type="int" />
+    <Property Name="InTransitQuantity" Type="int" StoreGeneratedPattern="Computed" />
+    <Property Name="PackedQty" Type="int" Nullable="false" />
+    <Property Name="DestLocAverageCost" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="DestLocUnitPrice" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="hs_processed_consighdrs">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="consignment" Type="nvarchar" MaxLength="50" />
+    <Property Name="date_bookedin" Type="datetime" />
+    <Property Name="isBookedin" Type="bit" Nullable="false" />
+    <Property Name="storeid" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="hs_processed_interstore">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gdonumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="date_booked_in" Type="datetime" />
+    <Property Name="isBookedin" Type="bit" />
+    <Property Name="storeid" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="hs_processed_purchorders">
+    <Key>
+      <PropertyRef Name="rowid" />
+    </Key>
+    <Property Name="rowid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ponumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="date_booked_in" Type="datetime" />
+    <Property Name="isBookedin" Type="bit" />
+    <Property Name="storeid" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="HoldingModelStoreContainer">
+    <EntitySet Name="consigdests" EntityType="Self.consigdests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="consighdrs" EntityType="Self.consighdrs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="consiglines" EntityType="Self.consiglines" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hs_processed_consighdrs" EntityType="Self.hs_processed_consighdrs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hs_processed_interstore" EntityType="Self.hs_processed_interstore" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="hs_processed_purchorders" EntityType="Self.hs_processed_purchorders" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

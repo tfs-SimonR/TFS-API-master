@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<script src="~/Scripts/jquery-3.0.0.js"></script>
+
+<script src="https://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
+
+<!-- This css is to ensure that the google map contols (zoom bar etc) show and size correctly. -->
+<style>
+    #map_canvas img {
+        max-width: none
+    }
+</style>
+
+<!-- This css is to give a nice big popup "info window" when a marker is clicked on the map -->
+<style>
+    .infoDiv {
+        height: 200px;
+        width: 300px;
+        -webkit-user-select: none;
+        background-color: white;
+    }
+</style>
+
+<br /><br /><br />
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+
+                <div id="map_canvas" style="height: 600px;"></div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        Initialize();
+    });
+
+    // Where all the fun happens
+    function Initialize() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+
+        function showPosition(position) {
+            var latitude = position.coords.latitude;
+            var longitude = position.coords.longitude;
+
+            google.maps.visualRefresh = true;
+            var storeLocation = new google.maps.LatLng(latitude, longitude);
+
+            var mapOptions = {
+                zoom: 7,
+                center: storeLocation,
+                mapTypeId: google.maps.MapTypeId.G_NORMAL_MAP
+            };
+
+            var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+            var storeLatLong = new google.maps.LatLng(latitude, longitude);
+
+            var marker = new google.maps.Marker({
+                position: storeLatLong,
+                map: map,
+                title: 'Your Current Location'
+            });
+            marker.setIcon('https://maps.google.com/mapfiles/ms/icons/purple-dot.png');
+
+            $.ajax({
+                type: 'GET',
+                dataType: "json",
+                url: "/Stock/GetStoreDetails",
+                success: function (data) {
+                    console.log(data);
+                    data = $.parseJSON(data);
+                    $.each(data, function (i, item) {
+                        if (item.isMeraki) {
+                            var marker = new google.maps.Marker({
+                                'Id': item.storeId,
+                                'position': new google.maps.LatLng(item.properties_lat, item.properties_long),
+                                'map': map,
+                                'title': item.store_name
+                            });
+                            marker.setIcon('https://maps.google.com/mapfiles/ms/icons/green-dot.png');
+                        } else {
+                            var marker = new google.maps.Marker({
+                                'Id': item.storeId,
+                                'position': new google.maps.LatLng(item.properties_lat, item.properties_long),
+                                'map': map,
+                                'title': item.store_name
+                            });
+                            marker.setIcon('https://maps.google.com/mapfiles/ms/icons/red-dot.png');
+                        }
+
+
+                        var infowindow = new google.maps.InfoWindow({
+                            content: "<div class='infoDiv'><h3>" + item.store_name + "</h3>" + "<div><h4>Stock level at Store: " + item.OpeningHours + "</h4></div></div>"
+                        });
+                        google.maps.event.addListener(marker, 'click', function () {
+                            infowindow.open(map, marker);
+                        });
+                    });
+
+                }
+            });
+        }
+    }
+
+</script>
+
+

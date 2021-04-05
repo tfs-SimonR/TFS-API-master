@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Mi9DataAccessLayer.tfs_store_details>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.storeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.properties_long)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.properties_lat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.store_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.store_address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isMeraki)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.storeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.properties_long)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.properties_lat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.store_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.store_address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isMeraki)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RowId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RowId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RowId })
+        </td>
+    </tr>
+}
+
+</table>

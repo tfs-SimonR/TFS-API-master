@@ -1,0 +1,2068 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="mi9_mms_fs_trainModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="branches">
+    <Key>
+      <PropertyRef Name="branchcode" />
+    </Key>
+    <Property Name="branchcode" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="colevel1" Type="varchar" MaxLength="12" />
+    <Property Name="colevel2" Type="varchar" MaxLength="12" />
+    <Property Name="colevel3" Type="varchar" MaxLength="12" />
+    <Property Name="name" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="shortname" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="commsline" Type="varchar" MaxLength="15" />
+    <Property Name="mastind" Type="varchar" MaxLength="1" />
+    <Property Name="mastbranch" Type="varchar" MaxLength="4" />
+    <Property Name="league" Type="varchar" MaxLength="20" />
+    <Property Name="positionind" Type="int" />
+    <Property Name="branchtype" Type="varchar" MaxLength="1" />
+    <Property Name="branchsize" Type="int" />
+    <Property Name="locntype" Type="varchar" MaxLength="3" />
+    <Property Name="storegroup" Type="varchar" MaxLength="4" />
+    <Property Name="staff" Type="smallint" />
+    <Property Name="floors" Type="smallint" />
+    <Property Name="lifts" Type="smallint" />
+    <Property Name="catalogue" Type="varchar" MaxLength="2" />
+    <Property Name="tradplan" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="holplan" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="merchplan" Type="varchar" MaxLength="3" />
+    <Property Name="repsource" Type="varchar" MaxLength="12" />
+    <Property Name="reptype" Type="smallint" />
+    <Property Name="delroute" Type="varchar" MaxLength="3" />
+    <Property Name="status" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="operstatus" Type="varchar" MaxLength="1" />
+    <Property Name="notepad" Type="int" Nullable="false" />
+    <Property Name="auditdate" Type="datetime" />
+    <Property Name="stkchkdate" Type="datetime" />
+    <Property Name="opendate" Type="datetime" />
+    <Property Name="closedate" Type="datetime" />
+    <Property Name="createdate" Type="datetime" Nullable="false" />
+    <Property Name="amenddate" Type="datetime" />
+    <Property Name="deletedate" Type="datetime" />
+    <Property Name="integritylok" Type="varchar" MaxLength="1" />
+    <Property Name="levint" Type="int" Nullable="false" />
+    <Property Name="version" Type="varchar" MaxLength="6" />
+    <Property Name="commsmethod" Type="varchar" MaxLength="4" />
+    <Property Name="keydatelist" Type="varchar" MaxLength="3" />
+    <Property Name="bankcode" Type="varchar" MaxLength="3" />
+    <Property Name="languageid" Type="varchar" MaxLength="2" />
+    <Property Name="pricegroup" Type="varchar" MaxLength="3" />
+    <Property Name="franchisee" Type="varchar" MaxLength="4" />
+    <Property Name="replenmethod" Type="varchar" MaxLength="4" />
+    <Property Name="sizegrade" Type="varchar" MaxLength="1" />
+    <Property Name="grandopendte" Type="datetime" />
+    <Property Name="remodeldate" Type="datetime" />
+    <Property Name="plandate" Type="datetime" />
+    <Property Name="printloc" Type="varchar" MaxLength="12" />
+    <Property Name="costcentre" Type="varchar" MaxLength="20" />
+    <Property Name="autoreplen" Type="varchar" MaxLength="1" />
+    <Property Name="SaleGoalProfileID" Type="int" />
+    <Property Name="CommissionPercent" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="ba01" Type="varchar" MaxLength="20" />
+    <Property Name="ba02" Type="varchar" MaxLength="20" />
+    <Property Name="ba03" Type="varchar" MaxLength="20" />
+    <Property Name="ba04" Type="varchar" MaxLength="20" />
+    <Property Name="ba05" Type="varchar" MaxLength="20" />
+    <Property Name="ba06" Type="varchar" MaxLength="20" />
+    <Property Name="ba07" Type="varchar" MaxLength="20" />
+    <Property Name="ba08" Type="varchar" MaxLength="20" />
+    <Property Name="ba09" Type="varchar" MaxLength="20" />
+    <Property Name="ba10" Type="varchar" MaxLength="20" />
+    <Property Name="ba11" Type="varchar" MaxLength="20" />
+    <Property Name="ba12" Type="varchar" MaxLength="20" />
+    <Property Name="ba13" Type="varchar" MaxLength="20" />
+    <Property Name="ba14" Type="varchar" MaxLength="20" />
+    <Property Name="ba15" Type="varchar" MaxLength="20" />
+    <Property Name="ba16" Type="varchar" MaxLength="20" />
+    <Property Name="ba17" Type="varchar" MaxLength="20" />
+    <Property Name="ba18" Type="varchar" MaxLength="20" />
+    <Property Name="ba19" Type="varchar" MaxLength="20" />
+    <Property Name="ba20" Type="varchar" MaxLength="20" />
+    <Property Name="ba21" Type="varchar" MaxLength="20" />
+    <Property Name="ba22" Type="varchar" MaxLength="20" />
+    <Property Name="ba23" Type="varchar" MaxLength="20" />
+    <Property Name="ba24" Type="varchar" MaxLength="20" />
+    <Property Name="ba25" Type="varchar" MaxLength="20" />
+    <Property Name="GLEntity" Type="varchar" MaxLength="20" />
+    <Property Name="GLCompany" Type="varchar" MaxLength="20" />
+    <Property Name="GLCorpCostCentre" Type="varchar" MaxLength="20" />
+    <Property Name="Comparative" Type="tinyint" Nullable="false" />
+    <Property Name="ShrinkPercent" Type="numeric" Precision="9" Scale="7" />
+    <Property Name="CoLevel4" Type="varchar" MaxLength="12" />
+    <Property Name="CoLevel5" Type="varchar" MaxLength="12" />
+    <Property Name="AltCoHierarchy1ID" Type="int" />
+    <Property Name="Currency" Type="varchar" MaxLength="3" />
+    <Property Name="BankCode1" Type="varchar" MaxLength="3" />
+    <Property Name="BankAccount1" Type="varchar" MaxLength="25" />
+    <Property Name="GLForBankCode1" Type="varchar" MaxLength="64" />
+    <Property Name="BankCode2" Type="varchar" MaxLength="3" />
+    <Property Name="BankAccount2" Type="varchar" MaxLength="25" />
+    <Property Name="GLForBankCode2" Type="varchar" MaxLength="64" />
+    <Property Name="SellingSize" Type="int" />
+    <Property Name="BackRoomSize" Type="int" />
+    <Property Name="ShoppingCenter1" Type="varchar" MaxLength="32" />
+    <Property Name="ShoppingCenter2" Type="varchar" MaxLength="32" />
+    <Property Name="BuildingType" Type="varchar" MaxLength="4" />
+    <Property Name="CeilingType" Type="varchar" MaxLength="4" />
+    <Property Name="CeilingHeight" Type="numeric" Precision="9" Scale="4" />
+    <Property Name="HVACUnits" Type="int" />
+    <Property Name="LoadingDock" Type="bit" Nullable="false" />
+    <Property Name="DelRestrictions" Type="bit" Nullable="false" />
+    <Property Name="HoldTruckReceipt" Type="bit" Nullable="false" />
+    <Property Name="FireLine1" Type="varchar" MaxLength="12" />
+    <Property Name="FireLine2" Type="varchar" MaxLength="12" />
+    <Property Name="LeaseCommenceDate" Type="datetime" />
+    <Property Name="PossessionPerLeaseDate" Type="datetime" />
+    <Property Name="LeaseExpirationDate" Type="datetime" />
+    <Property Name="RelocationDate1" Type="datetime" />
+    <Property Name="RelocationDate2" Type="datetime" />
+    <Property Name="RelocationDate3" Type="datetime" />
+    <Property Name="RelocationDate4" Type="datetime" />
+    <Property Name="ChangeInSameMall" Type="bit" Nullable="false" />
+    <Property Name="OpeningCash" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="InventoryManagedAtWarehouseCode" Type="varchar" MaxLength="4" />
+    <Property Name="SingleDestinationPO" Type="bit" Nullable="false" />
+    <Property Name="ShipInCartons" Type="bit" Nullable="false" />
+    <Property Name="DateStartReplen" Type="datetime" />
+    <Property Name="DateEndReplen" Type="datetime" />
+    <Property Name="TransInHomeCurrency" Type="bit" Nullable="false" />
+    <Property Name="LeadTime" Type="smallint" Nullable="false" />
+    <Property Name="ReplSunday" Type="bit" Nullable="false" />
+    <Property Name="ReplMonday" Type="bit" Nullable="false" />
+    <Property Name="ReplTuesday" Type="bit" Nullable="false" />
+    <Property Name="ReplWednesday" Type="bit" Nullable="false" />
+    <Property Name="ReplThursday" Type="bit" Nullable="false" />
+    <Property Name="ReplFriday" Type="bit" Nullable="false" />
+    <Property Name="ReplSaturday" Type="bit" Nullable="false" />
+    <Property Name="TaxIncluded" Type="bit" Nullable="false" />
+    <Property Name="Planogram" Type="varchar" MaxLength="20" />
+    <Property Name="PlanogramGLU" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="FAInvoiceAccount" Type="varchar" MaxLength="20" />
+    <Property Name="FACostAccount" Type="varchar" MaxLength="20" />
+    <Property Name="FAWriteOffAccount" Type="varchar" MaxLength="20" />
+    <Property Name="FAInvoiceUseCorp" Type="bit" Nullable="false" />
+    <Property Name="FACostUseCorp" Type="bit" Nullable="false" />
+    <Property Name="FAWriteOffUseCorp" Type="bit" Nullable="false" />
+    <Property Name="ChannelType" Type="tinyint" Nullable="false" />
+    <Property Name="UPSAccount" Type="nvarchar" MaxLength="12" />
+    <Property Name="EmailHouseCoEntry" Type="bit" Nullable="false" />
+    <Property Name="EmailCorpCoEntry" Type="bit" Nullable="false" />
+    <Property Name="EmailHouseCoShip" Type="bit" Nullable="false" />
+    <Property Name="EmailCorpCoShip" Type="bit" Nullable="false" />
+    <Property Name="EmailHouseCoReturn" Type="bit" Nullable="false" />
+    <Property Name="EmailCorpCoReturn" Type="bit" Nullable="false" />
+    <Property Name="PrimaryForManagedAtWarehouse" Type="bit" Nullable="false" />
+    <Property Name="POSTransNumber" Type="int" Nullable="false" />
+    <Property Name="MarketCode" Type="varchar" MaxLength="20" />
+    <Property Name="MarketGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="AltCode" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="Email1" Type="varchar" MaxLength="50" />
+    <Property Name="Email2" Type="varchar" MaxLength="50" />
+    <Property Name="EDISenderID" Type="varchar" MaxLength="15" />
+    <Property Name="EDISenderIDQualifier" Type="varchar" MaxLength="20" />
+    <Property Name="EDISenderIDQualifierGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="PICountDays" Type="tinyint" Nullable="false" />
+    <Property Name="SmallFormat" Type="bit" Nullable="false" />
+    <Property Name="FulfillsCustomerOrders" Type="bit" Nullable="false" />
+    <Property Name="DefaultTaxCode" Type="varchar" MaxLength="12" />
+    <Property Name="ShipSunday" Type="bit" Nullable="false" />
+    <Property Name="ShipMonday" Type="bit" Nullable="false" />
+    <Property Name="ShipTuesday" Type="bit" Nullable="false" />
+    <Property Name="ShipWednesday" Type="bit" Nullable="false" />
+    <Property Name="ShipThursday" Type="bit" Nullable="false" />
+    <Property Name="ShipFriday" Type="bit" Nullable="false" />
+    <Property Name="ShipSaturday" Type="bit" Nullable="false" />
+    <Property Name="ShipScheduleSameAsRepl" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="brnstkchks">
+    <Key>
+      <PropertyRef Name="levint" />
+      <PropertyRef Name="prodint" />
+    </Key>
+    <Property Name="levint" Type="int" Nullable="false" />
+    <Property Name="prodint" Type="int" Nullable="false" />
+    <Property Name="planint" Type="int" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="requestdate" Type="datetime" Nullable="false" />
+    <Property Name="completedate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="brnstocks">
+    <Key>
+      <PropertyRef Name="branchcode" />
+      <PropertyRef Name="varint" />
+    </Key>
+    <Property Name="branchcode" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="varint" Type="int" Nullable="false" />
+    <Property Name="lastmovedate" Type="int" />
+    <Property Name="onorder" Type="int" Nullable="false" />
+    <Property Name="avcost" Type="float" Nullable="false" />
+    <Property Name="retail" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="showroom" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="damaged" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="allocated" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="quarantine" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="stockcheck" Type="varchar" MaxLength="1" />
+    <Property Name="lastcheckdte" Type="int" />
+    <Property Name="discrepancy" Type="smallint" Nullable="false" />
+    <Property Name="stdcost" Type="float" />
+    <Property Name="lastcost" Type="float" />
+    <Property Name="carryoverqty" Type="float" />
+    <Property Name="carryovercst" Type="float" />
+    <Property Name="firstdeldate" Type="datetime" />
+    <Property Name="lastdeldate" Type="datetime" />
+    <Property Name="FirstSoldDate" Type="date" />
+    <Property Name="LastSoldDate" Type="date" />
+    <Property Name="CrossDockQty" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="TransferHeldQty" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="btranscounts">
+    <Key>
+      <PropertyRef Name="transint" />
+      <PropertyRef Name="transline" />
+      <PropertyRef Name="sequenceno" />
+    </Key>
+    <Property Name="transint" Type="int" Nullable="false" />
+    <Property Name="transline" Type="int" Nullable="false" />
+    <Property Name="sequenceno" Type="smallint" Nullable="false" />
+    <Property Name="transcount" Type="smallint" />
+    <Property Name="linecount" Type="int" />
+    <Property Name="transunits" Type="int" />
+    <Property Name="transvalue" Type="money" />
+    <Property Name="transtax" Type="money" />
+    <Property Name="notepad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="btransdiscs">
+    <Key>
+      <PropertyRef Name="transint" />
+      <PropertyRef Name="transline" />
+      <PropertyRef Name="sequenceno" />
+    </Key>
+    <Property Name="transint" Type="int" Nullable="false" />
+    <Property Name="transline" Type="int" Nullable="false" />
+    <Property Name="sequenceno" Type="smallint" Nullable="false" />
+    <Property Name="translineint" Type="int" />
+    <Property Name="discountvalue" Type="money" />
+    <Property Name="discounttax" Type="money" />
+    <Property Name="reasoncode" Type="varchar" MaxLength="2" />
+    <Property Name="discountcode" Type="varchar" MaxLength="4" />
+    <Property Name="authority" Type="varchar" MaxLength="12" />
+    <Property Name="notepad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="btranshdrs">
+    <Key>
+      <PropertyRef Name="transnumber" />
+      <PropertyRef Name="typecode" />
+      <PropertyRef Name="branchcode" />
+    </Key>
+    <Property Name="transnumber" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="typecode" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="reasoncode" Type="varchar" MaxLength="20" />
+    <Property Name="transdate" Type="datetime" Nullable="false" />
+    <Property Name="branchcode" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="branchother" Type="varchar" MaxLength="4" />
+    <Property Name="nominal" Type="varchar" MaxLength="20" />
+    <Property Name="status" Type="varchar" MaxLength="1" />
+    <Property Name="download" Type="varchar" MaxLength="1" />
+    <Property Name="usercode" Type="varchar" MaxLength="4" />
+    <Property Name="processdate" Type="datetime" />
+    <Property Name="transint" Type="int" Nullable="false" />
+    <Property Name="postransint" Type="int" />
+    <Property Name="source" Type="varchar" MaxLength="12" />
+    <Property Name="KitAssemblyOrderID" Type="int" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="SalesAudit" Type="bit" Nullable="false" />
+    <Property Name="Reference" Type="varchar" MaxLength="20" />
+    <Property Name="WhDeliveryID" Type="int" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="ShipCode" Type="varchar" MaxLength="12" />
+    <Property Name="TargetCode" Type="varchar" MaxLength="12" />
+    <Property Name="AdjOtherTranCode" Type="varchar" MaxLength="12" />
+    <Property Name="AdjOtherLocCode" Type="varchar" MaxLength="4" />
+    <Property Name="Reference2" Type="varchar" MaxLength="20" />
+    <Property Name="KitDisassemblyID" Type="int" />
+    <Property Name="KitAssemblyID" Type="int" />
+    <Property Name="DateExtractedToBI" Type="datetime" />
+    <Property Name="CustomerOrderID" Type="int" />
+    <Property Name="CustomerShipmentID" Type="int" />
+    <Property Name="UserAmended" Type="varchar" MaxLength="4" />
+    <Property Name="DateAmended" Type="datetime" />
+    <Property Name="UserApproved" Type="varchar" MaxLength="4" />
+    <Property Name="DateApproved" Type="datetime" />
+    <Property Name="UserRejected" Type="varchar" MaxLength="4" />
+    <Property Name="DateRejected" Type="datetime" />
+    <Property Name="UserConfirmed" Type="varchar" MaxLength="4" />
+    <Property Name="DateConfirmed" Type="datetime" />
+    <Property Name="TotalAbsoluteCost" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="TotalAbsoluteRetail" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="PIHeaderID" Type="int" />
+  </EntityType>
+  <EntityType Name="btransifdata">
+    <Key>
+      <PropertyRef Name="transint" />
+      <PropertyRef Name="transline" />
+    </Key>
+    <Property Name="transint" Type="int" Nullable="false" />
+    <Property Name="transline" Type="int" Nullable="false" />
+    <Property Name="status" Type="smallint" Nullable="false" />
+    <Property Name="notepad" Type="int" Nullable="false" />
+    <Property Name="transdata" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="btranslines">
+    <Key>
+      <PropertyRef Name="transint" />
+      <PropertyRef Name="transline" />
+    </Key>
+    <Property Name="transint" Type="int" Nullable="false" />
+    <Property Name="transline" Type="int" Nullable="false" />
+    <Property Name="prodint" Type="int" Nullable="false" />
+    <Property Name="quantity" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="costvalue" Type="money" Nullable="false" />
+    <Property Name="retailvalue" Type="money" Nullable="false" />
+    <Property Name="retailtax" Type="money" />
+    <Property Name="category" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="download" Type="varchar" MaxLength="1" />
+    <Property Name="costcode" Type="varchar" MaxLength="12" />
+    <Property Name="weeknumber" Type="smallint" />
+    <Property Name="subcategory" Type="varchar" MaxLength="3" />
+    <Property Name="stklevel" Type="int" />
+    <Property Name="transdate" Type="datetime" />
+    <Property Name="pluvalue" Type="money" />
+    <Property Name="plutax" Type="money" />
+    <Property Name="barcode" Type="varchar" MaxLength="20" />
+    <Property Name="reasoncode" Type="varchar" MaxLength="20" />
+    <Property Name="translineint" Type="int" Nullable="false" />
+    <Property Name="kitlineint" Type="int" />
+    <Property Name="stklretail" Type="float" />
+    <Property Name="stklcost" Type="float" />
+    <Property Name="stklcm" Type="float" />
+    <Property Name="fiscyrpercode" Type="int" />
+    <Property Name="kitvarint" Type="int" />
+    <Property Name="OldQty" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="DbProcessStatus" Type="bit" Nullable="false" />
+    <Property Name="DbProcessedCount" Type="smallint" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="Replenished" Type="bit" />
+    <Property Name="PromoCode" Type="nvarchar" MaxLength="30" />
+    <Property Name="CustomerOrderLineID" Type="int" />
+    <Property Name="CustomerShipmentLineID" Type="int" />
+    <Property Name="StoreSubcategoryID" Type="int" />
+  </EntityType>
+  <EntityType Name="consigdests">
+    <Key>
+      <PropertyRef Name="warehouse" />
+      <PropertyRef Name="consignment" />
+      <PropertyRef Name="destination" />
+    </Key>
+    <Property Name="warehouse" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="consignment" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="desttype" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="destination" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="condestint" Type="int" Nullable="false" />
+    <Property Name="delroute" Type="varchar" MaxLength="3" />
+    <Property Name="droppoint" Type="int" />
+    <Property Name="destdoc" Type="varchar" MaxLength="50" />
+    <Property Name="delroutedoc" Type="varchar" MaxLength="12" />
+    <Property Name="payterms" Type="varchar" MaxLength="4" />
+    <Property Name="freightchg" Type="float" />
+    <Property Name="freighttax" Type="money" />
+    <Property Name="address1" Type="varchar" MaxLength="32" />
+    <Property Name="address2" Type="varchar" MaxLength="32" />
+    <Property Name="address3" Type="varchar" MaxLength="32" />
+    <Property Name="address4" Type="varchar" MaxLength="32" />
+    <Property Name="postcode" Type="varchar" MaxLength="12" />
+    <Property Name="country" Type="varchar" MaxLength="3" />
+    <Property Name="notepad" Type="int" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="1" />
+    <Property Name="reference" Type="varchar" MaxLength="20" />
+    <Property Name="category" Type="varchar" MaxLength="1" />
+    <Property Name="reasoncode" Type="varchar" MaxLength="12" />
+    <Property Name="reference2" Type="varchar" MaxLength="12" />
+    <Property Name="KitAssemblyOrderDestinationID" Type="int" />
+    <Property Name="ShipDate" Type="datetime" />
+    <Property Name="ShipUser" Type="varchar" MaxLength="4" />
+    <Property Name="ReceiveDate" Type="datetime" />
+    <Property Name="ReceiveUser" Type="varchar" MaxLength="4" />
+    <Property Name="AllocStatus" Type="tinyint" Nullable="false" />
+    <Property Name="PickStatus" Type="tinyint" Nullable="false" />
+    <Property Name="ParcelCnt" Type="int" />
+    <Property Name="ParcelType" Type="varchar" MaxLength="3" />
+    <Property Name="DateInterfaced" Type="datetime" />
+    <Property Name="ShippingCost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="RTVDisposalMethod" Type="tinyint" Nullable="false" />
+    <Property Name="SourceSubLocationID" Type="int" Nullable="false" />
+    <Property Name="UserCancelled" Type="varchar" MaxLength="4" />
+    <Property Name="DateCancelled" Type="datetime" />
+    <Property Name="UserReopened" Type="varchar" MaxLength="4" />
+    <Property Name="DateReopened" Type="datetime" />
+    <Property Name="RowVer" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="VendorLocationID" Type="int" />
+    <Property Name="ShipMethodCode" Type="varchar" MaxLength="20" />
+    <Property Name="ShipMethodCodeGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="ShipReference" Type="nvarchar" MaxLength="50" />
+    <Property Name="DriverReference" Type="nvarchar" MaxLength="50" />
+    <Property Name="TruckNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserRejected" Type="varchar" MaxLength="4" />
+    <Property Name="DateRejected" Type="datetime" />
+    <Property Name="UserApproved" Type="varchar" MaxLength="4" />
+    <Property Name="DateApproved" Type="datetime" />
+    <Property Name="DateLastModified" Type="datetime" Nullable="false" />
+    <Property Name="DateCreatedInStore" Type="datetime" />
+    <Property Name="UserCreatedInStore" Type="nvarchar(max)" />
+    <Property Name="DateCancelledInStore" Type="datetime" />
+    <Property Name="UserCancelledInStore" Type="nvarchar(max)" />
+    <Property Name="StoreSuggestionCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateAmendedInStore" Type="datetime" />
+    <Property Name="UserAmendedInStore" Type="nvarchar(max)" />
+    <Property Name="DateApprovedInStore" Type="datetime" />
+    <Property Name="UserApprovedInStore" Type="nvarchar(max)" />
+    <Property Name="DateShippedInStore" Type="datetime" />
+    <Property Name="UserShippedInStore" Type="nvarchar(max)" />
+    <Property Name="ParentShipDestID" Type="int" />
+    <Property Name="LastChildShipCodeSuffix" Type="int" />
+    <Property Name="DateReceivedInStore" Type="datetime" />
+    <Property Name="UserReceivedInStore" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'mi9_mms_fs_train.dbo.consigdocs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="consigdocs">
+    <Key>
+      <PropertyRef Name="warehouse" />
+      <PropertyRef Name="levelid" />
+      <PropertyRef Name="processname" />
+    </Key>
+    <Property Name="warehouse" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="consignment" Type="varchar" MaxLength="12" />
+    <Property Name="levelid" Type="smallint" Nullable="false" />
+    <Property Name="processname" Type="varchar" MaxLength="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="consighdrs">
+    <Key>
+      <PropertyRef Name="warehouse" />
+      <PropertyRef Name="consignment" />
+    </Key>
+    <Property Name="warehouse" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="consignment" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="collect" Type="varchar" MaxLength="1" />
+    <Property Name="carrier" Type="varchar" MaxLength="4" />
+    <Property Name="notepad" Type="int" Nullable="false" />
+    <Property Name="createdate" Type="datetime" Nullable="false" />
+    <Property Name="amenddate" Type="datetime" />
+    <Property Name="despatchdate" Type="datetime" />
+    <Property Name="issuedate" Type="datetime" />
+    <Property Name="confirmdate" Type="datetime" />
+    <Property Name="consigdoc" Type="varchar" MaxLength="50" />
+    <Property Name="exceptions" Type="smallint" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="authorityno" Type="varchar" MaxLength="50" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="4" />
+    <Property Name="AmendUser" Type="varchar" MaxLength="4" />
+    <Property Name="AuthorizeUser" Type="varchar" MaxLength="4" />
+    <Property Name="AuthorizeDate" Type="datetime" />
+    <Property Name="ManyToOne" Type="bit" Nullable="false" />
+    <Property Name="ChannelType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="TransferRequest" Type="bit" Nullable="false" />
+    <Property Name="TransferAll" Type="bit" Nullable="false" />
+    <Property Name="BuyerCode" Type="varchar" MaxLength="8" />
+    <Property Name="ReasonCode" Type="varchar" MaxLength="2" />
+    <Property Name="RTV" Type="bit" Nullable="false" />
+    <Property Name="TransferRequestID" Type="int" />
+    <Property Name="StoreInitiated" Type="bit" Nullable="false" />
+    <Property Name="RTVAuthRequestedUser" Type="varchar" MaxLength="4" />
+    <Property Name="RTVAuthRequestedDate" Type="datetime" />
+    <Property Name="RTVRejectNotes" Type="nvarchar" MaxLength="300" />
+    <Property Name="RTVRejectedUser" Type="varchar" MaxLength="4" />
+    <Property Name="RTVRejectedDate" Type="datetime" />
+    <Property Name="RTVCancelReasonCode" Type="varchar" MaxLength="20" />
+    <Property Name="RTVCancelReasonGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="DateExtractedToAP" Type="datetime" />
+    <Property Name="AllowAddProductsDuringPack" Type="bit" Nullable="false" />
+    <Property Name="DateCreatedInStore" Type="datetime" />
+    <Property Name="UserCreatedInStore" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="consiglines">
+    <Key>
+      <PropertyRef Name="condestint" />
+      <PropertyRef Name="transline" />
+      <PropertyRef Name="varint" />
+    </Key>
+    <Property Name="condestint" Type="int" Nullable="false" />
+    <Property Name="transline" Type="int" Nullable="false" />
+    <Property Name="conlineint" Type="int" Nullable="false" />
+    <Property Name="destordref" Type="varchar" MaxLength="12" />
+    <Property Name="destordline" Type="int" />
+    <Property Name="destordint" Type="int" />
+    <Property Name="varint" Type="int" Nullable="false" />
+    <Property Name="batchint" Type="int" />
+    <Property Name="issueqty" Type="int" Nullable="false" />
+    <Property Name="receiveqty" Type="int" />
+    <Property Name="avcost" Type="float" Nullable="false" />
+    <Property Name="unitretail" Type="money" />
+    <Property Name="othervalue" Type="money" />
+    <Property Name="discrepqty" Type="int" />
+    <Property Name="download" Type="smallint" Nullable="false" />
+    <Property Name="RequestQty" Type="int" Nullable="false" />
+    <Property Name="ReasonCode" Type="varchar" MaxLength="12" />
+    <Property Name="WIPQty" Type="int" />
+    <Property Name="InTransitQuantity" Type="int" StoreGeneratedPattern="Computed" />
+    <Property Name="PackedQty" Type="int" Nullable="false" />
+    <Property Name="DestLocAverageCost" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="DestLocUnitPrice" Type="numeric" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="pricechghdrs">
+    <Key>
+      <PropertyRef Name="pricechgcode" />
+    </Key>
+    <Property Name="pricechgcode" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="pricechgint" Type="int" Nullable="false" />
+    <Property Name="startdate" Type="datetime" Nullable="false" />
+    <Property Name="enddate" Type="datetime" />
+    <Property Name="createdate" Type="datetime" Nullable="false" />
+    <Property Name="authdate" Type="datetime" />
+    <Property Name="reasoncode" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="pricechgtype" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="status" Type="smallint" Nullable="false" />
+    <Property Name="usercode" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="authuser" Type="varchar" MaxLength="4" />
+    <Property Name="buyer" Type="varchar" MaxLength="8" />
+    <Property Name="totvalue" Type="money" />
+    <Property Name="frequency" Type="varchar" MaxLength="1" />
+    <Property Name="daysofweek" Type="varchar" MaxLength="14" />
+    <Property Name="starttime" Type="varchar" MaxLength="5" />
+    <Property Name="endtime" Type="varchar" MaxLength="5" />
+    <Property Name="budgetqty" Type="int" />
+    <Property Name="budgetval" Type="money" />
+    <Property Name="eventcode" Type="varchar" MaxLength="12" />
+    <Property Name="buycond" Type="varchar" MaxLength="1" />
+    <Property Name="reccond" Type="varchar" MaxLength="1" />
+    <Property Name="disctype" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="proddescs">
+    <Key>
+      <PropertyRef Name="prodint" />
+      <PropertyRef Name="sequenceno" />
+    </Key>
+    <Property Name="prodint" Type="int" Nullable="false" />
+    <Property Name="sequenceno" Type="smallint" Nullable="false" />
+    <Property Name="descline" Type="varchar" MaxLength="75" />
+  </EntityType>
+  <EntityType Name="prodkeys">
+    <Key>
+      <PropertyRef Name="prodaltkey" />
+      <PropertyRef Name="keytype" />
+    </Key>
+    <Property Name="prodaltkey" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="prodint" Type="int" Nullable="false" />
+    <Property Name="keytype" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="Primary" Type="bit" Nullable="false" />
+    <Property Name="ProductUnitID" Type="int" />
+    <Property Name="PrimaryForUnit" Type="bit" Nullable="false" />
+    <Property Name="prodaltkeyNoZeros" Type="varchar" MaxLength="20" StoreGeneratedPattern="Computed" Nullable="false" />
+  </EntityType>
+  <EntityType Name="productcodes">
+    <Key>
+      <PropertyRef Name="varint" />
+    </Key>
+    <Property Name="variantcode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="prodint" Type="int" Nullable="false" />
+    <Property Name="varint" Type="int" Nullable="false" />
+    <Property Name="vatcode" Type="varchar" MaxLength="12" />
+    <Property Name="repcost" Type="float" />
+    <Property Name="status" Type="varchar" MaxLength="1" />
+    <Property Name="baseproduct" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="sequenceno" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="varcode1" Type="varchar" MaxLength="5" />
+    <Property Name="varcode2" Type="varchar" MaxLength="5" />
+    <Property Name="vardesc1" Type="varchar" MaxLength="40" />
+    <Property Name="vardesc2" Type="varchar" MaxLength="40" />
+    <Property Name="SeasonIntroduced" Type="varchar" MaxLength="3" />
+    <Property Name="CoordinateGroup" Type="varchar" MaxLength="8" />
+    <Property Name="Silhouette" Type="varchar" MaxLength="8" />
+    <Property Name="InventoryStatus" Type="varchar" MaxLength="2" />
+    <Property Name="CountryOrigin" Type="varchar" MaxLength="2" />
+    <Property Name="CountryMfr" Type="varchar" MaxLength="2" />
+    <Property Name="CountryDispatch" Type="varchar" MaxLength="2" />
+    <Property Name="pa01" Type="varchar" MaxLength="20" />
+    <Property Name="pa02" Type="varchar" MaxLength="20" />
+    <Property Name="pa03" Type="varchar" MaxLength="20" />
+    <Property Name="pa04" Type="varchar" MaxLength="20" />
+    <Property Name="pa05" Type="varchar" MaxLength="20" />
+    <Property Name="pa06" Type="varchar" MaxLength="20" />
+    <Property Name="pa07" Type="varchar" MaxLength="20" />
+    <Property Name="pa08" Type="varchar" MaxLength="20" />
+    <Property Name="pa09" Type="varchar" MaxLength="20" />
+    <Property Name="pa10" Type="varchar" MaxLength="20" />
+    <Property Name="pa11" Type="varchar" MaxLength="20" />
+    <Property Name="pa12" Type="varchar" MaxLength="20" />
+    <Property Name="pa13" Type="varchar" MaxLength="20" />
+    <Property Name="pa14" Type="varchar" MaxLength="20" />
+    <Property Name="pa15" Type="varchar" MaxLength="20" />
+    <Property Name="pa16" Type="varchar" MaxLength="20" />
+    <Property Name="pa17" Type="varchar" MaxLength="20" />
+    <Property Name="pa18" Type="varchar" MaxLength="20" />
+    <Property Name="pa19" Type="varchar" MaxLength="20" />
+    <Property Name="pa20" Type="varchar" MaxLength="20" />
+    <Property Name="pa21" Type="varchar" MaxLength="20" />
+    <Property Name="pa22" Type="varchar" MaxLength="20" />
+    <Property Name="pa23" Type="varchar" MaxLength="20" />
+    <Property Name="pa24" Type="varchar" MaxLength="20" />
+    <Property Name="pa25" Type="varchar" MaxLength="20" />
+    <Property Name="CreatedOffline" Type="bit" Nullable="false" />
+    <Property Name="DefaultVendorProductID" Type="int" />
+    <Property Name="Web" Type="bit" Nullable="false" />
+    <Property Name="prodint2" Type="int" />
+    <Property Name="WebRejected" Type="bit" Nullable="false" />
+    <Property Name="ClusterID" Type="int" />
+    <Property Name="WIPClusterID" Type="int" />
+    <Property Name="TargetYrWeek" Type="int" />
+    <Property Name="AdCode" Type="varchar" MaxLength="20" />
+    <Property Name="POSMarkdown" Type="varchar" MaxLength="4" />
+    <Property Name="MarkdownDate" Type="datetime" />
+    <Property Name="MergeID" Type="int" />
+    <Property Name="MergeDate" Type="datetime" />
+    <Property Name="MergeUser" Type="varchar" MaxLength="4" />
+    <Property Name="ColourARGB" Type="varchar" MaxLength="50" />
+    <Property Name="SizeType" Type="varchar" MaxLength="1" />
+    <Property Name="SizeCode" Type="varchar" MaxLength="5" />
+    <Property Name="SizeDesc" Type="varchar" MaxLength="40" />
+    <Property Name="ProductOptionID" Type="int" />
+    <Property Name="ProductOptionCode" Type="varchar" MaxLength="5" />
+    <Property Name="CouponFamily1" Type="varchar" MaxLength="6" />
+    <Property Name="CouponFamily2" Type="varchar" MaxLength="6" />
+    <Property Name="pa26" Type="varchar" MaxLength="20" />
+    <Property Name="pa27" Type="varchar" MaxLength="20" />
+    <Property Name="pa28" Type="varchar" MaxLength="20" />
+    <Property Name="pa29" Type="varchar" MaxLength="20" />
+    <Property Name="pa30" Type="varchar" MaxLength="20" />
+    <Property Name="pa31" Type="varchar" MaxLength="20" />
+    <Property Name="pa32" Type="varchar" MaxLength="20" />
+    <Property Name="pa33" Type="varchar" MaxLength="20" />
+    <Property Name="pa34" Type="varchar" MaxLength="20" />
+    <Property Name="pa35" Type="varchar" MaxLength="20" />
+    <Property Name="pa36" Type="varchar" MaxLength="20" />
+    <Property Name="pa37" Type="varchar" MaxLength="20" />
+    <Property Name="pa38" Type="varchar" MaxLength="20" />
+    <Property Name="pa39" Type="varchar" MaxLength="20" />
+    <Property Name="pa40" Type="varchar" MaxLength="20" />
+    <Property Name="pa41" Type="varchar" MaxLength="20" />
+    <Property Name="pa42" Type="varchar" MaxLength="20" />
+    <Property Name="pa43" Type="varchar" MaxLength="20" />
+    <Property Name="pa44" Type="varchar" MaxLength="20" />
+    <Property Name="pa45" Type="varchar" MaxLength="20" />
+    <Property Name="pa46" Type="varchar" MaxLength="20" />
+    <Property Name="pa47" Type="varchar" MaxLength="20" />
+    <Property Name="pa48" Type="varchar" MaxLength="20" />
+    <Property Name="pa49" Type="varchar" MaxLength="20" />
+    <Property Name="pa50" Type="varchar" MaxLength="20" />
+    <Property Name="pa51" Type="varchar" MaxLength="20" />
+    <Property Name="pa52" Type="varchar" MaxLength="20" />
+    <Property Name="pa53" Type="varchar" MaxLength="20" />
+    <Property Name="pa54" Type="varchar" MaxLength="20" />
+    <Property Name="pa55" Type="varchar" MaxLength="20" />
+    <Property Name="pa56" Type="varchar" MaxLength="20" />
+    <Property Name="pa57" Type="varchar" MaxLength="20" />
+    <Property Name="pa58" Type="varchar" MaxLength="20" />
+    <Property Name="pa59" Type="varchar" MaxLength="20" />
+    <Property Name="pa60" Type="varchar" MaxLength="20" />
+    <Property Name="pa61" Type="varchar" MaxLength="20" />
+    <Property Name="pa62" Type="varchar" MaxLength="20" />
+    <Property Name="pa63" Type="varchar" MaxLength="20" />
+    <Property Name="pa64" Type="varchar" MaxLength="20" />
+    <Property Name="pa65" Type="varchar" MaxLength="20" />
+    <Property Name="pa66" Type="varchar" MaxLength="20" />
+    <Property Name="pa67" Type="varchar" MaxLength="20" />
+    <Property Name="pa68" Type="varchar" MaxLength="20" />
+    <Property Name="pa69" Type="varchar" MaxLength="20" />
+    <Property Name="pa70" Type="varchar" MaxLength="20" />
+    <Property Name="pa71" Type="varchar" MaxLength="20" />
+    <Property Name="pa72" Type="varchar" MaxLength="20" />
+    <Property Name="pa73" Type="varchar" MaxLength="20" />
+    <Property Name="pa74" Type="varchar" MaxLength="20" />
+    <Property Name="pa75" Type="varchar" MaxLength="20" />
+    <Property Name="pa76" Type="varchar" MaxLength="20" />
+    <Property Name="pa77" Type="varchar" MaxLength="20" />
+    <Property Name="pa78" Type="varchar" MaxLength="20" />
+    <Property Name="pa79" Type="varchar" MaxLength="20" />
+    <Property Name="pa80" Type="varchar" MaxLength="20" />
+    <Property Name="pa81" Type="varchar" MaxLength="20" />
+    <Property Name="pa82" Type="varchar" MaxLength="20" />
+    <Property Name="pa83" Type="varchar" MaxLength="20" />
+    <Property Name="pa84" Type="varchar" MaxLength="20" />
+    <Property Name="pa85" Type="varchar" MaxLength="20" />
+    <Property Name="pa86" Type="varchar" MaxLength="20" />
+    <Property Name="pa87" Type="varchar" MaxLength="20" />
+    <Property Name="pa88" Type="varchar" MaxLength="20" />
+    <Property Name="pa89" Type="varchar" MaxLength="20" />
+    <Property Name="pa90" Type="varchar" MaxLength="20" />
+    <Property Name="pa91" Type="varchar" MaxLength="20" />
+    <Property Name="pa92" Type="varchar" MaxLength="20" />
+    <Property Name="pa93" Type="varchar" MaxLength="20" />
+    <Property Name="pa94" Type="varchar" MaxLength="20" />
+    <Property Name="pa95" Type="varchar" MaxLength="20" />
+    <Property Name="pa96" Type="varchar" MaxLength="20" />
+    <Property Name="pa97" Type="varchar" MaxLength="20" />
+    <Property Name="pa98" Type="varchar" MaxLength="20" />
+    <Property Name="pa99" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="products">
+    <Key>
+      <PropertyRef Name="prodint" />
+    </Key>
+    <Property Name="prodcode" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="velcode" Type="varchar" MaxLength="6" />
+    <Property Name="altkey" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="barcode" Type="varchar" MaxLength="13" />
+    <Property Name="proddesc" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="longdescind" Type="varchar" MaxLength="1" />
+    <Property Name="level1" Type="varchar" MaxLength="8" />
+    <Property Name="level2" Type="varchar" MaxLength="8" />
+    <Property Name="level3" Type="varchar" MaxLength="8" />
+    <Property Name="prodquality" Type="varchar" MaxLength="1" />
+    <Property Name="prodstatus" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="prodtype" Type="varchar" MaxLength="3" />
+    <Property Name="prodhistlev" Type="varchar" MaxLength="1" />
+    <Property Name="prodorderind" Type="varchar" MaxLength="1" />
+    <Property Name="prodallocind" Type="varchar" MaxLength="1" />
+    <Property Name="kitind" Type="varchar" MaxLength="1" />
+    <Property Name="packcode" Type="varchar" MaxLength="3" />
+    <Property Name="supplier" Type="varchar" MaxLength="12" />
+    <Property Name="supptable" Type="varchar" MaxLength="3" />
+    <Property Name="avlead" Type="int" />
+    <Property Name="vatcode" Type="varchar" MaxLength="12" />
+    <Property Name="cubefactor" Type="float" />
+    <Property Name="weight" Type="float" />
+    <Property Name="facing" Type="float" />
+    <Property Name="height" Type="float" />
+    <Property Name="width" Type="float" />
+    <Property Name="depth" Type="float" />
+    <Property Name="length" Type="float" />
+    <Property Name="convcode" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="purchunits" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="stockunits" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="salesunits" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="abcclass" Type="varchar" MaxLength="2" />
+    <Property Name="analcode1" Type="varchar" MaxLength="3" />
+    <Property Name="analcode2" Type="varchar" MaxLength="3" />
+    <Property Name="analcode3" Type="varchar" MaxLength="3" />
+    <Property Name="analcode4" Type="varchar" MaxLength="3" />
+    <Property Name="analcode5" Type="varchar" MaxLength="3" />
+    <Property Name="prodclass" Type="varchar" MaxLength="3" />
+    <Property Name="disccat" Type="varchar" MaxLength="3" />
+    <Property Name="commcat" Type="varchar" MaxLength="3" />
+    <Property Name="resprodcode" Type="varchar" MaxLength="3" />
+    <Property Name="seasoncode" Type="varchar" MaxLength="3" />
+    <Property Name="misccharge" Type="varchar" MaxLength="3" />
+    <Property Name="merchmodel" Type="varchar" MaxLength="3" />
+    <Property Name="carrmethod" Type="varchar" MaxLength="3" />
+    <Property Name="carrcharge" Type="varchar" MaxLength="3" />
+    <Property Name="handcharge" Type="varchar" MaxLength="3" />
+    <Property Name="surcharge" Type="varchar" MaxLength="3" />
+    <Property Name="salesnomcode" Type="varchar" MaxLength="20" />
+    <Property Name="purchnomcode" Type="varchar" MaxLength="20" />
+    <Property Name="stocknomcode" Type="varchar" MaxLength="20" />
+    <Property Name="lastmovedate" Type="datetime" />
+    <Property Name="amenddate" Type="datetime" />
+    <Property Name="amenduser" Type="varchar" MaxLength="4" />
+    <Property Name="createdate" Type="datetime" Nullable="false" />
+    <Property Name="deletedate" Type="datetime" />
+    <Property Name="introdate" Type="datetime" />
+    <Property Name="discondate" Type="datetime" />
+    <Property Name="suspdate" Type="datetime" />
+    <Property Name="lastcheckdte" Type="datetime" />
+    <Property Name="nextcheckdte" Type="datetime" />
+    <Property Name="stdcost" Type="float" />
+    <Property Name="nxtstdcost" Type="float" />
+    <Property Name="nxtstddate" Type="datetime" />
+    <Property Name="oldstdcost" Type="float" />
+    <Property Name="avcost" Type="float" />
+    <Property Name="repcost" Type="float" />
+    <Property Name="valueprice" Type="float" />
+    <Property Name="ordercost" Type="float" />
+    <Property Name="storagecost" Type="float" />
+    <Property Name="demandytd" Type="float" />
+    <Property Name="lostsalesytd" Type="float" />
+    <Property Name="mingmpc" Type="float" />
+    <Property Name="maxgmpc" Type="float" />
+    <Property Name="basegmpc" Type="float" />
+    <Property Name="reportseq" Type="int" />
+    <Property Name="accesscount" Type="int" />
+    <Property Name="abcrankno" Type="int" />
+    <Property Name="abclastrank" Type="int" />
+    <Property Name="abclastdate" Type="datetime" />
+    <Property Name="prodint" Type="int" Nullable="false" />
+    <Property Name="life" Type="smallint" />
+    <Property Name="idealset" Type="int" />
+    <Property Name="brand" Type="varchar" MaxLength="12" />
+    <Property Name="contind" Type="varchar" MaxLength="1" />
+    <Property Name="introseason" Type="varchar" MaxLength="3" />
+    <Property Name="reordmethod" Type="varchar" MaxLength="3" />
+    <Property Name="customsdesc" Type="varchar" MaxLength="12" />
+    <Property Name="prodstruct" Type="varchar" MaxLength="2" />
+    <Property Name="labeltype" Type="varchar" MaxLength="2" />
+    <Property Name="sourcecode" Type="varchar" MaxLength="2" />
+    <Property Name="licencecode" Type="varchar" MaxLength="8" />
+    <Property Name="foodstamp" Type="varchar" MaxLength="1" />
+    <Property Name="shelldep" Type="float" />
+    <Property Name="bottledep" Type="float" />
+    <Property Name="paytable" Type="varchar" MaxLength="2" />
+    <Property Name="competeprice" Type="varchar" MaxLength="1" />
+    <Property Name="knownvalue" Type="varchar" MaxLength="1" />
+    <Property Name="manufacturer" Type="varchar" MaxLength="12" />
+    <Property Name="buyer" Type="varchar" MaxLength="8" />
+    <Property Name="replenmethod" Type="varchar" MaxLength="4" />
+    <Property Name="backsalhist" Type="smallint" />
+    <Property Name="wksstockheld" Type="float" />
+    <Property Name="replenstdte" Type="datetime" />
+    <Property Name="replenenddte" Type="datetime" />
+    <Property Name="statchgdate" Type="datetime" />
+    <Property Name="range" Type="varchar" MaxLength="12" />
+    <Property Name="CommodityID" Type="int" />
+    <Property Name="VarTableCode" Type="varchar" MaxLength="5" />
+    <Property Name="CoordinateGroup" Type="varchar" MaxLength="8" />
+    <Property Name="Silhouette" Type="varchar" MaxLength="8" />
+    <Property Name="CreatedOffline" Type="bit" Nullable="false" />
+    <Property Name="CreateUser" Type="varchar" MaxLength="4" />
+    <Property Name="LongDesc" Type="varchar" MaxLength="300" />
+    <Property Name="StatChgUser" Type="varchar" MaxLength="4" />
+    <Property Name="PrimaryMaterial" Type="varchar" MaxLength="12" />
+    <Property Name="KitDisassemblyAction" Type="tinyint" Nullable="false" />
+    <Property Name="Stockable" Type="bit" Nullable="false" />
+    <Property Name="Consignment" Type="bit" Nullable="false" />
+    <Property Name="SpecialOrder" Type="bit" Nullable="false" />
+    <Property Name="NonMarkdownReason" Type="varchar" MaxLength="2" />
+    <Property Name="AvReceivedCost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ReceivedQty" Type="int" Nullable="false" />
+    <Property Name="DefaultVendorProductID" Type="int" />
+    <Property Name="level4" Type="varchar" MaxLength="8" />
+    <Property Name="level5" Type="varchar" MaxLength="8" />
+    <Property Name="AltMerchHierarchy1ID" Type="int" />
+    <Property Name="ExpiryDate" Type="datetime" />
+    <Property Name="InnerPack" Type="int" Nullable="false" />
+    <Property Name="MasterPack" Type="int" Nullable="false" />
+    <Property Name="MarkdownDate" Type="datetime" />
+    <Property Name="PreTicket" Type="bit" Nullable="false" />
+    <Property Name="Assorted" Type="bit" Nullable="false" />
+    <Property Name="AllocUnits" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="SetQty" Type="int" />
+    <Property Name="CartonQty" Type="int" Nullable="false" />
+    <Property Name="PalletQty" Type="int" Nullable="false" />
+    <Property Name="WebDate" Type="datetime" />
+    <Property Name="CopyDate" Type="datetime" />
+    <Property Name="PhotoDate" Type="datetime" />
+    <Property Name="PhotoLocation" Type="varchar" MaxLength="20" />
+    <Property Name="SetType" Type="varchar" MaxLength="12" />
+    <Property Name="Replenished" Type="bit" Nullable="false" />
+    <Property Name="ReplenishmentSourceType" Type="tinyint" Nullable="false" />
+    <Property Name="POSMarkdown" Type="varchar" MaxLength="4" />
+    <Property Name="VMI" Type="bit" Nullable="false" />
+    <Property Name="Scaled" Type="bit" Nullable="false" />
+    <Property Name="PriceCompareUnits" Type="varchar" MaxLength="4" />
+    <Property Name="PriceCompareFactor" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="SalesUnitsID" Type="int" />
+    <Property Name="AltSalesUnitsID" Type="int" />
+    <Property Name="AllocUnitsID" Type="int" />
+    <Property Name="PDQUnitsID" Type="int" />
+    <Property Name="AltSalesUnitsSKU" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="HazMatClass" Type="varchar" MaxLength="10" />
+    <Property Name="SecurityTagType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="SellingRestriction" Type="varchar" MaxLength="3" />
+    <Property Name="POSKeyword" Type="varchar" MaxLength="15" />
+    <Property Name="CommissionPercent" Type="numeric" Precision="4" Scale="2" Nullable="false" />
+    <Property Name="Fee" Type="varchar" MaxLength="20" />
+    <Property Name="NeverOutOfStock" Type="bit" Nullable="false" />
+    <Property Name="FarmerTaxExempt" Type="bit" Nullable="false" />
+    <Property Name="SerialNumRequired" Type="bit" Nullable="false" />
+    <Property Name="WarrantyAvailable" Type="bit" Nullable="false" />
+    <Property Name="PreventEnteringQtyForRepeatItemInPOS" Type="bit" Nullable="false" />
+    <Property Name="FoodStampCanBeUsed" Type="bit" Nullable="false" />
+    <Property Name="AssociatedProdint" Type="int" />
+    <Property Name="POSScriptLine1" Type="varchar" MaxLength="45" />
+    <Property Name="POSScriptLine2" Type="varchar" MaxLength="31" />
+    <Property Name="AllowPriceOverrideInPOS" Type="bit" Nullable="false" />
+    <Property Name="ForceEnteringQtyInPOS" Type="bit" Nullable="false" />
+    <Property Name="WebPublishedDate" Type="datetime" />
+    <Property Name="NonMerchType" Type="tinyint" Nullable="false" />
+    <Property Name="HTSCode" Type="varchar" MaxLength="20" />
+    <Property Name="ProPricingGroup" Type="varchar" MaxLength="20" />
+    <Property Name="ProPricingType" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="ShipQtyMayExceedAvailable" Type="bit" Nullable="false" />
+    <Property Name="WarehouseReplenishmentStartDate" Type="date" />
+    <Property Name="WarehouseReplenishmentEndDate" Type="date" />
+  </EntityType>
+  <EntityType Name="purchcosts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="purchlineint" Type="int" Nullable="false" />
+    <Property Name="costcode" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="homecurrency" Type="smallint" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SourceType" Type="tinyint" Nullable="false" />
+    <Property Name="SourceID" Type="int" />
+    <Property Name="CreatedOffline" Type="bit" Nullable="false" />
+    <Property Name="NetCost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="LandedCost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="TotalCost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DutiableCost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Reason" Type="varchar(max)" />
+    <Property Name="FromHeader" Type="bit" Nullable="false" />
+    <Property Name="costvalue" Type="numeric" Precision="9" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="purchorders">
+    <Key>
+      <PropertyRef Name="ordernumber" />
+    </Key>
+    <Property Name="suppint" Type="int" Nullable="false" />
+    <Property Name="ordernumber" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="buyer" Type="varchar" MaxLength="8" />
+    <Property Name="suppbrint" Type="int" />
+    <Property Name="seasoncode" Type="varchar" MaxLength="3" />
+    <Property Name="orderdate" Type="datetime" Nullable="false" />
+    <Property Name="createdate" Type="datetime" Nullable="false" />
+    <Property Name="amenddate" Type="datetime" />
+    <Property Name="printdate" Type="datetime" />
+    <Property Name="makeupdate" Type="datetime" />
+    <Property Name="makeupprint" Type="datetime" />
+    <Property Name="location" Type="varchar" MaxLength="4" />
+    <Property Name="deliverydate" Type="datetime" />
+    <Property Name="canceldate" Type="datetime" />
+    <Property Name="ackreference" Type="varchar" MaxLength="20" />
+    <Property Name="ackdate" Type="datetime" />
+    <Property Name="authuser" Type="varchar" MaxLength="4" />
+    <Property Name="authdate" Type="datetime" />
+    <Property Name="plint" Type="int" />
+    <Property Name="settlement" Type="float" />
+    <Property Name="settletype" Type="varchar" MaxLength="3" />
+    <Property Name="buyingmethod" Type="varchar" MaxLength="4" />
+    <Property Name="currency" Type="varchar" MaxLength="3" />
+    <Property Name="currrate" Type="float" />
+    <Property Name="usercode" Type="varchar" MaxLength="4" />
+    <Property Name="status" Type="smallint" Nullable="false" />
+    <Property Name="transint" Type="int" Nullable="false" />
+    <Property Name="makeupstatus" Type="smallint" />
+    <Property Name="printprice" Type="varchar" MaxLength="1" />
+    <Property Name="openorder" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="ordertype" Type="smallint" Nullable="false" />
+    <Property Name="splint" Type="int" />
+    <Property Name="printstatus" Type="smallint" />
+    <Property Name="dealnumber" Type="varchar" MaxLength="8" />
+    <Property Name="amendno" Type="int" />
+    <Property Name="allowbo" Type="varchar" MaxLength="1" />
+    <Property Name="compafter" Type="int" />
+    <Property Name="channelcode" Type="varchar" MaxLength="4" />
+    <Property Name="faxsubmitref" Type="varchar" MaxLength="40" />
+    <Property Name="faxstatus" Type="char" MaxLength="1" />
+    <Property Name="type" Type="varchar" MaxLength="3" />
+    <Property Name="shipdate" Type="datetime" />
+    <Property Name="carrier" Type="varchar" MaxLength="4" />
+    <Property Name="firstdeldate" Type="datetime" />
+    <Property Name="lastdeldate" Type="datetime" />
+    <Property Name="CreatedOffline" Type="bit" Nullable="false" />
+    <Property Name="SendEDI" Type="tinyint" Nullable="false" />
+    <Property Name="AmendUser" Type="varchar" MaxLength="4" />
+    <Property Name="TransportMethod" Type="varchar" MaxLength="2" />
+    <Property Name="VendorPromoCode" Type="varchar" MaxLength="12" />
+    <Property Name="KitAssemblyOrderID" Type="int" />
+    <Property Name="CheckOutUser" Type="varchar" MaxLength="4" />
+    <Property Name="CheckOutDate" Type="datetime" />
+    <Property Name="AllocStatus" Type="tinyint" Nullable="false" />
+    <Property Name="UserClosed" Type="varchar" MaxLength="4" />
+    <Property Name="DateClosed" Type="datetime" />
+    <Property Name="BuyerCommissionPC" Type="numeric" Precision="4" Scale="2" />
+    <Property Name="Reference1" Type="varchar" MaxLength="30" />
+    <Property Name="PriceListCurrRate" Type="numeric" Precision="19" Scale="9" Nullable="false" />
+    <Property Name="PurchaseType" Type="varchar" MaxLength="20" />
+    <Property Name="YrWeek" Type="int" />
+    <Property Name="EmailDate" Type="datetime" />
+    <Property Name="EmailCount" Type="int" Nullable="false" />
+    <Property Name="EmailFailed" Type="bit" Nullable="false" />
+    <Property Name="EmailFailedText" Type="varchar" MaxLength="200" />
+    <Property Name="EmailTryCount" Type="int" Nullable="false" />
+    <Property Name="ReplenishmentOrder" Type="bit" Nullable="false" />
+    <Property Name="EmailAgain" Type="bit" Nullable="false" />
+    <Property Name="PurchaseContractID" Type="int" />
+    <Property Name="Reference2" Type="varchar" MaxLength="30" />
+    <Property Name="DateInterfaced" Type="datetime" />
+    <Property Name="DateEDIFirstSent" Type="datetime" />
+    <Property Name="DateEDILastSent" Type="datetime" />
+    <Property Name="LastEDIControlNumber" Type="int" />
+    <Property Name="DoNotDeliverAfterDate" Type="datetime" Nullable="false" />
+    <Property Name="VendorLocationID" Type="int" />
+    <Property Name="VMITransactionID" Type="int" />
+    <Property Name="SendToPOS" Type="bit" Nullable="false" />
+    <Property Name="DateBooked" Type="date" />
+    <Property Name="VersionDate" Type="datetime" />
+    <Property Name="PayMethod" Type="varchar" MaxLength="20" />
+    <Property Name="PayMethodGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="SpecialInstructions1" Type="varchar" MaxLength="20" />
+    <Property Name="SpecialInstructions2" Type="varchar" MaxLength="20" />
+    <Property Name="SpecialInstructionsGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="ShippingInstructions" Type="varchar" MaxLength="20" />
+    <Property Name="ShippingInstructionsGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="CancellationNote" Type="nvarchar" MaxLength="300" />
+    <Property Name="NewStoreCostDiscount" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="QualifiesForNewStoreDiscount" Type="bit" Nullable="false" />
+    <Property Name="MergedIntoPO" Type="bit" Nullable="false" />
+    <Property Name="FinalLocationCode" Type="varchar" MaxLength="4" />
+    <Property Name="AckStatus" Type="char" MaxLength="1" />
+    <Property Name="ASNFirstReceivedDate" Type="date" />
+    <Property Name="ASNLastReceivedDate" Type="date" />
+    <Property Name="CustomID" Type="varchar" MaxLength="20" />
+    <Property Name="ChangeReason" Type="varchar" MaxLength="20" />
+    <Property Name="ChangeReasonGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="EDISentCount" Type="tinyint" Nullable="false" />
+    <Property Name="DateLastModified" Type="datetime" Nullable="false" />
+    <Property Name="CustomerOrderID" Type="int" />
+    <Property Name="DateAmendedForEDI" Type="datetime" />
+    <Property Name="SpecialOrderStatus" Type="varchar" MaxLength="20" />
+    <Property Name="SpecialOrderStatusGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="SpecialOrderCancellationStatus" Type="varchar" MaxLength="20" />
+    <Property Name="SpecialOrderCancellationStatusGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="SpecialOrderAuthorizeCancellationNotes" Type="nvarchar(max)" />
+    <Property Name="SpecialOrderAuthorizeReactivationNotes" Type="nvarchar(max)" />
+    <Property Name="DateAuthorizedSpecialOrderCancellation" Type="datetime" />
+    <Property Name="UserAuthorizedSpecialOrderCancellation" Type="varchar" MaxLength="4" />
+    <Property Name="DateAuthorizedSpecialOrderReactivation" Type="datetime" />
+    <Property Name="UserAuthorizedSpecialOrderReactivation" Type="varchar" MaxLength="4" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'mi9_mms_fs_train.dbo.purchordhist' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="purchordhist">
+    <Key>
+      <PropertyRef Name="transint" />
+      <PropertyRef Name="orderdate" />
+      <PropertyRef Name="openorder" />
+    </Key>
+    <Property Name="transint" Type="int" Nullable="false" />
+    <Property Name="buyer" Type="varchar" MaxLength="8" />
+    <Property Name="suppbrint" Type="int" />
+    <Property Name="seasoncode" Type="varchar" MaxLength="3" />
+    <Property Name="orderdate" Type="datetime" Nullable="false" />
+    <Property Name="location" Type="varchar" MaxLength="12" />
+    <Property Name="deliverydate" Type="datetime" />
+    <Property Name="canceldate" Type="datetime" />
+    <Property Name="ackreference" Type="varchar" MaxLength="20" />
+    <Property Name="ackdate" Type="datetime" />
+    <Property Name="plint" Type="int" />
+    <Property Name="settlement" Type="float" />
+    <Property Name="settletype" Type="varchar" MaxLength="3" />
+    <Property Name="buyingmethod" Type="varchar" MaxLength="4" />
+    <Property Name="currrate" Type="float" />
+    <Property Name="printprice" Type="varchar" MaxLength="1" />
+    <Property Name="openorder" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="splint" Type="int" />
+    <Property Name="amenddate" Type="datetime" />
+    <Property Name="amenduser" Type="varchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="purchordline">
+    <Key>
+      <PropertyRef Name="transint" />
+      <PropertyRef Name="transline" />
+    </Key>
+    <Property Name="transint" Type="int" Nullable="false" />
+    <Property Name="transline" Type="smallint" Nullable="false" />
+    <Property Name="location" Type="varchar" MaxLength="4" />
+    <Property Name="deliverydate" Type="datetime" />
+    <Property Name="canceldate" Type="datetime" />
+    <Property Name="varint" Type="int" Nullable="false" />
+    <Property Name="prodint" Type="int" Nullable="false" />
+    <Property Name="baseproduct" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="quantity" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="makeupqty" Type="int" Nullable="false" />
+    <Property Name="purchunits" Type="varchar" MaxLength="4" />
+    <Property Name="unitcost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="netcost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="unitretail" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="bandingunits" Type="varchar" MaxLength="4" />
+    <Property Name="packagetype" Type="varchar" MaxLength="3" />
+    <Property Name="origin" Type="varchar" MaxLength="3" />
+    <Property Name="suppprodref" Type="varchar" MaxLength="20" />
+    <Property Name="quoteref" Type="varchar" MaxLength="20" />
+    <Property Name="quotedate" Type="datetime" />
+    <Property Name="status" Type="smallint" Nullable="false" />
+    <Property Name="amendstatus" Type="smallint" />
+    <Property Name="makeupstatus" Type="smallint" />
+    <Property Name="purchlineint" Type="int" Nullable="false" />
+    <Property Name="supprodint" Type="int" />
+    <Property Name="delschstatus" Type="smallint" />
+    <Property Name="CreatedOffline" Type="bit" Nullable="false" />
+    <Property Name="LandedCost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DutiableCost" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="MultiBrand" Type="bit" Nullable="false" />
+    <Property Name="BoxCount" Type="int" Nullable="false" />
+    <Property Name="PreTicket" Type="bit" Nullable="false" />
+    <Property Name="SampleQty" Type="int" Nullable="false" />
+    <Property Name="YrWeek" Type="int" />
+    <Property Name="QtyPerPurchUnit" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="QtyInPurchUnits" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="FirstCostPerPurchUnit" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="PurchUnitsID" Type="int" />
+    <Property Name="TaxRate" Type="numeric" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="MergedIntoPOLineID" Type="int" />
+    <Property Name="CustomerOrderLineID" Type="int" />
+    <Property Name="DateCreated" Type="datetime" Nullable="false" />
+    <Property Name="DateAmendedForEDI" Type="datetime" Nullable="false" />
+    <Property Name="DateReopened" Type="datetime" />
+    <Property Name="QtyFromEDILastSent" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="SpecialOrderDescription" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="reasoncodes">
+    <Key>
+      <PropertyRef Name="languageid" />
+      <PropertyRef Name="typecode" />
+      <PropertyRef Name="reasoncode" />
+    </Key>
+    <Property Name="languageid" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="typecode" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="reasoncode" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="structlevels">
+    <Key>
+      <PropertyRef Name="levint" />
+    </Key>
+    <Property Name="level1" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="level2" Type="varchar" MaxLength="8" />
+    <Property Name="level3" Type="varchar" MaxLength="8" />
+    <Property Name="description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="shortdesc" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="vatcode" Type="varchar" MaxLength="12" />
+    <Property Name="historylevel" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="orderind" Type="varchar" MaxLength="1" />
+    <Property Name="autoallocate" Type="varchar" MaxLength="1" />
+    <Property Name="mingmpc" Type="float" />
+    <Property Name="maxgmpc" Type="float" />
+    <Property Name="costmethod" Type="varchar" MaxLength="1" />
+    <Property Name="issuemethod" Type="varchar" MaxLength="1" />
+    <Property Name="salesnomcode" Type="varchar" MaxLength="20" />
+    <Property Name="purchnomcode" Type="varchar" MaxLength="20" />
+    <Property Name="stocknomcode" Type="varchar" MaxLength="20" />
+    <Property Name="purchunits" Type="varchar" MaxLength="4" />
+    <Property Name="stockunits" Type="varchar" MaxLength="4" />
+    <Property Name="salesunits" Type="varchar" MaxLength="4" />
+    <Property Name="supplier" Type="varchar" MaxLength="12" />
+    <Property Name="buyer" Type="varchar" MaxLength="8" />
+    <Property Name="abccode" Type="varchar" MaxLength="3" />
+    <Property Name="disccat" Type="varchar" MaxLength="3" />
+    <Property Name="commcat" Type="varchar" MaxLength="3" />
+    <Property Name="seasoncode" Type="varchar" MaxLength="3" />
+    <Property Name="resprodcode" Type="varchar" MaxLength="3" />
+    <Property Name="distplan" Type="varchar" MaxLength="3" />
+    <Property Name="forecast" Type="varchar" MaxLength="3" />
+    <Property Name="suppriority" Type="varchar" MaxLength="3" />
+    <Property Name="surcharge" Type="varchar" MaxLength="3" />
+    <Property Name="merchmodel" Type="varchar" MaxLength="3" />
+    <Property Name="carrmethod" Type="varchar" MaxLength="3" />
+    <Property Name="carrcharge" Type="varchar" MaxLength="3" />
+    <Property Name="misccharge" Type="varchar" MaxLength="3" />
+    <Property Name="handling" Type="varchar" MaxLength="3" />
+    <Property Name="prodstruct" Type="varchar" MaxLength="2" />
+    <Property Name="vartable1" Type="varchar" MaxLength="5" />
+    <Property Name="vartable2" Type="varchar" MaxLength="5" />
+    <Property Name="dummyind" Type="varchar" MaxLength="3" />
+    <Property Name="hitcount" Type="int" />
+    <Property Name="popcount" Type="int" />
+    <Property Name="amenddate" Type="datetime" />
+    <Property Name="createdate" Type="datetime" Nullable="false" />
+    <Property Name="deletedate" Type="datetime" />
+    <Property Name="deleteind" Type="varchar" MaxLength="1" />
+    <Property Name="accessdate" Type="datetime" />
+    <Property Name="convcode" Type="varchar" MaxLength="3" />
+    <Property Name="levint" Type="int" Nullable="false" />
+    <Property Name="priceband" Type="varchar" MaxLength="3" />
+    <Property Name="gradetable" Type="varchar" MaxLength="3" />
+    <Property Name="keydatetype" Type="varchar" MaxLength="1" />
+    <Property Name="replenmethod" Type="varchar" MaxLength="4" />
+    <Property Name="wksstockheld" Type="float" />
+    <Property Name="backsalhist" Type="smallint" />
+    <Property Name="dumpvarint" Type="int" />
+    <Property Name="featsetcode" Type="varchar" MaxLength="8" />
+    <Property Name="vargroup1" Type="varchar" MaxLength="12" />
+    <Property Name="vargroup2" Type="varchar" MaxLength="12" />
+    <Property Name="customsdesc" Type="varchar" MaxLength="12" />
+    <Property Name="primarymaterial" Type="varchar" MaxLength="12" />
+    <Property Name="countrymfr" Type="varchar" MaxLength="20" />
+    <Property Name="cubefactor" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="weight" Type="numeric" Precision="19" Scale="4" />
+    <Property Name="prodclass" Type="varchar" MaxLength="3" />
+    <Property Name="LabelType" Type="varchar" MaxLength="2" />
+    <Property Name="Consignment" Type="bit" Nullable="false" />
+    <Property Name="level4" Type="varchar" MaxLength="8" />
+    <Property Name="level5" Type="varchar" MaxLength="8" />
+    <Property Name="ProductClusterGroupID" Type="int" />
+    <Property Name="MHClusterGroupID" Type="int" />
+    <Property Name="ClusterID" Type="int" />
+    <Property Name="AllocUnits" Type="varchar" MaxLength="4" />
+    <Property Name="ProductAttributeSetCode" Type="varchar" MaxLength="20" />
+    <Property Name="RetailCostMultiplier" Type="numeric" Precision="5" Scale="4" />
+    <Property Name="ExpenseItemReasonGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="ExpenseItemReason" Type="varchar" MaxLength="20" />
+    <Property Name="CountryOrigin" Type="varchar" MaxLength="20" />
+    <Property Name="CountryGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="Replenished" Type="bit" />
+  </EntityType>
+  <EntityType Name="suppliers">
+    <Key>
+      <PropertyRef Name="supplier" />
+    </Key>
+    <Property Name="supplier" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="shortname" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="commsline" Type="varchar" MaxLength="15" />
+    <Property Name="hoaccountno" Type="varchar" MaxLength="12" />
+    <Property Name="grpaccountno" Type="varchar" MaxLength="12" />
+    <Property Name="category" Type="varchar" MaxLength="3" />
+    <Property Name="typecode" Type="varchar" MaxLength="3" />
+    <Property Name="class" Type="varchar" MaxLength="3" />
+    <Property Name="accounttype" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="buyer" Type="varchar" MaxLength="8" />
+    <Property Name="ordermethod" Type="varchar" MaxLength="1" />
+    <Property Name="merchplan" Type="varchar" MaxLength="3" />
+    <Property Name="invmethod" Type="varchar" MaxLength="1" />
+    <Property Name="paymethod" Type="varchar" MaxLength="20" />
+    <Property Name="currency" Type="varchar" MaxLength="3" />
+    <Property Name="retmethod" Type="varchar" MaxLength="1" />
+    <Property Name="creditproc" Type="varchar" MaxLength="1" />
+    <Property Name="minlead" Type="int" />
+    <Property Name="maxlead" Type="int" />
+    <Property Name="leadtimetype" Type="smallint" Nullable="false" />
+    <Property Name="orderbranch" Type="int" />
+    <Property Name="historylevel" Type="varchar" MaxLength="1" />
+    <Property Name="suppprod" Type="varchar" MaxLength="1" />
+    <Property Name="lastmovedate" Type="datetime" />
+    <Property Name="createdate" Type="datetime" Nullable="false" />
+    <Property Name="amenddate" Type="datetime" />
+    <Property Name="deletedate" Type="datetime" />
+    <Property Name="suppint" Type="int" Nullable="false" />
+    <Property Name="suspreason" Type="varchar" MaxLength="2" />
+    <Property Name="suspreasonra" Type="varchar" MaxLength="2" />
+    <Property Name="suspreasonap" Type="varchar" MaxLength="2" />
+    <Property Name="suspdate" Type="datetime" />
+    <Property Name="suspuser" Type="varchar" MaxLength="4" />
+    <Property Name="reinstdate" Type="datetime" />
+    <Property Name="reinstuser" Type="varchar" MaxLength="4" />
+    <Property Name="status" Type="varchar" MaxLength="1" />
+    <Property Name="minorder" Type="int" />
+    <Property Name="maxorder" Type="int" />
+    <Property Name="anacode" Type="varchar" MaxLength="13" />
+    <Property Name="discount" Type="float" />
+    <Property Name="languageid" Type="varchar" MaxLength="2" />
+    <Property Name="settletype" Type="varchar" MaxLength="3" />
+    <Property Name="taxregno" Type="varchar" MaxLength="32" />
+    <Property Name="printprice" Type="varchar" MaxLength="1" />
+    <Property Name="supptype" Type="smallint" />
+    <Property Name="buymethod" Type="varchar" MaxLength="4" />
+    <Property Name="stdindclass" Type="varchar" MaxLength="4" />
+    <Property Name="dbrating" Type="varchar" MaxLength="4" />
+    <Property Name="reportcat" Type="varchar" MaxLength="1" />
+    <Property Name="carrier" Type="varchar" MaxLength="4" />
+    <Property Name="multilocords" Type="varchar" MaxLength="1" />
+    <Property Name="maxdelval" Type="int" />
+    <Property Name="mindelval" Type="int" />
+    <Property Name="allowbo" Type="varchar" MaxLength="1" />
+    <Property Name="compafter" Type="int" />
+    <Property Name="sa01" Type="varchar" MaxLength="20" />
+    <Property Name="sa02" Type="varchar" MaxLength="20" />
+    <Property Name="sa03" Type="varchar" MaxLength="20" />
+    <Property Name="sa04" Type="varchar" MaxLength="20" />
+    <Property Name="sa05" Type="varchar" MaxLength="20" />
+    <Property Name="sa06" Type="varchar" MaxLength="20" />
+    <Property Name="sa07" Type="varchar" MaxLength="20" />
+    <Property Name="sa08" Type="varchar" MaxLength="20" />
+    <Property Name="sa09" Type="varchar" MaxLength="20" />
+    <Property Name="sa10" Type="varchar" MaxLength="20" />
+    <Property Name="sa11" Type="varchar" MaxLength="20" />
+    <Property Name="sa12" Type="varchar" MaxLength="20" />
+    <Property Name="sa13" Type="varchar" MaxLength="20" />
+    <Property Name="sa14" Type="varchar" MaxLength="20" />
+    <Property Name="sa15" Type="varchar" MaxLength="20" />
+    <Property Name="sa16" Type="varchar" MaxLength="20" />
+    <Property Name="sa17" Type="varchar" MaxLength="20" />
+    <Property Name="sa18" Type="varchar" MaxLength="20" />
+    <Property Name="sa19" Type="varchar" MaxLength="20" />
+    <Property Name="sa20" Type="varchar" MaxLength="20" />
+    <Property Name="sa21" Type="varchar" MaxLength="20" />
+    <Property Name="sa22" Type="varchar" MaxLength="20" />
+    <Property Name="sa23" Type="varchar" MaxLength="20" />
+    <Property Name="sa24" Type="varchar" MaxLength="20" />
+    <Property Name="sa25" Type="varchar" MaxLength="20" />
+    <Property Name="EdiTestCodeQualifier" Type="varchar" MaxLength="2" />
+    <Property Name="EdiTestCode" Type="varchar" MaxLength="15" />
+    <Property Name="EdiLiveCodeQualifier" Type="varchar" MaxLength="2" />
+    <Property Name="EdiLiveCode" Type="varchar" MaxLength="15" />
+    <Property Name="EdiStatus" Type="tinyint" Nullable="false" />
+    <Property Name="EdiFormat" Type="tinyint" Nullable="false" />
+    <Property Name="EdiVersion" Type="varchar" MaxLength="12" />
+    <Property Name="EdiTestStartDate" Type="datetime" />
+    <Property Name="EdiLiveStartDate" Type="datetime" />
+    <Property Name="EdiSuspendDate" Type="datetime" />
+    <Property Name="EdiPo" Type="tinyint" Nullable="false" />
+    <Property Name="EdiPoAck" Type="bit" Nullable="false" />
+    <Property Name="EdiPoAmend" Type="bit" Nullable="false" />
+    <Property Name="EdiInvoice" Type="bit" Nullable="false" />
+    <Property Name="EdiAsn" Type="bit" Nullable="false" />
+    <Property Name="EdiPayment" Type="bit" Nullable="false" />
+    <Property Name="EdiCatalog" Type="bit" Nullable="false" />
+    <Property Name="EdiFuncAck" Type="bit" Nullable="false" />
+    <Property Name="AutoAuthorizeOrders" Type="tinyint" Nullable="false" />
+    <Property Name="TransportMethod" Type="varchar" MaxLength="2" />
+    <Property Name="Import" Type="bit" Nullable="false" />
+    <Property Name="Brand" Type="varchar" MaxLength="12" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Fulfillment" Type="bit" Nullable="false" />
+    <Property Name="FFShipMode" Type="varchar" MaxLength="2" />
+    <Property Name="FFShipModeInt" Type="varchar" MaxLength="2" />
+    <Property Name="FFHandlingCharge" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="FFHandlingChargeInt" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="FFItemHandlingCharge" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="FFItemHandlingChargeInt" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="FFShipChargeType" Type="tinyint" Nullable="false" />
+    <Property Name="FFShipChargeCountType" Type="tinyint" Nullable="false" />
+    <Property Name="FFUsePackaging" Type="bit" Nullable="false" />
+    <Property Name="FFPackagingOptimizationType" Type="tinyint" Nullable="false" />
+    <Property Name="CreatedOffline" Type="bit" Nullable="false" />
+    <Property Name="Interfaced" Type="bit" Nullable="false" />
+    <Property Name="DateInterfaced" Type="datetime" />
+    <Property Name="PreTicket" Type="bit" Nullable="false" />
+    <Property Name="DUNS" Type="int" Nullable="false" />
+    <Property Name="RequireVendorProduct" Type="tinyint" Nullable="false" />
+    <Property Name="RequireVendorUPC" Type="tinyint" Nullable="false" />
+    <Property Name="Edi850ControlNumber" Type="int" Nullable="false" />
+    <Property Name="VMI" Type="bit" Nullable="false" />
+    <Property Name="AutoReceiveASN" Type="tinyint" Nullable="false" />
+    <Property Name="CancelAfterDays" Type="tinyint" Nullable="false" />
+    <Property Name="Edi850DTM001InUse" Type="bit" Nullable="false" />
+    <Property Name="Edi850DTM010InUse" Type="bit" Nullable="false" />
+    <Property Name="Edi850DTM037InUse" Type="bit" Nullable="false" />
+    <Property Name="Edi850DTM038InUse" Type="bit" Nullable="false" />
+    <Property Name="Edi850DTM074InUse" Type="bit" Nullable="false" />
+    <Property Name="EdiLastInvoiceCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="EdiLastASNCode" Type="varchar" MaxLength="20" />
+    <Property Name="VendorLocationsInUse" Type="bit" Nullable="false" />
+    <Property Name="EdiUseTildeAsSegmentTerminator" Type="tinyint" Nullable="false" />
+    <Property Name="EnforceVendorCompanyLocationRules" Type="tinyint" Nullable="false" />
+    <Property Name="UseSystemTolerance" Type="bit" Nullable="false" />
+    <Property Name="ImportingCompany" Type="varchar" MaxLength="20" />
+    <Property Name="ImportingCompanyGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="SbaContractInUse" Type="bit" Nullable="false" />
+    <Property Name="SbaContractStartDate" Type="date" />
+    <Property Name="CommercialDiscountPercent" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="CommercialDiscountPercentStartDate" Type="date" />
+    <Property Name="DefectiveMerchandiseDiscountPercent" Type="numeric" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="DefectiveMerchandiseDiscountPercentStartDate" Type="date" />
+    <Property Name="EdiProvider" Type="varchar" MaxLength="20" />
+    <Property Name="EdiProviderGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="EdiMessagingProtocol" Type="varchar" MaxLength="20" />
+    <Property Name="EdiMessagingProtocolGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="OrderPlanRequired" Type="bit" Nullable="false" />
+    <Property Name="AllowBrokenPacks" Type="bit" Nullable="false" />
+    <Property Name="NewStoreDiscountDays" Type="tinyint" Nullable="false" />
+    <Property Name="EdiProductActivity" Type="bit" Nullable="false" />
+    <Property Name="UpdateCostOnASN" Type="bit" Nullable="false" />
+    <Property Name="RebateVendor" Type="varchar" MaxLength="20" />
+    <Property Name="RebateVendorGLU" Type="varchar" MaxLength="4" StoreGeneratedPattern="Computed" Nullable="false" />
+    <Property Name="VerticallyIntegratedRetailer" Type="bit" Nullable="false" />
+    <Property Name="SpecialOrders" Type="bit" Nullable="false" />
+    <Property Name="SpecialOrdersSpecRequired" Type="bit" Nullable="false" />
+    <Property Name="Edi850DTM001DeliveryDateInUse" Type="bit" Nullable="false" />
+    <Property Name="Edi850SDQInUse" Type="bit" Nullable="false" />
+    <Property Name="Edi850TD5InUse" Type="bit" Nullable="false" />
+    <Property Name="Edi850ITDInUse" Type="bit" Nullable="false" />
+    <Property Name="EdiFuncAckForInvoice" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="supproducts">
+    <Key>
+      <PropertyRef Name="supprodint" />
+    </Key>
+    <Property Name="suppint" Type="int" Nullable="false" />
+    <Property Name="supproduct" Type="varchar" MaxLength="32" Nullable="false" />
+    <Property Name="supprodint" Type="int" Nullable="false" />
+    <Property Name="prodint" Type="int" />
+    <Property Name="varint" Type="int" />
+    <Property Name="description" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="reference" Type="varchar" MaxLength="30" />
+    <Property Name="anacode" Type="varchar" MaxLength="14" />
+    <Property Name="retailprice" Type="money" />
+    <Property Name="rrpvat" Type="varchar" MaxLength="1" />
+    <Property Name="vatcode" Type="varchar" MaxLength="1" />
+    <Property Name="convcode" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="salesunits" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="minorder" Type="int" />
+    <Property Name="maxorder" Type="int" />
+    <Property Name="minvalue" Type="int" />
+    <Property Name="maxvalue" Type="int" />
+    <Property Name="minlead" Type="smallint" />
+    <Property Name="maxlead" Type="smallint" />
+    <Property Name="leadtimetype" Type="smallint" />
+    <Property Name="life" Type="smallint" />
+    <Property Name="origin" Type="varchar" MaxLength="3" />
+    <Property Name="preference" Type="smallint" Nullable="false" />
+    <Property Name="suppbrint" Type="int" />
+    <Property Name="introdate" Type="datetime" />
+    <Property Name="discondate" Type="datetime" />
+    <Property Name="suspreason" Type="varchar" MaxLength="2" />
+    <Property Name="suspdate" Type="datetime" />
+    <Property Name="suspuser" Type="varchar" MaxLength="4" />
+    <Property Name="reinstdate" Type="datetime" />
+    <Property Name="reinstuser" Type="varchar" MaxLength="4" />
+    <Property Name="createdate" Type="datetime" />
+    <Property Name="amenddate" Type="datetime" />
+    <Property Name="deletedate" Type="datetime" />
+    <Property Name="status" Type="smallint" Nullable="false" />
+    <Property Name="discount" Type="float" />
+    <Property Name="settletype" Type="varchar" MaxLength="3" />
+    <Property Name="mindelqty" Type="int" />
+    <Property Name="maxdelqty" Type="int" />
+    <Property Name="mindelval" Type="int" />
+    <Property Name="maxdelval" Type="int" />
+    <Property Name="bandingunits" Type="varchar" MaxLength="4" />
+    <Property Name="sourcepercent" Type="smallint" />
+    <Property Name="CreatedOffline" Type="bit" Nullable="false" />
+    <Property Name="vardesc1" Type="varchar" MaxLength="40" />
+    <Property Name="vardesc2" Type="varchar" MaxLength="40" />
+    <Property Name="basesupprodint" Type="int" />
+    <Property Name="OrderMultiple" Type="int" />
+    <Property Name="ImportCertificate" Type="varchar" MaxLength="35" />
+    <Property Name="ImportCertificateStartDate" Type="date" />
+    <Property Name="ImportCertificateEndDate" Type="date" />
+    <Property Name="ImportCertificateInProgress" Type="bit" Nullable="false" />
+    <Property Name="SafetyCertificate" Type="varchar" MaxLength="35" />
+    <Property Name="UserCreated" Type="varchar" MaxLength="4" />
+    <Property Name="UserAmended" Type="varchar" MaxLength="4" />
+    <Property Name="CountryMfr" Type="varchar" MaxLength="2" />
+    <Property Name="CountryDispatch" Type="varchar" MaxLength="2" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="UserActiveChanged" Type="varchar" MaxLength="4" />
+    <Property Name="DateActiveChanged" Type="datetime" />
+    <Property Name="DateLastModified" Type="datetime" />
+    <Property Name="AvailableForWebFF" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="supprodunits">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="supprodint" Type="int" Nullable="false" />
+    <Property Name="purchunits" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="anacode" Type="varchar" MaxLength="14" />
+    <Property Name="status" Type="smallint" Nullable="false" />
+    <Property Name="CreatedOffline" Type="bit" Nullable="false" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductUnitID" Type="int" />
+    <Property Name="Primary" Type="bit" Nullable="false" />
+    <Property Name="OrderMultiple" Type="int" />
+    <Property Name="MinQty" Type="int" />
+    <Property Name="MaxQty" Type="int" />
+    <Property Name="MinCost" Type="int" />
+    <Property Name="MaxCost" Type="int" />
+    <Property Name="MinWeight" Type="int" />
+    <Property Name="MaxWeight" Type="int" />
+    <Property Name="MinCube" Type="int" />
+    <Property Name="MaxCube" Type="int" />
+  </EntityType>
+  <EntityType Name="varcodes">
+    <Key>
+      <PropertyRef Name="vartype" />
+      <PropertyRef Name="varcode" />
+    </Key>
+    <Property Name="vartype" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="varcode" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="description" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="vargroup" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="varcodeint" Type="int" Nullable="false" />
+    <Property Name="Sequence" Type="int" />
+    <Property Name="Code1" Type="varchar" MaxLength="12" />
+    <Property Name="Code2" Type="varchar" MaxLength="12" />
+    <Property Name="NRFCode" Type="int" />
+    <Property Name="ColourARGB" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'mi9_mms_fs_train.dbo.TOFS_RetailPrice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="TOFS_RetailPrice">
+    <Key>
+      <PropertyRef Name="Varint" />
+    </Key>
+    <Property Name="Varint" Type="int" Nullable="false" />
+    <Property Name="Retail_Price" Type="money" />
+    <Property Name="Price_List" Type="varchar" MaxLength="6" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'consigdests_FK8' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="consigdests_FK8" />-->
+  <Association Name="fk_branches_2">
+    <End Role="branches" Type="Self.branches" Multiplicity="0..1" />
+    <End Role="branches1" Type="Self.branches" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="branches">
+        <PropertyRef Name="branchcode" />
+      </Principal>
+      <Dependent Role="branches1">
+        <PropertyRef Name="mastbranch" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'fk_brnstkchks_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="fk_brnstkchks_1" />-->
+  <Association Name="fk_brnstkchks_2">
+    <End Role="products" Type="Self.products" Multiplicity="1" />
+    <End Role="brnstkchks" Type="Self.brnstkchks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="prodint" />
+      </Principal>
+      <Dependent Role="brnstkchks">
+        <PropertyRef Name="prodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_brnstocks_1">
+    <End Role="branches" Type="Self.branches" Multiplicity="1" />
+    <End Role="brnstocks" Type="Self.brnstocks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="branches">
+        <PropertyRef Name="branchcode" />
+      </Principal>
+      <Dependent Role="brnstocks">
+        <PropertyRef Name="branchcode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_brnstocks_2">
+    <End Role="productcodes" Type="Self.productcodes" Multiplicity="1" />
+    <End Role="brnstocks" Type="Self.brnstocks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productcodes">
+        <PropertyRef Name="varint" />
+      </Principal>
+      <Dependent Role="brnstocks">
+        <PropertyRef Name="varint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_BTRANSCOUNTS_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_BTRANSCOUNTS_1" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'fk_btransdiscs_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="fk_btransdiscs_1" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'fk_btransdiscs_2' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="fk_btransdiscs_2" />-->
+  <Association Name="fk_btranshdrs_2">
+    <End Role="branches" Type="Self.branches" Multiplicity="1" />
+    <End Role="btranshdrs" Type="Self.btranshdrs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="branches">
+        <PropertyRef Name="branchcode" />
+      </Principal>
+      <Dependent Role="btranshdrs">
+        <PropertyRef Name="branchcode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_btranshdrs_4">
+    <End Role="branches" Type="Self.branches" Multiplicity="0..1" />
+    <End Role="btranshdrs" Type="Self.btranshdrs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="branches">
+        <PropertyRef Name="branchcode" />
+      </Principal>
+      <Dependent Role="btranshdrs">
+        <PropertyRef Name="branchother" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'fk_btransifdata_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="fk_btransifdata_1" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'fk_btranslines_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="fk_btranslines_1" />-->
+  <Association Name="fk_btranslines_2">
+    <End Role="productcodes" Type="Self.productcodes" Multiplicity="1" />
+    <End Role="btranslines" Type="Self.btranslines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productcodes">
+        <PropertyRef Name="varint" />
+      </Principal>
+      <Dependent Role="btranslines">
+        <PropertyRef Name="prodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_consigdests_1">
+    <End Role="consighdrs" Type="Self.consighdrs" Multiplicity="1" />
+    <End Role="consigdests" Type="Self.consigdests" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="consighdrs">
+        <PropertyRef Name="consignment" />
+        <PropertyRef Name="warehouse" />
+      </Principal>
+      <Dependent Role="consigdests">
+        <PropertyRef Name="consignment" />
+        <PropertyRef Name="warehouse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_consigdocs_2">
+    <End Role="consighdrs" Type="Self.consighdrs" Multiplicity="0..1" />
+    <End Role="consigdocs" Type="Self.consigdocs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="consighdrs">
+        <PropertyRef Name="consignment" />
+        <PropertyRef Name="warehouse" />
+      </Principal>
+      <Dependent Role="consigdocs">
+        <PropertyRef Name="consignment" />
+        <PropertyRef Name="warehouse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'fk_consiglines_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="fk_consiglines_1" />-->
+  <Association Name="fk_consiglines_2">
+    <End Role="productcodes" Type="Self.productcodes" Multiplicity="1" />
+    <End Role="consiglines" Type="Self.consiglines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productcodes">
+        <PropertyRef Name="varint" />
+      </Principal>
+      <Dependent Role="consiglines">
+        <PropertyRef Name="varint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_prodkeys_1">
+    <End Role="productcodes" Type="Self.productcodes" Multiplicity="1" />
+    <End Role="prodkeys" Type="Self.prodkeys" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productcodes">
+        <PropertyRef Name="varint" />
+      </Principal>
+      <Dependent Role="prodkeys">
+        <PropertyRef Name="prodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_productcodes_1">
+    <End Role="products" Type="Self.products" Multiplicity="1" />
+    <End Role="productcodes" Type="Self.productcodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="prodint" />
+      </Principal>
+      <Dependent Role="productcodes">
+        <PropertyRef Name="prodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'fk_products_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="fk_products_1" />-->
+  <Association Name="fk_products_19">
+    <End Role="suppliers" Type="Self.suppliers" Multiplicity="0..1" />
+    <End Role="products" Type="Self.products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suppliers">
+        <PropertyRef Name="supplier" />
+      </Principal>
+      <Dependent Role="products">
+        <PropertyRef Name="manufacturer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_products_26">
+    <End Role="products" Type="Self.products" Multiplicity="0..1" />
+    <End Role="products1" Type="Self.products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="prodint" />
+      </Principal>
+      <Dependent Role="products1">
+        <PropertyRef Name="AssociatedProdint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_products_3">
+    <End Role="suppliers" Type="Self.suppliers" Multiplicity="0..1" />
+    <End Role="products" Type="Self.products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suppliers">
+        <PropertyRef Name="supplier" />
+      </Principal>
+      <Dependent Role="products">
+        <PropertyRef Name="supplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'fk_purchcosts' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="fk_purchcosts" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'fk_purchorders_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="fk_purchorders_1" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'fk_purchordline_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="fk_purchordline_1" />-->
+  <Association Name="fk_purchordline_2">
+    <End Role="productcodes" Type="Self.productcodes" Multiplicity="1" />
+    <End Role="purchordline" Type="Self.purchordline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productcodes">
+        <PropertyRef Name="varint" />
+      </Principal>
+      <Dependent Role="purchordline">
+        <PropertyRef Name="varint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_purchordline_3">
+    <End Role="products" Type="Self.products" Multiplicity="1" />
+    <End Role="purchordline" Type="Self.purchordline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="prodint" />
+      </Principal>
+      <Dependent Role="purchordline">
+        <PropertyRef Name="prodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_purchordline_7">
+    <End Role="supproducts" Type="Self.supproducts" Multiplicity="0..1" />
+    <End Role="purchordline" Type="Self.purchordline" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="supproducts">
+        <PropertyRef Name="supprodint" />
+      </Principal>
+      <Dependent Role="purchordline">
+        <PropertyRef Name="supprodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_structlevels_4">
+    <End Role="suppliers" Type="Self.suppliers" Multiplicity="0..1" />
+    <End Role="structlevels" Type="Self.structlevels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suppliers">
+        <PropertyRef Name="supplier" />
+      </Principal>
+      <Dependent Role="structlevels">
+        <PropertyRef Name="supplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_suppliers_1">
+    <End Role="suppliers" Type="Self.suppliers" Multiplicity="0..1" />
+    <End Role="suppliers1" Type="Self.suppliers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suppliers">
+        <PropertyRef Name="supplier" />
+      </Principal>
+      <Dependent Role="suppliers1">
+        <PropertyRef Name="hoaccountno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_suppliers_2">
+    <End Role="suppliers" Type="Self.suppliers" Multiplicity="0..1" />
+    <End Role="suppliers1" Type="Self.suppliers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="suppliers">
+        <PropertyRef Name="supplier" />
+      </Principal>
+      <Dependent Role="suppliers1">
+        <PropertyRef Name="grpaccountno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'fk_supproducts_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="fk_supproducts_1" />-->
+  <Association Name="fk_supproducts_10">
+    <End Role="supproducts" Type="Self.supproducts" Multiplicity="0..1" />
+    <End Role="supproducts1" Type="Self.supproducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="supproducts">
+        <PropertyRef Name="supprodint" />
+      </Principal>
+      <Dependent Role="supproducts1">
+        <PropertyRef Name="basesupprodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_supproducts_2">
+    <End Role="products" Type="Self.products" Multiplicity="0..1" />
+    <End Role="supproducts" Type="Self.supproducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="prodint" />
+      </Principal>
+      <Dependent Role="supproducts">
+        <PropertyRef Name="prodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_supproducts_3">
+    <End Role="productcodes" Type="Self.productcodes" Multiplicity="0..1" />
+    <End Role="supproducts" Type="Self.supproducts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productcodes">
+        <PropertyRef Name="varint" />
+      </Principal>
+      <Dependent Role="supproducts">
+        <PropertyRef Name="varint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_supprodunits_1">
+    <End Role="supproducts" Type="Self.supproducts" Multiplicity="1" />
+    <End Role="supprodunits" Type="Self.supprodunits" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="supproducts">
+        <PropertyRef Name="supprodint" />
+      </Principal>
+      <Dependent Role="supprodunits">
+        <PropertyRef Name="supprodint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productcodes_FK2">
+    <End Role="supproducts" Type="Self.supproducts" Multiplicity="0..1" />
+    <End Role="productcodes" Type="Self.productcodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="supproducts">
+        <PropertyRef Name="supprodint" />
+      </Principal>
+      <Dependent Role="productcodes">
+        <PropertyRef Name="DefaultVendorProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productcodes_FK3">
+    <End Role="products" Type="Self.products" Multiplicity="0..1" />
+    <End Role="productcodes" Type="Self.productcodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="products">
+        <PropertyRef Name="prodint" />
+      </Principal>
+      <Dependent Role="productcodes">
+        <PropertyRef Name="prodint2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productcodes_FK8">
+    <End Role="productcodes" Type="Self.productcodes" Multiplicity="0..1" />
+    <End Role="productcodes1" Type="Self.productcodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="productcodes">
+        <PropertyRef Name="varint" />
+      </Principal>
+      <Dependent Role="productcodes1">
+        <PropertyRef Name="MergeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="productcodes_FK9">
+    <End Role="varcodes" Type="Self.varcodes" Multiplicity="0..1" />
+    <End Role="productcodes" Type="Self.productcodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="varcodes">
+        <PropertyRef Name="vartype" />
+        <PropertyRef Name="varcode" />
+      </Principal>
+      <Dependent Role="productcodes">
+        <PropertyRef Name="SizeType" />
+        <PropertyRef Name="SizeCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'purchordline_FK9' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="purchordline_FK9" />-->
+  <EntityContainer Name="mi9_mms_fs_trainModelStoreContainer">
+    <EntitySet Name="branches" EntityType="Self.branches" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="brnstkchks" EntityType="Self.brnstkchks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="brnstocks" EntityType="Self.brnstocks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="btranscounts" EntityType="Self.btranscounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="btransdiscs" EntityType="Self.btransdiscs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="btranshdrs" EntityType="Self.btranshdrs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="btransifdata" EntityType="Self.btransifdata" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="btranslines" EntityType="Self.btranslines" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="consigdests" EntityType="Self.consigdests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="consighdrs" EntityType="Self.consighdrs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="consiglines" EntityType="Self.consiglines" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pricechghdrs" EntityType="Self.pricechghdrs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="proddescs" EntityType="Self.proddescs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="prodkeys" EntityType="Self.prodkeys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="productcodes" EntityType="Self.productcodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="products" EntityType="Self.products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="purchcosts" EntityType="Self.purchcosts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="purchorders" EntityType="Self.purchorders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="purchordline" EntityType="Self.purchordline" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="reasoncodes" EntityType="Self.reasoncodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="structlevels" EntityType="Self.structlevels" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="suppliers" EntityType="Self.suppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="supproducts" EntityType="Self.supproducts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="supprodunits" EntityType="Self.supprodunits" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="varcodes" EntityType="Self.varcodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="consigdocs" EntityType="Self.consigdocs" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [consigdocs].[warehouse] AS [warehouse], 
+    [consigdocs].[consignment] AS [consignment], 
+    [consigdocs].[levelid] AS [levelid], 
+    [consigdocs].[processname] AS [processname]
+    FROM [dbo].[consigdocs] AS [consigdocs]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="purchordhist" EntityType="Self.purchordhist" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [purchordhist].[transint] AS [transint], 
+    [purchordhist].[buyer] AS [buyer], 
+    [purchordhist].[suppbrint] AS [suppbrint], 
+    [purchordhist].[seasoncode] AS [seasoncode], 
+    [purchordhist].[orderdate] AS [orderdate], 
+    [purchordhist].[location] AS [location], 
+    [purchordhist].[deliverydate] AS [deliverydate], 
+    [purchordhist].[canceldate] AS [canceldate], 
+    [purchordhist].[ackreference] AS [ackreference], 
+    [purchordhist].[ackdate] AS [ackdate], 
+    [purchordhist].[plint] AS [plint], 
+    [purchordhist].[settlement] AS [settlement], 
+    [purchordhist].[settletype] AS [settletype], 
+    [purchordhist].[buyingmethod] AS [buyingmethod], 
+    [purchordhist].[currrate] AS [currrate], 
+    [purchordhist].[printprice] AS [printprice], 
+    [purchordhist].[openorder] AS [openorder], 
+    [purchordhist].[splint] AS [splint], 
+    [purchordhist].[amenddate] AS [amenddate], 
+    [purchordhist].[amenduser] AS [amenduser]
+    FROM [dbo].[purchordhist] AS [purchordhist]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TOFS_RetailPrice" EntityType="Self.TOFS_RetailPrice" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TOFS_RetailPrice].[Varint] AS [Varint], 
+    [TOFS_RetailPrice].[Retail_Price] AS [Retail_Price], 
+    [TOFS_RetailPrice].[Price_List] AS [Price_List]
+    FROM [dbo].[TOFS_RetailPrice] AS [TOFS_RetailPrice]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="fk_branches_2" Association="Self.fk_branches_2">
+      <End Role="branches" EntitySet="branches" />
+      <End Role="branches1" EntitySet="branches" />
+    </AssociationSet>
+    <AssociationSet Name="fk_brnstkchks_2" Association="Self.fk_brnstkchks_2">
+      <End Role="products" EntitySet="products" />
+      <End Role="brnstkchks" EntitySet="brnstkchks" />
+    </AssociationSet>
+    <AssociationSet Name="fk_brnstocks_1" Association="Self.fk_brnstocks_1">
+      <End Role="branches" EntitySet="branches" />
+      <End Role="brnstocks" EntitySet="brnstocks" />
+    </AssociationSet>
+    <AssociationSet Name="fk_brnstocks_2" Association="Self.fk_brnstocks_2">
+      <End Role="productcodes" EntitySet="productcodes" />
+      <End Role="brnstocks" EntitySet="brnstocks" />
+    </AssociationSet>
+    <AssociationSet Name="fk_btranshdrs_2" Association="Self.fk_btranshdrs_2">
+      <End Role="branches" EntitySet="branches" />
+      <End Role="btranshdrs" EntitySet="btranshdrs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_btranshdrs_4" Association="Self.fk_btranshdrs_4">
+      <End Role="branches" EntitySet="branches" />
+      <End Role="btranshdrs" EntitySet="btranshdrs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_btranslines_2" Association="Self.fk_btranslines_2">
+      <End Role="productcodes" EntitySet="productcodes" />
+      <End Role="btranslines" EntitySet="btranslines" />
+    </AssociationSet>
+    <AssociationSet Name="fk_consigdests_1" Association="Self.fk_consigdests_1">
+      <End Role="consighdrs" EntitySet="consighdrs" />
+      <End Role="consigdests" EntitySet="consigdests" />
+    </AssociationSet>
+    <AssociationSet Name="fk_consigdocs_2" Association="Self.fk_consigdocs_2">
+      <End Role="consighdrs" EntitySet="consighdrs" />
+      <End Role="consigdocs" EntitySet="consigdocs" />
+    </AssociationSet>
+    <AssociationSet Name="fk_consiglines_2" Association="Self.fk_consiglines_2">
+      <End Role="productcodes" EntitySet="productcodes" />
+      <End Role="consiglines" EntitySet="consiglines" />
+    </AssociationSet>
+    <AssociationSet Name="fk_prodkeys_1" Association="Self.fk_prodkeys_1">
+      <End Role="productcodes" EntitySet="productcodes" />
+      <End Role="prodkeys" EntitySet="prodkeys" />
+    </AssociationSet>
+    <AssociationSet Name="fk_productcodes_1" Association="Self.fk_productcodes_1">
+      <End Role="products" EntitySet="products" />
+      <End Role="productcodes" EntitySet="productcodes" />
+    </AssociationSet>
+    <AssociationSet Name="fk_products_19" Association="Self.fk_products_19">
+      <End Role="suppliers" EntitySet="suppliers" />
+      <End Role="products" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="fk_products_26" Association="Self.fk_products_26">
+      <End Role="products" EntitySet="products" />
+      <End Role="products1" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="fk_products_3" Association="Self.fk_products_3">
+      <End Role="suppliers" EntitySet="suppliers" />
+      <End Role="products" EntitySet="products" />
+    </AssociationSet>
+    <AssociationSet Name="fk_purchordline_2" Association="Self.fk_purchordline_2">
+      <End Role="productcodes" EntitySet="productcodes" />
+      <End Role="purchordline" EntitySet="purchordline" />
+    </AssociationSet>
+    <AssociationSet Name="fk_purchordline_3" Association="Self.fk_purchordline_3">
+      <End Role="products" EntitySet="products" />
+      <End Role="purchordline" EntitySet="purchordline" />
+    </AssociationSet>
+    <AssociationSet Name="fk_purchordline_7" Association="Self.fk_purchordline_7">
+      <End Role="supproducts" EntitySet="supproducts" />
+      <End Role="purchordline" EntitySet="purchordline" />
+    </AssociationSet>
+    <AssociationSet Name="fk_structlevels_4" Association="Self.fk_structlevels_4">
+      <End Role="suppliers" EntitySet="suppliers" />
+      <End Role="structlevels" EntitySet="structlevels" />
+    </AssociationSet>
+    <AssociationSet Name="fk_suppliers_1" Association="Self.fk_suppliers_1">
+      <End Role="suppliers" EntitySet="suppliers" />
+      <End Role="suppliers1" EntitySet="suppliers" />
+    </AssociationSet>
+    <AssociationSet Name="fk_suppliers_2" Association="Self.fk_suppliers_2">
+      <End Role="suppliers" EntitySet="suppliers" />
+      <End Role="suppliers1" EntitySet="suppliers" />
+    </AssociationSet>
+    <AssociationSet Name="fk_supproducts_10" Association="Self.fk_supproducts_10">
+      <End Role="supproducts" EntitySet="supproducts" />
+      <End Role="supproducts1" EntitySet="supproducts" />
+    </AssociationSet>
+    <AssociationSet Name="fk_supproducts_2" Association="Self.fk_supproducts_2">
+      <End Role="products" EntitySet="products" />
+      <End Role="supproducts" EntitySet="supproducts" />
+    </AssociationSet>
+    <AssociationSet Name="fk_supproducts_3" Association="Self.fk_supproducts_3">
+      <End Role="productcodes" EntitySet="productcodes" />
+      <End Role="supproducts" EntitySet="supproducts" />
+    </AssociationSet>
+    <AssociationSet Name="fk_supprodunits_1" Association="Self.fk_supprodunits_1">
+      <End Role="supproducts" EntitySet="supproducts" />
+      <End Role="supprodunits" EntitySet="supprodunits" />
+    </AssociationSet>
+    <AssociationSet Name="productcodes_FK2" Association="Self.productcodes_FK2">
+      <End Role="supproducts" EntitySet="supproducts" />
+      <End Role="productcodes" EntitySet="productcodes" />
+    </AssociationSet>
+    <AssociationSet Name="productcodes_FK3" Association="Self.productcodes_FK3">
+      <End Role="products" EntitySet="products" />
+      <End Role="productcodes" EntitySet="productcodes" />
+    </AssociationSet>
+    <AssociationSet Name="productcodes_FK8" Association="Self.productcodes_FK8">
+      <End Role="productcodes" EntitySet="productcodes" />
+      <End Role="productcodes1" EntitySet="productcodes" />
+    </AssociationSet>
+    <AssociationSet Name="productcodes_FK9" Association="Self.productcodes_FK9">
+      <End Role="varcodes" EntitySet="varcodes" />
+      <End Role="productcodes" EntitySet="productcodes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
